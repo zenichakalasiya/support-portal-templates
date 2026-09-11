@@ -452,6 +452,7 @@
   
       vals.kbs4 = (vals.kbs6 || []).slice(0, 4);
       vals.kbs3 = (vals.kbs6 || []).slice(0, 3);
+      vals.quickLinks4 = (vals.quickLinks || []).slice(0, 4);
       vals.assetsCis4 = (vals.assetsCis || vals.assets || []).slice(0, 4);
   
       const foy = this.foyVals();

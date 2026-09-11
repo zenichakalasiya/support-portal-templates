@@ -67,7 +67,7 @@
           <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:12px">
             <sc-for list="{{ actionsPlain4 }}" as="a" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #dde4ee;border-radius:4px;padding:14px 16px;min-width:0">
-                <div style="width:34px;height:34px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <div style="width:34px;height:34px;border-radius:4px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ a.i }}</span>
                 </div>
                 <div style="font-size:13.5px;font-weight:700;color:#0b2545;margin-top:9px;line-height:1.3">{{ a.t }}</div>
@@ -92,7 +92,6 @@
         <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;min-width:0">
           <sc-for list="{{ empKpis }}" as="k" hint-placeholder-count="4">
             <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 8px;background:#fff;border:1px solid #dde4ee;border-radius:4px;min-width:0">
-              <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ brand }}">{{ k.i }}</span>
               <div style="font-size:24px;font-weight:700;color:#0b2545;letter-spacing:-0.03em;line-height:1;margin-top:3px">{{ k.v }}</div>
               <div style="font-size:11.5px;font-weight:600;color:#0b2545;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%">{{ k.l }}</div>
               <div style="font-size:10.5px;color:#5f6f83;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%">{{ k.s }}</div>
@@ -104,7 +103,6 @@
       <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:stretch">
         <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
           <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-            <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#8a5a08">menu_book</span>
             <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most read knowledge</div>
             <div style="flex:1"></div>
             <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
@@ -113,12 +111,12 @@
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
                     <div style="flex:1 1 auto;min-width:0;font-size:11.5px;color:#5f6f83">{{ k.d }}</div>
-                    <div style="flex-shrink:0;font-size:11.5px;color:#5f6f83;background:#f2f3f5;padding:3px 9px;border-radius:8px;white-space:nowrap">{{ k.cat }}</div>
+                    <div style="flex-shrink:0;font-size:11.5px;color:#5f6f83;background:#f2f3f5;padding:3px 9px;border-radius:4px;white-space:nowrap">{{ k.cat }}</div>
                   </div>
                 </div>
                 </sc-for>
@@ -127,7 +125,6 @@
 
         <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
         <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-          <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#4c37b0">shopping_cart</span>
           <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Popular services</div>
           <div style="flex:1"></div>
           <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214</div>
@@ -149,7 +146,6 @@
       <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:start">
         <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#4c37b0">devices</span>
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
               <div style="flex:1"></div>
               <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
@@ -170,7 +166,6 @@
           <sc-if value="{{ notHealth }}">
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ brand }}">bolt</span>
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Quick links</div>
             </div>
             <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#eef2f7">
@@ -183,30 +178,11 @@
               </sc-for>
             </div>
           </div>
-
-            <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
-            <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#0f766e">campaign</span>
-              <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Notice board</div>
-              <div style="flex:1"></div>
-              <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 5</div>
-            </div>
-            <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
-              <div style="padding:14px 20px;border-bottom:1px solid #f4f7fa">
-                <div style="display:flex;align-items:center;gap:9px">
-                  <div style="font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:{{ brand }}">{{ n.k }}</div>
-                  <div style="font-size:11.5px;color:#5f6f83;white-space:nowrap">{{ n.d }}</div>
-                </div>
-                <div style="font-size:13.5px;color:#0b2545;margin-top:7px;line-height:1.45">{{ n.t }}</div>
-              </div>
-            </sc-for>
-          </div>
           </sc-if>
         </div>
       </div>
 
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:{{ ink }};padding:16px 22px">
-        <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ inkAccent }};flex-shrink:0">support_agent</span>
         <div style="font-size:14px;font-weight:700;color:{{ onInk }};white-space:nowrap">Contact us</div>
         <div style="font-size:13px;color:{{ inkSub }};white-space:nowrap">Mon–Fri · 08:00–20:00 IST</div>
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
