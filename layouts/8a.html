@@ -30,15 +30,11 @@
       </div>
       <div style="flex:1;min-width:0;background:#fff">
 
-        <div style="padding:20px 20px 0;background:#10306B">
+        <div style="padding:34px 20px 0;background:#10306B">
         <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);height:238px;overflow:hidden;border-radius:6px">
           <div style="position:relative;display:flex;flex-direction:column;background:#10306B;overflow:hidden" data-comment-anchor="a03e23cb59-div">
             <div style="position:absolute;inset:0;background-image:linear-gradient(#ffffff0f 1px,transparent 1px),linear-gradient(90deg,#ffffff0f 1px,transparent 1px);background-size:34px 34px;pointer-events:none"></div>
             <div style="position:relative;display:flex;flex-direction:column;justify-content:center;flex:1;min-height:0;padding:22px 30px 14px;pointer-events:none">
-              <div style="display:flex;align-items:center;gap:9px">
-                <div style="width:22px;height:2px;background:#7CC243"></div>
-                <div style="font-size:11px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#9FD97A">Sterling Financial Group</div>
-              </div>
               <div style="font-size:30px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.14;margin-top:14px;text-transform:uppercase;max-width:330px;text-wrap:pretty">Welcome to Technology Support</div>
               <div style="font-size:13.5px;color:#BECDE8;margin-top:11px;line-height:1.55;max-width:330px;text-wrap:pretty">Trading floor, core banking and access requests — with a full audit trail.</div>
             </div>
@@ -69,6 +65,24 @@
           </div>
         </div>
 
+        <!-- Announcement strip attached below the banner, as 5a does. -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:16px 30px;background:#fff;border-bottom:1px solid #DCE3EE">
+          <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#10306B;flex-shrink:0">campaign</span>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;flex:1 1 420px;min-width:0">
+            <div style="flex:1;min-width:0;font-size:14px;color:#10306B;line-height:1.5;text-wrap:pretty">{{ annNow.t }}</div>
+            <div style="font-size:12px;color:#5A6884;white-space:nowrap">{{ annNow.d }}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <sc-for list="{{ annDotsInk }}" as="d" hint-placeholder-count="3">
+              <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
+            </sc-for>
+          </div>
+          <div style="width:1px;height:26px;background:#DCE3EE;flex-shrink:0"></div>
+          <div style="display:flex;align-items:center;gap:7px;height:36px;padding:0 16px;background:#10306B;color:#fff;border-radius:3px;font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0">
+            <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">description</span>Read the notice
+          </div>
+        </div>
+
         <div style="padding:28px 30px 34px;background:#F4F6FA;display:flex;flex-direction:column;gap:22px">
 
           <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
@@ -85,10 +99,10 @@
             </sc-for>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,0.42fr);gap:20px;align-items:stretch">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr)">
             <div style="min-width:0;display:flex;flex-direction:column">
               <div style="text-align:center;font-size:24px;font-weight:700;color:#10306B;letter-spacing:-0.024em">What can we help you with?</div>
-              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px">
                 <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
                   <div style="display:flex;flex-direction:column;align-items:center;gap:11px;padding:20px 16px 17px;background:#fff;border:1px solid #DCE3EE;border-bottom:3px solid #10306B;border-radius:3px;min-width:0">
                     <div style="width:38px;height:38px;border-radius:50%;background:#10306B;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
@@ -100,43 +114,11 @@
                 </sc-for>
               </div>
             </div>
-
-            <div style="min-width:0;display:flex;flex-direction:column;gap:16px">
-              <div style="background:#EDF1F8;border:1px solid #DCE3EE;border-radius:3px;padding:16px">
-                <div style="display:flex;flex-direction:column;gap:10px">
-                  <sc-for list="{{ vaultCounts }}" as="v" hint-placeholder-count="3">
-                    <div style="display:flex;align-items:center;gap:10px;padding:16px 14px;background:#fff;border:1px solid #DCE3EE;border-radius:3px">
-                      <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#10306B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ v.l }}</div>
-                      <div style="min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:{{ v.bg }};color:{{ v.fg }};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ v.n }}</div>
-                    </div>
-                  </sc-for>
-                </div>
-              </div>
-
-              <div style="display:flex;flex-direction:column;flex:1;background:#EDF1F8;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden">
-                <div style="display:flex;align-items:center;gap:9px;padding:13px 16px;border-bottom:1px solid #DCE3EE">
-                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#10306B">campaign</span>
-                  <div style="font-size:14px;font-weight:700;color:#10306B">Announcements</div>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:9px;padding:14px 16px">
-                  <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
-                    <div style="padding:11px 13px;background:#fff;border-left:3px solid #C0392B;border-radius:0 3px 3px 0">
-                      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:3px 8px">
-                        <div style="font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#A0301F">{{ n.k }}</div>
-                        <div style="font-size:11px;color:#5A6884">{{ n.d }}</div>
-                      </div>
-                      <div style="font-size:12.5px;font-weight:500;color:#10306B;margin-top:5px;line-height:1.45;text-wrap:pretty">{{ n.t }}</div>
-                    </div>
-                  </sc-for>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:stretch">
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
               <div style="font-size:15.5px;font-weight:700;color:#10306B">Pending approvals</div>
               <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
               <div style="flex:1"></div>
@@ -169,7 +151,6 @@
           </div>
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#10306B">menu_book</span>
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">Most read</div>
                 <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">412 articles</div>
@@ -192,7 +173,6 @@
           <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:stretch">
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#10306B">devices</span>
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">My assets</div>
                 <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">9 assigned</div>

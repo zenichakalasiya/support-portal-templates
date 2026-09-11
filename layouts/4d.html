@@ -52,35 +52,35 @@
               </div>
             </div>
 
-            <div style="display:flex;flex-direction:column;gap:12px">
-              <sc-for list="{{ portalActions3 }}" as="a" hint-placeholder-count="3">
-                <div style="display:flex;align-items:center;gap:18px;background:#f4f8fd;border:1px solid #e2ebf6;border-radius:6px;padding:18px 20px;min-width:0">
-                  <div style="width:52px;height:52px;border-radius:6px;background:{{ a.bg }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">{{ a.i }}</span>
+            <div style="display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:12px;align-items:stretch">
+              <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+                <sc-for list="{{ portalActions3 }}" as="a" hint-placeholder-count="3">
+                  <div style="flex:1;display:flex;align-items:center;gap:18px;background:#f4f8fd;border:1px solid #dde4ee;border-radius:6px;padding:16px 20px;min-width:0">
+                    <div style="width:52px;height:52px;border-radius:6px;background:{{ a.bg }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">{{ a.i }}</span>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0b2545">{{ a.t }}</div>
+                      <div style="font-size:13.5px;color:#4a5a70;margin-top:6px;line-height:1.55">{{ a.s }}</div>
+                    </div>
+                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#7b8a9d;flex-shrink:0">chevron_right</span>
                   </div>
-                  <div style="flex:1;min-width:0">
-                    <div style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0b2545">{{ a.t }}</div>
-                    <div style="font-size:13.5px;color:#4a5a70;margin-top:6px;line-height:1.55">{{ a.s }}</div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+                <sc-for list="{{ portalKpis }}" as="k" hint-placeholder-count="3">
+                  <div style="flex:1;display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #dde4ee;border-radius:6px;padding:16px 18px;min-width:0">
+                    <div style="font-size:28px;font-weight:700;color:#0b2545;letter-spacing:-0.03em;line-height:1;flex-shrink:0">{{ k.v }}</div>
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35">{{ k.l }}</div>
+                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;line-height:1.35">{{ k.s }}</div>
+                    </div>
                   </div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#7b8a9d;flex-shrink:0">chevron_right</span>
-                </div>
-              </sc-for>
-            </div>
-
-            <div style="display:flex;align-items:stretch;background:#fff;border:1px solid #dde4ee;border-radius:6px;overflow:hidden">
-              <sc-for list="{{ portalKpis }}" as="k" hint-placeholder-count="3">
-                <div style="flex:1;min-width:0;padding:16px 20px;border-left:1px solid #eef2f7;display:flex;align-items:center;gap:12px">
-                  <div style="font-size:28px;font-weight:700;color:#0b2545;letter-spacing:-0.03em;line-height:1">{{ k.v }}</div>
-                  <div style="min-width:0">
-                    <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35">{{ k.l }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;line-height:1.35">{{ k.s }}</div>
-                  </div>
-                </div>
-              </sc-for>
+                </sc-for>
+              </div>
             </div>
 
             <div style="display:flex;align-items:center;gap:14px;background:{{ ink }};border-radius:6px;padding:15px 20px;min-width:0;flex-wrap:wrap">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ accent }};flex-shrink:0">campaign</span>
               <div style="font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:{{ inkAccent }};white-space:nowrap">Announcement</div>
               <div style="flex:1 1 220px;min-width:0;font-size:13.5px;font-weight:500;color:#fff;line-height:1.45">{{ annFeatured.t }}</div>
               <div style="font-size:12px;color:{{ inkSub }};white-space:nowrap">{{ annFeatured.d }}</div>
@@ -89,7 +89,6 @@
 
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:6px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
                 <div style="flex:1"></div>
                 <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
@@ -110,20 +109,20 @@
               </div>
             </div>
 
-            <div>
-              <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px">
+            <div style="background:#fff;border:1px solid #dde4ee;border-radius:6px;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My assets &amp; CIs</div>
-                <div style="font-size:12.5px;color:#5f6f83">9 assigned</div>
+                <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
                 <div style="flex:1"></div>
                 <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+              <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                  <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #dde4ee;border-radius:6px;padding:13px 15px;min-width:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#7b8a9d;flex-shrink:0">{{ a.i }}</span>
+                  <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81;flex-shrink:0">{{ a.i }}</span>
                     <div style="flex:1;min-width:0">
-                      <div style="font-size:13px;font-weight:600;color:#0b2545;line-height:1.35">{{ a.n }}</div>
-                      <div style="font-size:11.5px;color:#5f6f83;margin-top:3px">{{ a.tag }} · {{ a.k }}</div>
+                      <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
                     </div>
                   </div>
                 </sc-for>

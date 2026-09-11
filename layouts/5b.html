@@ -33,7 +33,6 @@
       <div style="flex:1;min-width:0">
 
         <div style="display:flex;flex-direction:column;align-items:center;padding:46px 30px 40px;background-image:linear-gradient(102deg,#2E4F42 0%,#3E6B5A 44%,#527A66 100%)">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#F5E6DA">Consort Health Group</div>
           <div style="font-size:31px;font-weight:700;color:#fff;letter-spacing:.02em;line-height:1.24;margin-top:16px;text-align:center;text-transform:uppercase;max-width:760px;text-wrap:pretty">Welcome to Consort Health IT Support</div>
           <div style="display:flex;gap:10px;margin-top:24px;width:100%;max-width:560px">
             <div style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:46px;padding:0 15px;background:#fff;border-radius:2px">
@@ -89,11 +88,10 @@
               <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
                 <div style="padding:12px 0;border-top:1px solid #EFF1EC">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 9px">
-                    <div style="font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#A85B33">{{ n.k }}</div>
-                    <div style="width:3px;height:3px;border-radius:50%;background:#5F6E66;flex-shrink:0"></div>
                     <div style="font-size:12px;color:#4A5A52">{{ n.d }}</div>
                   </div>
                   <div style="font-size:14px;font-weight:500;color:#23302B;margin-top:5px;line-height:1.45;text-wrap:pretty">{{ n.t }}</div>
+                  <div style="font-size:12px;color:#4A5A52;margin-top:6px;line-height:1.5;text-wrap:pretty">{{ n.s }}</div>
                 </div>
               </sc-for>
             </div>

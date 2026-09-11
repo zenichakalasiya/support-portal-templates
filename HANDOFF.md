@@ -1,125 +1,130 @@
-# Handoff — 2026-09-11 12:29
+# Handoff — 2026-09-11 17:32
 
 ## Read first
 
-`CLAUDE.md` in full — it's short. Focus on **Commands** (the `node build.js` rule),
-**The layout catalog** (`LAYOUTS`/`GROUPS` live *inside* `renderVals()`), and the
-**Data flow** note about shared fixture lists. Those three cover almost every way
-this repo can bite you.
+`CLAUDE.md` in full — it's short. The three sections that matter most:
+**Commands** (the `node build.js` rule), **The layout catalog** (`LAYOUTS`/`GROUPS`
+live *inside* `renderVals()`), and **House rules that hold across the gallery**,
+which is new and records the conventions now applied to every template.
 
 ## What we worked on this session
 
-Layout and consistency work across the gallery: reworked 3h, 4i, 3j and 6a, added
-a new Manufacturing template (4c2 "Mosaic II"), and ran two gallery-wide sweeps to
-make the **My assets & CIs** and **Pending Approvals** cards consistent everywhere.
-Finished by publishing the whole gallery as a Claude artifact.
+Two gallery-wide passes — announcement kickers removed everywhere, and the hero
+eyebrow line removed from 21 templates — plus per-template reworks across
+Education (7a, 7b, 7c, 4e, 4p), BFSI (8a, 8b, 4a, 4f, 4g) and three Rejected-group
+layouts (4d, 3c, 6c).
 
 ## Completed
 
-**New template**
-- **4c2 "Mosaic II"** — duplicate of 4c, registered in `LAYOUTS` + the `mfg` group.
-  Col 2 reduced to two sections (Quick links, Most Used Services); col 3 swapped
-  the image slot for the open-requests KPI and the service tiles for 3 KB articles;
-  col 1's 1:1 image slot became an **AD Self Service** action card in industrial
-  slate `#26384A`; all three action cards carry a top-right `north_east` arrow.
+**Gallery-wide**
+- **Announcement kickers gone.** The coloured category label (MAINTENANCE,
+  ROLLOUT…) removed from all 24 announcement and notice spots. Announcements now
+  read title · description · date. `anns` and `anns5` had no description field, so
+  one was written for every item. 8a and 8b are one-line strips, so they show
+  title + date; notices show sentence + date.
+- **Hero eyebrow gone** from 21 templates (2a, 3b, 3b2, 3c, 3g, 3i, 3j, 4a, 4a2,
+  4g, 4h, 4i, 5a, 5b, 5c, 6a, 6c, 7a, 7b, 7c, 8a). Where it sat beside a small
+  decorative rule, the rule and the emptied wrapper went too.
+- **Heading icons** removed across Education, BFSI and the templates touched here.
 
-**3h Concierge**
-- Three aligned rows: ask card + Quick links · announcements + Pending Approvals ·
-  Most Used Services + Most Read.
-- Contact Us moved inside the ask card, sized to its own text, background `#eff4fa`;
-  "Start a chat" removed. Action cards are all the width of the widest label
-  (`width:max-content` + equal `1fr` columns).
-- The decorative shape panel became a **flex sibling**, not an absolute overlay, so
-  content can never cover it.
-- Most Read header moved inside its card, ruled off from the rows.
+**Education**
+- **7a** — KPI strip removed, 7 header icons, Most used services became a 4-row
+  listing.
+- **7b** — 7 header icons; both card rows were inverted splits (`1fr/1.25fr` then
+  `1.3fr/1fr`), now equal halves so all four cards share a width.
+- **7c** — Notice Board replaced by a swipeable announcement carousel in the paper
+  palette; approvals card dropped; services / calendar / quick links became one
+  row of three at equal heights, services trimmed to 4 and tiled 5a-style; hero
+  moved into its own `#F6F2E9` banner band with the action cards outside it, and
+  the announcement card shares a grid row with the KPIs.
+- **4e** — FAQ became Quick links (4); knowledge, catalog and requests trimmed to
+  4; catalog took the assets-tile treatment; hero gradient reworked to a 222px
+  eased fade so the photograph blends into the panel; eyebrow and subtitle removed.
+- **4p** — KPI icons removed (tiles keep their size), Notice board dropped now the
+  banner carousel carries notices, in-card pills squared to 4px.
 
-**3j Bulletin** (biggest change)
-- Hero: column stretches to the notices card, heading top-aligned / search
-  bottom-aligned, search capped to the subtitle's `470px`.
-- Two KPI counters added as the 5th and 6th card of the action row; figure sits on
-  the left, no icon (new `kpis3j` fixture).
-- "Browse by category" revamped from a hairline-ruled table into 8 standalone cards.
-- New **Pending Approvals** card (4 rows, new `approvals4` fixture); row order is
-  approvals → requests → most read.
-- Assets and CIs split into separate cards, 3g-style. All 6 data cards equal width.
-- Leading icons removed from all 7 card headers.
+**BFSI**
+- **8a** — announcement strip attached below the banner (5a's pattern), counts card
+  removed, banner top padding raised, services band now full width.
+- **8b** — KPI row and Announcements card removed, the "Latest notice" bar became
+  the announcement swiper, Promoted articles became a Most read listing card beside
+  Pending approvals, both at equal width and height.
+- **4a** — rebuilt: banking banner with the greeting on the colour side and the
+  photograph at full strength, small action cards below it, and the body as three
+  two-column rows (services/approvals, requests/most read, assets/contact). A
+  Pending approvals card was added — 4a had none.
+- **4f** — Most read listing card added. **4g** — Most read rows normalised.
 
-**6a Gazette**
-- My Open Requests cut to 4 rows (`requests4`, pill 6 → 4); requests/approvals row
-  changed from `2fr 1fr` to equal columns; My Devices moved into a proper card with
-  a ruled header (its tiles are now borderless on `#f7f9fc` to avoid nested borders);
-  all 5 header icons removed.
+**Rejected group**
+- **4d** — three KPIs moved beside the action cards at matching heights in white
+  cards; assets card rebuilt in the 3b style.
+- **3c** — banner recoloured `#07101F` and the whole template's accents and icons
+  pinned to it; search resized twice (now 40px title / 48px search); services
+  divider and the one-liner under the search removed; Most read cut to 3 and
+  bottom-aligned with Pending approvals via a 2×2 grid; assets and CIs tiled.
+- **6c** — top row rearranged to Announcements · (title+search over Most Read) ·
+  Contact us; the duplicate left contact card removed; requests trimmed to 4;
+  outer columns widened 25% → 30%; title card reordered so the heading leads and
+  the search sits at the foot.
 
-**Gallery-wide sweeps**
-- **Assets tiles** — 4b and 4a converted from bordered boxes, and 3j/7a/7b/7c/8a/8b
-  from divider rows, to the 3i tinted-tile treatment. Tint is taken from each
-  layout's own hairline colour so warm (7a/7c) and navy (8a/8b) palettes survive.
-- **Pending Approvals** — 13 layouts (2b, 3c, 3i, 4e, 5b, 6a, 6b, 6c, 7a, 7b, 7c,
-  8a, 8b) had their text Approve/Reject buttons replaced with the check / close /
-  undo icon trio. Button radius is read from each row's own ID pill. All 23
-  approval cards now match.
-
-**Smaller items**
-- 4i: hazard rail + dark action cards were already fixed on disk but the bundle was
-  stale — a rebuild was the actual fix. Devices KPI subtext → "under maintenance".
-- 3i and 4b: leading icons removed from data-card headers.
-- 3g: announcements card given `align-self:start` so it stops stretching; "Start a
-  chat" removed from Contact Us.
-
-**Published**
-- <https://claude.ai/code/artifact/fdeaa529-b28d-4f96-a9f4-bb9b385ff0f4> — the page
-  plus 21 supporting files. **Private**; share from the page's share menu.
+**New fixtures** in `logic.js`: `quickLinks4`, `deptCards4`, plus descriptions on
+`anns` / `anns5`.
 
 ## In progress
 
-Nothing mid-flight. Everything above is built, rebuilt (`node build.js`) and
-verified against what `localhost:5173` is serving.
+Nothing mid-flight. Everything is built, rebuilt and verified against what
+`localhost:5173` serves.
 
 ## Next steps
 
-1. Review the two sweeps in the browser — especially **7a/7c** (warm cream) and
-   **8a/8b** (navy), where the asset tiles now use a per-layout tint rather than
-   one shared grey. Offered to force all eight to `#f7f9fc` if you prefer.
-2. **6a Gazette's assets section** was deliberately left out of the assets sweep —
-   it's a 3-up card component, not a row list, so matching it means replacing the
-   component. Decide whether to.
-3. Nine layouts lost a 34px button row when approvals became icons, so those cards
-   are shorter — check 7a, 7b and 6b for cards that now look empty.
-4. 3j's action row fits 6 cards on one line only above ~1450px; below that the two
-   counters wrap. Say if you want a fixed `repeat(6, …)` instead.
-5. Republish the artifact after the next batch of changes (same URL).
+1. Look over the gallery after the two sweeps — the eyebrow removal touched 21
+   templates, so a pass across several tabs is worth it.
+2. **3c no longer responds to the palette switcher.** Pinning its theme to
+   `#07101F` replaced `{{ brand }}` and `{{ ink }}`, which the theme bar drives.
+   Decide whether that's wanted or whether the banner should use `{{ ink }}` so
+   both follow the selected palette.
+3. 4f's card headers use coloured icon chips rather than bare icons, so they
+   survived the icon sweep. Decide whether those four should go too.
+4. The `campaign` icon still marks the announcement bars in 3h, 4p, 5c, 8a, 8b —
+   a section marker, not row data. Remove or keep.
+5. 6a Gazette's assets section is still a 3-up card component rather than the
+   tiled list the rest of the gallery uses.
+6. The Claude artifact (`/artifact/fdeaa529…`) is a stale private snapshot; either
+   resync it or retire it now that Pages is the shared link.
 
 ## Decisions made
 
-- **Per-layout tints over one shared grey** in the assets sweep — a cold `#f7f9fc`
-  tile inside 7a's cream card reads as a mistake. Same treatment, palette intact.
-- **Semantic colours fixed, geometry local** for the approval icon buttons — green
-  / red / amber are meaning, so they're constant; the corner radius follows each
-  template's own idiom (2px in 5b, 3px in 8a, 8px in 3c…).
-- **Shape panel as a flex sibling** in 3h rather than an absolute overlay — the
-  blobs were only ever visible by luck, which is why they vanished when the cards
-  stretched.
-- **Rejected-group templates were left out of the assets sweep** (not shipping),
-  but were included in the approvals sweep, since the user asked for every template.
-- Header icons were removed template-wide (not just on the named card) in 3i, 6a
-  and 3j — a template with three of five headers still iconned reads as an
-  oversight. Flagged each time; easy to revert.
+- **Notices lost their kicker too** (user's call), but kept their category-free
+  sentence + date. Descriptions were added only to the `anns` family, since
+  notices already carry a full sentence as their title.
+- **Per-layout tints over one shared grey** for tiles and fades, so warm paper
+  layouts (7a/7c) and navy ones (8a/8b) keep their palette while sharing the
+  treatment.
+- **Semantic colours fixed, geometry local** — approval icon tints are constant;
+  radius follows each template.
+- **Structure over tweaks for alignment.** Bottom-aligning two cards in different
+  columns (3c) or aligning a card with a KPI block (7c) was done by putting them
+  in a shared grid row, not by nudging heights.
+- Hero eyebrow removal was scoped to the line above the welcome heading only;
+  other uppercase labels (ANNOUNCEMENT strips, KPI labels, calendar months) stay.
 
 ## Gotchas & notes
 
-- **`node build.js` after every `layouts/` edit.** This bit us on day one: 4i had
-  been fixed on disk but never rebuilt, so the page showed the old dark cards. The
-  browser reads `js/templates.js`, never `layouts/*.html`.
-- **Fixture lists share byte-identical rows.** Stripping the icon from `kpis3j`'s
-  first row silently hit `empKpis` (used by 4p) instead, because that list appears
-  earlier in `logic.js` with an identical row. Anchor edits by line or by a
-  surrounding unique string, and verify by printing the value after.
-- **`DC.compile` can't be smoke-tested in Node** — it needs a DOM and throws
-  `document is not defined`. Use tag-balance checks (`<div>` vs `</div>`, `<sc-for>`
-  vs `</sc-for>`) plus `renderVals()` in Node, then look in the browser.
-- `localhost:5173` is served by a `server.js` living in an **old session's temp
-  scratchpad**. It works, but if that process dies the script may be gone with its
-  session's temp folder — a fresh one will need to be written.
-- The repo is **not** a git repository, and `layouts/` is the source of truth —
-  `js/templates.js` and `js/slots.js` are generated, so never hand-edit them.
-- Loose `image*.png` screenshots in the project root are review scratch, not assets.
+- **`node build.js` after every `layouts/` edit.** The browser reads
+  `js/templates.js`, never `layouts/*.html`.
+- **A template can reuse `as="x"` across several loops.** 4e uses it for `kbs4`,
+  `quickLinks4`, `anns`, `services4` and `requests4` — a bare `{{ x.t }}` match put
+  a description in the wrong card and removed an arrow from the wrong rows. Scope
+  edits to the `sc-for` block, then verify what each loop renders.
+- **Fixture lists share byte-identical rows.** Stripping an icon from `kpis3j`
+  silently hit `empKpis` (used by 4p) because that list appears earlier in
+  `logic.js`. Anchor by line, and print the value back afterwards.
+- **Identical CSS can appear twice in one file.** A block regex for 7a's KPI grid
+  also matched the action-card grid 68 lines earlier; it would have deleted both.
+  Anchor block edits by line number with assertions on every boundary.
+- **`DC.compile` can't be smoke-tested in Node** (no DOM). Use tag-balance checks
+  plus `renderVals()`, then look in the browser.
+- `localhost:5173` is served by a `server.js` in an **old session's temp
+  scratchpad**; if that process dies the script may be gone with it.
+- `layouts/` is the source of truth — `js/templates.js` and `js/slots.js` are
+  generated; never hand-edit them.

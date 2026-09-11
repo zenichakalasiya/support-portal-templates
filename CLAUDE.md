@@ -139,6 +139,25 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
   don't "fix" it by adding an image. `mrd-t1`–`t3` and `cst-mark` are photographs
   held for slots no current layout renders; keep them.
 
+## House rules that hold across the gallery
+
+These were applied template-wide and should be kept when adding or editing one:
+
+- **No leading icon before a card heading.** Card headers start with the title.
+  Icons inside rows (an asset’s device glyph, a status pill) stay.
+- **No hero eyebrow.** The small uppercase, letterspaced organisation line that
+  sat above each welcome heading is gone from every template. Other uppercase
+  labels (ANNOUNCEMENT strips, KPI labels, calendar months) remain.
+- **Announcements read title · description · date** — no coloured category
+  kicker. Notices follow the same rule.
+- **Pending Approvals rows** use the check / close / undo icon buttons, never
+  text buttons. Tints are semantic and fixed; the corner radius follows the
+  template.
+- **Asset and CI lists** use tinted rounded tiles in a gapped column (the 3b
+  treatment), with the tint taken from the layout’s own palette.
+- **Most read** is a listing data card: header, then rows of id pill, title,
+  date and category.
+
 ## Deployment
 
 Repo: https://github.com/zenichakalasiya/support-portal-templates

@@ -453,6 +453,7 @@
       vals.kbs4 = (vals.kbs6 || []).slice(0, 4);
       vals.kbs3 = (vals.kbs6 || []).slice(0, 3);
       vals.quickLinks4 = (vals.quickLinks || []).slice(0, 4);
+      vals.deptCards4 = (vals.deptCards12 || []).slice(0, 4);
       vals.assetsCis4 = (vals.assetsCis || vals.assets || []).slice(0, 4);
   
       const foy = this.foyVals();
@@ -583,9 +584,9 @@
         ],
   
         anns: [
-          { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026" },
-          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026" },
-          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026" }
+          { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
+          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
+          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." }
         ],
   
         kbs: [
@@ -1111,18 +1112,18 @@
         },
   
         annsRest: [
-          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026" },
-          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026" },
-          { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026" },
-          { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026" }
+          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
+          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." },
+          { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026", s: "Laptops and desktops now come up for replacement a year earlier than before." },
+          { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
         ],
   
         anns5: [
-          { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026" },
-          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026" },
-          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026" },
-          { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026" },
-          { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026" }
+          { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
+          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
+          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." },
+          { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026", s: "Laptops and desktops now come up for replacement a year earlier than before." },
+          { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
         ],
   
         kbs8: [

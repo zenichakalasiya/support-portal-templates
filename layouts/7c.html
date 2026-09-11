@@ -35,7 +35,6 @@
         <div style="margin:-30px -30px 0;padding:30px 30px 34px;background:#F6F2E9;border-bottom:1px solid #EFE4CE">
         <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:26px;align-items:start">
           <div style="grid-column:1;grid-row:1;min-width:0;padding-top:12px">
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:#FF6B4A;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#1F0A03">Northline Academy</div>
             <div style="font-size:36px;font-weight:700;color:#14183A;letter-spacing:-0.034em;line-height:1.1;margin-top:16px;text-wrap:pretty">Your desk, Yash. Everything you left open.</div>
             <div style="font-size:15px;color:#5A5750;margin-top:13px;line-height:1.65;max-width:420px;text-wrap:pretty">Cohort enrolments, certificates and compliance training, plus every request you have with the service desk.</div>
             <div style="display:flex;gap:10px;margin-top:22px;max-width:460px">
@@ -63,9 +62,9 @@
                   <image-slot id="7c-ann" shape="rect" fit="cover" placeholder="Photo"></image-slot>
                 </div>
                 <div style="flex:1;min-width:0">
-                  <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C33F22">{{ annNow.k }}</div>
                   <div style="font-size:17px;font-weight:700;color:#14183A;letter-spacing:-0.02em;line-height:1.3;margin-top:7px;text-wrap:pretty">{{ annNow.t }}</div>
                   <div style="font-size:12.5px;color:#5A5750;margin-top:7px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
+                  <div style="font-size:11.5px;color:#5A5750;margin-top:7px">{{ annNow.d }}</div>
                 </div>
               </div>
               <div style="display:flex;align-items:center;gap:12px;padding:12px 18px 14px;border-top:1px solid #F4F2ED">
@@ -101,16 +100,16 @@
         </div>
 
 
-        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px;align-items:start">
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px;align-items:stretch">
 
-          <div style="background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
+          <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">Browse all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
-            <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:16px 18px">
-              <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
+            <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:12px;padding:16px 18px">
+              <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:11px;padding:12px 13px;background:#FEFAF3;border:1px solid #EFE4CE;border-radius:10px;min-width:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#2B3A8F;flex-shrink:0">{{ s.i }}</span>
                   <div style="flex:1;min-width:0">
@@ -122,12 +121,13 @@
             </div>
           </div>
 
-          <div style="background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
+          <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Programme calendar</div>
             </div>
+            <div style="flex:1;display:flex;flex-direction:column">
             <sc-for list="{{ calendar4 }}" as="c" hint-placeholder-count="4">
-              <div style="display:flex;gap:13px;padding:13px 18px;border-bottom:1px solid #F4F2ED">
+              <div style="flex:1;display:flex;gap:13px;padding:13px 18px;border-bottom:1px solid #F4F2ED">
                 <div style="flex:0 0 40px;text-align:center;padding-top:2px">
                   <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C33F22">{{ c.mon }}</div>
                   <div style="font-size:20px;font-weight:700;color:#14183A;letter-spacing:-0.02em;line-height:1.1">{{ c.day }}</div>
@@ -138,19 +138,22 @@
                 </div>
               </div>
             </sc-for>
+            </div>
           </div>
 
-          <div style="background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
+          <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Quick links</div>
             </div>
+            <div style="flex:1;display:flex;flex-direction:column">
             <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
-              <div style="display:flex;align-items:center;gap:11px;padding:14px 18px;border-bottom:1px solid #F4F2ED">
+              <div style="flex:1;display:flex;align-items:center;gap:11px;padding:14px 18px;border-bottom:1px solid #F4F2ED">
                 <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#2B3A8F;flex-shrink:0">{{ q.i }}</span>
                 <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#14183A;line-height:1.35;text-wrap:pretty">{{ q.t }}</div>
                 <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#C33F22;flex-shrink:0">north_east</span>
               </div>
             </sc-for>
+            </div>
           </div>
 
         </div>

@@ -38,10 +38,8 @@
 
           <div style="position:relative;height:100%;border-radius:8px;overflow:hidden;background:#e6ebf2">
             <image-slot id="atrium-hero" shape="rect" fit="cover"></image-slot>
-            <div style="position:absolute;left:0;right:0;bottom:0;padding:26px 28px 28px;background:#061426;pointer-events:none">
-              <div style="font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:{{ accent }}">Ashgrove University · IT Services</div>
-              <div style="font-size:25px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.22;margin-top:10px">Welcome to Ashgrove University, how can we help you?</div>
-              <div style="font-size:13.5px;color:rgba(255,255,255,.84);margin-top:9px;line-height:1.55">Wi-Fi, accounts, labs and academic systems — raise a ticket or find the answer yourself.</div>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:236px 28px 28px;background:linear-gradient(180deg, rgba(6,20,38,0) 0px, rgba(6,20,38,.05) 34px, rgba(6,20,38,.14) 68px, rgba(6,20,38,.29) 102px, rgba(6,20,38,.48) 134px, rgba(6,20,38,.68) 164px, rgba(6,20,38,.85) 190px, rgba(6,20,38,.96) 208px, #061426 222px);pointer-events:none">
+              <div style="font-size:25px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.22">Welcome to Ashgrove University, how can we help you?</div>
               <div style="display:flex;flex-direction:column;gap:16px;margin-top:28px;pointer-events:auto">
                 <sc-for list="{{ heroTiles3 }}" as="h" hint-placeholder-count="3">
                   <div style="display:flex;align-items:center;gap:13px;min-width:0">
@@ -117,9 +115,9 @@
                 <div style="display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
                   <div style="flex:1;min-width:0">
                     <div style="font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.45">{{ x.t }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;line-height:1.4">{{ x.k }} · {{ x.d }}</div>
+                    <div style="font-size:12px;color:#5f6f83;margin-top:5px;line-height:1.5;text-wrap:pretty">{{ x.s }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;line-height:1.4">{{ x.d }}</div>
                   </div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#9fb0c4;flex-shrink:0">north_east</span>
                 </div>
               </sc-for>
             </div>
