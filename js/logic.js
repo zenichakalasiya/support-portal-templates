@@ -24,6 +24,9 @@
 
   var DCLogic = global.DCLogic;
 
+  // tabs whose announcement strip rotates on its own
+  const AUTO_ANN = new Set(["3h", "4g", "4i", "6c"]);
+
   class Component extends DCLogic {
     state = { tab: "3b", group: "it", reqH: 0, seed: "coral" };
   
@@ -367,17 +370,17 @@
       const GROUPS = [
         ["it", "IT & ITES", [["3b", "primary"], ["3b2", "announcement card"], ["3g", ""], ["2a", ""], ["2ag", ""], ["4f", ""], ["4f2", "image panel"], ["4g", ""]],
           "No industry widget — the out-of-the-box baseline. Requests, approvals and assets as individual cards."],
-        ["health", "Healthcare", [["5a", "primary"], ["5c", ""], ["2an", ""], ["3i", ""], ["4b", ""], ["4f", ""], ["4p", ""]],
+        ["health", "Healthcare", [["5a", "primary"], ["5c", ""], ["2an", ""], ["3i", ""], ["4b", ""], ["4f", ""], ["4p", ""], ["6c", ""]],
           "Status board first, report-dominant actions, downtime procedures and on-call. Announcements are downtimes only."],
-        ["mfg", "Manufacturing", [["4i", "primary"], ["3h", ""], ["4c", ""], ["4c2", ""]],
+        ["mfg", "Manufacturing", [["4i", "primary"], ["3h", ""], ["4c", ""], ["4c2", ""], ["4d", ""]],
           "Action bars, plant and line status, shift handover and line equipment ahead of the generic queue."],
-        ["gov", "Government", [["3i", "primary"], ["4b", "catalog-first"], ["3j", ""], ["6a", ""], ["4f", ""], ["4g", ""]],
+        ["gov", "Government", [["3i", "primary"], ["4b", "catalog-first"], ["3j", ""], ["6a", ""], ["4f", ""], ["4g", ""], ["3c", ""]],
           "Categories with descriptions, policies and circulars, public notices and an office directory."],
         ["edu", "Education", [["7a", "primary"], ["7b", "course-led"], ["7c", "tactile"], ["4e", ""], ["4p", "multi-dept"]],
           "Notice board, academic calendar and quick links above the actions; approvals and catalog below, with a student KPI row."],
         ["bfsi", "BFSI", [["8a", "primary"], ["8b", "help-centre"], ["4a", ""], ["4f", ""], ["4g", ""]],
           "Split banner with a finance motif, category grid beside announcements, approvals full width, then assets, contacts and KPIs."],
-        ["rejected", "Rejected", [["4a2", "unplaced"], ["6c", ""], ["4d", ""], ["4h", ""], ["3c", ""], ["3d", ""], ["3h2", ""], ["2b", ""], ["5b", ""], ["6b", ""]],
+        ["rejected", "Rejected", [["4a2", "unplaced"], ["4h", ""], ["3d", ""], ["3h2", ""], ["2b", ""], ["5b", ""], ["6b", ""]],
           "Not shipping."]
       ];
       const NAMES = {};
@@ -435,6 +438,7 @@
       // 4p is shared by Education and Healthcare; Healthcare drops its
       // Quick links and Notice board cards.
       show.notHealth = group !== "health";
+      show.isHealth = group === "health";
   
   
       const measure = {
@@ -454,6 +458,8 @@
       vals.kbs3 = (vals.kbs6 || []).slice(0, 3);
       vals.quickLinks4 = (vals.quickLinks || []).slice(0, 4);
       vals.deptCards4 = (vals.deptCards12 || []).slice(0, 4);
+      vals.assetsCis8 = [].concat(vals.assets || [], vals.cis || []).slice(0, 8);
+      vals.assetsCis5 = (vals.assetsCis8 || []).slice(0, 5);
       vals.assetsCis4 = (vals.assetsCis || vals.assets || []).slice(0, 4);
   
       const foy = this.foyVals();
@@ -469,7 +475,7 @@
       });
       if (this._reqCard) this._ro.observe(this._reqCard);
       this._annT = setInterval(() => {
-        if (this.state.tab === "4g") this.setState(s => ({ annIdx: (s.annIdx || 0) + 1 }));
+        if (AUTO_ANN.has(this.state.tab)) this.setState(s => ({ annIdx: (s.annIdx || 0) + 1 }));
       }, 5000);
     }
   
@@ -954,8 +960,8 @@
         ],
   
         annRows2: [
-          { t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "Posted Mon, Aug 11", dot: "#2f6fbf", bg: "#fafbfd" },
-          { t: "New VPN client rollout begins next week", d: "Posted Fri, Aug 08", dot: "#0b2545", bg: "#ffffff" }
+          { t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window.", d: "Posted Mon, Aug 11", dot: "#2f6fbf", bg: "#fafbfd" },
+          { t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first.", d: "Posted Fri, Aug 08", dot: "#0b2545", bg: "#ffffff" }
         ],
   
         chips4: [

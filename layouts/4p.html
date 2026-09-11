@@ -42,19 +42,28 @@
             <div style="position:absolute;inset:0">
               <image-slot id="center-hero" shape="rect" fit="cover"></image-slot>
             </div>
-            <div style="position:absolute;left:0;right:0;bottom:0;padding:62px 26px 20px;background:linear-gradient(180deg, rgba(10,26,46,0) 0%, rgba(10,26,46,.22) 22%, rgba(10,26,46,.52) 46%, rgba(10,26,46,.72) 70%, rgba(10,26,46,.76) 100%);pointer-events:none">
-              <div style="display:flex;align-items:center;gap:9px">
-                <div style="font-size:11.5px;color:rgba(255,255,255,.82)">{{ annNow.d }}</div>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:62px 26px 18px;background:linear-gradient(180deg, rgba(10,26,46,0) 0%, rgba(10,26,46,.22) 22%, rgba(10,26,46,.52) 46%, rgba(10,26,46,.72) 70%, rgba(10,26,46,.76) 100%);pointer-events:none">
+              <div style="display:flex;align-items:stretch;gap:14px;min-width:0;max-width:680px">
+                <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
+                  <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.82);line-height:1.4">{{ annNow.d }}</div>
+                </div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
+                  <div style="font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.2;text-wrap:pretty">{{ annNow.t }}</div>
+                  <div style="font-size:13.5px;font-weight:400;color:#fff;margin-top:8px;line-height:1.55;max-width:520px;text-wrap:pretty">{{ annNow.s }}</div>
+                </div>
               </div>
-              <div style="font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.2;margin-top:9px;max-width:640px;text-wrap:pretty">{{ annNow.t }}</div>
-              <div style="font-size:13.5px;color:#fff;margin-top:8px;line-height:1.55;max-width:520px;text-wrap:pretty">{{ annNow.s }}</div>
-            </div>
-            <div style="position:absolute;right:22px;bottom:20px;display:flex;align-items:center;gap:8px">
-              <div onClick="{{ annPrev }}" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.42);background:rgba(10,26,46,.34);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">chevron_left</span>
-              </div>
-              <div onClick="{{ annNext }}" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.42);background:rgba(10,26,46,.34);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">chevron_right</span>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:16px">
+                <div onClick="{{ annPrev }}" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.42);background:rgba(10,26,46,.34);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">chevron_left</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:5px;flex-shrink:0">
+                  <sc-for list="{{ annDots }}" as="d" hint-placeholder-count="3">
+                    <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
+                  </sc-for>
+                </div>
+                <div onClick="{{ annNext }}" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.42);background:rgba(10,26,46,.34);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">chevron_right</span>
+                </div>
               </div>
             </div>
           </div>
@@ -141,44 +150,67 @@
       </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:start">
-        <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+        <sc-if value="{{ isHealth }}">
+          <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
               <div style="flex:1"></div>
               <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
-              <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81;flex-shrink:0">{{ a.i }}</span>
-                  <div style="flex:1;min-width:0">
-                    <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+            <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;padding:16px 20px">
+              <sc-for list="{{ assetsCis8 }}" as="a" hint-placeholder-count="8">
+                <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81">{{ a.i }}</span>
+                  <div style="min-width:0">
+                    <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                    <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
                   </div>
                 </div>
               </sc-for>
             </div>
           </div>
-        <div style="min-width:0;display:flex;flex-direction:column;gap:18px">
-          <sc-if value="{{ notHealth }}">
+        </sc-if>
+
+        <sc-if value="{{ notHealth }}">
+          <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:stretch">
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
-            <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-              <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Quick links</div>
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
+                <div style="flex:1"></div>
+                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:16px 20px">
+                <sc-for list="{{ assetsCis5 }}" as="a" hint-placeholder-count="5">
+                  <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81">{{ a.i }}</span>
+                    <div style="min-width:0">
+                      <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
             </div>
-            <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#eef2f7">
-              <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
-                <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;background:#fff;min-width:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }};flex-shrink:0">{{ q.i }}</span>
-                  <div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.t }}</div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:{{ brand }};flex-shrink:0">north_east</span>
-                </div>
-              </sc-for>
+          <div style="min-width:0;display:flex;flex-direction:column;gap:18px">
+            <sc-if value="{{ notHealth }}">
+              <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Quick links</div>
+              </div>
+              <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#eef2f7">
+                <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;background:#fff;min-width:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }};flex-shrink:0">{{ q.i }}</span>
+                    <div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.t }}</div>
+                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:{{ brand }};flex-shrink:0">north_east</span>
+                  </div>
+                </sc-for>
+              </div>
             </div>
+            </sc-if>
           </div>
-          </sc-if>
-        </div>
-      </div>
+          </div>
+        </sc-if>
 
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:{{ ink }};padding:16px 22px">
         <div style="font-size:14px;font-weight:700;color:{{ onInk }};white-space:nowrap">Contact us</div>

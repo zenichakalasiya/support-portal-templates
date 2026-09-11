@@ -81,6 +81,13 @@ a template string is parsed once per session.
   (`kbs3/4/6/8`, `approvals/approvals3/approvals4`, `requests4/requests6`), so
   **grep before editing one** — some rows are byte-identical across lists and a
   naive string replace will hit the wrong fixture.
+  The same trap applies inside a template: one file can reuse the same
+  `as="x"` name across several `sc-for` loops (4e uses it for five), so a bare
+  `{{ x.t }}` match lands in whichever card comes first — scope edits to the
+  loop, not the file. Identical CSS can repeat too (two grids with the same
+  columns), so anchor block edits by line number with an assertion on every
+  boundary, and check `<sc-if>` balance alongside `<div>` after any edit that
+  adds a conditional row.
 - **`js/templates.js`** — GENERATED (`node build.js`). Do not hand-edit; edit
   `layouts/*.html` instead.
 - **`js/slots.js`** — GENERATED. Placed photographs and their hand-adjusted
@@ -149,7 +156,13 @@ These were applied template-wide and should be kept when adding or editing one:
   sat above each welcome heading is gone from every template. Other uppercase
   labels (ANNOUNCEMENT strips, KPI labels, calendar months) remain.
 - **Announcements read title · description · date** — no coloured category
-  kicker. Notices follow the same rule.
+  kicker, and every row is [ filled date block ] [ bold title / small regular
+  subtext ]. The date block is `#f1f3f6` on light cards and
+  `rgba(255,255,255,.14)` on dark ones. Notices follow the same rule.
+- **Rotating announcements** use `annNow` with `annDots` (light dots, for dark
+  cards) or `annDotsInk` (dark dots, for light cards). A tab listed in the
+  `AUTO_ANN` set near the top of `logic.js` advances on its own every five
+  seconds — add a tab there rather than writing a new timer.
 - **Pending Approvals rows** use the check / close / undo icon buttons, never
   text buttons. Tints are semantic and fixed; the corner radius follows the
   template.

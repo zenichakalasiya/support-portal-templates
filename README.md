@@ -16,12 +16,12 @@ proposed for it; the tag on a tab is the role that layout plays in the group.
 | Group | Layouts | Notes |
 | --- | --- | --- |
 | IT & ITES | `3b` Sidecar *(primary)*, `3b2` Sidecar · Announcements, `3g` Atlas, `2a` Prism, `2ag` Prism · Green, `4f` Front Desk, `4f2` Counter · Image, `4g` Half Deck | No industry widget — the out-of-the-box baseline |
-| Healthcare | `5a` Meridian *(primary)*, `5c` Bedside, `2an` Prism · Navy, `3i` Wayfinder, `4b` Broadsheet, `4f` Front Desk, `4p` Employee Center | Status board first, report-dominant actions, downtime procedures |
-| Manufacturing | `4i` Rails *(primary)*, `3h` Concierge, `4c` Mosaic, `4c2` Mosaic II | Action bars, plant and line status, shift handover |
-| Government | `3i` Wayfinder *(primary)*, `4b` Broadsheet *(catalog-first)*, `3j` Bulletin, `6a` Gazette, `4f` Front Desk, `4g` Half Deck | Categories with descriptions, policies, circulars, notices |
+| Healthcare | `5a` Meridian *(primary)*, `5c` Bedside, `2an` Prism · Navy, `3i` Wayfinder, `4b` Broadsheet, `4f` Front Desk, `4p` Employee Center, `6c` Triptych | Status board first, report-dominant actions, downtime procedures |
+| Manufacturing | `4i` Rails *(primary)*, `3h` Concierge, `4c` Mosaic, `4c2` Mosaic II, `4d` Portico | Action bars, plant and line status, shift handover |
+| Government | `3i` Wayfinder *(primary)*, `4b` Broadsheet *(catalog-first)*, `3j` Bulletin, `6a` Gazette, `4f` Front Desk, `4g` Half Deck, `3c` Counter | Categories with descriptions, policies, circulars, notices |
 | Education | `7a` Quadrangle *(primary)*, `7b` Course Shelf *(course-led)*, `7c` Study Desk *(tactile)*, `4e` Atrium, `4p` Employee Center *(multi-dept)* | Notice board and academic calendar above the actions |
 | BFSI | `8a` Vault *(primary)*, `8b` Keystone *(help-centre)*, `4a` Service Center, `4f` Front Desk, `4g` Half Deck | Split banner with a finance motif, approvals full width |
-| Rejected | `4a2` Help Desk, `6c` Triptych, `4d` Portico, `4h` Broadside, `3c` Counter, `3d` Dispatch, `3h2` Concierge II, `2b` Ledger, `5b` Consort, `6b` Foyer | Not shipping — kept so the decision stays visible |
+| Rejected | `4a2` Help Desk, `4h` Broadside, `3d` Dispatch, `3h2` Concierge II, `2b` Ledger, `5b` Consort, `6b` Foyer | Not shipping — kept so the decision stays visible |
 
 `3i`, `4b`, `4f`, `4g`, `4p` and the Prism family appear in more than one
 group, which is why 37 layouts spread across 45 tab positions.
