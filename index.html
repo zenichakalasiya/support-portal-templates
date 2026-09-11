@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Portal layout templates · Motadata ServiceOps</title>
+<meta name="description" content="Thirty-six Support Portal layout templates for Motadata ServiceOps, grouped by the industry each one ships to.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b2545'/%3E%3Crect x='7' y='8' width='7' height='16' rx='2' fill='%233f8ee8'/%3E%3Crect x='17' y='8' width='8' height='7' rx='2' fill='%23f5b342'/%3E%3Crect x='17' y='17' width='8' height='7' rx='2' fill='%23ffffff' opacity='.85'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+</head>
+
+<body data-booting>
+
+  <div class="app">
+
+    <!-- Design-time props. The design file exposes these three as editable
+         controls; they are kept here so a reviewer can check a layout against
+         a different brand palette or card treatment without a rebuild. -->
+    <div class="props" id="panel-wrap">
+      <span class="props-title">Theme</span>
+      <div id="panel" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap"></div>
+      <span class="spacer"></span>
+      <span class="props-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> step through layouts</span>
+    </div>
+
+    <!-- Industry chips + layout tabs, rendered from layouts/_shell.html -->
+    <div id="shell"></div>
+
+    <!-- The active layout, rendered from layouts/&lt;id&gt;.html -->
+    <section id="stage"></section>
+
+  </div>
+
+  <noscript>
+    <p style="padding:24px;font:14px/1.6 system-ui,sans-serif;color:#4a5a70">
+      These templates are assembled in the browser from the layout partials in
+      <code>layouts/</code>. Enable JavaScript to view the gallery, or open any
+      file in <code>layouts/</code> to read a single layout&rsquo;s markup.
+    </p>
+  </noscript>
+
+  <!-- Data and generated bundles, then the runtime, then the app. -->
+  <script src="js/slots.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/dc.js"></script>
+  <script src="js/image-slot.js"></script>
+  <script src="js/logic.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

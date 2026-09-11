@@ -1,0 +1,191 @@
+/* ---------------------------------------------------------------------------
+   base.css — page reset, gallery chrome, and the interaction states the
+   static design implies but cannot express.
+
+   The layouts are reproduced with their inline styles intact, so this file
+   deliberately does not restyle anything inside #stage. What it adds is the
+   behaviour a real page needs and a flat mockup does not have: hover and
+   focus feedback on the things that are clickable, a usable tab strip on a
+   narrow window, and sensible print output.
+--------------------------------------------------------------------------- */
+
+/* -- reset ---------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  font-family: var(--font-sans);
+  color: var(--text-strong);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Until app.js has drawn once, hide the shell so the reader never sees the
+   raw {{ }} markup of an unrendered template. */
+body[data-booting] #shell,
+body[data-booting] #stage { visibility: hidden; }
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { color: var(--ink); text-decoration: underline; }
+
+img { max-width: 100%; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 6px;
+}
+
+/* -- app chrome ----------------------------------------------------------- */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+  min-height: 100vh;
+}
+
+/* The props panel sits above the sticky header and scrolls away with it. */
+.props {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 10px var(--pad-x);
+  background: var(--ink);
+  color: #fff;
+}
+
+.props-title {
+  font-size: var(--size-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin-right: 4px;
+}
+
+.props .spacer { flex: 1; }
+
+.props-hint {
+  font-size: var(--size-sm);
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+.props kbd {
+  font: inherit;
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.field { display: flex; align-items: center; gap: 8px; }
+
+.field-label {
+  font-size: var(--size-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.swatches { display: flex; gap: 6px; }
+
+.swatch {
+  display: flex;
+  width: 56px;
+  height: 24px;
+  padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+}
+.swatch i { flex: 1; }
+.swatch:hover { border-color: rgba(255, 255, 255, 0.55); }
+.swatch[aria-pressed='true'] { border-color: #fff; }
+
+.select {
+  height: 26px;
+  padding: 0 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  font: 600 var(--size-sm) var(--font-sans);
+  cursor: pointer;
+}
+.select:hover { border-color: rgba(255, 255, 255, 0.45); }
+.select option { color: #111; }
+
+/* -- sticky header (rendered from layouts/_shell.html) --------------------- */
+
+#shell > div { position: sticky; }
+
+/* Industry chips and layout tabs are div[role=button]; give them the
+   feedback a real control has. */
+#shell [role='button'] { transition: background-color .12s ease, box-shadow .12s ease; }
+#shell [role='button']:hover { filter: brightness(0.975); }
+
+/* The tab strip scrolls horizontally when the industry has many layouts. */
+#shell [style*='overflow-x:auto'] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ring-line) transparent;
+  scroll-behavior: smooth;
+}
+#shell [style*='overflow-x:auto']::-webkit-scrollbar { height: 6px; }
+#shell [style*='overflow-x:auto']::-webkit-scrollbar-thumb {
+  background: var(--ring-line);
+  border-radius: 3px;
+}
+
+/* -- stage ---------------------------------------------------------------- */
+
+#stage { display: flex; flex-direction: column; }
+
+/* Every clickable region inside a layout gets a pointer and a focus ring;
+   the design draws them as plain divs. */
+#stage [role='button'] { cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -- narrow windows -------------------------------------------------------- */
+
+/* The layouts are designed for a desktop service-desk window and use fixed
+   multi-column grids. Below the design width they are allowed to scroll
+   horizontally rather than reflow into something the design never specified. */
+@media (max-width: 1180px) {
+  #stage {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #stage > div { min-width: 1180px; }
+}
+
+@media (max-width: 700px) {
+  .props { gap: 12px; padding: 10px 14px; }
+  .props-hint { display: none; }
+  :root { --pad-x: 14px; }
+}
+
+/* -- print ---------------------------------------------------------------- */
+
+@media print {
+  .props { display: none; }
+  #shell { display: none; }
+  body { background: #fff; }
+  #stage { overflow: visible; }
+  #stage > div { min-width: 0; }
+}

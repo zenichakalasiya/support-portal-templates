@@ -1,0 +1,238 @@
+<div id="3h2" style="display:flex;flex-direction:column;width:100%">
+
+  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:{{ groundBg }}">
+    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+      <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
+      <div style="display:flex;align-items:center;gap:7px">
+        <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
+        <div style="font-size:19px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">motadata</div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:7px;height:36px;padding:0 14px;border:1.5px solid {{ brand }};border-radius:8px;color:{{ brand }};font-size:13px;font-weight:600;white-space:nowrap">
+        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">auto_awesome</span>Ask AI
+      </div>
+      <div style="width:36px;height:36px;border-radius:8px;background:#0b2545;color:#fff;display:flex;align-items:center;justify-content:center">
+        <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">add</span>
+      </div>
+      <sc-for list="{{ topIcons }}" as="i" hint-placeholder-count="5">
+        <div style="width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#5f6f83">
+          <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ i.n }}</span>
+        </div>
+      </sc-for>
+      <div style="width:34px;height:34px;border-radius:8px;background:#2f5fe0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">YG</div>
+    </div>
+
+    <div style="display:flex;align-items:stretch">
+      <div style="width:56px;background:#fff;border-right:1px solid #e4e9f0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0">
+        <sc-for list="{{ railIcons }}" as="i" hint-placeholder-count="8">
+          <div style="width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#7c8a9c">
+            <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">{{ i.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="flex:1;min-width:0;padding:22px 24px 30px">
+
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:16px 22px;border-radius:14px;background:{{ cardBg }};border:1px solid {{ cardBorder }};box-shadow:{{ cardShadow }}">
+          <div style="width:44px;height:44px;border-radius:50%;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex-shrink:0">YG</div>
+          <div style="min-width:0">
+            <div style="font-size:19px;font-weight:700;color:#0b2545;letter-spacing:-0.016em">Welcome back, Yash</div>
+            <div style="font-size:13px;color:#5f6f83;margin-top:3px">Acme Corporation IT Service Desk</div>
+          </div>
+          <div style="flex:1"></div>
+          <div style="display:flex;align-items:stretch;gap:1px;background:{{ cardBorder }};border:1px solid {{ cardBorder }};border-radius:12px;overflow:hidden">
+            <sc-for list="{{ greetCounters }}" as="c" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:11px;padding:12px 20px;background:{{ groundBg }}">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#5f6f83">{{ c.i }}</span>
+                <div>
+                  <div style="font-size:21px;font-weight:700;color:#0b2545;line-height:1.1;letter-spacing:-0.02em">{{ c.v }}</div>
+                  <div style="font-size:12px;color:#5f6f83;margin-top:2px">{{ c.l }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,392px);gap:18px;margin-top:18px;align-items:stretch">
+
+          <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+
+            <div style="position:relative;border-radius:16px;overflow:hidden;height:268px;background:{{ ink }};flex:0 0 268px">
+              <div style="position:absolute;inset:0" data-comment-anchor="b87d4cc397-div"><image-slot id="cn2-banner" shape="rect" fit="cover" placeholder="Banner image · 16:6"></image-slot></div>
+              <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(20deg,rgba(6,20,38,.78) 0%,rgba(6,20,38,.34) 52%,rgba(6,20,38,.08) 100%)"></div>
+              <div style="position:absolute;left:24px;bottom:24px;max-width:420px;padding:16px 20px;background:rgba(6,20,38,.82);border-radius:12px">
+                <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:{{ accent }}">Announcement</div>
+                <div style="font-size:18px;font-weight:700;color:#fff;margin-top:7px;letter-spacing:-0.015em">Windows 11 rollout starts 22 September</div>
+                <div style="font-size:13px;color:rgba(255,255,255,.78);margin-top:5px;line-height:1.5">Check whether your laptop is on the first wave, and what to back up first.</div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
+                <div style="font-size:12.5px;color:#5f6f83">Tap the heart to pin a service to your favourites</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214 services<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+                <sc-for list="{{ svcCards4 }}" as="s" hint-placeholder-count="4">
+                  <div style="background:{{ cardBg }};border:1px solid #dfe5ec;border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;min-width:0;display:flex;flex-direction:column">
+                    <div style="flex:1;padding:14px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center">
+                      <div style="width:100%;display:flex;justify-content:flex-end">
+                        <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#F2A81D">{{ s.h }}</span>
+                      </div>
+                      <div style="width:48px;height:48px;border-radius:14px;background:#EDF1F5;color:#26384A;display:flex;align-items:center;justify-content:center;margin-top:2px">
+                        <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">{{ s.i }}</span>
+                      </div>
+                      <div style="font-size:14px;font-weight:600;color:#0b2545;margin-top:12px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%">{{ s.n }}</div>
+                      <div style="font-size:12px;color:#5f6f83;margin-top:4px">{{ s.c }}</div>
+                    </div>
+                    <div style="height:40px;flex-shrink:0;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;background:#F6F8FA;border-top:1px solid #dfe5ec;font-size:13px;font-weight:600;color:#26384A">
+                      {{ s.btn }}
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:16px;box-shadow:{{ cardShadow }};overflow:hidden">
+              <div style="display:flex;align-items:center;gap:12px;padding:17px 20px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:16.5px;font-weight:700;color:#0b2545">My Open Requests</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">Open full list<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+              </div>
+              <div style="padding:14px 16px 16px">
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <sc-for list="{{ listRows }}" as="r" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border:1px solid {{ cardBorder }};border-radius:10px;min-width:0">
+                      <div style="width:32px;height:32px;border-radius:9px;background:{{ r.iconBg }};color:{{ r.iconFg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ r.i }}</span>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:13.5px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
+                        <div style="display:flex;align-items:center;gap:6px;margin-top:3px">
+                          <div style="width:6px;height:6px;border-radius:50%;background:{{ r.dot }}"></div>
+                          <div style="font-size:11.5px;color:#5f6f83">{{ r.state }}</div>
+                        </div>
+                      </div>
+                      <div style="font-size:11px;font-weight:600;color:{{ r.pillFg }};background:{{ r.pillBg }};padding:4px 9px;border-radius:6px;white-space:nowrap">{{ r.pill }}</div>
+                      <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d;flex-shrink:0">chevron_right</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+
+            <div style="height:268px;flex:0 0 268px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:13px;background:{{ ink }};border-radius:13px;padding:12px 16px;flex:0 0 76px">
+                <div style="width:40px;height:40px;border-radius:11px;background:{{ accent }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:23px;line-height:1;color:#3d2a05">report</span>
+                </div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:16px;font-weight:700;color:{{ onInk }};letter-spacing:-0.012em">Report an Incident</div>
+                </div>
+                <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:{{ accent }}">arrow_forward</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:10px;flex:1;min-height:0;overflow:hidden">
+                <sc-for list="{{ actions4 }}" as="a" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;justify-content:center;gap:8px;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:12px;padding:10px 14px;box-shadow:{{ cardShadow }};min-width:0;min-height:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:{{ a.fg }}">{{ a.i }}</span>
+                    <div style="font-size:13px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.t }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+              <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#8a5a08">star</span>
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read</div>
+                <div style="flex:1"></div>
+                <div style="font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View All</div>
+              </div>
+              <sc-for list="{{ topArticles }}" as="k" hint-placeholder-count="4">
+                <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#5f6f83;flex-shrink:0;margin-top:2px">description</span>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                      <div style="flex:1 1 auto;min-width:0;font-size:11.5px;color:#5f6f83">{{ k.d }}</div>
+                      <div style="flex-shrink:0;font-size:11.5px;color:#5f6f83;background:#f2f3f5;padding:3px 9px;border-radius:8px;white-space:nowrap">{{ k.cat }}</div>
+                    </div>
+                  </div>
+                </div>
+                </sc-for>
+            </div>
+
+            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;min-height:320px;display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
+                <div style="flex:1"></div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">0</div>
+              </div>
+              <div style="flex:1;padding:30px 18px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+                <div style="width:64px;height:64px;border-radius:50%;background:#e4f4f0;display:flex;align-items:center;justify-content:center">
+                  <span style="font-family:'Material Symbols Rounded';font-size:32px;line-height:1;color:#0c6259">check</span>
+                </div>
+                <div style="font-size:14.5px;font-weight:600;color:#0b2545;margin-top:14px">Nothing to approve</div>
+                <div style="font-size:12.5px;color:#5f6f83;margin-top:5px;line-height:1.5;max-width:230px">When a colleague needs your sign-off it will appear here.</div>
+              </div>
+            </div>
+
+            <div style="background:{{ ink }};border-radius:14px;padding:18px 20px;margin-top:auto">
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ inkAccent }}">support_agent</span>
+                <div style="font-size:15px;font-weight:700;color:{{ onInk }}">Contact Us</div>
+                <div style="flex:1"></div>
+                <div style="font-size:12px;color:{{ inkSub }}">Mon–Fri · 08:00–20:00 IST</div>
+              </div>
+              <div style="height:1px;background:{{ inkLine }};margin:14px 0"></div>
+              <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+                <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ inkAccent }}">mail</span>
+                  <div style="font-size:13px;color:{{ onInk }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ inkAccent }}">call</span>
+                  <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;margin-top:18px">
+          <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #eef2f7">
+            <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#4c37b0">devices</span>
+            <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets &amp; CIs</div>
+            <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">12</div>
+            <div style="flex:1"></div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding:16px 20px">
+            <sc-for list="{{ assetsCis }}" as="a" hint-placeholder-count="6">
+              <div style="display:flex;align-items:center;gap:11px;padding:12px 14px;background:{{ groundBg }};border:1px solid {{ cardBorder }};border-radius:11px;min-width:0">
+                <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:{{ a.fg }};flex-shrink:0">{{ a.i }}</span>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:13px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                  <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

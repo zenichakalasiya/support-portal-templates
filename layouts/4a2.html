@@ -1,0 +1,139 @@
+<div id="4a2" style="display:flex;flex-direction:column;width:100%">
+
+  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
+    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+      <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
+      <div style="display:flex;align-items:center;gap:7px">
+        <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
+        <div style="font-size:19px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">motadata</div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:7px;height:36px;padding:0 14px;border:1.5px solid {{ brand }};border-radius:4px;color:{{ brand }};font-size:13px;font-weight:600;white-space:nowrap">
+        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">auto_awesome</span>Ask AI
+      </div>
+      <div style="width:36px;height:36px;border-radius:4px;background:#0b2545;color:#fff;display:flex;align-items:center;justify-content:center">
+        <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">add</span>
+      </div>
+      <sc-for list="{{ topIcons }}" as="i" hint-placeholder-count="5">
+        <div style="width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#5f6f83">
+          <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ i.n }}</span>
+        </div>
+      </sc-for>
+      <div style="width:34px;height:34px;border-radius:4px;background:#2f5fe0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">YG</div>
+    </div>
+
+    <div style="display:flex;align-items:stretch">
+      <div style="width:56px;background:#fff;border-right:1px solid #e4e9f0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0">
+        <sc-for list="{{ railIcons }}" as="i" hint-placeholder-count="8">
+          <div style="width:38px;height:38px;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#7c8a9c">
+            <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">{{ i.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="flex:1;min-width:0;padding:20px 24px 24px">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,372px);gap:18px;align-items:start">
+
+          <div style="position:relative;overflow:hidden;border-radius:4px;background:#274472;min-width:0;min-height:724px">
+            <div style="position:relative;box-sizing:border-box;padding:52px 40px 44px;display:flex;flex-direction:column;align-items:center">
+              <div style="font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)">Acme Corporation · Service Desk</div>
+              <div style="font-size:34px;font-weight:700;color:#fff;letter-spacing:-0.026em;margin-top:14px;text-align:center">How can we help you?</div>
+
+              <div style="display:flex;align-items:center;gap:12px;width:100%;max-width:620px;height:56px;margin-top:26px;padding:0 8px 0 20px;background:#fff;border-radius:4px">
+                <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5f6f83">search</span>
+                <div style="flex:1;font-size:14.5px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search solutions, services, announcements and requests</div>
+                <div style="display:flex;align-items:center;height:40px;padding:0 20px;background:#274472;color:#fff;border-radius:4px;font-size:14px;font-weight:600;white-space:nowrap;flex-shrink:0">Search</div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;width:100%;max-width:540px;margin-top:52px">
+                <sc-for list="{{ heroActions }}" as="a" hint-placeholder-count="3">
+                  <div style="box-sizing:border-box;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;background:#fff;border-radius:4px;padding:18px 16px;min-width:0">
+                    <div style="width:52px;height:52px;border-radius:4px;background:{{ a.bg }};color:{{ a.fg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <span style="font-family:'Material Symbols Rounded';font-size:27px;line-height:1">{{ a.i }}</span>
+                    </div>
+                    <div style="min-width:0">
+                      <div style="font-size:15px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">{{ a.t }}</div>
+                      <div style="font-size:12.5px;color:#5f6f83;margin-top:4px">{{ a.s }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;width:100%;max-width:680px;margin-top:44px">
+                <sc-for list="{{ svcTiles9 }}" as="s" hint-placeholder-count="9">
+                  <div style="display:flex;align-items:center;justify-content:center;height:46px;padding:0 14px;border:1px solid rgba(255,255,255,.26);border-radius:4px;font-size:13.5px;font-weight:500;color:#fff;min-width:0">
+                    <div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.n }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="height:724px;position:sticky;top:20px;overflow-y:auto;display:flex;flex-direction:column;gap:16px;min-width:0;padding-right:2px">
+
+            <div style="background:#fff;border:1px solid #e6ebf2;border-radius:4px;overflow:hidden;flex-shrink:0">
+              <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
+                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }}">campaign</span>
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
+                <div style="flex:1"></div>
+                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
+              </div>
+              <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
+                <div style="padding:13px 18px;border-bottom:1px solid #f4f7fa">
+                  <div style="font-size:13.5px;color:#0b2545;line-height:1.45">{{ n.t }}</div>
+                  <div style="font-size:11.5px;color:#5f6f83;margin-top:5px;white-space:nowrap">{{ n.k }} · {{ n.d }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="background:#fff;border:1px solid #e6ebf2;border-radius:4px;overflow:hidden;flex-shrink:0">
+              <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
+                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
+                <div style="flex:1"></div>
+                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+              </div>
+              <sc-for list="{{ kbs6 }}" as="k" hint-placeholder-count="6">
+                <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
+                  <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                    <div style="flex:1 1 auto;min-width:0;font-size:11.5px;color:#5f6f83">{{ k.d }}</div>
+                    <div style="flex-shrink:0;font-size:11.5px;color:#5f6f83;background:#f2f3f5;padding:3px 9px;border-radius:4px;white-space:nowrap">{{ k.cat }}</div>
+                  </div>
+                </div>
+                </sc-for>
+            </div>
+
+            <div style="background:#fff;border:1px solid #e6ebf2;border-radius:4px;padding:18px;flex-shrink:0">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:34px;height:34px;border-radius:4px;background:#e4f4f0;color:#0c6259;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">support_agent</span>
+                </div>
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Need support?</div>
+              </div>
+              <div style="font-size:13.5px;color:#4a5a70;margin-top:11px;line-height:1.6">Can't find the answer you're looking for? The service desk is open Monday to Friday, 08:00–20:00 IST.</div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:15px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#0c6259">forum</span>
+                  <div style="font-size:13.5px;font-weight:600;color:#0c6259">Chat with the support team</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83">mail</span>
+                  <div style="font-size:13.5px;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83">call</span>
+                  <div style="font-size:13.5px;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

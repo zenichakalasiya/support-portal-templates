@@ -1,0 +1,12 @@
+# Review screenshots dropped in the project root during design review —
+# scratch, not part of the gallery.
+/*.png
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+
+# Not used by this project, but kept so a stray install can't be committed.
+node_modules/
+.env
+.env.*

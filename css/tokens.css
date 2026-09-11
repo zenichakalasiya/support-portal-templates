@@ -1,0 +1,78 @@
+/* ---------------------------------------------------------------------------
+   tokens.css — the values the gallery chrome is built from.
+
+   The layouts themselves carry their colours inline, computed per palette in
+   js/logic.js; app.js mirrors the active palette onto the custom properties
+   below so that everything *around* the layouts — the sticky header, the tab
+   strip, the props panel, focus rings — follows the same brand.
+
+   The literal values here are the defaults from the design file's own prop
+   declarations (palette #0b2545 / #1856b3 / #3f8ee8 / #f5b342, mood "Ink
+   blocks", card style "Elevated"). They are what you see before app.js runs,
+   and what a printed page falls back to.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* Brand — overwritten at runtime from the active palette. */
+  --ink: #0b2545;
+  --brand: #1856b3;
+  --brand-lite: #3f8ee8;
+  --accent: #f5b342;
+
+  /* Surfaces */
+  --card-bg: #ffffff;
+  --card-border: #e9eef5;
+  --ground-bg: #eff4fa;
+  --ring-line: #d3e0ee;
+
+  /* Chrome — fixed, independent of palette. */
+  --page-bg: #eef1f6;
+  --chrome-bg: #ffffff;
+  --chrome-line: #dde4ee;
+  --chrome-line-soft: #e9eef5;
+
+  /* Text */
+  --text-strong: #0b2545;
+  --text: #4a5a70;
+  --text-muted: #5f6f83;
+  --text-faint: #7b8a9d;
+
+  /* Type */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-icons: 'Material Symbols Rounded';
+
+  --size-xs: 10.5px;
+  --size-sm: 12px;
+  --size-base: 13px;
+  --size-md: 14.5px;
+
+  /* Spacing — the 3/7/9/12/24 rhythm the design header uses. */
+  --gap-xs: 3px;
+  --gap-sm: 7px;
+  --gap-md: 9px;
+  --gap-lg: 12px;
+  --pad-x: 24px;
+
+  --radius-chip: 20px;
+  --radius-tab: 8px 8px 0 0;
+  --radius-panel: 10px;
+
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px var(--brand);
+}
+
+/* Icon glyphs are ligatures: the markup says `chevron_right` and the font
+   draws an arrow. These properties set the variable axes the design uses and
+   make sure the ligature is applied. Sizing and line-height are deliberately
+   left alone — every icon in the layouts sets its own inline. */
+[style*='Material Symbols Rounded'] {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  letter-spacing: normal;
+  text-transform: none;
+  font-style: normal;
+}
