@@ -139,6 +139,20 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
   don't "fix" it by adding an image. `mrd-t1`–`t3` and `cst-mark` are photographs
   held for slots no current layout renders; keep them.
 
+## Deployment
+
+Repo: https://github.com/zenichakalasiya/support-portal-templates
+Live URL: https://zenichakalasiya.github.io/support-portal-templates/
+
+Public repo, deployed by `.github/workflows/deploy.yml` on every push to `main`
+(the repo is uploaded as-is — `js/templates.js` is committed, so Pages needs no
+build step). Run `node build.js` before pushing, or the live page serves the old
+bundle. Root-level `*.png` review screenshots are gitignored.
+
+Also published as a private Claude artifact:
+https://claude.ai/code/artifact/fdeaa529-b28d-4f96-a9f4-bb9b385ff0f4 — a snapshot,
+republished manually.
+
 ## Handoff
 
 Latest session state is in [HANDOFF.md](HANDOFF.md) — read it first.
