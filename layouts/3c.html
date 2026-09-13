@@ -98,7 +98,7 @@
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                   <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">8</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -122,7 +122,7 @@
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Announcements</div>
                   <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">5</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="flex:1;min-height:0;overflow-y:auto">
                   <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
@@ -147,7 +147,7 @@
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 9px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -179,7 +179,7 @@
                 <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:12px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -193,7 +193,6 @@
                     </div>
                   </div>
                   </sc-for>
-                <div style="display:flex;align-items:center;gap:4px;padding:13px 20px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">Browse all articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
 
               <div style="grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
@@ -202,6 +201,8 @@
                     <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#07101F">inventory_2</span>
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets</div>
                     <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">9</div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -214,14 +215,13 @@
                     </div>
                   </sc-for>
                   </div>
-                  <div style="padding:11px 20px">
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all 9<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
-                  </div>
                 </div>
                 <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                   <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My CIs</div>
                     <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">4</div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
@@ -233,9 +233,6 @@
                       </div>
                     </div>
                   </sc-for>
-                  </div>
-                  <div style="padding:11px 20px">
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all 4<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
                   </div>
                 </div>
               </div>

@@ -96,7 +96,7 @@
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
                   <div style="flex:1"></div>
-                  <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
                   <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -119,7 +119,7 @@
                   <div style="font-size:15px;font-weight:700;color:#0b2545">My assets &amp; CIs</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
                   <div style="flex:1"></div>
-                  <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">

@@ -71,7 +71,7 @@
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="x" hint-placeholder-count="4">
                 <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -109,7 +109,7 @@
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 5</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ anns }}" as="x" hint-placeholder-count="5">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -147,7 +147,7 @@
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My open requests</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all 8</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests4 }}" as="x" hint-placeholder-count="4">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -166,8 +166,9 @@
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending approvals</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">2 waiting</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals }}" as="x" hint-placeholder-count="5">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">

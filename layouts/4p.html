@@ -112,7 +112,7 @@
           <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
             <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most read knowledge</div>
             <div style="flex:1"></div>
-            <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
             <div style="display:grid;grid-template-columns:minmax(0,1fr)">
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -155,7 +155,7 @@
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
               <div style="flex:1"></div>
-              <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;padding:16px 20px">
               <sc-for list="{{ assetsCis8 }}" as="a" hint-placeholder-count="8">
@@ -177,7 +177,7 @@
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:16px 20px">
                 <sc-for list="{{ assetsCis5 }}" as="a" hint-placeholder-count="5">
@@ -218,9 +218,7 @@
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">servicedesk@acme.com</div>
         <div style="flex:1"></div>
-        <div style="display:flex;align-items:center;gap:8px;height:36px;padding:0 16px;background:{{ bandBtnBg }};color:{{ bandBtnFg }};font-size:13px;font-weight:600;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-        </div>
+        <div style="height:36px;margin-top:0px"></div>
       </div>
 
     </div>

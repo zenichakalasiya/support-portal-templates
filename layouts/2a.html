@@ -89,9 +89,7 @@
                 <div style="font-size:13.5px;color:{{ t2Mute }}">Mon–Fri, 08:00–20:00 IST</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;margin-top:18px;background:{{ t2Btn }};color:#fff;border-radius:10px;font-size:13.5px;font-weight:600;white-space:nowrap">
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">forum</span>Start a chat
-            </div>
+            <div style="height:44px;margin-top:18px"></div>
           </div>
           </sc-if>
         </div>
@@ -168,7 +166,7 @@
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Open Requests</div>
                 <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid {{ t2Hair2 }}">
@@ -191,6 +189,8 @@
               <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Pending Approvals</div>
                 <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 9px;border-radius:20px">2</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid {{ t2Hair2 }}">
@@ -247,7 +247,7 @@
               <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Most Read</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:6px;padding:13px 20px;border-bottom:1px solid {{ t2Hair2 }};min-width:0">

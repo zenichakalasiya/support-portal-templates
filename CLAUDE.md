@@ -170,6 +170,17 @@ These were applied template-wide and should be kept when adding or editing one:
   treatment), with the tint taken from the layout’s own palette.
 - **Most read** is a listing data card: header, then rows of id pill, title,
   date and category.
+- **Every data card header ends with a right-aligned CTA.** My Open Requests,
+  Pending Approvals, Most Read and My Assets & CIs read `View all ›`;
+  announcement and notice cards read `All announcements ›`. The link is the
+  last child of the title row, pushed right by a `<div style="flex:1"></div>`,
+  and takes the accent that template already uses. Counts and meta ("5 active",
+  "9 assigned") stay beside the title. Cards outside those four keep their own
+  wording — "Browse catalog", "Full catalog", "Browse all". KPI counter tiles
+  (4c, 4c2) get no CTA: there is no list behind them.
+- **Contact Us cards carry no chat button.** It was removed everywhere and its
+  height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
+  alignments are unchanged — keep the spacer if you edit one of these cards.
 
 ## Deployment
 

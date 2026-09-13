@@ -81,8 +81,9 @@
           <div style="display:flex;flex-direction:column;padding:26px 26px 24px;background:#fff;border:1px solid #E2E5DE;border-radius:2px">
             <div style="display:flex;align-items:center;gap:12px">
               <div style="font-size:18px;font-weight:700;color:#23302B;letter-spacing:-0.014em">Announcements</div>
-              <div style="flex:1"></div>
               <div style="font-size:12.5px;color:#4A5A52;white-space:nowrap">5 active</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:flex;flex-direction:column;margin-top:16px">
               <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
@@ -104,8 +105,9 @@
           <div style="display:flex;flex-direction:column;padding:26px 26px 24px;background:#fff;border:1px solid #E2E5DE;border-radius:2px">
             <div style="display:flex;align-items:center;gap:12px">
               <div style="font-size:18px;font-weight:700;color:#23302B;letter-spacing:-0.014em">My Devices</div>
-              <div style="flex:1"></div>
               <div style="font-size:12.5px;color:#4A5A52;white-space:nowrap">6 assigned</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px">
               <sc-for list="{{ devices6 }}" as="a" hint-placeholder-count="6">
@@ -153,8 +155,9 @@
                 <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
                   <div style="font-size:15px;font-weight:700;color:#23302B">Pending Approvals</div>
-                  <div style="flex:1"></div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:2px">2</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:9px;padding:13px 18px;border-bottom:1px solid #EFF1EC">
@@ -207,6 +210,8 @@
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Read</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0">
                   <sc-for list="{{ kbs8 }}" as="k" hint-placeholder-count="8">

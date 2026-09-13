@@ -95,9 +95,7 @@ window.TEMPLATES = {
                 <div style="font-size:13.5px;color:{{ t2Mute }}">Mon–Fri, 08:00–20:00 IST</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;margin-top:18px;background:{{ t2Btn }};color:#fff;border-radius:10px;font-size:13.5px;font-weight:600;white-space:nowrap">
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">forum</span>Start a chat
-            </div>
+            <div style="height:44px;margin-top:18px"></div>
           </div>
           </sc-if>
         </div>
@@ -174,7 +172,7 @@ window.TEMPLATES = {
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Open Requests</div>
                 <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid {{ t2Hair2 }}">
@@ -197,6 +195,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Pending Approvals</div>
                 <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 9px;border-radius:20px">2</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid {{ t2Hair2 }}">
@@ -253,7 +253,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Most Read</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:6px;padding:13px 20px;border-bottom:1px solid {{ t2Hair2 }};min-width:0">
@@ -429,9 +429,7 @@ window.TEMPLATES = {
                 </div>
               </div>
               <div style="flex:1;min-height:14px"></div>
-              <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;margin-top:16px;background:{{ ink }};color:{{ onInk }};border-radius:9px;font-size:13.5px;font-weight:600;white-space:nowrap">
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">forum</span>Start a chat
-              </div>
+              <div style="height:44px;margin-top:16px"></div>
             </div>
           </div>
 
@@ -442,7 +440,7 @@ window.TEMPLATES = {
                 <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <div style="width:28px;height:28px;border-radius:50%;border:1px solid #dfe5ee;display:flex;align-items:center;justify-content:center;color:{{ brand }};flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">arrow_forward</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px">
                 <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
@@ -465,7 +463,7 @@ window.TEMPLATES = {
                 <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
-                <div style="width:28px;height:28px;border-radius:50%;border:1px solid #dfe5ee;display:flex;align-items:center;justify-content:center;color:{{ brand }};flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">arrow_forward</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px">
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
@@ -520,7 +518,7 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Most Read</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,252px),1fr));gap:14px">
               <sc-for list="{{ kbTiles }}" as="k" hint-placeholder-count="4">
@@ -652,7 +650,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -673,7 +671,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:3px 9px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -708,6 +706,8 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -724,6 +724,8 @@ window.TEMPLATES = {
               <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Announcements</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
                   <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -875,7 +877,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -895,7 +897,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:3px 9px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -929,6 +931,8 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545;white-space:nowrap">My Assets</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -946,7 +950,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -1070,7 +1074,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                   <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">8</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -1094,7 +1098,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Announcements</div>
                   <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">5</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="flex:1;min-height:0;overflow-y:auto">
                   <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
@@ -1119,7 +1123,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 9px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -1151,7 +1155,7 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:12px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -1165,7 +1169,6 @@ window.TEMPLATES = {
                     </div>
                   </div>
                   </sc-for>
-                <div style="display:flex;align-items:center;gap:4px;padding:13px 20px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">Browse all articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
 
               <div style="grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
@@ -1174,6 +1177,8 @@ window.TEMPLATES = {
                     <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#07101F">inventory_2</span>
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets</div>
                     <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">9</div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -1186,14 +1191,13 @@ window.TEMPLATES = {
                     </div>
                   </sc-for>
                   </div>
-                  <div style="padding:11px 20px">
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all 9<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
-                  </div>
                 </div>
                 <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                   <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My CIs</div>
                     <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">4</div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
@@ -1205,9 +1209,6 @@ window.TEMPLATES = {
                       </div>
                     </div>
                   </sc-for>
-                  </div>
-                  <div style="padding:11px 20px">
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all 4<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
                   </div>
                 </div>
               </div>
@@ -1315,18 +1316,19 @@ window.TEMPLATES = {
         <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">My open requests</div>
           <div style="flex:1;height:1px;background:#e2e8f0"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Open full list</div>
+          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
         </div>
         <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-top:12px">
           <div style="display:flex;align-items:center;gap:11px;padding:14px 20px;border-bottom:1px solid #eef2f7">
             <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }}">inbox</span>
             <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
-            <div style="flex:1"></div>
             <div style="display:flex;gap:2px">
               <div style="font-size:12.5px;font-weight:600;color:#0b2545;padding:6px 11px;background:#f0f4f9;border-radius:6px;white-space:nowrap">Requests 8</div>
               <div style="font-size:12.5px;font-weight:500;color:#5f6f83;padding:6px 11px;white-space:nowrap">Approvals 2</div>
             </div>
+            <div style="flex:1"></div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))">
             <sc-for list="{{ requests8 }}" as="r" hint-placeholder-count="8">
@@ -1351,8 +1353,9 @@ window.TEMPLATES = {
           <div style="flex:1 1 320px;min-width:0;border-right:1px solid #f1f5f9">
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #f1f5f9">
               <div style="font-size:14.5px;font-weight:700;color:#0b2545">Announcements</div>
-              <div style="flex:1"></div>
               <div style="font-size:12px;color:#5f6f83;white-space:nowrap">5 active</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
               <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f7fafc;min-width:0">
@@ -1377,8 +1380,9 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #f1f5f9">
               <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
               <div style="font-size:14.5px;font-weight:700;color:#0b2545">Most read</div>
-              <div style="flex:1"></div>
               <div style="font-size:12px;color:#5f6f83;white-space:nowrap">This month</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr))">
               <sc-for list="{{ kbs6 }}" as="k" hint-placeholder-count="6">
@@ -1400,7 +1404,7 @@ window.TEMPLATES = {
         <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">My assets &amp; CIs</div>
           <div style="flex:1;height:1px;background:#e2e8f0"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all 9</div>
+          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px">
           <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -1529,7 +1533,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                 <div style="padding:12px 18px;border-bottom:1px solid #f4f7fa">
@@ -1549,7 +1553,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Assets</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -1569,7 +1573,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My CIs</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
@@ -1615,7 +1619,8 @@ window.TEMPLATES = {
                   <div style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read Knowledge</div>
                     <div style="flex:1" data-comment-anchor="14958def03-div"></div>
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412 articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
                     <div style="display:flex;flex-direction:column;gap:6px;padding:13px 18px;border-bottom:1px solid #eef2f7;min-width:0">
@@ -1637,7 +1642,7 @@ window.TEMPLATES = {
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #f4f7fa">
@@ -1672,7 +1677,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
                 <div style="padding:6px 0">
                   <sc-for list="{{ anns2 }}" as="n" hint-placeholder-count="2">
@@ -1873,8 +1878,9 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
-                <div style="flex:1"></div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">0</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;padding:30px 18px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
                 <div style="width:64px;height:64px;border-radius:50%;background:{{ groundBg }};border:1px solid {{ cardBorder }};display:flex;align-items:center;justify-content:center">
@@ -1917,7 +1923,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #e6ebf2">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Read</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412 articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div>
                 <sc-for list="{{ topArticles }}" as="k" hint-placeholder-count="4">
@@ -2047,7 +2053,7 @@ window.TEMPLATES = {
                 <div style="font-size:16.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">Open full list<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="padding:14px 16px 16px">
                 <div style="display:flex;flex-direction:column;gap:8px">
@@ -2100,7 +2106,7 @@ window.TEMPLATES = {
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#8a5a08">star</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read</div>
                 <div style="flex:1"></div>
-                <div style="font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View All</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ topArticles }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -2123,8 +2129,9 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
-                <div style="flex:1"></div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">0</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;padding:30px 18px 32px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
                 <div style="width:64px;height:64px;border-radius:50%;background:#e4f4f0;display:flex;align-items:center;justify-content:center">
@@ -2164,7 +2171,7 @@ window.TEMPLATES = {
             <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets &amp; CIs</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">12</div>
             <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding:16px 20px">
             <sc-for list="{{ assetsCis }}" as="a" hint-placeholder-count="6">
@@ -2289,8 +2296,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;min-width:0" data-comment-anchor="c9a36b6503-div">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12px;color:#5f6f83;white-space:nowrap">5 active</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1">
               <sc-for list="{{ govNotices }}" as="n" hint-placeholder-count="4">
@@ -2312,6 +2320,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1">
                 <sc-for list="{{ approvals3 }}" as="p" hint-placeholder-count="3">
@@ -2339,14 +2349,14 @@ window.TEMPLATES = {
                   </div>
                   </sc-for>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">All approvals<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
 
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12px;color:#5f6f83;white-space:nowrap">This month</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1">
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -2362,7 +2372,6 @@ window.TEMPLATES = {
                   </div>
                   </sc-for>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">All 412 articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
           </div>
 
@@ -2371,6 +2380,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My assets &amp; CIs</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -2383,13 +2394,14 @@ window.TEMPLATES = {
                   </div>
                 </sc-for>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">All my items<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
 
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1">
                 <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
@@ -2405,7 +2417,6 @@ window.TEMPLATES = {
                   </div>
                   </sc-for>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">View all requests<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
           </div>
 
@@ -2429,9 +2440,7 @@ window.TEMPLATES = {
                 <div style="font-size:13.5px;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
               </div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:8px;height:42px;padding:0 18px;background:{{ ink }};color:{{ onInk }};border-radius:8px;font-size:13.5px;font-weight:600;white-space:nowrap">
-                <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">forum</span>Start a chat
-              </div>
+              <div style="height:42px;margin-top:0px"></div>
             </div>
           </div>
 
@@ -2500,8 +2509,9 @@ window.TEMPLATES = {
             <div style="border:1px solid #dde4ee;border-radius:10px;background:#fff;overflow:hidden;flex:0 0 380px;min-width:0;align-self:start" data-comment-anchor="8bb5c95720-div">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Public Notices</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12px;color:#5f6f83;white-space:nowrap">Gazette</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ govNotices3 }}" as="n" hint-placeholder-count="3">
                 <div style="padding:14px 20px;border-bottom:1px solid #f4f7fa">
@@ -2584,6 +2594,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545;white-space:nowrap">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">4</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals4 }}" as="a" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -2609,13 +2621,14 @@ window.TEMPLATES = {
                   </div>
                 </div>
               </sc-for>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">All approvals<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
 
             <div style="border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;background:#fff" data-comment-anchor="05d19ec25e-div">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545;white-space:nowrap">My Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -2629,14 +2642,13 @@ window.TEMPLATES = {
                   <div style="width:7px;height:7px;border-radius:50%;background:{{ r.fg }};flex-shrink:0"></div>
                 </div>
                 </sc-for>
-              <div style="display:flex;align-items:center;gap:4px;padding:13px 18px;font-size:13px;font-weight:600;color:{{ brand }}">View all requests<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
 
             <div style="border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;background:#fff" data-comment-anchor="b43f1bc0bc-div">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#f1f5f9">
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -2667,7 +2679,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Assets</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -2687,7 +2699,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My CIs</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
@@ -2717,9 +2729,7 @@ window.TEMPLATES = {
                   <div style="font-size:13.5px;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
                 </div>
               </div>
-              <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:42px;margin-top:16px;background:{{ ink }};color:{{ onInk }};border-radius:8px;font-size:13.5px;font-weight:600;white-space:nowrap">
-                <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">forum</span>Start a chat
-              </div>
+              <div style="height:42px;margin-top:16px"></div>
             </div>
 
           </div>
@@ -2912,7 +2922,7 @@ window.TEMPLATES = {
               <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
               <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">412 articles</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -2966,9 +2976,7 @@ window.TEMPLATES = {
                 <div style="font-size:13.5px;font-weight:500;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
               </div>
               <div style="flex:1;min-height:14px"></div>
-              <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:{{ ink }};color:{{ onInk }};border-radius:6px;font-size:13.5px;font-weight:600;white-space:nowrap">
-                <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-              </div>
+              <div style="height:40px;margin-top:0px"></div>
             </div>
           </div>
         </div>
@@ -3054,7 +3062,7 @@ window.TEMPLATES = {
                 <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }}">campaign</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3074,7 +3082,7 @@ window.TEMPLATES = {
                 <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs6 }}" as="k" hint-placeholder-count="6">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3101,7 +3109,7 @@ window.TEMPLATES = {
               <div style="display:flex;flex-direction:column;gap:10px;margin-top:15px">
                 <div style="display:flex;align-items:center;gap:10px">
                   <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#0c6259">forum</span>
-                  <div style="font-size:13.5px;font-weight:600;color:#0c6259">Chat with the support team</div>
+                  <div style="height:40px;margin-top:0px"></div>
                 </div>
                 <div style="display:flex;align-items:center;gap:10px">
                   <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83">mail</span>
@@ -3192,8 +3200,9 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
               <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ brand }}">campaign</span>
               <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
-              <div style="flex:1"></div>
               <div style="font-size:12px;color:#5f6f83;white-space:nowrap">5 active</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
               <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3237,7 +3246,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f1f5f9;min-width:0">
@@ -3289,8 +3298,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #dde4ee;border-radius:10px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
-                <div style="flex:1"></div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 18px;border-bottom:1px solid #f1f5f9">
@@ -3312,7 +3322,7 @@ window.TEMPLATES = {
               <div style="font-size:16.5px;font-weight:600;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
               <div style="font-size:12.5px;color:#5f6f83">9 assigned</div>
               <div style="flex:1"></div>
-              <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:18px 20px 20px">
               <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -3336,9 +3346,7 @@ window.TEMPLATES = {
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">servicedesk@acme.com</div>
         <div style="flex:1"></div>
-        <div style="display:flex;align-items:center;gap:8px;height:38px;padding:0 18px;background:{{ bandBtnBg }};color:{{ bandBtnFg }};border-radius:7px;font-size:13px;font-weight:600;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-        </div>
+        <div style="height:38px;margin-top:0px"></div>
       </div>
       </div>
     </div>
@@ -3504,7 +3512,7 @@ window.TEMPLATES = {
               <div style="font-size:13.5px;color:#4a5a70;margin-top:11px;line-height:1.6">Can't find the answer you're looking for? The desk is open Mon–Fri, 08:00–20:00 IST.</div>
               <div style="display:flex;align-items:center;gap:9px;margin-top:14px">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#a4305c">forum</span>
-                <div style="font-size:13.5px;font-weight:600;color:#a4305c">Chat with the support team</div>
+                <div style="height:40px;margin-top:0px"></div>
               </div>
               <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83">mail</span>
@@ -3687,7 +3695,7 @@ window.TEMPLATES = {
               <div style="font-size:13.5px;color:#4a5a70;margin-top:11px;line-height:1.6">Can't find the answer you're looking for? The desk is open Mon–Fri, 08:00–20:00 IST.</div>
               <div style="display:flex;align-items:center;gap:9px;margin-top:14px">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#a4305c">forum</span>
-                <div style="font-size:13.5px;font-weight:600;color:#a4305c">Chat with the support team</div>
+                <div style="height:40px;margin-top:0px"></div>
               </div>
               <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83">mail</span>
@@ -3800,7 +3808,7 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
                   <div style="flex:1"></div>
-                  <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
                   <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -3823,7 +3831,7 @@ window.TEMPLATES = {
                   <div style="font-size:15px;font-weight:700;color:#0b2545">My assets &amp; CIs</div>
                   <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
                   <div style="flex:1"></div>
-                  <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all</div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -3919,7 +3927,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="x" hint-placeholder-count="4">
                 <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3957,7 +3965,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 5</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ anns }}" as="x" hint-placeholder-count="5">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3995,7 +4003,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My open requests</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all 8</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests4 }}" as="x" hint-placeholder-count="4">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -4014,8 +4022,9 @@ window.TEMPLATES = {
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending approvals</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">2 waiting</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals }}" as="x" hint-placeholder-count="5">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -4170,6 +4179,8 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:11px;padding:14px 18px">
               <div style="font-size:15px;font-weight:700;color:#0b2545;white-space:nowrap">Pending Approvals</div>
               <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
               <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-top:1px solid #f1f5f9;min-width:0">
@@ -4206,7 +4217,7 @@ window.TEMPLATES = {
             <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
             <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <sc-for list="{{ annRows2 }}" as="n" hint-placeholder-count="2">
             <div style="display:flex;align-items:stretch;gap:13px;padding:14px 18px;border-top:1px solid #f1f5f9;background:{{ n.bg }};min-width:0">
@@ -4228,7 +4239,7 @@ window.TEMPLATES = {
             </div>
             <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
             <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
             <div style="display:flex;flex-direction:column;gap:7px;padding:13px 18px;border-top:1px solid #f1f5f9;min-width:0">
@@ -4382,6 +4393,8 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:11px;padding:14px 18px">
               <div style="font-size:15px;font-weight:700;color:#0b2545;white-space:nowrap">Pending Approvals</div>
               <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
               <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-top:1px solid #f1f5f9;min-width:0">
@@ -4418,7 +4431,7 @@ window.TEMPLATES = {
             <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
             <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <sc-for list="{{ annRows2 }}" as="n" hint-placeholder-count="2">
             <div style="display:flex;gap:13px;padding:14px 18px;border-top:1px solid #f1f5f9;background:{{ n.bg }};min-width:0">
@@ -4633,7 +4646,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:13px 15px;border-bottom:1px solid #eef2f7">
             <div style="font-size:14px;font-weight:700;color:#0b2545;white-space:nowrap">Most Read Knowledge</div>
             <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
             <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 15px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -4875,7 +4888,7 @@ window.TEMPLATES = {
         </div>
         <div style="display:flex;align-items:center;gap:9px;padding:11px 20px;background:#2a2317;min-width:0">
           <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#f7f2e8">forum</span>
-          <div style="font-size:14px;font-weight:600;color:#f7f2e8;white-space:nowrap">Start a chat</div>
+          <div style="height:40px;margin-top:0px"></div>
         </div>
       </div>
     </div>
@@ -5011,7 +5024,7 @@ window.TEMPLATES = {
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em;white-space:nowrap">Most read</div>
                 <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">this month</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412 articles<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             <div style="flex:1;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden">
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -5074,9 +5087,7 @@ window.TEMPLATES = {
       <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
         <div style="font-size:13px;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
         <div style="font-size:13px;color:#0b2545;white-space:nowrap">servicedesk@acme.com</div>
-        <div style="display:flex;align-items:center;gap:8px;height:38px;padding:0 18px;background:{{ ink }};color:{{ onInk }};border-radius:19px;font-size:13px;font-weight:600;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">forum</span>Start a chat
-        </div>
+        <div style="height:38px;margin-top:0px"></div>
       </div>
     </div>
 
@@ -5199,7 +5210,7 @@ window.TEMPLATES = {
           <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
             <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most read knowledge</div>
             <div style="flex:1"></div>
-            <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412</div>
+            <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
             <div style="display:grid;grid-template-columns:minmax(0,1fr)">
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -5242,7 +5253,7 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
               <div style="flex:1"></div>
-              <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;padding:16px 20px">
               <sc-for list="{{ assetsCis8 }}" as="a" hint-placeholder-count="8">
@@ -5264,7 +5275,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
                 <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 9</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:16px 20px">
                 <sc-for list="{{ assetsCis5 }}" as="a" hint-placeholder-count="5">
@@ -5305,9 +5316,7 @@ window.TEMPLATES = {
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
         <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">servicedesk@acme.com</div>
         <div style="flex:1"></div>
-        <div style="display:flex;align-items:center;gap:8px;height:36px;padding:0 16px;background:{{ bandBtnBg }};color:{{ bandBtnFg }};font-size:13px;font-weight:600;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-        </div>
+        <div style="height:36px;margin-top:0px"></div>
       </div>
 
     </div>
@@ -5394,9 +5403,7 @@ window.TEMPLATES = {
                     <div style="font-size:13.5px;color:#4a6478;min-width:0;overflow:hidden;text-overflow:ellipsis">Clinical on-call · bleep 2217</div>
                   </div>
                 </div>
-                <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:38px;margin-top:13px;background:#17A2A2;color:#fff;border-radius:4px;font-size:13px;font-weight:700;letter-spacing:.03em">
-                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-                </div>
+                <div style="height:38px;margin-top:13px"></div>
               </div>
             </div>
           </div>
@@ -5429,7 +5436,7 @@ window.TEMPLATES = {
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Change Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#0F5C8C;background:#E8F2FA;padding:2px 8px;border-radius:20px">4</div>
                 <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
                 <sc-for list="{{ changes4 }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 13px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
@@ -5474,7 +5481,7 @@ window.TEMPLATES = {
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Devices</div>
               <div style="font-size:11.5px;font-weight:700;color:#0F5C8C;background:#E8F2FA;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all assets<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 18px">
               <sc-for list="{{ devices6 }}" as="a" hint-placeholder-count="6">
@@ -5495,6 +5502,8 @@ window.TEMPLATES = {
                 
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">2</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
                 <div style="display:flex;flex-direction:column;gap:9px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
@@ -5528,7 +5537,7 @@ window.TEMPLATES = {
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#0F5C8C;background:#E8F2FA;padding:2px 8px;border-radius:20px">6</div>
                 <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
                 <sc-for list="{{ requests6 }}" as="r" hint-placeholder-count="6">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 13px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
@@ -5636,8 +5645,9 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;padding:26px 26px 24px;background:#fff;border:1px solid #E2E5DE;border-radius:2px">
             <div style="display:flex;align-items:center;gap:12px">
               <div style="font-size:18px;font-weight:700;color:#23302B;letter-spacing:-0.014em">Announcements</div>
-              <div style="flex:1"></div>
               <div style="font-size:12.5px;color:#4A5A52;white-space:nowrap">5 active</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:flex;flex-direction:column;margin-top:16px">
               <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
@@ -5659,8 +5669,9 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;padding:26px 26px 24px;background:#fff;border:1px solid #E2E5DE;border-radius:2px">
             <div style="display:flex;align-items:center;gap:12px">
               <div style="font-size:18px;font-weight:700;color:#23302B;letter-spacing:-0.014em">My Devices</div>
-              <div style="flex:1"></div>
               <div style="font-size:12.5px;color:#4A5A52;white-space:nowrap">6 assigned</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px">
               <sc-for list="{{ devices6 }}" as="a" hint-placeholder-count="6">
@@ -5708,8 +5719,9 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
                   <div style="font-size:15px;font-weight:700;color:#23302B">Pending Approvals</div>
-                  <div style="flex:1"></div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:2px">2</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:9px;padding:13px 18px;border-bottom:1px solid #EFF1EC">
@@ -5762,6 +5774,8 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Read</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0">
                   <sc-for list="{{ kbs8 }}" as="k" hint-placeholder-count="8">
@@ -5876,7 +5890,7 @@ window.TEMPLATES = {
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Approvals</div>
               <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
               <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:600;color:#2B54F5;white-space:nowrap">View all</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#2B54F5;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
               <div style="display:flex;flex-direction:column;gap:8px;padding:13px 22px;border-top:1px solid #ececec">
@@ -5940,9 +5954,7 @@ window.TEMPLATES = {
               </div>
             </div>
             <div style="flex:1;min-height:18px"></div>
-            <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:42px;background:#CE8922;color:#1A1206;border-radius:20px;font-size:13.5px;font-weight:600">
-              <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">forum</span>Start a chat
-            </div>
+            <div style="height:42px;margin-top:0px"></div>
           </div>
         </div>
 
@@ -5953,7 +5965,7 @@ window.TEMPLATES = {
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">My Devices</div>
               <div style="font-size:11.5px;font-weight:700;color:#2B54F5;background:#EEF2FF;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:600;color:#2B54F5;white-space:nowrap">View all</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#2B54F5;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:flex;flex-direction:column;gap:10px;padding:16px 22px">
               <sc-for list="{{ devices4 }}" as="a" hint-placeholder-count="4">
@@ -5973,7 +5985,7 @@ window.TEMPLATES = {
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">My Open Requests</div>
               <div style="font-size:11.5px;font-weight:700;color:#2B54F5;background:#EEF2FF;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:600;color:#2B54F5;white-space:nowrap">View all</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#2B54F5;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 22px;border-top:1px solid #ececec">
@@ -5995,7 +6007,7 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:18px 22px 16px">
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Most Read</div>
               <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:600;color:#2B54F5;white-space:nowrap">All 412</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#2B54F5;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:13px 22px;border-top:1px solid #ececec;min-width:0">
@@ -6088,8 +6100,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e2e8f0;border-radius:6px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">Public Notices</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">Gazette</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ govNotices }}" as="n" hint-placeholder-count="4">
                 <div style="padding:14px 18px;border-bottom:1px solid #f4f7fa">
@@ -6141,7 +6154,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                   <div style="font-size:11.5px;font-weight:700;color:#0B3B7A;background:#EAF1FA;padding:2px 8px;border-radius:20px">4</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 18px;border-bottom:1px solid #f4f7fa">
@@ -6168,8 +6181,9 @@ window.TEMPLATES = {
               <div style="background:#fff;border:1px solid #e2e8f0;border-radius:6px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
-                  <div style="flex:1"></div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
@@ -6205,7 +6219,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Devices</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all assets<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:18px">
               <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -6234,9 +6248,7 @@ window.TEMPLATES = {
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0b2545">Still have a question?</div>
               <div style="font-size:14.5px;color:#3f5266;margin-top:7px;line-height:1.55;text-wrap:pretty"><a href="#6a" style="color:#0B3B7A;font-weight:700;text-decoration:underline">Contact the service desk</a> on 1800 200 4455, by email at helpdesk@dit.gov.in, or at any citizen facilitation centre.</div>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 24px;background:#0B3B7A;color:#fff;border-radius:24px;font-size:14px;font-weight:600;white-space:nowrap;flex-shrink:0">
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">forum</span>Start a chat
-            </div>
+            <div style="height:44px;margin-top:0px"></div>
           </div>
         </div>
 
@@ -6511,7 +6523,7 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
               <div style="font-size:15px;font-weight:700;color:#1B2430">Announcements</div>
               <div style="flex:1"></div>
-              <div style="font-size:12.5px;font-weight:600;color:#2E3A4B;white-space:nowrap">All 3</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:16px 18px">
               <div style="display:flex;align-items:stretch;gap:12px;min-width:0">
@@ -6557,9 +6569,7 @@ window.TEMPLATES = {
                   <div style="font-size:13.5px;font-weight:500;color:#1B2430;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
                 </div>
                 <div style="flex:1;min-height:14px"></div>
-                <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:#1B2430;color:#fff;border-radius:6px;font-size:13.5px;font-weight:600;white-space:nowrap">
-                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">forum</span>Start a chat
-                </div>
+                <div style="height:40px;margin-top:0px"></div>
               </div>
             </div>
         </div>
@@ -6601,7 +6611,7 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
                   <div style="font-size:15.5px;font-weight:700;color:#1B2430">Most Read</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">Knowledge base<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:1px;background:#eef0f4">
                   <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -6623,8 +6633,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;flex:1;background:#fff;border:1px solid #e6e9ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
                 <div style="font-size:15px;font-weight:700;color:#1B2430">Pending Approvals</div>
-                <div style="flex:1"></div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #f3f5f8">
@@ -6764,8 +6775,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Notice board</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#6B6255;white-space:nowrap">4 active</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
                 <div style="padding:13px 18px;border-bottom:1px solid #F6F2E9">
@@ -6828,6 +6840,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Pending approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F6F2E9">
@@ -6879,8 +6893,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Most read</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#6B6255;white-space:nowrap">412 articles</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F6F2E9;min-width:0">
@@ -6899,6 +6914,8 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">My devices</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -6999,8 +7016,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Notice board</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">4 active</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
                 <div style="padding:13px 18px;border-bottom:1px solid #F6F7FB">
@@ -7049,6 +7067,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Pending approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F6F7FB">
@@ -7100,8 +7120,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Most read guides</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">412 articles</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F6F7FB;min-width:0">
@@ -7120,6 +7141,8 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">My devices</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -7301,8 +7324,9 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Most read guides</div>
-              <div style="flex:1"></div>
               <div style="font-size:12.5px;color:#5A5750;white-space:nowrap">412 articles</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F4F2ED;min-width:0">
@@ -7321,6 +7345,8 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">My devices</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
               <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -7469,7 +7495,7 @@ window.TEMPLATES = {
               <div style="font-size:15.5px;font-weight:700;color:#10306B">Pending approvals</div>
               <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
               <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F4F6FA">
@@ -7499,8 +7525,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">Most read</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">412 articles</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F4F6FA;min-width:0">
@@ -7521,8 +7548,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">My assets</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">9 assigned</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -7559,9 +7587,7 @@ window.TEMPLATES = {
                 </div>
               </div>
               <div style="flex:1;min-height:14px"></div>
-              <div style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:#7CC243;color:#123008;border-radius:3px;font-size:13.5px;font-weight:700">
-                <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">forum</span>Start a chat
-              </div>
+              <div style="height:40px;margin-top:0px"></div>
             </div>
           </div>
 
@@ -7675,7 +7701,7 @@ window.TEMPLATES = {
                 <div style="font-size:16px;font-weight:700;color:#152D4B">Pending approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
@@ -7707,7 +7733,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #E7EFF6">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">Most read</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">All 412<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:15px 20px;border-bottom:1px solid #F4F8FB;min-width:0">
@@ -7740,8 +7766,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">My assets</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#54677B;white-space:nowrap">9 assigned</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">

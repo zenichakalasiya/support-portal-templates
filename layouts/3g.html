@@ -89,7 +89,7 @@
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
                 <div style="padding:12px 18px;border-bottom:1px solid #f4f7fa">
@@ -109,7 +109,7 @@
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My Assets</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
@@ -129,7 +129,7 @@
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My CIs</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
@@ -175,7 +175,8 @@
                   <div style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read Knowledge</div>
                     <div style="flex:1" data-comment-anchor="14958def03-div"></div>
-                    <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 412 articles<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                    <div style="flex:1"></div>
+                    <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
                     <div style="display:flex;flex-direction:column;gap:6px;padding:13px 18px;border-bottom:1px solid #eef2f7;min-width:0">
@@ -197,7 +198,7 @@
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">2</div>
                   <div style="flex:1"></div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #f4f7fa">
@@ -232,7 +233,7 @@
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#7b8a9d">chevron_right</span>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
                 <div style="padding:6px 0">
                   <sc-for list="{{ anns2 }}" as="n" hint-placeholder-count="2">

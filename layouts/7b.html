@@ -77,8 +77,9 @@
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Notice board</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">4 active</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
                 <div style="padding:13px 18px;border-bottom:1px solid #F6F7FB">
@@ -127,6 +128,8 @@
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Pending approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F6F7FB">
@@ -178,8 +181,9 @@
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Most read guides</div>
-                <div style="flex:1"></div>
                 <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">412 articles</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F6F7FB;min-width:0">
@@ -198,6 +202,8 @@
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">My devices</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
