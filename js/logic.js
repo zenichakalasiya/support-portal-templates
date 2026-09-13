@@ -122,10 +122,10 @@
           { i: "menu_book", t: "Library account" }
         ],
         eduNotices: [
-          { k: "Examinations", d: "12 Aug 2026", t: "Mid-term hall tickets are now available for download on the student portal." },
-          { k: "Admissions", d: "10 Aug 2026", t: "Round 2 counselling schedule published for postgraduate programmes." },
-          { k: "Maintenance", d: "08 Aug 2026", t: "Hostel block C Wi-Fi upgrade on Saturday 16 Aug, 02:00–05:00." },
-          { k: "Library", d: "05 Aug 2026", t: "Extended reading room hours until 23:00 through the examination period." }
+          { k: "Examinations", d: "12 Aug 2026", t: "Mid-term hall tickets are now available for download on the student portal.", s: "Download yours before the 20 Aug cut-off; late requests go through the exam cell." },
+          { k: "Admissions", d: "10 Aug 2026", t: "Round 2 counselling schedule published for postgraduate programmes.", s: "Seat allotment results follow on 18 Aug; keep your documents to hand." },
+          { k: "Maintenance", d: "08 Aug 2026", t: "Hostel block C Wi-Fi upgrade on Saturday 16 Aug, 02:00–05:00.", s: "Wired ports in the common room stay live through the window." },
+          { k: "Library", d: "05 Aug 2026", t: "Extended reading room hours until 23:00 through the examination period.", s: "Entry needs your library card after 20:00." }
         ],
         railKpis: [
           { v: "8", l: "Open requests", s: "2 updated today" },
@@ -213,9 +213,9 @@
        own dots. */
     prismAnn() {
       const items = [
-        { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00" },
-        { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week" },
-        { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST" }
+        { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
+        { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first." },
+        { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST", s: "Walk-in support at the Block B desk now runs through the evening shift." }
       ];
       const i = ((this.state.pAnnIdx || 0) % items.length + items.length) % items.length;
       const tok = this.seedTokens();
@@ -226,6 +226,8 @@
           bg: n === i ? tok.t2Acc : tok.t2Dot,
           go: () => this.setState({ pAnnIdx: n })
         })),
+        pAnnPrev: () => this.setState({ pAnnIdx: i - 1 }),
+        pAnnNext: () => this.setState({ pAnnIdx: i + 1 }),
         pAnnAuto: (node) => this.prismAnnStart(node)
       };
     }
@@ -257,9 +259,9 @@
       ];
       // carried over from the Announcements card this layout no longer has
       const hcAnns = [
-        { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00. Clinical Wi-Fi stays up throughout." },
-        { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week. Ward laptops update overnight on their own." },
-        { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST. Clinical on-call cover is unchanged." }
+        { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "Clinical Wi-Fi stays up throughout." },
+        { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week", s: "Ward laptops update overnight on their own." },
+        { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST", s: "Clinical on-call cover is unchanged." }
       ];
       const hcI = ((this.state.hcAnnIdx || 0) % hcAnns.length + hcAnns.length) % hcAnns.length;
       const out = {
@@ -270,6 +272,8 @@
           bg: n === hcI ? "#0F5C8C" : "#c3d3e0",
           go: () => this.setState({ hcAnnIdx: n })
         })),
+        hcAnnPrev: () => this.setState({ hcAnnIdx: hcI - 1 }),
+        hcAnnNext: () => this.setState({ hcAnnIdx: hcI + 1 }),
         hcAnnAuto: (node) => this.hcAnnStart(node),
         hcActions3,
         requests4: req.slice(0, 4),

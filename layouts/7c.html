@@ -47,10 +47,10 @@
 
         <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.6fr);gap:12px;margin-top:30px;align-items:stretch">
                 <sc-for list="{{ eduKpis }}" as="k" hint-placeholder-count="4">
-                  <div style="padding:12px 14px;background:#fff;border:1px solid #DCD8CF;border-radius:10px;min-width:0">
-                    <div style="font-size:21px;font-weight:700;color:#14183A;letter-spacing:-0.03em;line-height:1">{{ k.v }}</div>
-                    <div style="font-size:12px;font-weight:700;color:#14183A;margin-top:5px;line-height:1.3">{{ k.l }}</div>
-                    <div style="font-size:11px;color:#5A5750;margin-top:2px;line-height:1.35">{{ k.s }}</div>
+                  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px 14px;background:#fff;border:1px solid #DCD8CF;border-radius:10px;min-width:0">
+                    <div style="font-size:30px;font-weight:700;color:#14183A;letter-spacing:-0.03em;line-height:1">{{ k.v }}</div>
+                    <div style="font-size:13px;font-weight:700;color:#14183A;margin-top:11px;line-height:1.3">{{ k.l }}</div>
+                    <div style="font-size:12px;color:#5A5750;margin-top:4px;line-height:1.35">{{ k.s }}</div>
                   </div>
                 </sc-for>
 

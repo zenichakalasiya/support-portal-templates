@@ -163,6 +163,14 @@ These were applied template-wide and should be kept when adding or editing one:
   cards) or `annDotsInk` (dark dots, for light cards). A tab listed in the
   `AUTO_ANN` set near the top of `logic.js` advances on its own every five
   seconds — add a tab there rather than writing a new timer.
+  **The carousel controls sit on one line with the announcement**, not below it:
+  the row is `[ date block | title / description ]` taking the free space, then a
+  right-aligned group of `‹ dots ›` and the `All announcements ›` link. Arrows are
+  circular 26–28px buttons and stay even where the tab also auto-advances. If the
+  card header already carries the CTA (4i), the strip does not repeat it.
+  Where the card is too narrow for one line (5c), the row splits instead: arrows
+  and dots top right, top-aligned with the title, and the CTA on its own line at
+  bottom right. Do not shrink the announcement text to force one line.
 - **Pending Approvals rows** use the check / close / undo icon buttons, never
   text buttons. Tints are semantic and fixed; the corner radius follows the
   template.
@@ -170,6 +178,8 @@ These were applied template-wide and should be kept when adding or editing one:
   treatment), with the tint taken from the layout’s own palette.
 - **Most read** is a listing data card: header, then rows of id pill, title,
   date and category.
+- **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
+  notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Every data card header ends with a right-aligned CTA.** My Open Requests,
   Pending Approvals, Most Read and My Assets & CIs read `View all ›`;
   announcement and notice cards read `All announcements ›`. The link is the
@@ -181,6 +191,9 @@ These were applied template-wide and should be kept when adding or editing one:
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.
+  Two cards are exceptions the user asked for: **5a** and **2a/2ag/2an** had the
+  spacer taken out so the card sits to its content. Both live in a hero row that
+  does not stretch, so nothing else moved.
 
 ## Deployment
 

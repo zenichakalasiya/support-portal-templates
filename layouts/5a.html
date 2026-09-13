@@ -49,7 +49,7 @@
               </div>
             </div>
 
-            <div style="flex:0 0 300px;min-width:0;display:flex;flex-direction:column;gap:10px">
+            <div style="flex:0 0 300px;min-width:0;display:flex;flex-direction:column;gap:10px;align-self:flex-start">
               <sc-for list="{{ qa3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;background:#fff;border:1px solid #ffffff;border-radius:6px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);min-width:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#0F5C8C;flex-shrink:0">{{ a.i }}</span>
@@ -75,27 +75,35 @@
                     <div style="font-size:13.5px;color:#4a6478;min-width:0;overflow:hidden;text-overflow:ellipsis">Clinical on-call · bleep 2217</div>
                   </div>
                 </div>
-                <div style="height:38px;margin-top:13px"></div>
               </div>
             </div>
           </div>
         </div>
-        <div ref="{{ hcAnnAuto }}" style="display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:18px 26px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="76bc550d33-div">
-          <div style="display:flex;align-items:center;gap:14px;min-width:0">
-            <div style="flex:1;min-width:0">
-              <div style="font-size:14px;font-weight:700;color:#0b2545;line-height:1.45;text-wrap:pretty">{{ hcAnnNow.t }}</div>
+        <div ref="{{ hcAnnAuto }}" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:18px 26px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="76bc550d33-div">
+          <div style="flex:1 1 420px;min-width:0;display:flex;align-items:stretch;gap:13px">
+            <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
+              <div style="font-size:11.5px;font-weight:600;color:#5f7c93;line-height:1.4">{{ hcAnnNow.d }}</div>
+            </div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
+              <div style="font-size:14px;font-weight:700;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ hcAnnNow.t }}</div>
+              <div style="font-size:12.5px;font-weight:400;color:#5f7c93;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ hcAnnNow.s }}</div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:12px;margin-top:8px">
-            <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
-              <sc-for list="{{ hcAnnDots }}" as="d" hint-placeholder-count="3">
-                <div onClick="{{ d.go }}" style="width:{{ d.w }};height:5px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
-              </sc-for>
+          <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+            <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+            <div onClick="{{ hcAnnPrev }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f7c93;cursor:pointer;flex-shrink:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_left</span>
             </div>
-            <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#0F5C8C;color:#fff;border-radius:4px;font-size:12.5px;font-weight:600;white-space:nowrap;flex-shrink:0">
-              <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">description</span>Read the notice
+              <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
+                <sc-for list="{{ hcAnnDots }}" as="d" hint-placeholder-count="3">
+                  <div onClick="{{ d.go }}" title="{{ d.k }}" style="width:{{ d.w }};height:5px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
+                </sc-for>
+              </div>
+            <div onClick="{{ hcAnnNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f7c93;cursor:pointer;flex-shrink:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
             </div>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">All announcements</div>
           </div>
         </div>
 

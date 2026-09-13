@@ -51,8 +51,8 @@
                 <image-slot id="4a-banner" shape="rect" fit="cover" placeholder="Trading floor or city skyline · fills the panel · 3:2"></image-slot>
               </div>
             </div>
-            <div style="border-top:1px solid #dde4ee;padding:14px 18px;flex-shrink:0">
-              <div style="display:flex;align-items:stretch;gap:12px;min-width:0">
+            <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #dde4ee;padding:14px 18px;flex-shrink:0">
+              <div style="flex:1 1 320px;display:flex;align-items:stretch;gap:12px;min-width:0">
                 <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
                   <div style="font-size:11.5px;font-weight:600;color:#5f6f83;line-height:1.4">{{ annNow.d }}</div>
                 </div>
@@ -61,7 +61,7 @@
                   <div style="font-size:12px;font-weight:400;color:#5f6f83;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
-              <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+              <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
                 <div onClick="{{ annPrev }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f6f83;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_left</span>
                 </div>
@@ -73,8 +73,7 @@
                 <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f6f83;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
                 </div>
-                <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements</div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             </div>
           </div>

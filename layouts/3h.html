@@ -133,8 +133,8 @@
               <div style="position:relative;flex:1;min-height:196px;background:#e6ebf2">
                 <image-slot id="3h-banner" shape="rect" fit="cover" placeholder="Drop a banner image — 16:6, fills this panel"></image-slot>
               </div>
-              <div style="display:flex;flex-direction:column;gap:11px;padding:16px 18px 17px;border-top:1px solid rgba(255,255,255,.14);flex-shrink:0">
-                <div style="display:flex;align-items:stretch;gap:13px;min-width:0">
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 18px 17px;border-top:1px solid rgba(255,255,255,.14);flex-shrink:0">
+                <div style="flex:1 1 320px;display:flex;align-items:stretch;gap:13px;min-width:0">
                   <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
                     <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
                   </div>
@@ -143,12 +143,19 @@
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
-                <div style="display:flex;align-items:center;gap:10px">
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+                  <div onClick="{{ annPrev }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_left</span>
+                  </div>
                   <div style="display:flex;align-items:center;gap:5px;flex-shrink:0">
                     <sc-for list="{{ annDots }}" as="d" hint-placeholder-count="3">
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
               </div>
             </div>

@@ -49,17 +49,17 @@
                   <image-slot id="ks-hero" shape="rect" fit="cover" placeholder="Branch exterior or city skyline · 4:3"></image-slot>
                 </div>
               </div>
-              <div style="display:flex;flex-direction:column;padding:14px 22px;background:#152D4B;flex-shrink:0">
-                <div style="display:flex;align-items:stretch;gap:12px;min-width:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#E8850C;flex-shrink:0;align-self:center">campaign</span>
+              <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 22px;background:#152D4B;flex-shrink:0">
+                <div style="flex:1 1 320px;display:flex;align-items:stretch;gap:12px;min-width:0">
                   <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
                     <div style="font-size:11.5px;font-weight:600;color:#A9C0D5;line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
                     <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:12px;font-weight:400;color:#A9C0D5;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
-                <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
                   <div onClick="{{ annPrev }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #33557E;display:flex;align-items:center;justify-content:center;color:#A9C0D5;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_left</span>
                   </div>
@@ -71,6 +71,7 @@
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #33557E;display:flex;align-items:center;justify-content:center;color:#A9C0D5;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span>
                   </div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#E8850C;white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
               </div>
             </div>
