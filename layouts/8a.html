@@ -1,7 +1,7 @@
 <div id="8a" data-screen-label="8a Vault" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F4F6FA">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
         <div style="width:9px;height:9px;border-radius:50%;background:#4C7A1E"></div>
         <div style="font-size:17px;font-weight:700;color:#10306B;letter-spacing:-0.012em">motadata</div>
@@ -85,10 +85,14 @@
                   <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                 </sc-for>
               </div>
+              <sc-if value="{{ !annIsLast }}">
               <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #DCE3EE;display:flex;align-items:center;justify-content:center;color:#5A6884;cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
+              </sc-if>
+              <sc-if value="{{ annIsLast }}">
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#10306B;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </sc-if>
             </div>
           </div>
 

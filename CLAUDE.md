@@ -154,19 +154,20 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
   render a dashed placeholder with authored caption — this matches the design,
   don't "fix" it by adding an image. `mrd-t1`–`t3` and `cst-mark` are photographs
   held for slots no current layout renders; keep them.
-- **Sticky headers, two layers.** `css/base.css` sticks `#shell` (the gallery's
-  own title/industry-chips/tab-strip chrome) to `top:0`. The rule must target
-  `#shell` itself, not a child of it — a sticky element can't stay pinned past
-  its own parent's box, and `#shell`'s rendered child is exactly as tall as
-  `#shell`, so stickying the child gives it zero room to ever actually stick
-  (this was a real, silent bug once). Every template's *own* top bar (the
-  `dock_to_right` icon + "motadata" + Ask AI + avatar row) is separately sticky
-  at `top:158px` (158px ≈ `#shell`'s rendered height, so the template header
-  docks directly beneath it) — for this to work, the wrapping div around
+- **Sticky header: only the template's own top bar sticks.** `#shell` (the
+  gallery's own title/industry-chips/tab-strip chrome) is deliberately **not**
+  sticky — it scrolls away with the theme bar above it, same as any other page
+  content. A `position:sticky` rule on `#shell` was tried first and reverted:
+  the user wants the gallery chrome (title, chips, tabs) to scroll away, not
+  stay pinned — only each template's *own* top bar (the `dock_to_right` icon +
+  "motadata" + Ask AI + avatar row, inside `#stage`) should dock to the very
+  top of the viewport, at `top:0`. For this to work, the wrapping div around
   the whole template body must **not** carry `overflow:hidden` (it did, on
   every template, purely as inherited boilerplate; removing it is safe and
-  required). When adding a new layout, copy the sticky `top` bar and the
-  overflow-free wrapper from an existing one rather than the raw design export.
+  required — `overflow:hidden` on any ancestor silently blocks a sticky
+  descendant). When adding a new layout, copy the sticky top bar
+  (`position:sticky;top:0`) and the overflow-free wrapper from an existing one
+  rather than the raw design export.
 
 ## House rules that hold across the gallery
 

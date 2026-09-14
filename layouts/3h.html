@@ -1,7 +1,7 @@
 <div id="3h" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:{{ groundBg }}">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -150,10 +150,14 @@
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ !annIsLast }}">
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
+                  </sc-if>
+                  <sc-if value="{{ annIsLast }}">
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  </sc-if>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 <div id="7c" data-screen-label="7c Study Desk" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#FDFCFA">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5A6079">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#FF6B4A"></div>
@@ -73,11 +73,14 @@
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:4px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ !annIsLast }}">
                   <div onClick="{{ annNext }}" style="width:30px;height:30px;border-radius:50%;border:1px solid #DCD8CF;background:#fff;display:flex;align-items:center;justify-content:center;color:#14183A;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
-                  <div style="flex:1"></div>
-                  <div style="font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all</div>
+                  </sc-if>
+                  <sc-if value="{{ annIsLast }}">
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  </sc-if>
                 </div>
               </div>
         </div>

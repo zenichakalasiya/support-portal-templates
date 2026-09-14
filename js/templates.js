@@ -22,7 +22,7 @@ window.TEMPLATES = {
   </sc-if>
 
   <div style="border-top:1px solid #dde4ee;background:{{ t2Ground }}">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ t2Acc }}"></div>
@@ -299,7 +299,7 @@ window.TEMPLATES = {
   "2b": `<div id="2b" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -564,7 +564,7 @@ window.TEMPLATES = {
   "3b": `<div id="3b" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -799,7 +799,7 @@ window.TEMPLATES = {
   "3b2": `<div id="3b2" data-screen-label="3b2 Sidecar · Announcements" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -860,11 +860,14 @@ window.TEMPLATES = {
                   <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:4px;background:{{ d.bg }};cursor:pointer"></div>
                 </sc-for>
               </div>
+              <sc-if value="{{ !annIsLast }}">
               <div onClick="{{ annNext }}" style="width:30px;height:30px;border-radius:50%;border:1px solid #dbe3ec;display:flex;align-items:center;justify-content:center;color:#41546b;cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
-              <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:700;color:#14468F;white-space:nowrap">View all</div>
+              </sc-if>
+              <sc-if value="{{ annIsLast }}">
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#14468F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </sc-if>
             </div>
           </div>
         </div>
@@ -1035,7 +1038,7 @@ window.TEMPLATES = {
   "3c": `<div id="3c" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#07101F">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1300,7 +1303,7 @@ window.TEMPLATES = {
   "3d": `<div id="3d" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1496,7 +1499,7 @@ window.TEMPLATES = {
   "3g": `<div id="3g" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1777,7 +1780,7 @@ window.TEMPLATES = {
   "3h": `<div id="3h" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:{{ groundBg }}">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1926,10 +1929,14 @@ window.TEMPLATES = {
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ !annIsLast }}">
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
+                  </sc-if>
+                  <sc-if value="{{ annIsLast }}">
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  </sc-if>
                 </div>
               </div>
             </div>
@@ -2012,7 +2019,7 @@ window.TEMPLATES = {
   "3h2": `<div id="3h2" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:{{ groundBg }}">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2243,7 +2250,7 @@ window.TEMPLATES = {
   "3i": `<div id="3i" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2525,7 +2532,7 @@ window.TEMPLATES = {
   "3j": `<div id="3j" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2816,7 +2823,7 @@ window.TEMPLATES = {
   "4a": `<div id="4a" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2885,10 +2892,14 @@ window.TEMPLATES = {
                     <div onClick="{{ d.go }}" style="width:{{ d.w }};height:5px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                   </sc-for>
                 </div>
+                <sc-if value="{{ !annIsLast }}">
                 <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f6f83;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
                 </div>
+                </sc-if>
+                <sc-if value="{{ annIsLast }}">
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </sc-if>
               </div>
             </div>
           </div>
@@ -3081,7 +3092,7 @@ window.TEMPLATES = {
   "4a2": `<div id="4a2" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3225,7 +3236,7 @@ window.TEMPLATES = {
   "4b": `<div id="4b" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3467,7 +3478,7 @@ window.TEMPLATES = {
   "4c": `<div id="4c" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3641,7 +3652,7 @@ window.TEMPLATES = {
   "4c2": `<div id="4c2" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3831,7 +3842,7 @@ window.TEMPLATES = {
   "4d": `<div id="4d" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -4000,7 +4011,7 @@ window.TEMPLATES = {
   "4e": `<div id="4e" style="display:flex;flex-direction:column;width:100%">
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -4237,7 +4248,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4468,7 +4479,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4700,7 +4711,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4953,7 +4964,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#f7f2e8">
 
-    <div style="position:sticky;top:158px;z-index:25;background:#f7f2e8;display:flex;align-items:center;gap:14px;padding:16px 40px;border-bottom:1px solid #ddd1bb">
+    <div style="position:sticky;top:0;z-index:25;background:#f7f2e8;display:flex;align-items:center;gap:14px;padding:16px 40px;border-bottom:1px solid #ddd1bb">
       <div style="width:26px;height:26px;border-radius:50%;background:#2a2317;color:#f7f2e8;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700">A</div>
       <div style="font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:600;color:#2a2317">Acme Corporation</div>
       <div style="flex:1"></div>
@@ -5128,7 +5139,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#fff">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ brand }}"></div>
@@ -5289,10 +5300,14 @@ window.TEMPLATES = {
                 <div onClick="{{ d.go }}" style="width:{{ d.w }};height:6px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
               </sc-for>
             </div>
+            <sc-if value="{{ !annIsLast }}">
             <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
               <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
             </div>
+            </sc-if>
+            <sc-if value="{{ annIsLast }}">
             <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            </sc-if>
           </div>
         </div>
       </div>
@@ -5327,7 +5342,7 @@ window.TEMPLATES = {
 
   <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ brand }}"></div>
@@ -5386,9 +5401,14 @@ window.TEMPLATES = {
                     <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                   </sc-for>
                 </div>
+                <sc-if value="{{ !annIsLast }}">
                 <div onClick="{{ annNext }}" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.42);background:rgba(10,26,46,.34);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">chevron_right</span>
                 </div>
+                </sc-if>
+                <sc-if value="{{ annIsLast }}">
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </sc-if>
               </div>
             </div>
           </div>
@@ -5608,7 +5628,7 @@ window.TEMPLATES = {
 
   "5a": `<div id="5a" data-screen-label="5a Meridian" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F4F8FC">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#17A2A2"></div>
@@ -5851,7 +5871,7 @@ window.TEMPLATES = {
 
   "5b": `<div id="5b" data-screen-label="5b Consort" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#FAF7F2">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E2E5DE">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E2E5DE">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#4A5A52">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#A85B33"></div>
@@ -6085,7 +6105,7 @@ window.TEMPLATES = {
 
   "5c": `<div id="5c" data-screen-label="5c Bedside" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6b6b6b">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:2px;background:#2B54F5"></div>
@@ -6156,9 +6176,14 @@ window.TEMPLATES = {
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                <sc-if value="{{ !annIsLast }}">
                 <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                 </div>
+                </sc-if>
+                <sc-if value="{{ annIsLast }}">
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </sc-if>
                 </div>
               </div>
               <div style="display:flex;justify-content:flex-end">
@@ -6324,7 +6349,7 @@ window.TEMPLATES = {
 
   "6a": `<div id="6a" data-screen-label="6a Gazette" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F7F8FA">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="d5ceadcdfc-div">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="d5ceadcdfc-div">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:8px">
         <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#E0B44A">account_balance</span>
@@ -6550,7 +6575,7 @@ window.TEMPLATES = {
 
   "6b": `<div id="6b" data-screen-label="6b Foyer" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#fff">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #eef1f5">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #eef1f5">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#8494a8">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:9px">
         <div style="width:9px;height:9px;border-radius:50%;background:#1A8FE3"></div>
@@ -6781,7 +6806,7 @@ window.TEMPLATES = {
 
   "6c": `<div id="6c" data-screen-label="6c Triptych" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F4F5F7">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e6e9ee">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e6e9ee">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#7a8595">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:8px">
         <div style="width:9px;height:9px;border-radius:2px;background:#2E3A4B"></div>
@@ -7009,7 +7034,7 @@ window.TEMPLATES = {
 
   "7a": `<div id="7a" data-screen-label="7a Quadrangle" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#FAF7F1">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E4DCCC">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E4DCCC">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6B6255">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#B07A24"></div>
@@ -7236,7 +7261,7 @@ window.TEMPLATES = {
 
   "7b": `<div id="7b" data-screen-label="7b Course Shelf" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F6F7FB">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E3E6F0">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E3E6F0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5A6079">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#FF6B4A"></div>
@@ -7469,7 +7494,7 @@ window.TEMPLATES = {
 
   "7c": `<div id="7c" data-screen-label="7c Study Desk" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#FDFCFA">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5A6079">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#FF6B4A"></div>
@@ -7542,11 +7567,14 @@ window.TEMPLATES = {
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:4px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ !annIsLast }}">
                   <div onClick="{{ annNext }}" style="width:30px;height:30px;border-radius:50%;border:1px solid #DCD8CF;background:#fff;display:flex;align-items:center;justify-content:center;color:#14183A;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
-                  <div style="flex:1"></div>
-                  <div style="font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all</div>
+                  </sc-if>
+                  <sc-if value="{{ annIsLast }}">
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  </sc-if>
                 </div>
               </div>
         </div>
@@ -7676,7 +7704,7 @@ window.TEMPLATES = {
   "8a": `<div id="8a" data-screen-label="8a Vault" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#F4F6FA">
 
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
         <div style="width:9px;height:9px;border-radius:50%;background:#4C7A1E"></div>
         <div style="font-size:17px;font-weight:700;color:#10306B;letter-spacing:-0.012em">motadata</div>
@@ -7760,10 +7788,14 @@ window.TEMPLATES = {
                   <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                 </sc-for>
               </div>
+              <sc-if value="{{ !annIsLast }}">
               <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #DCE3EE;display:flex;align-items:center;justify-content:center;color:#5A6884;cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
+              </sc-if>
+              <sc-if value="{{ annIsLast }}">
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#10306B;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </sc-if>
             </div>
           </div>
 
@@ -7936,7 +7968,7 @@ window.TEMPLATES = {
 
   "8b": `<div id="8b" data-screen-label="8b Keystone" style="display:flex;flex-direction:column;width:100%">
   <div style="border-top:1px solid #dde4ee;background:#EAF3FA">
-    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #D7E3EE" data-comment-anchor="59e07c8c94-div">
+    <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #D7E3EE" data-comment-anchor="59e07c8c94-div">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#54677B">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#E8850C"></div>
@@ -8004,10 +8036,14 @@ window.TEMPLATES = {
                       <div onClick="{{ d.go }}" style="width:{{ d.w }};height:7px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
                     </sc-for>
                   </div>
+                  <sc-if value="{{ !annIsLast }}">
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #33557E;display:flex;align-items:center;justify-content:center;color:#A9C0D5;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span>
                   </div>
+                  </sc-if>
+                  <sc-if value="{{ annIsLast }}">
                   <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#E8850C;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  </sc-if>
                 </div>
               </div>
             </div>

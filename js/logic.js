@@ -160,6 +160,7 @@
       return {
         annNow: items[i],
         annPos: (i + 1) + " of " + items.length,
+        annIsLast: i === items.length - 1,
         annPrev: () => this.setState({ annIdx: i - 1 }),
         annNext: () => this.setState({ annIdx: i + 1 }),
         annDotsInk: items.map((_, n) => ({
@@ -379,7 +380,7 @@
         ["2b", "Ledger"]
       ];
       const GROUPS = [
-        ["it", "IT & ITES", [["3b", "primary"], ["3b2", "announcement card"], ["3g", ""], ["2a", ""], ["2ag", ""], ["4f", ""], ["4f2", "image panel"], ["4g", ""]],
+        ["it", "IT & ITES", [["3b2", "announcement card"], ["3g", ""], ["2a", ""], ["2ag", ""], ["4f", ""], ["4f2", "image panel"], ["4g", ""]],
           "No industry widget — the out-of-the-box baseline. Requests, approvals and assets as individual cards."],
         ["health", "Healthcare", [["5a", "primary"], ["5c", ""], ["2an", ""], ["3i", ""], ["4b", ""], ["4f", ""], ["4p", ""], ["6c", ""]],
           "Status board first, report-dominant actions, downtime procedures and on-call. Announcements are downtimes only."],
@@ -391,7 +392,7 @@
           "Notice board, academic calendar and quick links above the actions; approvals and catalog below, with a student KPI row."],
         ["bfsi", "BFSI", [["8a", "primary"], ["8b", "help-centre"], ["4a", ""], ["4f", ""], ["4g", ""]],
           "Split banner with a finance motif, category grid beside announcements, approvals full width, then assets, contacts and KPIs."],
-        ["rejected", "Rejected", [["4a2", "unplaced"], ["4h", ""], ["3d", ""], ["3h2", ""], ["2b", ""], ["5b", ""], ["6b", ""]],
+        ["rejected", "Rejected", [["4a2", "unplaced"], ["4h", ""], ["3d", ""], ["3h2", ""], ["2b", ""], ["5b", ""], ["6b", ""], ["3b", ""]],
           "Not shipping."]
       ];
       const NAMES = {};
