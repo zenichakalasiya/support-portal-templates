@@ -45,7 +45,9 @@
           <div style="position:relative;display:flex;gap:10px">
             <sc-for list="{{ greetCounters }}" as="c" hint-placeholder-count="3">
               <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:12px;min-width:132px">
-                <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:rgba(255,255,255,.9)">{{ c.i }}</span>
+                <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#fff">{{ c.i }}</span>
+                </div>
                 <div>
                   <div style="font-size:21px;font-weight:700;color:#fff;line-height:1.1">{{ c.v }}</div>
                   <div style="font-size:12px;color:rgba(255,255,255,.82);margin-top:2px">{{ c.l }}</div>
@@ -82,19 +84,15 @@
                       </div>
                     </div>
                     <div style="display:flex;flex-direction:column;width:max-content;flex:0 0 auto;padding:14px 16px;background:#eff4fa;border:1px solid {{ cardBorder }};border-radius:11px">
-                      <div style="display:flex;align-items:center;gap:9px">
-                        <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#26384A">support_agent</span>
-                        <div style="font-size:14.5px;font-weight:700;color:#0b2545;white-space:nowrap">Contact Us</div>
-                      </div>
-                      <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;white-space:nowrap">Mon–Fri · 08:00–20:00 IST</div>
+                      <div style="font-size:14.5px;font-weight:700;color:#0b2545;white-space:nowrap">Contact Us</div>
                       <div style="height:1px;background:#eef2f7;margin:11px 0"></div>
                       <div style="display:flex;align-items:center;gap:10px">
-                        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83;flex-shrink:0">mail</span>
-                        <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap">servicedesk@acme.com</div>
-                      </div>
-                      <div style="display:flex;align-items:center;gap:10px;margin-top:9px">
                         <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83;flex-shrink:0">call</span>
                         <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap">+91 79 4040 0000</div>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:10px;margin-top:9px">
+                        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#5f6f83;flex-shrink:0">mail</span>
+                        <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap">servicedesk@acme.com</div>
                       </div>
                     </div>
                   </div>

@@ -36,8 +36,17 @@ a new partial needs no registration in the build itself.
 
 To view changes: open `index.html` in a browser (double-click or `file://`
 path — no dev server needed/used). A static server on `localhost:5173` has also
-been used this project; either works. Verification is visual; there is nothing
-to run that will catch a broken layout for you.
+been used this project; either works. Final verification is visual — there is
+no automated check for whether a layout *looks* right.
+
+There is a headless sanity check short of that, though: `dc.js` and `logic.js`
+both run in plain Node when a `window` object is passed in (`new
+Function('window', body)(w)` after reading the file, then call methods on
+`w.DC`/`w.Component`), so `renderVals()` can be exercised for every tab to
+catch a thrown error or an unbalanced `<sc-if>`/`<div>` before opening a
+browser. `DC.compile` itself still needs `document` and won't run this way.
+Note also that `js/templates.js` is template literals, not JSON — grepping it
+for `"id": "…"` finds nothing; eval it to inspect `TEMPLATES`.
 
 The gallery is also published as a private Claude artifact:
 <https://claude.ai/code/artifact/fdeaa529-b28d-4f96-a9f4-bb9b385ff0f4>. It is a
@@ -175,7 +184,19 @@ These were applied template-wide and should be kept when adding or editing one:
   text buttons. Tints are semantic and fixed; the corner radius follows the
   template.
 - **Asset and CI lists** use tinted rounded tiles in a gapped column (the 3b
-  treatment), with the tint taken from the layout’s own palette.
+  treatment), with the tint taken from the layout's own palette; the icon itself
+  sits on its own small background chip (bg + accent colour pair), matching
+  whatever chip style that template's other action/service tiles already use —
+  never a bare icon with no background.
+- **"My Assets" and "My CIs" are two separate cards, not one merged "Assets &
+  CIs" card.** Where a template still has a single combined card, split it:
+  "My Assets" (badge **8**, the `assets` fixture) and "My CIs" (badge **4**, the
+  `cis` fixture), each showing its items in a tile grid — usually 2 columns × 2
+  rows. Precedent for the split (and its badge numbers) is `3g`/`3j`, which
+  already did this in the design. When splitting a card that shares its row
+  with something else that must **not** resize (a Contact/escalation card, e.g.
+  `8a`/`8b`), nest the two new cards in their own sub-grid inside the original
+  card's slot rather than changing the outer row's column count.
 - **Most read** is a listing data card: header, then rows of id pill, title,
   date and category.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
@@ -183,13 +204,16 @@ These were applied template-wide and should be kept when adding or editing one:
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That
   is the whole row — no leading glyph, no descriptive meta, one spacer. It holds
   for My Open Requests, Most read, Pending Approvals / My approvals, My Assets,
-  My CIs and My Devices. The badge is a **number only** (9, 412, 3), never
-  "9 assigned" or "412 articles"; a card with no count of its own takes the total
-  that card type uses elsewhere — Most read 412, assets & CIs 9, CIs 4, devices 6,
-  open requests 8. Announcement and notice cards read `All announcements ›`
-  instead. Two deliberate exceptions: the **4c / 4c2 counter tiles** (one figure,
-  no list behind them) and **4h**, whose editorial layout uses an uppercase
-  eyebrow over a serif heading with no header row at all.
+  My CIs and My Devices. The badge is a **number only** (8, 412, 3), never
+  "8 assigned" or "412 articles"; a card with no count of its own takes the total
+  that card type uses elsewhere — Most read 412, My Assets 8, My CIs 4, devices 6
+  (or 4 where only 4 are shown, e.g. `5a`), open requests 8. Announcement and
+  notice cards read `All announcements ›`
+  instead. Two deliberate exceptions: the **4c / 4c2 counter tiles** (a flat
+  figure + label per tile, no list behind any of them — now four tiles: Open
+  Requests, Approvals, My Assets, My CIs, using the same figures as the list
+  cards elsewhere) and **4h**, whose editorial layout uses an
+  uppercase eyebrow over a serif heading with no header row at all.
 - **Service and catalogue sections carry no link.** "Popular services",
   "Most used services", "Browse by category", "Service catalog" and the like are
   a heading alone — the "Browse catalog ›" / "Full catalog ›" / "All 214" links

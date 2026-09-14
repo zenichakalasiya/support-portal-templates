@@ -189,10 +189,12 @@
                   
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Used Services</div>
                 </div>
-                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#E6E9E2">
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 18px">
                   <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
-                    <div style="display:flex;align-items:center;gap:11px;padding:14px 16px;background:#fff;min-width:0">
-                      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5F6E66;flex-shrink:0">{{ s.i }}</span>
+                    <div style="display:flex;align-items:center;gap:11px;padding:12px 14px;background:#F7F9F6;border:1px solid #E6E9E2;border-radius:8px;min-width:0">
+                      <div style="width:34px;height:34px;border-radius:8px;background:#E6EBE3;color:#3E5A45;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>
+                      </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:500;color:#23302B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.n }}</div>
                         <div style="font-size:11.5px;color:#4A5A52;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.c }}</div>

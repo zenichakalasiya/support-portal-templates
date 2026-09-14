@@ -43,6 +43,7 @@
         mfgQuickLinks3: mfgLinks.slice(0, 3),
         kbs5: (this.layoutVals().kbs8 || []).slice(0, 5),
         kbs4: (this.layoutVals().kbs8 || []).slice(0, 4),
+        kbs2: (this.layoutVals().kbs8 || []).slice(0, 2),
         anns2: (this.layoutVals().anns5 || []).slice(0, 2),
         apprRowsStd: [
           { id: "INC-192", s: "Wrong configuration details · editorial review", d: "11 Aug, 02:14 PM", who: "Rosy", ai: "RO", ab: "#2f5fe0" },
@@ -284,6 +285,12 @@
           { n: "iPad Pro 11 · rounds", tag: "AST-1188", k: "Tablet", i: "tablet_mac" },
           { n: "Zebra ZD421 label printer", tag: "AST-1203", k: "Printer", i: "print" },
           { n: "Ascom d63 handset", tag: "AST-1249", k: "Handset", i: "phone_iphone" }
+        ],
+        devices4: [
+          { n: "Dell Latitude 5440", tag: "AST-1041", k: "Laptop", i: "laptop_mac" },
+          { n: "Dell UltraSharp U2723QE", tag: "AST-1042", k: "Monitor", i: "desktop_windows" },
+          { n: "Ward PC · Bay 4B", tag: "CI-2208", k: "Base CI", i: "dns" },
+          { n: "iPad Pro 11 · rounds", tag: "AST-1188", k: "Tablet", i: "tablet_mac" }
         ],
         changes4: [
           { t: "Firewall rule change for the pathology VLAN", id: "CHG-441", d: "Aug 14", who: "Network", st: "Scheduled", si: "event", bg: "#e6eef9", fg: "#1a4f96" },
@@ -692,8 +699,7 @@
         railActions: [
           { t: "Request Service", s: "Browse the services offered", i: "shopping_cart", bg: "#eae7fb", fg: "#4c37b0" },
           { t: "AD Self Service", s: "Reset your domain password", i: "key", bg: "#d9f2ee", fg: "#0f766e" },
-          { t: "Knowledge", s: "Browse knowledge", i: "lightbulb", bg: "#fdf1d6", fg: "#8a5a08" },
-          { t: "Track a Request", s: "By ID or subject", i: "manage_search", bg: "#f0f4f9", fg: "#5a6b81" }
+          { t: "Knowledge", s: "Browse knowledge", i: "lightbulb", bg: "#fdf1d6", fg: "#8a5a08" }
         ],
   
         deskChannels: [
@@ -890,8 +896,7 @@
   
         quietLinks: [
           { t: "AD Self Service", i: "key", fg: "#0c6259" },
-          { t: "Knowledge", i: "lightbulb", fg: "#8a5a08" },
-          { t: "Track a Request", i: "manage_search", fg: "#4a5a70" }
+          { t: "Knowledge", i: "lightbulb", fg: "#8a5a08" }
         ],
   
         categories: [
@@ -964,8 +969,8 @@
         ],
   
         annRows2: [
-          { t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window.", d: "Posted Mon, Aug 11", dot: "#2f6fbf", bg: "#fafbfd" },
-          { t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first.", d: "Posted Fri, Aug 08", dot: "#0b2545", bg: "#ffffff" }
+          { t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window.", d: "11 Aug 2026" },
+          { t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first.", d: "08 Aug 2026" }
         ],
   
         chips4: [

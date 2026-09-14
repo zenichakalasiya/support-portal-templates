@@ -181,25 +181,51 @@
           </div>
 
           <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:stretch">
-            <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
-              <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
-                <div style="font-size:15.5px;font-weight:700;color:#10306B">My assets</div>
-                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">9</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-              </div>
-              <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
-                <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
-                  <div style="padding:11px 12px;display:flex;align-items:center;gap:12px;background:#F4F6FA;border-radius:10px;min-width:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#10306B;flex-shrink:0">{{ a.i }}</span>
-                    <div style="flex:1;min-width:0">
-                      <div style="font-size:13.5px;font-weight:600;color:#10306B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                      <div style="font-size:11.5px;color:#5A6884;margin-top:2px">{{ a.tag }} · {{ a.k }}</div>
-                    </div>
-                    <div style="font-size:11.5px;font-weight:600;color:#1f7a44;background:#e7f4ee;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0">In use</div>
-                  </div>
-                </sc-for>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch">
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
+                <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
+                  <div style="font-size:15.5px;font-weight:700;color:#10306B">My assets</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">9</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
+                  <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
+                    <div style="padding:11px 12px;display:flex;align-items:center;gap:12px;background:#F4F6FA;border-radius:10px;min-width:0">
+                      <div style="width:34px;height:34px;border-radius:50%;background:#10306B;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ a.i }}</span>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:13.5px;font-weight:600;color:#10306B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                        <div style="font-size:11.5px;color:#5A6884;margin-top:2px">{{ a.tag }} · {{ a.k }}</div>
+                      </div>
+                      <div style="font-size:11.5px;font-weight:600;color:#1f7a44;background:#e7f4ee;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0">In use</div>
+                    </div>
+                  </sc-for>
+                  </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
+                <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
+                  <div style="font-size:15.5px;font-weight:700;color:#10306B">My CIs</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">4</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
+                  <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                    <div style="padding:11px 12px;display:flex;align-items:center;gap:12px;background:#F4F6FA;border-radius:10px;min-width:0">
+                      <div style="width:34px;height:34px;border-radius:50%;background:#10306B;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ c.i }}</span>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:13.5px;font-weight:600;color:#10306B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                        <div style="font-size:11.5px;color:#5A6884;margin-top:2px">{{ c.tag }} · {{ c.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                  </div>
+              </div>
             </div>
 
             <div style="display:flex;flex-direction:column;background:#10306B;border-radius:3px;padding:20px;min-width:0">

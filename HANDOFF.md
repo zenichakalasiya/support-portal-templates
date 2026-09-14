@@ -1,137 +1,150 @@
-# Handoff — 2026-09-13 23:36
+# Handoff — 2026-09-14 15:10
 
 ## Read first
 
-`CLAUDE.md`, especially **House rules that hold across the gallery**. Three rules
-changed this session: the announcement carousel controls now sit inline with the
-title (with a documented exception for narrow cards), two Contact Us cards were
-allowed to shrink, and government notice cards have their own row rule. The
-**Data flow** paragraph on shared fixtures and reused `as="x"` names still lists
-the edit traps that have caught us before.
+`CLAUDE.md`, especially the **House rules** section — the "My Assets / My CIs
+are two separate cards" rule is brand new this session and explains the pattern
+behind most of the edits below. Also re-read the **Commands** section's note on
+running `renderVals()` headlessly in Node; that check was used after every edit
+this session instead of opening a browser each time.
 
 ## What we worked on this session
 
-One announcement pass across the gallery — the carousel arrows, dots and
-`All announcements ›` link moved onto the same line as the announcement title and
-description — plus a batch of per-template fixes the user called out from
-screenshots.
+A long series of targeted fixes and one recurring structural change: wherever a
+template still showed a single merged "My Assets & CIs" card, it was split into
+two real cards — "My Assets" (badge 8) and "My CIs" (badge 4) — following the
+precedent `3g`/`3j` already set. That split touched most of the gallery. Beyond
+that, this session did a full audit-and-fix pass on the Contact Us card format,
+the "services" listing → card treatment, and icon backgrounds on asset/CI
+tiles, plus several one-off layout fixes called out from screenshots.
 
 ## Completed
 
-**Announcement strips, controls inline** — 5c, 2a/2ag/2an, 4i, 3h, 8a, 8b, 4a.
-The row is now `[ date block | bold title / description ]` taking the free space,
-then a right-aligned group of `‹ dots ›` and the CTA.
+**"My Assets & CIs" split into two cards** (badge 8 / badge 4, `assets` / `cis`
+fixtures), each usually as a 2×2 tile grid:
+- `4f`, `4f2` — split side by side; `4g` — added as a new stacked section below
+  the existing "My Assets"; `4d` — added as a new row below "Most read
+  knowledge" (which was made full-width, its 4 rows now 2×2 to fill the space);
+  `4p` — split within its existing 1.55fr column slot, for **both** the
+  Healthcare (`isHealth`, `assetsCis8`) and Education (`notHealth`,
+  `assetsCis5`) branches; `3i` — split and added as a third column alongside
+  the existing "My Open Requests" (now 3 equal columns, `align-items:stretch`);
+  `4b` — split into 2 equal columns; `4a` — split into 3 equal columns
+  alongside "Contact Us"; `8a`/`8b` — added "My CIs" beside the *existing*
+  "My assets" card (left untouched: still `assetsCis3`, badge 9, "In use"
+  pills) by nesting both inside the row's original slot so the neighbouring
+  Contact/escalation-desk card's width was **not** touched; `4c`/`4c2` — the
+  KPI counter-tile block was restructured from an asymmetric 2-tile-then-1-tile
+  layout into two full rows of 2 tiles: Open Requests + Approvals, then My
+  Assets (8) + My CIs (4).
 
-- **8a** had no date block at all — the date was small grey text under the title.
-  Rebuilt to the standard row; "Read the notice" became `All announcements ›`.
-- **2a (Prism)** still carried the old coloured kicker (`ANNOUNCEMENT · Maintenance`)
-  and "Read the full notice". Rebuilt the same way. Its `prismAnn()` fixture had
-  no description, so `s` was written for all three items, and `pAnnPrev` /
-  `pAnnNext` were added beside `pAnnAuto`.
-- **4i and 3h got their arrows back.** They were removed earlier when both went
-  auto-rotating; they now have both — the `AUTO_ANN` five-second timer still runs
-  and the arrows work alongside it.
-- **8b** lost its leading `campaign` glyph and gained the description line.
-- **5c stacks instead** (see Decisions).
+**Icon backgrounds added to every My Assets / My CIs tile gallery-wide** (19
+files: `3b`, `3b2`, `3g`, `2a`/`2ag`/`2an`, `4f`, `4f2`, `4g`, `4b`, `4d`, `3c`,
+`3j`, `3i`, `7a`, `7b`, `7c`, `4p`, `4a`, `8a`, `8b`) — matching each template's
+own existing action/service-tile chip colour, not one global colour. `6a`/`6b`
+already had chips and were left alone. Rejected-group templates (`3h2`, `3d`,
+`4h`) were explicitly skipped per earlier instruction not to touch that group.
 
-**Duplicate CTAs removed** — the footer `All announcements ›` under 3i and 4b, and
-the footer "All notices in the gazette ›" under 3j and 6a. Each of those cards
-already carried the link in its header.
+**Contact Us card format standardised**: title → divider → phone icon+number →
+email icon+email, nothing else (no header icon, no hours subtitle, no chat
+button). Fixed in `3b`, `3b2`, `3g`, `3j`, `4a`, `3h`, `3h2`, `2a` family, `2b`,
+plus reorder-only touch-ups in `3c`/`6c`. Left `5a`/`5c` alone — their contact
+cards show Healthcare-specific fields (extension, on-call line), not generic
+phone/email, so they're a different card, not this pattern.
 
-**Government notice rows** — 3j and 6a now use the announcement shape with the
-notice number as the subtext, matching 3i. Both were date-on-top with a
-plain-weight title.
+**Services listing → card treatment with icon backgrounds**: converted flat/
+hairline listings into tinted tile grids in `4p`, `4i`, `4c2`, `5b`, `7a`, `7b`;
+added just the missing icon chip to already-boxed cards in `5a`, `4a`, `7c`,
+`4e`. Left `4h` alone (its timeline/editorial motif would clash with boxed
+tiles) — flagged, not silently skipped.
 
-**Education** — 7a and 7b notice rows reshaped the same way; `eduNotices` gained a
-description per row. 7c's KPI tiles centred, figure 21px → 30px, gap 5px → 11px,
-description 11px → 12px.
+**Announcement section fixes**: `4f`/`4f2`'s shared `annRows2` fixture had a
+"Posted Mon, Aug 11" prose date and an `s` (description) field the markup never
+rendered — fixed the data to a compact date ("11 Aug 2026") and rebuilt `4f2`'s
+row from a bullet-dot list into the standard date-tile structure (`4f2` had no
+description rendering at all before). Then, per a follow-up, "Most read" was
+placed beside Announcements in the same row/size in both `4f` and `4f2`,
+trimmed to 2 items via a new `kbs2` fixture (`4f2` didn't have a Most Read
+section before this — one was added to match `4f`).
 
-**4p (shared by Education and Healthcare)** — the date block over the banner photo
-was `rgba(255,255,255,.14)` and invisible; it is now a dark scrim
-`rgba(10,26,46,.62)` with a hairline white border. KPI figure 24px → 30px with a
-10px gap under it.
-
-**Leading glyphs removed** — the `description` tile in 6a's open request rows, the
-`north_east` arrow before 4e's KB rows and before 3j's Most read rows, and the
-`campaign` glyph in 4b's Announcements header.
-
-**Smaller fixes** — 2a's Contact Us lost the 44px chat-button spacer; 4d's Most
-read reads down one column instead of across two; 5a's Contact Us spacer removed,
-right stack top-aligned, and its strip rebuilt (start of the session).
+**One-off fixes from screenshots**:
+- Removed "Track a Request" from the IT group's `railActions` (`3b`/`3b2`) and
+  from `3i`'s "Raise a ticket" card (`quietLinks`).
+- `4b`: removed the "Home › Information Technology" breadcrumb; went through
+  an `align-items:center` attempt for top/bottom alignment with the
+  Announcements card, then reverted to `align-items:stretch` +
+  `justify-content:space-between` on the left column after feedback that
+  centering doesn't actually align the top/bottom edges when block heights
+  differ.
+- `5a` "My Devices": limited to 4 cards in one row (new `devices4` fixture,
+  `devices6` left untouched since `5b` — Rejected — still uses it), added icon
+  backgrounds, then bumped title/description font size and row padding/gap on
+  request to increase the card's height.
+- `3h`: added icon backgrounds to the dark `greetCounters` KPI row (Open
+  requests / Approvals / My assets).
+- `4d`: "Most read knowledge" was briefly made a 2-column grid to fill its new
+  full-row width, then reverted back to a single stacked column per follow-up
+  feedback — it's 1 column × 4 rows now.
+- `4p`: the "Quick links" card in the Education (`notHealth`) branch wasn't
+  stretching to match its row siblings — it sat in a `flex-direction:column`
+  wrapper with no `flex:1`. Added `flex:1` to the card and `grid-auto-rows:1fr`
+  to its row list so the 3 links space out evenly across the full height.
 
 ## In progress
 
-Nothing mid-flight. All 36 partials balance on `<div>`, `<sc-for>` and `<sc-if>`,
-`renderVals()` runs clean for every affected tab, and the served bundle was
-checked for each change.
+Nothing mid-flight. Every change this session was verified with `node
+build.js` (bundle regenerates clean) and the headless `renderVals()` check
+(every affected tab/industry combination renders without a thrown error). No
+visual browser check was done this session beyond restarting the local
+`localhost:5173` server — that's still worth a pass before calling any of this
+done.
 
 ## Next steps
 
-1. **Review 5c's split strip against the other six** — it is the only card that
-   stacks, so confirm it still reads as the same component.
-2. **4d's announcement strip uses the rotating `annNow` but 4d is not in
-   `AUTO_ANN`**, and it has no arrows or dots — it shows the first announcement
-   permanently. Either add `4d` to the set or point it at `annFeatured`.
-3. **3c no longer responds to the palette switcher** — its theme is pinned to
-   `#07101F`, replacing the `{{ brand }}` and `{{ ink }}` tokens the theme bar
-   drives. Confirm that is wanted. 3c is also the one government template whose
-   notice rows were not re-checked this session.
-4. Review the three templates that moved groups two sessions ago (6c → Healthcare,
-   4d → Manufacturing, 3c → Government) — they were built for the Rejected shelf
-   and may want industry-specific content.
-5. Smaller open items: the remaining `campaign` markers on announcement strips,
-   and 6a's assets section (still a 3-up card component rather than the tiled
-   list).
-6. The Claude artifact (`/artifact/fdeaa529…`) is a stale private snapshot.
+1. **Visual QA pass in a browser** across everything touched — this session's
+   verification was structural (div/sc-for/sc-if balance + headless render),
+   not visual. Particularly worth checking: the new 3-column rows (`3i`, `4a`)
+   for cramped tile text, and the `4c`/`4c2` counter-tile restructure for
+   overall row height now that the tile block shape changed twice.
+2. Flagged, no response yet: the new "My CIs" cards in `8a`/`8b` dropped the
+   "In use" status pill that "My assets" rows still show — reasonable since it
+   doesn't map cleanly to a Configuration Item, but worth confirming.
+3. Flagged, no response yet: 3-item asset/CI tiles (`assetsCis3` in `7a`/`7b`/
+   `7c`/`8a`/`8b`) use a slightly smaller icon chip (34px) than the 4-item ones
+   elsewhere (36px) — intentional size-to-content, but could be made uniform if
+   preferred.
+4. The Claude artifact snapshot is stale relative to all of this — republish it
+   if it's still being used for review.
 
 ## Decisions made
 
-- **5c splits over two lines rather than compressing.** The user reported the
-  one-line row not working there; that card is ~440px wide with a three-line
-  title. Arrows and dots went top right, the CTA bottom right, rather than
-  shrinking the announcement text. Recorded in `CLAUDE.md` as the narrow-card
-  exception.
-- **4i's strip does not repeat the CTA.** Its section header above the dark card
-  already carries `All announcements ›`; adding a second would be exactly the
-  duplicate the user has been removing. Flagged to the user rather than done
-  silently.
-- **4p's date block got a dark scrim, not more white.** The house rule calls for
-  `rgba(255,255,255,.14)` on dark cards, but over a bright photo raising the white
-  opacity would wash out the white date text. A dark scrim with a white hairline
-  makes the block read and keeps the text legible.
-- **Government notice subtext is the notice number.** `govNotices` has no
-  description field, and 3i already rendered `No. IT/2026/114` in the subtext
-  slot, so 3j and 6a follow it rather than inventing copy.
-- **Two Contact Us cards may shrink.** 5a and 2a were explicitly asked for; both
-  sit in hero rows that do not stretch, so removing the spacer moved nothing else.
-  The other 15 keep theirs.
-- **4e's trailing arrows kept.** Only the arrow *before* each KB row was asked
-  for; the two trailing `north_east` glyphs (Quick links, service catalog) are a
-  different affordance and were left, with a note to the user.
+- **Split badge numbers are 8 (My Assets) and 4 (My CIs), not derived from the
+  old combined "9."** Reason: `3g`/`3j` had already established this exact
+  split with these exact numbers in the original design, so every other split
+  this session matched that precedent rather than inventing new figures or
+  literally halving 9.
+- **Where a merged card shares a row with something that must not resize**
+  (`8a`/`8b`'s escalation-desk card), the two new cards are nested in a sub-grid
+  inside the original card's column slot, rather than changing the outer row's
+  column count — keeps the untouched sibling's width exactly as it was.
+- **Rejected-group templates were left out of every gallery-wide sweep** this
+  session (icon backgrounds, services cards, the Assets/CIs split) unless a
+  request named one specifically — consistent with earlier-session guidance not
+  to spend effort on templates that aren't shipping.
 
 ## Gotchas & notes
 
-- **`node build.js` after every `layouts/` edit.** The browser reads
-  `js/templates.js`, never `layouts/*.html`.
-- **The bundle is template literals, not JSON.** A verification script that
-  regex-scrapes `"id": "…"` out of `js/templates.js` finds nothing — keys have no
-  `.html` suffix and values are backticked. Eval it instead:
-  `new Function('window', body)(w)` then read `w.TEMPLATES`.
-- **Regex windows in bundle checks.** A `[\s\S]{0,200}` gap between two fragments
-  is not enough to span one styled `<div>` — these run 150–250 characters. Two
-  checks read false for that reason alone this session.
-- **`dc.js` does load in Node** when `window` is passed in as an argument, so
-  `renderVals()` can be exercised for every tab without a browser. (`DC.compile`
-  still cannot be — it needs `document`.)
-- **The localhost server runs from the session scratchpad.** It dies with the
-  session that started it; `scratchpad/server.js` can be restarted on 5173 at any
-  time and serves with `cache-control: no-store`.
-- **Earlier traps, still live**: shared fixtures with byte-identical rows, one
-  template reusing `as="x"` across several loops (4e uses it for five), identical
-  CSS appearing twice in one file, and `sc-if` balance after adding a conditional
-  row. Anchor block edits by line with assertions on every boundary.
-- **Shell heredocs**: writing a JS file through `bash <<'EOF'` failed on the
-  escaped quotes in this session's markup. Use the Write tool for scripts, and
-  never `node -e "…"` for markdown (backticks become command substitution).
-- `layouts/` is the source of truth — `js/templates.js` and `js/slots.js` are
-  generated; never hand-edit them.
+- **`4f2` had no "Most Read" section at all before this session** — it isn't
+  that one was broken, there simply wasn't one. Added to match `4f`.
+- **`assetsCis3`/`assetsCis5`/`assetsCis8` are still in use** by templates this
+  session did *not* touch for the Assets/CIs split (e.g. the mixed mini-lists
+  inside some Contact-adjacent cards) — don't assume every `assetsCis*` list
+  needs splitting; check what a given template actually asked for.
+- Same shared-fixture trap as always: `assets`, `cis`, `kbs4`, `annRows2`,
+  `railActions`, `quietLinks`, `devices6` are each reused by more than one
+  file — every edit this session started with a grep across `layouts/` before
+  touching the fixture in `js/logic.js`, and that caught at least one case
+  (`devices6` also used by `5b`, so a new `devices4` fixture was added instead
+  of mutating the shared one).
+- `node build.js` regenerates `js/templates.js`; it was run after every batch
+  of layout edits this session, not just once at the end.

@@ -207,7 +207,9 @@
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
                     <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#07101F;flex-shrink:0">{{ a.i }}</span>
+                      <div style="width:36px;height:36px;border-radius:10px;background:#eef1f5;color:#07101F;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
+                      </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
                         <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
@@ -226,7 +228,9 @@
                   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
                   <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
                     <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#07101F;flex-shrink:0">{{ c.i }}</span>
+                      <div style="width:36px;height:36px;border-radius:10px;background:#eef1f5;color:#07101F;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
+                      </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
                         <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
@@ -242,12 +246,12 @@
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Contact Us</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:11px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#07101F;flex-shrink:0">mail</span>
-                  <div style="font-size:13.5px;font-weight:500;color:#07101F;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
-                </div>
-                <div style="display:flex;align-items:center;gap:11px;padding:13px 18px;min-width:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#07101F;flex-shrink:0">call</span>
                   <div style="font-size:13.5px;font-weight:500;color:#07101F;white-space:nowrap">+91 79 4040 0000</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:11px;padding:13px 18px;min-width:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#07101F;flex-shrink:0">mail</span>
+                  <div style="font-size:13.5px;font-weight:500;color:#07101F;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
                 </div>
               </div>
            </div>

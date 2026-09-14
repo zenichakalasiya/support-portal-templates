@@ -135,10 +135,12 @@
         <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
           <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Popular services</div>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,1fr)">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
           <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
-            <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid #f4f7fa;border-right:1px solid #f4f7fa;min-width:0">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ brand }};flex-shrink:0">{{ s.i }}</span>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 13px;background:#f7f9fc;border-radius:10px;min-width:0">
+              <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>
+              </div>
               <div style="flex:1;min-width:0">
                 <div style="font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.35">{{ s.n }}</div>
                 <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;line-height:1.35">{{ s.c }}</div>
@@ -150,40 +152,20 @@
       </div>
 
         <sc-if value="{{ isHealth }}">
-          <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
-            <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-              <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
-              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;padding:16px 20px">
-              <sc-for list="{{ assetsCis8 }}" as="a" hint-placeholder-count="8">
-                <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81">{{ a.i }}</span>
-                  <div style="min-width:0">
-                    <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                    <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
-                  </div>
-                </div>
-              </sc-for>
-            </div>
-          </div>
-        </sc-if>
-
-        <sc-if value="{{ notHealth }}">
-          <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:stretch">
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-                <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
-                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
+                <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:16px 20px">
-                <sc-for list="{{ assetsCis5 }}" as="a" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+                <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#5a6b81">{{ a.i }}</span>
+                    <div style="width:34px;height:34px;border-radius:9px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ a.i }}</span>
+                    </div>
                     <div style="min-width:0">
                       <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
                       <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
@@ -192,13 +174,83 @@
                 </sc-for>
               </div>
             </div>
+            <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My CIs</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+                <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
+                    <div style="width:34px;height:34px;border-radius:9px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ c.i }}</span>
+                    </div>
+                    <div style="min-width:0">
+                      <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notHealth }}">
+          <div style="display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:18px;align-items:stretch">
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+              <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+                <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                  <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+                  <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
+                    <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
+                      <div style="width:34px;height:34px;border-radius:9px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                        <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ a.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+                <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                  <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My CIs</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+                  <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                    <div style="display:flex;flex-direction:column;gap:9px;padding:13px 12px;background:#f7f9fc;border-radius:4px;min-width:0">
+                      <div style="width:34px;height:34px;border-radius:9px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                        <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ c.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
           <div style="min-width:0;display:flex;flex-direction:column;gap:18px">
             <sc-if value="{{ notHealth }}">
-              <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
+              <div style="flex:1;display:flex;flex-direction:column;background:#fff;border:1px solid #dde4ee;border-radius:4px">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Quick links</div>
               </div>
-              <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#eef2f7">
+              <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:1px;background:#eef2f7">
                 <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
                   <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;background:#fff;min-width:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }};flex-shrink:0">{{ q.i }}</span>
