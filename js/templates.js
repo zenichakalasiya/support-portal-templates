@@ -21,8 +21,8 @@ window.TEMPLATES = {
   </div>
   </sc-if>
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:{{ t2Ground }}">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:{{ t2Ground }}">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ t2Acc }}"></div>
@@ -136,7 +136,7 @@ window.TEMPLATES = {
               <div onClick="{{ pAnnNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid {{ t2CardBd }};background:#fff;display:flex;align-items:center;justify-content:center;color:{{ t2Mute2 }};cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ t2Acc }};white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ t2Acc }};white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
           </div>
         </div>
@@ -222,28 +222,49 @@ window.TEMPLATES = {
           </div>
 
           <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;align-items:stretch">
-            <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
-              <div style="display:flex;align-items:center;gap:16px;padding:15px 20px 0;flex-wrap:wrap">
-                <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Estate</div>
-                <div style="font-size:12.5px;color:{{ t2Mute2 }};padding:9px 0">5 assets · 4 CIs</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
-              </div>
-              <div style="border-top:1px solid {{ t2Hair }};display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;padding:16px 20px 20px">
-                <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                  <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px">
-                    <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
-                    </div>
-                    <div style="min-width:0">
-                      <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ a.n }}</div>
-                      <div style="display:flex;align-items:center;gap:7px;margin-top:7px">
-                        <span style="font-size:11.5px;font-weight:600;color:{{ t2Acc }};background:{{ t2Badge }};padding:1px 7px;border-radius:4px">{{ a.tag }}</span>
-                        <span style="font-size:11.5px;color:{{ t2Mute2 }}">{{ a.k }}</span>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;flex-wrap:wrap">
+                  <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Assets</div>
+                  <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">8</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
+                  <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ a.n }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ a.tag }} · {{ a.k }}</div>
                       </div>
                     </div>
-                  </div>
-                </sc-for>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;flex-wrap:wrap">
+                  <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My CIs</div>
+                  <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">4</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
+                  <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ c.n }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ c.tag }} · {{ c.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
               </div>
             </div>
 
@@ -277,8 +298,8 @@ window.TEMPLATES = {
 
   "2b": `<div id="2b" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -542,8 +563,8 @@ window.TEMPLATES = {
 
   "3b": `<div id="3b" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f6f8fb">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -585,7 +606,7 @@ window.TEMPLATES = {
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:268px 1fr;gap:24px;padding:24px 32px 40px">
+        <div style="display:grid;grid-template-columns:268px 1fr;gap:24px;padding:24px 32px 40px;align-items:start">
 
           <div style="display:flex;flex-direction:column;gap:10px">
             <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:13px;box-shadow:{{ cardShadow }};padding:18px">
@@ -623,7 +644,7 @@ window.TEMPLATES = {
             </div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:18px;max-height:760px;overflow-y:auto;padding-right:4px">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
               <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 20px;border-bottom:1px solid #eef2f7">
@@ -705,9 +726,33 @@ window.TEMPLATES = {
               </div>
               <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                  <div style="font-size:15.5px;font-weight:700;color:#0b2545">My CIs</div>
+                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">4</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
+                  <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                      <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
+              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Announcements</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
                   <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -717,6 +762,27 @@ window.TEMPLATES = {
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
                       <div style="font-size:13.5px;font-weight:700;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ n.t }}</div>
                       <div style="font-size:12px;font-weight:400;color:#5f6f83;margin-top:5px;line-height:1.5;text-wrap:pretty">{{ n.s }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+                  <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most read</div>
+                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </div>
+                <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                      <div style="flex:1 1 auto;min-width:0;font-size:11.5px;color:#5f6f83">{{ k.d }}</div>
+                      <div style="flex-shrink:0;font-size:11.5px;color:#5f6f83;background:#f2f3f5;padding:3px 9px;border-radius:6px;white-space:nowrap">{{ k.cat }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -732,8 +798,8 @@ window.TEMPLATES = {
 
   "3b2": `<div id="3b2" data-screen-label="3b2 Sidecar · Announcements" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f6f8fb">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -781,7 +847,7 @@ window.TEMPLATES = {
                 <div style="font-size:13px;font-weight:600;color:#5f6f83;line-height:1.45">{{ annNow.d }}</div>
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                <div style="font-size:15px;font-weight:700;color:#14468F;line-height:1.35;text-wrap:pretty">{{ annNow.t }}</div>
+                <div style="font-size:15px;font-weight:700;color:#14468F;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                 <div style="font-size:12.5px;font-weight:400;color:#5f6f83;margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
               </div>
             </div>
@@ -798,12 +864,12 @@ window.TEMPLATES = {
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
               <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:700;color:#14468F;white-space:nowrap">All announcements</div>
+              <div style="font-size:13px;font-weight:700;color:#14468F;white-space:nowrap">View all</div>
             </div>
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:268px 1fr;gap:24px;padding:24px 32px 40px">
+        <div style="display:grid;grid-template-columns:268px 1fr 1fr;gap:24px;padding:24px 32px 40px;align-items:stretch">
 
           <div style="display:flex;flex-direction:column;gap:10px">
             <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:13px;box-shadow:{{ cardShadow }};padding:18px">
@@ -824,122 +890,140 @@ window.TEMPLATES = {
                 </div>
               </div>
             </sc-for>
-            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:13px;box-shadow:{{ cardShadow }};overflow:hidden;margin-top:4px">
-              <div style="padding:16px 16px 14px">
-                <div style="font-size:14.5px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Contact Us</div>
-              </div>
-              <div style="height:1px;background:#eef2f7;margin:0 16px"></div>
-              <div style="display:flex;flex-direction:column;padding:12px 16px 4px">
-                <sc-for list="{{ deskChannels }}" as="c" hint-placeholder-count="2">
-                  <div style="display:flex;align-items:center;gap:11px;padding:9px 0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#5a6b81;flex-shrink:0">{{ c.i }}</span>
-                    <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.v }}</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+              <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            </div>
+            <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
+                <div style="flex:1 1 150px;min-width:0">
+                  <div style="display:flex;align-items:center;gap:11px;min-width:0">
+                    <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#f3f6fa;border:1px solid #e6ecf3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                   </div>
-                </sc-for>
+                  <div style="font-size:12.5px;color:#5f6f83;margin-top:5px;line-height:1.45">{{ r.d }}</div>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;background:{{ r.bg }};color:{{ r.fg }};white-space:nowrap;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">{{ r.si }}</span>{{ r.st }}</span>
               </div>
-              <div style="height:97px;margin-top:0px"></div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+              <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
+              <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:3px 9px;border-radius:20px">2</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            </div>
+            <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
+              <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
+                <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                  <div style="font-size:11.5px;font-weight:600;color:#0b2545;background:#eef1f6;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                  <div style="flex:1;min-width:0;font-size:13px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
+                  <div style="display:flex;gap:5px;flex-shrink:0">
+                    <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">check</span>
+                    </div>
+                    <div title="Reject" style="width:24px;height:24px;border-radius:6px;background:#fdeaea;color:#b02a2a;display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">close</span>
+                    </div>
+                    <div title="Send back" style="width:24px;height:24px;border-radius:6px;background:#fdf1d6;color:#8a5a08;display:flex;align-items:center;justify-content:center">
+                      <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">undo</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;min-width:0">
+                  <div style="width:24px;height:24px;border-radius:6px;background:{{ a.ab }};color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ a.ai }}</div>
+                  <div style="flex-shrink:0;font-size:13px;color:#0b2545;white-space:nowrap">{{ a.who }}</div>
+                  <div style="flex:1;min-width:0;font-size:12.5px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">· {{ a.d }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:13px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="padding:16px 16px 14px">
+              <div style="font-size:14.5px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Contact Us</div>
+            </div>
+            <div style="height:1px;background:#eef2f7;margin:0 16px"></div>
+            <div style="display:flex;flex-direction:column;padding:12px 16px 16px">
+              <sc-for list="{{ deskChannels }}" as="c" hint-placeholder-count="2">
+                <div style="display:flex;align-items:center;gap:11px;padding:9px 0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#5a6b81;flex-shrink:0">{{ c.i }}</span>
+                  <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.v }}</div>
+                </div>
+              </sc-for>
             </div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:18px">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
-              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-                  <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
-                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
-                  <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-                </div>
-                <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
-                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
-                    <div style="flex:1 1 150px;min-width:0">
-                      <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#f3f6fa;border:1px solid #e6ecf3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
-                        <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
-                      </div>
-                      <div style="font-size:12.5px;color:#5f6f83;margin-top:5px;line-height:1.45">{{ r.d }}</div>
-                    </div>
-                    <span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;background:{{ r.bg }};color:{{ r.fg }};white-space:nowrap;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">{{ r.si }}</span>{{ r.st }}</span>
-                  </div>
-                </sc-for>
-              </div>
-              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-                  <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
-                  <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:3px 9px;border-radius:20px">2</div>
-                  <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-                </div>
-                <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
-                  <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
-                    <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#0b2545;background:#eef1f6;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
-                      <div style="flex:1;min-width:0;font-size:13px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
-                      <div style="display:flex;gap:5px;flex-shrink:0">
-                        <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
-                          <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">check</span>
-                        </div>
-                        <div title="Reject" style="width:24px;height:24px;border-radius:6px;background:#fdeaea;color:#b02a2a;display:flex;align-items:center;justify-content:center">
-                          <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">close</span>
-                        </div>
-                        <div title="Send back" style="width:24px;height:24px;border-radius:6px;background:#fdf1d6;color:#8a5a08;display:flex;align-items:center;justify-content:center">
-                          <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">undo</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:9px;min-width:0">
-                      <div style="width:24px;height:24px;border-radius:6px;background:{{ a.ab }};color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ a.ai }}</div>
-                      <div style="flex-shrink:0;font-size:13px;color:#0b2545;white-space:nowrap">{{ a.who }}</div>
-                      <div style="flex:1;min-width:0;font-size:12.5px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">· {{ a.d }}</div>
-                    </div>
-                  </div>
-                </sc-for>
-              </div>
+          <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+              <div style="font-size:15.5px;font-weight:700;color:#0b2545;white-space:nowrap">My Assets</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+              <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch">
-              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-                  <div style="font-size:15.5px;font-weight:700;color:#0b2545;white-space:nowrap">My Assets</div>
-                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">9</div>
-                  <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:10px;padding:16px 20px">
-                  <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                    <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                      <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
-                      </div>
-                      <div style="flex:1;min-width:0">
-                        <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
-                      </div>
-                    </div>
-                  </sc-for>
-                </div>
-              </div>
-              <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
-                  <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
-                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
-                  <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-                </div>
-                <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
-                  <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
-                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:12.5px;font-weight:600;color:#4a5a70;background:#eef1f6;padding:4px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
-                      <div style="flex:1;min-width:0;font-size:13.5px;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="flex:1 1 auto;min-width:0;font-size:12px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.d }}</div>
-                      <div style="flex-shrink:0;font-size:11.5px;color:#4a5a70;background:#f3f6fa;padding:3px 9px;border-radius:6px;white-space:nowrap">{{ k.cat }}</div>
-                    </div>
-                  </div>
-                </sc-for>
-              </div>
+          <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+              <div style="font-size:15.5px;font-weight:700;color:#0b2545">My CIs</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">4</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
+              <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="grid-column:1 / -1;display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
+              <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
+              <div style="flex:1"></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            </div>
+            <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
+              <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
+                <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                  <div style="font-size:12.5px;font-weight:600;color:#4a5a70;background:#eef1f6;padding:4px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                  <div style="flex:1;min-width:0;font-size:13.5px;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                  <div style="flex:1 1 auto;min-width:0;font-size:12px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.d }}</div>
+                  <div style="flex-shrink:0;font-size:11.5px;color:#4a5a70;background:#f3f6fa;padding:3px 9px;border-radius:6px;white-space:nowrap">{{ k.cat }}</div>
+                </div>
+              </div>
+            </sc-for>
           </div>
         </div>
 
@@ -950,8 +1034,8 @@ window.TEMPLATES = {
 
   "3c": `<div id="3c" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#07101F">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1072,7 +1156,7 @@ window.TEMPLATES = {
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Announcements</div>
                   <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">5</div>
                   <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="flex:1;min-height:0;overflow-y:auto">
                   <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
@@ -1215,8 +1299,8 @@ window.TEMPLATES = {
 
   "3d": `<div id="3d" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f5f7fa">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1411,8 +1495,8 @@ window.TEMPLATES = {
 
   "3g": `<div id="3g" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f6f8fb">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f6f8fb">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1566,7 +1650,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));grid-auto-rows:1fr;gap:14px">
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px">
                 <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
                   <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;padding:16px;box-shadow:{{ cardShadow }};display:flex;align-items:center;gap:12px;min-width:0">
                     <div style="width:38px;height:38px;border-radius:11px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
@@ -1646,7 +1730,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
                 <div style="padding:6px 0">
                   <sc-for list="{{ anns2 }}" as="n" hint-placeholder-count="2">
@@ -1692,8 +1776,8 @@ window.TEMPLATES = {
 
   "3h": `<div id="3h" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:{{ groundBg }}">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:{{ groundBg }}">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -1829,7 +1913,7 @@ window.TEMPLATES = {
                     <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -1845,7 +1929,7 @@ window.TEMPLATES = {
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
               </div>
             </div>
@@ -1927,8 +2011,8 @@ window.TEMPLATES = {
 
   "3h2": `<div id="3h2" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:{{ groundBg }}">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:{{ groundBg }}">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2158,8 +2242,8 @@ window.TEMPLATES = {
 
   "3i": `<div id="3i" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2261,7 +2345,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="font-size:12px;color:#5f6f83;white-space:nowrap">5 active</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="flex:1">
               <sc-for list="{{ govNotices }}" as="n" hint-placeholder-count="4">
@@ -2440,8 +2524,8 @@ window.TEMPLATES = {
 
   "3j": `<div id="3j" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2497,7 +2581,7 @@ window.TEMPLATES = {
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Public Notices</div>
                 <div style="font-size:12px;color:#5f6f83;white-space:nowrap">Gazette</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ govNotices3 }}" as="n" hint-placeholder-count="3">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -2731,8 +2815,8 @@ window.TEMPLATES = {
 
   "4a": `<div id="4a" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -2788,7 +2872,7 @@ window.TEMPLATES = {
                   <div style="font-size:11.5px;font-weight:600;color:#5f6f83;line-height:1.4">{{ annNow.d }}</div>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                  <div style="font-size:13.5px;font-weight:700;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                  <div style="font-size:13.5px;font-weight:700;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                   <div style="font-size:12px;font-weight:400;color:#5f6f83;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
@@ -2804,7 +2888,7 @@ window.TEMPLATES = {
                 <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f6f83;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             </div>
           </div>
@@ -2996,8 +3080,8 @@ window.TEMPLATES = {
 
   "4a2": `<div id="4a2" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3140,8 +3224,8 @@ window.TEMPLATES = {
 
   "4b": `<div id="4b" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3205,7 +3289,7 @@ window.TEMPLATES = {
               <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
               <div style="font-size:12px;color:#5f6f83;white-space:nowrap">5 active</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ anns }}" as="n" hint-placeholder-count="3">
               <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -3382,8 +3466,8 @@ window.TEMPLATES = {
 
   "4c": `<div id="4c" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3556,8 +3640,8 @@ window.TEMPLATES = {
 
   "4c2": `<div id="4c2" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3746,8 +3830,8 @@ window.TEMPLATES = {
 
   "4d": `<div id="4d" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -3831,10 +3915,10 @@ window.TEMPLATES = {
                 <div style="font-size:11.5px;font-weight:600;color:{{ inkSub }};line-height:1.4">{{ annNow.d }}</div>
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                <div style="font-size:13.5px;font-weight:700;color:{{ onInk }};line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                <div style="font-size:13.5px;font-weight:700;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                 <div style="font-size:12px;font-weight:400;color:{{ inkSub }};margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ onInk }};white-space:nowrap;flex-shrink:0;align-self:center">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ onInk }};white-space:nowrap;flex-shrink:0;align-self:center">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
 
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:6px;overflow:hidden">
@@ -3915,8 +3999,8 @@ window.TEMPLATES = {
 
   "4e": `<div id="4e" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -4024,7 +4108,7 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ anns }}" as="x" hint-placeholder-count="5">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -4151,9 +4235,9 @@ window.TEMPLATES = {
 
   "4f": `<div id="4f" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f5f7fa">
+  <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4275,7 +4359,7 @@ window.TEMPLATES = {
               <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
               <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ annRows2 }}" as="n" hint-placeholder-count="2">
               <div style="display:flex;align-items:stretch;gap:13px;padding:14px 18px;border-top:1px solid #f1f5f9;min-width:0">
@@ -4382,9 +4466,9 @@ window.TEMPLATES = {
 
   "4f2": `<div id="4f2" data-screen-label="4f2 Counter · Image" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f5f7fa">
+  <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4507,7 +4591,7 @@ window.TEMPLATES = {
               <div style="font-size:15px;font-weight:700;color:#0b2545">Announcements</div>
               <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <sc-for list="{{ annRows2 }}" as="n" hint-placeholder-count="2">
               <div style="display:flex;align-items:stretch;gap:13px;padding:14px 18px;border-top:1px solid #f1f5f9;min-width:0">
@@ -4614,9 +4698,9 @@ window.TEMPLATES = {
 
   "4g": `<div id="4g" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f5f7fa">
+  <div style="border-top:1px solid #dde4ee;background:#f5f7fa">
 
-    <div style="display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:12px;height:56px;padding:0 20px;background:#fff;border-bottom:1px solid #e6ebf2">
       <div style="width:24px;height:24px;border-radius:6px;background:{{ brand }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">A</div>
       <div style="font-size:15px;font-weight:600;color:#0b2545">Acme Corp</div>
       <div style="flex:1"></div>
@@ -4867,9 +4951,9 @@ window.TEMPLATES = {
 
   "4h": `<div id="4h" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f7f2e8">
+  <div style="border-top:1px solid #dde4ee;background:#f7f2e8">
 
-    <div style="display:flex;align-items:center;gap:14px;padding:16px 40px;border-bottom:1px solid #ddd1bb">
+    <div style="position:sticky;top:158px;z-index:25;background:#f7f2e8;display:flex;align-items:center;gap:14px;padding:16px 40px;border-bottom:1px solid #ddd1bb">
       <div style="width:26px;height:26px;border-radius:50%;background:#2a2317;color:#f7f2e8;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700">A</div>
       <div style="font-family:'Newsreader',Georgia,serif;font-size:18px;font-weight:600;color:#2a2317">Acme Corporation</div>
       <div style="flex:1"></div>
@@ -5042,9 +5126,9 @@ window.TEMPLATES = {
 
   "4i": `<div id="4i" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
 
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ brand }}"></div>
@@ -5186,19 +5270,13 @@ window.TEMPLATES = {
       </div>
 
       <div>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-              <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em;white-space:nowrap">Announcements</div>
-              <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">5 active</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-            </div>
         <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:{{ ink }};border-radius:12px;padding:16px 18px">
           <div style="flex:1 1 300px;display:flex;align-items:stretch;gap:13px;min-width:0">
             <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
               <div style="font-size:11.5px;font-weight:600;color:{{ inkSub }};line-height:1.4">{{ annNow.d }}</div>
             </div>
             <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-              <div style="font-size:14px;font-weight:700;color:{{ onInk }};line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+              <div style="font-size:14px;font-weight:700;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
               <div style="font-size:12px;font-weight:400;color:{{ inkSub }};margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
             </div>
           </div>
@@ -5214,6 +5292,7 @@ window.TEMPLATES = {
             <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
               <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
             </div>
+            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
         </div>
       </div>
@@ -5246,9 +5325,9 @@ window.TEMPLATES = {
 
   "4p": `<div id="4p" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
 
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ brand }}"></div>
@@ -5294,7 +5373,7 @@ window.TEMPLATES = {
                   <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.82);line-height:1.4">{{ annNow.d }}</div>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                  <div style="font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.2;text-wrap:pretty">{{ annNow.t }}</div>
+                  <div style="font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.022em;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                   <div style="font-size:13.5px;font-weight:400;color:#fff;margin-top:8px;line-height:1.55;max-width:520px;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
@@ -5528,8 +5607,8 @@ window.TEMPLATES = {
 </div>`,
 
   "5a": `<div id="5a" data-screen-label="5a Meridian" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#F4F8FC">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#F4F8FC">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#17A2A2"></div>
@@ -5632,7 +5711,7 @@ window.TEMPLATES = {
               <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
             </div>
             </div>
-            <div style="font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">All announcements</div>
+            <div style="font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">View all</div>
           </div>
         </div>
 
@@ -5771,8 +5850,8 @@ window.TEMPLATES = {
 </div>`,
 
   "5b": `<div id="5b" data-screen-label="5b Consort" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#FAF7F2">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E2E5DE">
+  <div style="border-top:1px solid #dde4ee;background:#FAF7F2">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E2E5DE">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#4A5A52">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#A85B33"></div>
@@ -6005,8 +6084,8 @@ window.TEMPLATES = {
 </div>`,
 
   "5c": `<div id="5c" data-screen-label="5c Bedside" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6b6b6b">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:2px;background:#2B54F5"></div>
@@ -6064,7 +6143,7 @@ window.TEMPLATES = {
                     <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -6083,7 +6162,7 @@ window.TEMPLATES = {
                 </div>
               </div>
               <div style="display:flex;justify-content:flex-end">
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             </div>
           </div>
@@ -6244,8 +6323,8 @@ window.TEMPLATES = {
 </div>`,
 
   "6a": `<div id="6a" data-screen-label="6a Gazette" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#F7F8FA">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="d5ceadcdfc-div">
+  <div style="border-top:1px solid #dde4ee;background:#F7F8FA">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0" data-comment-anchor="d5ceadcdfc-div">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:8px">
         <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#E0B44A">account_balance</span>
@@ -6316,7 +6395,7 @@ window.TEMPLATES = {
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">Public Notices</div>
                 <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">Gazette</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ govNotices }}" as="n" hint-placeholder-count="4">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
@@ -6470,8 +6549,8 @@ window.TEMPLATES = {
 </div>`,
 
   "6b": `<div id="6b" data-screen-label="6b Foyer" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #eef1f5">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #eef1f5">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#8494a8">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:9px">
         <div style="width:9px;height:9px;border-radius:50%;background:#1A8FE3"></div>
@@ -6701,8 +6780,8 @@ window.TEMPLATES = {
 </div>`,
 
   "6c": `<div id="6c" data-screen-label="6c Triptych" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#F4F5F7">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e6e9ee">
+  <div style="border-top:1px solid #dde4ee;background:#F4F5F7">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e6e9ee">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#7a8595">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:8px">
         <div style="width:9px;height:9px;border-radius:2px;background:#2E3A4B"></div>
@@ -6738,7 +6817,7 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
               <div style="font-size:15px;font-weight:700;color:#1B2430">Announcements</div>
               <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:16px 18px">
               <div style="display:flex;align-items:stretch;gap:12px;min-width:0">
@@ -6746,7 +6825,7 @@ window.TEMPLATES = {
                   <div style="font-size:11.5px;font-weight:600;color:#5c6675;line-height:1.4">{{ annNow.d }}</div>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                  <div style="font-size:13.5px;font-weight:700;color:#1B2430;line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                  <div style="font-size:13.5px;font-weight:700;color:#1B2430;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                   <div style="font-size:12px;font-weight:400;color:#5c6675;margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
@@ -6929,8 +7008,8 @@ window.TEMPLATES = {
 </div>`,
 
   "7a": `<div id="7a" data-screen-label="7a Quadrangle" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#FAF7F1">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E4DCCC">
+  <div style="border-top:1px solid #dde4ee;background:#FAF7F1">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E4DCCC">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6B6255">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#B07A24"></div>
@@ -6989,7 +7068,7 @@ window.TEMPLATES = {
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Notice board</div>
                 <div style="font-size:12.5px;color:#6B6255;white-space:nowrap">4 active</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
                 <div style="display:flex;align-items:stretch;gap:12px;padding:13px 18px;border-bottom:1px solid #F6F2E9;min-width:0">
@@ -7090,8 +7169,8 @@ window.TEMPLATES = {
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
-                  <div style="display:flex;align-items:center;gap:11px;padding:12px 13px;background:#FBF6EC;border:1px solid #F0EADD;border-radius:10px;min-width:0">
-                    <div style="width:34px;height:34px;border-radius:9px;background:#F3E6CC;color:#8A5710;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="display:flex;align-items:center;gap:11px;padding:12px 13px;background:#FCFAF4;border:1px solid #F0EADD;border-radius:10px;min-width:0">
+                    <div style="width:34px;height:34px;border-radius:9px;background:#F5EAD6;color:#8A5710;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0">
@@ -7135,8 +7214,8 @@ window.TEMPLATES = {
               </div>
               <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
-                  <div style="padding:11px 12px;display:flex;align-items:center;gap:12px;background:#F6F2E9;border-radius:10px;min-width:0">
-                    <div style="width:34px;height:34px;border-radius:9px;background:#F3E6CC;color:#8A5710;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="padding:11px 12px;display:flex;align-items:center;gap:12px;background:#FCFAF4;border-radius:10px;min-width:0">
+                    <div style="width:34px;height:34px;border-radius:9px;background:#F5EAD6;color:#8A5710;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ a.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0">
@@ -7156,8 +7235,8 @@ window.TEMPLATES = {
 </div>`,
 
   "7b": `<div id="7b" data-screen-label="7b Course Shelf" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#F6F7FB">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E3E6F0">
+  <div style="border-top:1px solid #dde4ee;background:#F6F7FB">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E3E6F0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5A6079">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#FF6B4A"></div>
@@ -7236,7 +7315,7 @@ window.TEMPLATES = {
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Notice board</div>
                 <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">4 active</div>
                 <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ eduNotices }}" as="n" hint-placeholder-count="4">
                 <div style="display:flex;align-items:stretch;gap:12px;padding:13px 18px;border-bottom:1px solid #F6F7FB;min-width:0">
@@ -7389,8 +7468,8 @@ window.TEMPLATES = {
 </div>`,
 
   "7c": `<div id="7c" data-screen-label="7c Study Desk" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#FDFCFA">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
+  <div style="border-top:1px solid #dde4ee;background:#FDFCFA">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #DCD8CF">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5A6079">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#FF6B4A"></div>
@@ -7450,7 +7529,7 @@ window.TEMPLATES = {
                     <div style="font-size:11.5px;font-weight:600;color:#5A5750;line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:15px;font-weight:700;color:#14183A;line-height:1.35;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:15px;font-weight:700;color:#14183A;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:12.5px;font-weight:400;color:#5A5750;margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -7467,7 +7546,7 @@ window.TEMPLATES = {
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
                   </div>
                   <div style="flex:1"></div>
-                  <div style="font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">All announcements</div>
+                  <div style="font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all</div>
                 </div>
               </div>
         </div>
@@ -7595,9 +7674,9 @@ window.TEMPLATES = {
 </div>`,
 
   "8a": `<div id="8a" data-screen-label="8a Vault" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#F4F6FA">
+  <div style="border-top:1px solid #dde4ee;background:#F4F6FA">
 
-    <div style="display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:26px;height:52px;padding:0 24px;background:#fff;border-bottom:1px solid #DCE3EE">
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
         <div style="width:9px;height:9px;border-radius:50%;background:#4C7A1E"></div>
         <div style="font-size:17px;font-weight:700;color:#10306B;letter-spacing:-0.012em">motadata</div>
@@ -7668,7 +7747,7 @@ window.TEMPLATES = {
                 <div style="font-size:11.5px;font-weight:600;color:#5A6884;line-height:1.4">{{ annNow.d }}</div>
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                <div style="font-size:14px;font-weight:700;color:#10306B;line-height:1.45;text-wrap:pretty">{{ annNow.t }}</div>
+                <div style="font-size:14px;font-weight:700;color:#10306B;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                 <div style="font-size:12px;font-weight:400;color:#5A6884;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
               </div>
             </div>
@@ -7684,7 +7763,7 @@ window.TEMPLATES = {
               <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #DCE3EE;display:flex;align-items:center;justify-content:center;color:#5A6884;cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#10306B;white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#10306B;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
           </div>
 
@@ -7856,8 +7935,8 @@ window.TEMPLATES = {
 </div>`,
 
   "8b": `<div id="8b" data-screen-label="8b Keystone" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#EAF3FA">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #D7E3EE" data-comment-anchor="59e07c8c94-div">
+  <div style="border-top:1px solid #dde4ee;background:#EAF3FA">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #D7E3EE" data-comment-anchor="59e07c8c94-div">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#54677B">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#E8850C"></div>
@@ -7912,7 +7991,7 @@ window.TEMPLATES = {
                     <div style="font-size:11.5px;font-weight:600;color:#A9C0D5;line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:12px;font-weight:400;color:#A9C0D5;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -7928,7 +8007,7 @@ window.TEMPLATES = {
                   <div onClick="{{ annNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid #33557E;display:flex;align-items:center;justify-content:center;color:#A9C0D5;cursor:pointer;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span>
                   </div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#E8850C;white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#E8850C;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
               </div>
             </div>

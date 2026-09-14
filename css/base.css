@@ -126,7 +126,13 @@ img { max-width: 100%; }
 
 /* -- sticky header (rendered from layouts/_shell.html) --------------------- */
 
-#shell > div { position: sticky; }
+/* The sticky rule has to live on #shell itself, not on its rendered child:
+   #shell's child is exactly as tall as #shell (it's a pass-through wrapper),
+   so a sticky child has zero room to stay pinned while anything scrolls past
+   it — it unsticks the instant its own bottom edge would clear the viewport.
+   #shell's real parent (.app) is much taller, so stickying #shell directly
+   gives the header somewhere to actually stay put. */
+#shell { position: sticky; top: 0; z-index: 30; }
 
 /* Industry chips and layout tabs are div[role=button]; give them the
    feedback a real control has. */

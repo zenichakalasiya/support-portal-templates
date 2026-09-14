@@ -154,6 +154,19 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
   render a dashed placeholder with authored caption — this matches the design,
   don't "fix" it by adding an image. `mrd-t1`–`t3` and `cst-mark` are photographs
   held for slots no current layout renders; keep them.
+- **Sticky headers, two layers.** `css/base.css` sticks `#shell` (the gallery's
+  own title/industry-chips/tab-strip chrome) to `top:0`. The rule must target
+  `#shell` itself, not a child of it — a sticky element can't stay pinned past
+  its own parent's box, and `#shell`'s rendered child is exactly as tall as
+  `#shell`, so stickying the child gives it zero room to ever actually stick
+  (this was a real, silent bug once). Every template's *own* top bar (the
+  `dock_to_right` icon + "motadata" + Ask AI + avatar row) is separately sticky
+  at `top:158px` (158px ≈ `#shell`'s rendered height, so the template header
+  docks directly beneath it) — for this to work, the wrapping div around
+  the whole template body must **not** carry `overflow:hidden` (it did, on
+  every template, purely as inherited boilerplate; removing it is safe and
+  required). When adding a new layout, copy the sticky `top` bar and the
+  overflow-free wrapper from an existing one rather than the raw design export.
 
 ## House rules that hold across the gallery
 
@@ -174,12 +187,21 @@ These were applied template-wide and should be kept when adding or editing one:
   seconds — add a tab there rather than writing a new timer.
   **The carousel controls sit on one line with the announcement**, not below it:
   the row is `[ date block | title / description ]` taking the free space, then a
-  right-aligned group of `‹ dots ›` and the `All announcements ›` link. Arrows are
-  circular 26–28px buttons and stay even where the tab also auto-advances. If the
-  card header already carries the CTA (4i), the strip does not repeat it.
+  right-aligned group of `‹ dots ›` and the `View all ›` link (was "All
+  announcements", renamed gallery-wide). Arrows are circular 26–28px buttons and
+  stay even where the tab also auto-advances. `4i` has no separate card header
+  above its strip at all — title and CTA both live inside the strip itself.
   Where the card is too narrow for one line (5c), the row splits instead: arrows
   and dots top right, top-aligned with the title, and the CTA on its own line at
-  bottom right. Do not shrink the announcement text to force one line.
+  bottom right.
+  This "don't shrink the text" rule is for the **card-row** announcement style
+  only (the `[date block | title/desc]` pattern above). The **hero-embedded**
+  carousel — `annNow.t` set directly inside a welcome banner (`3b2`, `3h`, `4a`,
+  `4d`, `4i`, `4p`, `5c`, `6c`, `7c`, `8a`, `8b`) — is the opposite: that title
+  is truncated to one line (`white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis`) on purpose, because a long title wrapping to 2 lines
+  there visibly grows the whole hero banner's height. Keep hero titles
+  single-line; leave card-row titles free to wrap.
 - **Pending Approvals rows** use the check / close / undo icon buttons, never
   text buttons. Tints are semantic and fixed; the corner radius follows the
   template.

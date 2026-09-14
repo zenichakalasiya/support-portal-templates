@@ -1,7 +1,7 @@
 <div id="4a" style="display:flex;flex-direction:column;width:100%">
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#f4f6f9">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:#f4f6f9">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5f6f83">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:#2f86d6"></div>
@@ -57,7 +57,7 @@
                   <div style="font-size:11.5px;font-weight:600;color:#5f6f83;line-height:1.4">{{ annNow.d }}</div>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                  <div style="font-size:13.5px;font-weight:700;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ annNow.t }}</div>
+                  <div style="font-size:13.5px;font-weight:700;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                   <div style="font-size:12px;font-weight:400;color:#5f6f83;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
@@ -73,7 +73,7 @@
                 <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dde4ee;display:flex;align-items:center;justify-content:center;color:#5f6f83;cursor:pointer;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             </div>
           </div>

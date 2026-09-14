@@ -1,6 +1,6 @@
 <div id="5c" data-screen-label="5c Bedside" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:#fff">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
+  <div style="border-top:1px solid #dde4ee;background:#fff">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #ececec">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6b6b6b">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:2px;background:#2B54F5"></div>
@@ -58,7 +58,7 @@
                     <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;text-wrap:pretty">{{ annNow.t }}</div>
+                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div style="display:flex;justify-content:flex-end">
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             </div>
           </div>

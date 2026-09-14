@@ -15,8 +15,8 @@
   </div>
   </sc-if>
 
-  <div style="border-top:1px solid #dde4ee;overflow:hidden;background:{{ t2Ground }}">
-    <div style="display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
+  <div style="border-top:1px solid #dde4ee;background:{{ t2Ground }}">
+    <div style="position:sticky;top:158px;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #e4e9f0">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#5a6b81">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
         <div style="width:9px;height:9px;border-radius:50%;background:{{ t2Acc }}"></div>
@@ -130,7 +130,7 @@
               <div onClick="{{ pAnnNext }}" style="width:28px;height:28px;border-radius:50%;border:1px solid {{ t2CardBd }};background:#fff;display:flex;align-items:center;justify-content:center;color:{{ t2Mute2 }};cursor:pointer;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">chevron_right</span>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ t2Acc }};white-space:nowrap;flex-shrink:0">All announcements<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ t2Acc }};white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
           </div>
         </div>
@@ -216,28 +216,49 @@
           </div>
 
           <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;align-items:stretch">
-            <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
-              <div style="display:flex;align-items:center;gap:16px;padding:15px 20px 0;flex-wrap:wrap">
-                <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Estate</div>
-                <div style="font-size:12.5px;color:{{ t2Mute2 }};padding:9px 0">5 assets · 4 CIs</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
-              </div>
-              <div style="border-top:1px solid {{ t2Hair }};display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;padding:16px 20px 20px">
-                <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                  <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px">
-                    <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
-                    </div>
-                    <div style="min-width:0">
-                      <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ a.n }}</div>
-                      <div style="display:flex;align-items:center;gap:7px;margin-top:7px">
-                        <span style="font-size:11.5px;font-weight:600;color:{{ t2Acc }};background:{{ t2Badge }};padding:1px 7px;border-radius:4px">{{ a.tag }}</span>
-                        <span style="font-size:11.5px;color:{{ t2Mute2 }}">{{ a.k }}</span>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;flex-wrap:wrap">
+                  <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My Assets</div>
+                  <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">8</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
+                  <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ a.n }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ a.tag }} · {{ a.k }}</div>
                       </div>
                     </div>
-                  </div>
-                </sc-for>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05)">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;flex-wrap:wrap">
+                  <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">My CIs</div>
+                  <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">4</div>
+                  <div style="flex:1"></div>
+                  <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
+                </div>
+                <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
+                  <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:#f2f3f4;border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ c.n }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ c.tag }} · {{ c.k }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
               </div>
             </div>
 
