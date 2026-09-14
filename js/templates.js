@@ -151,8 +151,6 @@ window.TEMPLATES = {
         <div style="margin:30px 0 14px">
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
             <div style="font-size:18px;font-weight:700;color:{{ t2Ink }};letter-spacing:-0.01em">Most Used Services</div>
-            <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:5px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">Browse catalog<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr));gap:14px">
@@ -257,6 +255,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
                 <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Most Read</div>
+                <div style="font-size:12px;font-weight:700;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 9px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -502,8 +501,6 @@ window.TEMPLATES = {
           <div>
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Most Used Services</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px">
               <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
@@ -522,6 +519,7 @@ window.TEMPLATES = {
           <div>
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Most Read</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
@@ -954,6 +952,7 @@ window.TEMPLATES = {
               <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
+                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
@@ -1159,6 +1158,7 @@ window.TEMPLATES = {
               <div style="grid-column:2;grid-row:1;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;flex:1;display:flex;flex-direction:column">
                 <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
+                  <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">412</div>
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
@@ -1179,7 +1179,6 @@ window.TEMPLATES = {
               <div style="grid-column:1;grid-row:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
                 <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                   <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#07101F">inventory_2</span>
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets</div>
                     <div style="font-size:12px;font-weight:700;color:#5a6b81;background:#f0f4f9;padding:2px 9px;border-radius:20px">9</div>
                     <div style="flex:1"></div>
@@ -1318,20 +1317,10 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
-          <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">My open requests</div>
-          <div style="flex:1;height:1px;background:#e2e8f0"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
-        </div>
         <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-top:12px">
           <div style="display:flex;align-items:center;gap:11px;padding:14px 20px;border-bottom:1px solid #eef2f7">
-            <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:{{ brand }}">inbox</span>
             <div style="font-size:15px;font-weight:700;color:#0b2545">My Open Requests</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
-            <div style="display:flex;gap:2px">
-              <div style="font-size:12.5px;font-weight:600;color:#0b2545;padding:6px 11px;background:#f0f4f9;border-radius:6px;white-space:nowrap">Requests 8</div>
-              <div style="font-size:12.5px;font-weight:500;color:#5f6f83;padding:6px 11px;white-space:nowrap">Approvals 2</div>
-            </div>
             <div style="flex:1"></div>
             <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
@@ -1383,9 +1372,8 @@ window.TEMPLATES = {
           </div>
           <div style="flex:1 1 380px;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #f1f5f9">
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
               <div style="font-size:14.5px;font-weight:700;color:#0b2545">Most read</div>
-              <div style="font-size:12px;color:#5f6f83;white-space:nowrap">This month</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -1408,6 +1396,7 @@ window.TEMPLATES = {
 
         <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">My assets &amp; CIs</div>
+          <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
           <div style="flex:1;height:1px;background:#e2e8f0"></div>
           <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
         </div>
@@ -1426,7 +1415,6 @@ window.TEMPLATES = {
         <div style="display:flex;align-items:center;gap:14px;margin-top:26px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">Popular services</div>
           <div style="flex:1;height:1px;background:#e2e8f0"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Browse all 214</div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin-top:12px">
           <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -1599,8 +1587,6 @@ window.TEMPLATES = {
             <div>
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Browse catalog<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));grid-auto-rows:1fr;gap:14px">
                 <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -1623,8 +1609,8 @@ window.TEMPLATES = {
                 <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                   <div style="display:flex;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read Knowledge</div>
+                    <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                     <div style="flex:1" data-comment-anchor="14958def03-div"></div>
-                    <div style="flex:1"></div>
                     <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </div>
                   <sc-for list="{{ kbRows3b2 }}" as="k" hint-placeholder-count="4">
@@ -1888,7 +1874,6 @@ window.TEMPLATES = {
 
             <div style="display:flex;flex-direction:column;min-width:0;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7;flex-shrink:0">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">0</div>
                 <div style="flex:1"></div>
@@ -1911,8 +1896,6 @@ window.TEMPLATES = {
             <div style="min-width:0">
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214 services<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
                 <sc-for list="{{ svcCards }}" as="s" hint-placeholder-count="8">
@@ -1934,6 +1917,7 @@ window.TEMPLATES = {
             <div style="min-width:0;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden" data-comment-anchor="038e65e09e-div">
               <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #e6ebf2">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -2036,8 +2020,6 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
                 <div style="font-size:12.5px;color:#5f6f83">Tap the heart to pin a service to your favourites</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214 services<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
                 <sc-for list="{{ svcCards4 }}" as="s" hint-placeholder-count="4">
@@ -2115,8 +2097,8 @@ window.TEMPLATES = {
 
             <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#8a5a08">star</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most Read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -2139,7 +2121,6 @@ window.TEMPLATES = {
 
             <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;min-height:320px;display:flex;flex-direction:column">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#b45309">how_to_reg</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">0</div>
                 <div style="flex:1"></div>
@@ -2179,7 +2160,6 @@ window.TEMPLATES = {
 
         <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;margin-top:18px">
           <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #eef2f7">
-            <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#4c37b0">devices</span>
             <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets &amp; CIs</div>
             <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">12</div>
             <div style="flex:1"></div>
@@ -2287,8 +2267,6 @@ window.TEMPLATES = {
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
             <div style="font-size:22px;font-weight:700;color:#0b2545;letter-spacing:-0.018em">Browse by category</div>
             <div style="font-size:14px;color:#5f6f83">214 services across 8 categories</div>
-            <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Full catalog<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;margin-top:16px">
             <sc-for list="{{ categories }}" as="c" hint-placeholder-count="8">
@@ -2365,7 +2343,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
-                <div style="font-size:12px;color:#5f6f83;white-space:nowrap">This month</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -2580,8 +2558,6 @@ window.TEMPLATES = {
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
             <div style="font-size:22px;font-weight:700;color:#0b2545;letter-spacing:-0.018em">Browse by category</div>
             <div style="font-size:14px;color:#5f6f83">214 services across 8 categories</div>
-            <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Full catalog<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px">
             <sc-for list="{{ categories }}" as="c" hint-placeholder-count="8">
@@ -2660,6 +2636,7 @@ window.TEMPLATES = {
             <div style="border:1px solid #e6ebf2;border-radius:12px;overflow:hidden;background:#fff" data-comment-anchor="b43f1bc0bc-div">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -2855,8 +2832,6 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15px;font-weight:700;color:#0b2545">Support services</div>
               <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">4</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Full catalog<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:12px;padding:16px 18px">
               <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -2931,7 +2906,7 @@ window.TEMPLATES = {
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden;min-width:0;display:flex;flex-direction:column">
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
-              <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">412 articles</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -2954,7 +2929,7 @@ window.TEMPLATES = {
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden;min-width:0;display:flex;flex-direction:column">
             <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15px;font-weight:700;color:#0b2545">My assets &amp; CIs</div>
-              <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">9 assigned</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -3090,8 +3065,8 @@ window.TEMPLATES = {
 
             <div style="background:#fff;border:1px solid #e6ebf2;border-radius:4px;overflow:hidden;flex-shrink:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8a5a08">menu_book</span>
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -3233,8 +3208,6 @@ window.TEMPLATES = {
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:10px;overflow:hidden">
             <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16.5px;font-weight:600;color:#0b2545;letter-spacing:-0.012em">Most used services</div>
-              <div style="flex:1"></div>
-              <div style="font-size:12.5px;color:#5f6f83">6 of 12 shown</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px 20px 20px">
               <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6">
@@ -3254,6 +3227,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #dde4ee;border-radius:10px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -3329,7 +3303,7 @@ window.TEMPLATES = {
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:10px;overflow:hidden;margin-top:20px">
             <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16.5px;font-weight:600;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
-              <div style="font-size:12.5px;color:#5f6f83">9 assigned</div>
+              <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">9</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -3816,6 +3790,7 @@ window.TEMPLATES = {
               <div style="background:#fff;border:1px solid #dde4ee;border-radius:6px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #eef2f7">
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
+                  <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
@@ -3935,6 +3910,7 @@ window.TEMPLATES = {
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Most read knowledge</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -3991,8 +3967,6 @@ window.TEMPLATES = {
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Service catalog</div>
-                <div style="flex:1"></div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214</div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px">
                 <sc-for list="{{ services4 }}" as="x" hint-placeholder-count="4">
@@ -4010,6 +3984,7 @@ window.TEMPLATES = {
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">My open requests</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -4030,7 +4005,7 @@ window.TEMPLATES = {
             <div style="flex:0 0 auto;background:#fff;border:1px solid #dde4ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:14px 18px;background:#f4f8fd;border-bottom:1px solid #e6ecf4">
                 <div style="font-size:15px;font-weight:700;color:#0b2545">Pending approvals</div>
-                <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">2 waiting</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -4240,6 +4215,7 @@ window.TEMPLATES = {
         <div style="background:#fff;border:1px solid #e6ebf2;border-radius:10px;overflow:hidden">
           <div style="display:flex;align-items:center;gap:11px;padding:14px 18px">
             <div style="font-size:15px;font-weight:700;color:#0b2545">Most read</div>
+            <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
             <div style="flex:1"></div>
             <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
@@ -4279,8 +4255,6 @@ window.TEMPLATES = {
 
         <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">Popular services</div>
-          <div style="flex:1"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214</div>
         </div>
 
         <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -4462,8 +4436,6 @@ window.TEMPLATES = {
 
         <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
           <div style="font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#5f6f83;white-space:nowrap">Popular services</div>
-          <div style="flex:1"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214</div>
         </div>
 
         <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -4619,8 +4591,6 @@ window.TEMPLATES = {
         <div style="flex:0 0 auto;background:#fff;border:1px solid #e6ebf2;border-radius:10px;overflow:hidden">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:13px 15px;border-bottom:1px solid #eef2f7">
             <div style="font-size:14px;font-weight:700;color:#0b2545;white-space:nowrap">Popular Services</div>
-            <div style="flex:1"></div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 15px">
             <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -4638,6 +4608,7 @@ window.TEMPLATES = {
         <div style="flex:0 0 auto;background:#fff;border:1px solid #e6ebf2;border-radius:10px;overflow:hidden">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:13px 15px;border-bottom:1px solid #eef2f7">
             <div style="font-size:14px;font-weight:700;color:#0b2545;white-space:nowrap">Most Read Knowledge</div>
+            <div style="font-size:11.5px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 8px;border-radius:20px">412</div>
             <div style="flex:1"></div>
             <div style="display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
@@ -4994,8 +4965,6 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em;white-space:nowrap">Popular services</div>
                 <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">most requested</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">Browse all 214<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
             <div style="flex:1;background:#fff;border:1px solid #e6ebf2;border-radius:12px;overflow:hidden">
               <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -5015,7 +4984,7 @@ window.TEMPLATES = {
         <div data-comment-anchor="2ccc45d25c-div" style="display:flex;flex-direction:column;min-width:0">
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em;white-space:nowrap">Most read</div>
-                <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">this month</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -5208,6 +5177,7 @@ window.TEMPLATES = {
         <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
           <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
             <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most read knowledge</div>
+            <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
             <div style="flex:1"></div>
             <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
           </div>
@@ -5230,8 +5200,6 @@ window.TEMPLATES = {
         <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
         <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
           <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Popular services</div>
-          <div style="flex:1"></div>
-          <div style="font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">All 214</div>
         </div>
         <div style="display:grid;grid-template-columns:minmax(0,1fr)">
           <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -5251,6 +5219,7 @@ window.TEMPLATES = {
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
             <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -5273,6 +5242,7 @@ window.TEMPLATES = {
             <div style="background:#fff;border:1px solid #dde4ee;border-radius:4px">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:16px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">My assets &amp; CIs</div>
+                <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">9</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -5465,8 +5435,6 @@ window.TEMPLATES = {
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;border-bottom:1px solid #eef3f8">
                 
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Used Services</div>
-                <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#0F5C8C;white-space:nowrap">Browse catalog<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 18px">
                 <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -5484,7 +5452,6 @@ window.TEMPLATES = {
 
           <div style="background:#fff;border:1px solid #dde7f0;border-radius:6px;overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;border-bottom:1px solid #eef3f8">
-              
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Devices</div>
               <div style="font-size:11.5px;font-weight:700;color:#0F5C8C;background:#E8F2FA;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
@@ -5506,7 +5473,6 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch">
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #dde7f0;border-radius:6px;overflow:hidden">
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;border-bottom:1px solid #eef3f8">
-                
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">Pending Approvals</div>
                 <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">2</div>
                 <div style="flex:1"></div>
@@ -5540,7 +5506,6 @@ window.TEMPLATES = {
 
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #dde7f0;border-radius:6px;overflow:hidden">
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;border-bottom:1px solid #eef3f8">
-                
                 <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
                 <div style="font-size:11.5px;font-weight:700;color:#0F5C8C;background:#E8F2FA;padding:2px 8px;border-radius:20px">6</div>
                 <div style="flex:1"></div>
@@ -5676,7 +5641,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;padding:26px 26px 24px;background:#fff;border:1px solid #E2E5DE;border-radius:2px">
             <div style="display:flex;align-items:center;gap:12px">
               <div style="font-size:18px;font-weight:700;color:#23302B;letter-spacing:-0.014em">My Devices</div>
-              <div style="font-size:12.5px;color:#4A5A52;white-space:nowrap">6 assigned</div>
+              <div style="font-size:11.5px;font-weight:700;color:#2E5546;background:#E4EDE7;padding:2px 8px;border-radius:2px">6</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -5700,7 +5665,6 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:18px;align-items:stretch">
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E2E5DE;border-radius:2px;overflow:hidden">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;background:#fff;border-bottom:1px solid #EFF1EC" data-comment-anchor="18b87037f7-div">
-                  
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">My Open Requests</div>
                   <div style="font-size:11.5px;font-weight:700;color:#2E5546;background:#E4EDE7;padding:2px 8px;border-radius:2px">6</div>
                   <div style="flex:1"></div>
@@ -5724,7 +5688,6 @@ window.TEMPLATES = {
 
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E2E5DE;border-radius:2px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
-                  
                   <div style="font-size:15px;font-weight:700;color:#23302B">Pending Approvals</div>
                   <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:2px">2</div>
                   <div style="flex:1"></div>
@@ -5761,8 +5724,6 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Used Services</div>
-                  <div style="flex:1"></div>
-                  <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">Browse catalog<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#E6E9E2">
                   <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -5779,8 +5740,8 @@ window.TEMPLATES = {
 
               <div style="background:#fff;border:1px solid #E2E5DE;border-radius:2px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
-                  
                   <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Read</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#2E5546;background:#E4EDE7;padding:2px 8px;border-radius:2px">412</div>
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#A85B33;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
@@ -5933,8 +5894,6 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #e6e6e6;border-radius:8px;overflow:hidden">
             <div style="display:flex;align-items:center;gap:10px;padding:18px 22px 16px">
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Most Used Services</div>
-              <div style="flex:1"></div>
-              <div style="font-size:13px;font-weight:600;color:#2B54F5;white-space:nowrap">Browse</div>
             </div>
             <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
               <div style="display:flex;align-items:center;gap:12px;padding:13px 22px;border-top:1px solid #ececec;min-width:0">
@@ -6018,6 +5977,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #e6e6e6;border-radius:8px;overflow:hidden">
             <div style="display:flex;align-items:center;gap:10px;padding:18px 22px 16px">
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Most Read</div>
+              <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:#2B54F5;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -6227,6 +6187,7 @@ window.TEMPLATES = {
           <div style="margin-top:22px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Devices</div>
+              <div style="font-size:11.5px;font-weight:700;color:#0B3B7A;background:#EAF1FA;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0B3B7A;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -6330,8 +6291,6 @@ window.TEMPLATES = {
           <div style="width:100%;padding:34px 0 0">
             <div style="display:flex;align-items:baseline;gap:10px">
               <div style="font-size:14.5px;color:#5f7288">Most used services</div>
-              <div style="flex:1"></div>
-              <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">Browse catalog</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px">
               <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -6353,6 +6312,8 @@ window.TEMPLATES = {
               <div style="display:flex;align-items:baseline;gap:9px;padding:18px 22px;border-bottom:1px solid #eef1f5">
                 <div style="font-size:14.5px;color:#5f7288">Pending approvals</div>
                 <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">3</div>
+                <div style="flex:1"></div>
+                <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 22px;border-bottom:1px solid #f4f7fa">
@@ -6383,8 +6344,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;border:1px solid #e6ebf1;border-radius:4px;overflow:hidden">
               <div style="display:flex;align-items:baseline;gap:10px;padding:18px 22px;border-bottom:1px solid #eef1f5">
                 <div style="font-size:14.5px;color:#5f7288">Most read knowledge</div>
+                <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
-                <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">All 412 articles</div>
+                <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div>
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
@@ -6409,8 +6371,9 @@ window.TEMPLATES = {
           <div style="width:100%;padding:38px 0 0">
             <div style="display:flex;align-items:baseline;gap:10px">
               <div style="font-size:14.5px;color:#5f7288">My devices</div>
+              <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
-              <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all assets</div>
+              <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px">
               <sc-for list="{{ assetsCis3 }}" as="a" hint-placeholder-count="3">
@@ -6435,8 +6398,9 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;border:1px solid #e6ebf1;border-radius:4px;overflow:hidden">
               <div style="display:flex;align-items:baseline;gap:10px;padding:18px 22px;border-bottom:1px solid #eef1f5">
                 <div style="font-size:14.5px;color:#5f7288">My open requests</div>
+                <div style="font-size:12px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">8</div>
                 <div style="flex:1"></div>
-                <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all</div>
+                <div style="font-size:13.5px;font-weight:600;color:#1A8FE3;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ requests6 }}" as="r" hint-placeholder-count="6">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 22px;border-bottom:1px solid #f4f7fa">
@@ -6619,6 +6583,7 @@ window.TEMPLATES = {
               <div style="display:flex;flex-direction:column;flex:1;min-height:0;box-sizing:border-box;background:#fff;border:1px solid #e6e9ee;border-radius:8px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
                   <div style="font-size:15.5px;font-weight:700;color:#1B2430">Most Read</div>
+                  <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
@@ -6679,8 +6644,6 @@ window.TEMPLATES = {
             <div style="background:#fff;border:1px solid #e6e9ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
                 <div style="font-size:15.5px;font-weight:700;color:#1B2430">Most Used Services</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">Browse catalog<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 18px 18px">
                 <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -6884,8 +6847,6 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Most used services</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">Browse all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:#F0EADD">
                 <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -6905,7 +6866,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">Most read</div>
-                <div style="font-size:12.5px;color:#6B6255;white-space:nowrap">412 articles</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -6926,6 +6887,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E4DCCC;border-radius:4px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                 <div style="font-size:15.5px;font-weight:700;color:#191510">My devices</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">6</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#8A5710;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7114,8 +7076,6 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
-                <div style="flex:1"></div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">Browse all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
               </div>
               <div style="display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:1px;background:#F0F2F8;flex:1">
                 <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -7135,7 +7095,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">Most read guides</div>
-                <div style="font-size:12.5px;color:#5A6079;white-space:nowrap">412 articles</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7156,6 +7116,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
                 <div style="font-size:15.5px;font-weight:700;color:#14183A">My devices</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">6</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7282,8 +7243,6 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">Browse all<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:12px;padding:16px 18px">
               <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
@@ -7339,7 +7298,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Most read guides</div>
-              <div style="font-size:12.5px;color:#5A5750;white-space:nowrap">412 articles</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -7360,6 +7319,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
               <div style="font-size:15.5px;font-weight:700;color:#14183A">My devices</div>
+              <div style="font-size:11.5px;font-weight:700;color:#4a5a70;background:#f0f4f9;padding:2px 8px;border-radius:20px">6</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -7545,7 +7505,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">Most read</div>
-                <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">412 articles</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7568,7 +7528,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCE3EE;border-radius:3px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid #EDF1F8">
                 <div style="font-size:15.5px;font-weight:700;color:#10306B">My assets</div>
-                <div style="font-size:12.5px;color:#5A6884;white-space:nowrap">9 assigned</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">9</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#10306B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7753,6 +7713,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #E7EFF6">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">Most read</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">412</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
@@ -7787,7 +7748,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">My assets</div>
-                <div style="font-size:12.5px;color:#54677B;white-space:nowrap">9 assigned</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">9</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
