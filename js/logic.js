@@ -397,6 +397,45 @@
       ];
       const NAMES = {};
       LAYOUTS.forEach(([id, name]) => { NAMES[id] = name; });
+
+      // Each team member's personal top picks, by layout id. Used to build
+      // the "Top selected by Team" group below — initials and industry tags
+      // on each of its tabs are derived from this, not hand-maintained.
+      const TEAM_PICKS = {
+        "Saahil Pandya": ["5a", "4b", "4p", "6c", "3h", "4c", "4c2", "3j"],
+        "Juli Gopani": ["2a", "4f2", "4g", "4i", "4d", "8a", "7a", "4e"],
+        "Nirav Bhatt": ["4f", "3g", "2a", "4c", "3h", "3c", "4b", "3i", "5a", "8b", "7c", "4e", "4g"],
+        "Zeni Chaklasiya": ["3b2", "4f", "2an", "6c", "4p", "4i", "4c2", "6a", "4e", "8b", "7a"]
+      };
+      const PERSON_COLOR = {
+        "Saahil Pandya": { bg: "#E6EEF9", fg: "#1A4F96" },
+        "Juli Gopani": { bg: "#E3F2EA", fg: "#0B5C40" },
+        "Nirav Bhatt": { bg: "#FDF1D6", fg: "#8A5A08" },
+        "Zeni Chaklasiya": { bg: "#F3E8FB", fg: "#6B3FA0" }
+      };
+      const SHORT_INDUSTRY = { it: "IT & ITES", health: "Healthcare", mfg: "Manufacturing", gov: "Government", edu: "Education", bfsi: "BFSI" };
+      const initialsOf = name => name.split(" ").map(w => w[0]).join("").toUpperCase();
+      const teamMeta = {};
+      Object.keys(TEAM_PICKS).forEach(person => {
+        Array.from(new Set(TEAM_PICKS[person])).forEach(id => {
+          const c = PERSON_COLOR[person] || {};
+          (teamMeta[id] || (teamMeta[id] = { people: [] })).people.push({ name: person, initials: initialsOf(person), bg: c.bg || "#f0f4f9", fg: c.fg || "#5f6f83" });
+        });
+      });
+      Object.keys(teamMeta).forEach(id => {
+        teamMeta[id].industries = GROUPS
+          .filter(([key]) => key !== "rejected")
+          .filter(([, , members]) => members.some(([mid]) => mid === id))
+          .map(([key]) => SHORT_INDUSTRY[key] || key)
+          .join(", ");
+      });
+      const teamOrder = Object.keys(teamMeta).sort((a, b) => {
+        const byVotes = teamMeta[b].people.length - teamMeta[a].people.length;
+        if (byVotes) return byVotes;
+        return LAYOUTS.findIndex(([id]) => id === a) - LAYOUTS.findIndex(([id]) => id === b);
+      });
+      GROUPS.unshift(["team", "Top selected by Team", teamOrder.map(id => [id, ""]),
+        "Personal top picks from the team, across every industry."]);
   
       let group = this.state.group;
       if (!GROUPS.some(g => g[0] === group)) group = GROUPS[0][0];
@@ -429,6 +468,7 @@
         tactile: { fg: "#2B3A8F", bg: "#EEF0FB" },
         "help-centre": { fg: "#10306B", bg: "#E8EDF6" }
       };
+      const isTeamGroup = group === "team";
       const tabs = activeGroup[2].map(([id, tag]) => {
         const on = id === active;
         const t = TAGS[tag] || {};
@@ -439,6 +479,9 @@
           bd: on ? "#1856b3" : "transparent",
           fg: on ? "#0b2545" : "#4a5a70",
           idfg: on ? "#1856b3" : "#7b8a9d",
+          isTeam: isTeamGroup,
+          people: isTeamGroup ? (teamMeta[id] || { people: [] }).people : [],
+          industryLabel: isTeamGroup ? (teamMeta[id] || { industries: "" }).industries : "",
           go: () => this.setState({ tab: id })
         };
       });

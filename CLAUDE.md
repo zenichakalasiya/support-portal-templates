@@ -126,6 +126,19 @@ both, drop a partial in `layouts/`, and rebuild. Role tags (`primary`,
 `catalog-first`, `course-led`, …) must also exist in the `TAGS` map just below,
 or the tab renders with the fallback grey.
 
+`GROUPS[0]` is a generated pseudo-group, **"Top selected by Team"** — each real
+team member's personal top picks, by layout id, live in the `TEAM_PICKS` map
+right after `GROUPS` is defined. It is unshifted onto `GROUPS` after being
+built, so it never needs its own hand-written member list: for each id in
+`TEAM_PICKS`, the group's industry tag(s) are derived by scanning the *real*
+groups (`it`/`health`/`mfg`/`gov`/`edu`/`bfsi`) for membership, and tabs are
+ordered by vote count (most picks first). To add or change a person's picks,
+edit only `TEAM_PICKS` (and `PERSON_COLOR` for a new person's initials chip
+colour) — everything else recomputes. This group's tabs render an extra row
+(industry label + colour-coded initials chips per person) via `t.isTeam` in
+`layouts/_shell.html`; other groups don't set that flag, so their tabs stay
+the original single-line layout.
+
 ### Layout ID quirks
 
 `renderVals()` derives one `is<id>` boolean per layout from the active tab, and
@@ -168,6 +181,15 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
   descendant). When adding a new layout, copy the sticky top bar
   (`position:sticky;top:0`) and the overflow-free wrapper from an existing one
   rather than the raw design export.
+- **The tab strip's horizontal scroll survives redraws.** `#shell` is fully
+  torn down and rebuilt (`DC.render` does `into.textContent = ''`) on *every*
+  state change anywhere in the app — including the 5-second `AUTO_ANN` timer —
+  which would otherwise silently reset the tab strip's `scrollLeft` to 0 mid-
+  scroll. `js/app.js`'s `draw()` captures the scroll container's `scrollLeft`
+  before re-rendering `#shell` and restores it after. If `_shell.html`'s tab
+  strip markup changes shape, keep a single element matching
+  `[style*="overflow-x:auto"]` inside `#shell` — that's the selector `draw()`
+  uses to find it.
 
 ## House rules that hold across the gallery
 
@@ -188,13 +210,26 @@ These were applied template-wide and should be kept when adding or editing one:
   seconds — add a tab there rather than writing a new timer.
   **The carousel controls sit on one line with the announcement**, not below it:
   the row is `[ date block | title / description ]` taking the free space, then a
-  right-aligned group of `‹ dots ›` and the `View all ›` link (was "All
-  announcements", renamed gallery-wide). Arrows are circular 26–28px buttons and
-  stay even where the tab also auto-advances. `4i` has no separate card header
-  above its strip at all — title and CTA both live inside the strip itself.
+  right-aligned group of `‹ dots ›` and the next-arrow (was "All
+  announcements", renamed gallery-wide, then folded into the arrow itself — see
+  below). Arrows are circular 24–28px buttons and stay even where the tab also
+  auto-advances. `4i` has no separate card header above its strip at all —
+  title and CTA both live inside the strip itself.
   Where the card is too narrow for one line (5c), the row splits instead: arrows
   and dots top right, top-aligned with the title, and the CTA on its own line at
   bottom right.
+  **Last-slide rule:** every carousel's next-arrow swaps to a `View all ›` CTA
+  on the final slide (`<sc-if value="{{ !annIsLast }}">` for the arrow,
+  `<sc-if value="{{ annIsLast }}">` for the CTA — `annIsLast` comes from
+  `annCarousel()` in `logic.js`), then swaps back once it wraps to the first
+  slide. This is now on every carousel in the gallery, arrowed or previously
+  auto-only: `3b2`, `3h`, `4a`, `4g`, `4i`, `4p`, `5c`, `6c`, `7c`, `8a`, `8b`
+  all have `annPrev`/`annNext` arrows for this. Don't add a *second*, always-
+  visible "View all" next to a carousel's own controls — the swap already
+  covers it (this was cleaned up once already; re-adding a persistent link
+  there is a regression, not a fix). `4d` shows `annNow` with a permanent
+  "View all" and no dots/arrows — it isn't a real carousel (nothing changes
+  it), so it's the one exception left out of the last-slide treatment.
   This "don't shrink the text" rule is for the **card-row** announcement style
   only (the `[date block | title/desc]` pattern above). The **hero-embedded**
   carousel — `annNow.t` set directly inside a welcome banner (`3b2`, `3h`, `4a`,

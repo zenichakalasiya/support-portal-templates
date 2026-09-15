@@ -84,7 +84,14 @@
     reconcile(vals);
 
     applyTheme(vals);
+    // #shell is fully torn down and rebuilt on every redraw (a state change
+    // anywhere, including the 5s auto-carousel timer), which would otherwise
+    // silently reset the tab strip's horizontal scroll position to 0.
+    var oldScroller = shellEl.querySelector('[style*="overflow-x:auto"]');
+    var scrollLeft = oldScroller ? oldScroller.scrollLeft : 0;
     DC.render(TEMPLATES._shell, vals, shellEl, '_shell');
+    var newScroller = shellEl.querySelector('[style*="overflow-x:auto"]');
+    if (newScroller) newScroller.scrollLeft = scrollLeft;
 
     var id = activeLayoutId(vals);
     var html = TEMPLATES[id];

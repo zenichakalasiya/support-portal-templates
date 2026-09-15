@@ -2330,18 +2330,14 @@ window.TEMPLATES = {
         <div style="padding:40px 56px 52px;background:#fbfcfd">
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
             <div style="font-size:22px;font-weight:700;color:#0b2545;letter-spacing:-0.018em">Browse by category</div>
-            <div style="font-size:14px;color:#5f6f83">214 services across 8 categories</div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;margin-top:16px">
             <sc-for list="{{ categories }}" as="c" hint-placeholder-count="8">
-              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;padding:18px;min-width:0">
-                <div style="display:flex;align-items:center;gap:11px">
-                  <div style="width:36px;height:36px;border-radius:10px;background:{{ c.bg }};color:{{ c.fg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ c.i }}</span>
-                  </div>
-                  <div style="font-size:15px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+              <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;min-width:0">
+                <div style="width:38px;height:38px;border-radius:10px;background:{{ c.bg }};color:{{ c.fg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                 </div>
-                <div style="font-size:13px;color:#5f6f83;margin-top:12px;line-height:1.5">{{ c.d }}</div>
+                <div style="font-size:15px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
               </div>
             </sc-for>
           </div>
@@ -4768,16 +4764,31 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:16px;padding:14px 16px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:10px;box-sizing:border-box;width:100%;min-width:0" data-comment-anchor="53857b897d-div">
-          <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ accent }};flex-shrink:0">campaign</span>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:{{ accent }};white-space:nowrap">Announcement</div>
-          <div style="flex:1"></div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,.66);white-space:nowrap">{{ annNow.d }}</div>
-          <div style="flex:1 1 100%;min-width:0;font-size:13.5px;font-weight:600;color:#fff;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+        <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:16px;padding:14px 16px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:10px;box-sizing:border-box;width:100%;min-width:0" data-comment-anchor="53857b897d-div">
+          <div style="flex:1 1 220px;display:flex;align-items:stretch;gap:12px;min-width:0">
+            <div style="flex:0 0 52px;display:flex;align-items:center;justify-content:center;text-align:center;padding:7px 5px;background:rgba(255,255,255,.14);border-radius:8px">
+              <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.3">{{ annNow.d }}</div>
+            </div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
+              <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+              <div style="font-size:12px;font-weight:400;color:rgba(255,255,255,.68);margin-top:4px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
+            </div>
+          </div>
           <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+            <div onClick="{{ annPrev }}" style="width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">chevron_left</span>
+            </div>
             <sc-for list="{{ annDots }}" as="d" hint-placeholder-count="3">
               <div onClick="{{ d.go }}" style="width:{{ d.w }};height:6px;border-radius:4px;background:{{ d.bg }};cursor:pointer"></div>
             </sc-for>
+            <sc-if value="{{ !annIsLast }}">
+            <div onClick="{{ annNext }}" style="width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">chevron_right</span>
+            </div>
+            </sc-if>
+            <sc-if value="{{ annIsLast }}">
+            <div style="display:flex;align-items:center;gap:3px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            </sc-if>
           </div>
         </div>
 
@@ -6841,8 +6852,6 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;background:#fff;border:1px solid #e6e9ee;border-radius:8px">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
               <div style="font-size:15px;font-weight:700;color:#1B2430">Announcements</div>
-              <div style="flex:1"></div>
-              <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:16px 18px">
               <div style="display:flex;align-items:stretch;gap:12px;min-width:0">
@@ -6854,10 +6863,23 @@ window.TEMPLATES = {
                   <div style="font-size:12px;font-weight:400;color:#5c6675;margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                 </div>
               </div>
-              <div style="display:flex;align-items:center;gap:5px;margin-top:14px">
-                <sc-for list="{{ annDotsInk }}" as="d" hint-placeholder-count="3">
-                  <div onClick="{{ d.go }}" style="width:{{ d.w }};height:5px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
-                </sc-for>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:14px">
+                <div onClick="{{ annPrev }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dbe3ec;display:flex;align-items:center;justify-content:center;color:#41546b;cursor:pointer;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_left</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:5px">
+                  <sc-for list="{{ annDotsInk }}" as="d" hint-placeholder-count="3">
+                    <div onClick="{{ d.go }}" style="width:{{ d.w }};height:5px;border-radius:20px;background:{{ d.bg }};cursor:pointer"></div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ !annIsLast }}">
+                <div onClick="{{ annNext }}" style="width:26px;height:26px;border-radius:50%;border:1px solid #dbe3ec;display:flex;align-items:center;justify-content:center;color:#41546b;cursor:pointer;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span>
+                </div>
+                </sc-if>
+                <sc-if value="{{ annIsLast }}">
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#2E3A4B;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                </sc-if>
               </div>
             </div>
           </div>
@@ -8238,13 +8260,25 @@ window.TEMPLATES = {
     <div style="display:flex;align-items:center;gap:10px;margin-top:11px">
       <div style="font-size:12px;color:#5f6f83;line-height:1.5">{{ industryNote }}</div>
     </div>
-    <div style="display:flex;gap:3px;margin-top:9px;overflow-x:auto">
+    <div style="display:flex;align-items:flex-end;gap:3px;margin-top:9px;overflow-x:auto">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="15">
-        <div onClick="{{ t.go }}" style="display:flex;align-items:center;gap:7px;height:42px;padding:0 15px;border-radius:8px 8px 0 0;background:{{ t.bg }};border-bottom:2.5px solid {{ t.bd }};white-space:nowrap;cursor:pointer;flex-shrink:0">
-          <div style="font-size:10.5px;font-weight:700;letter-spacing:.06em;color:{{ t.idfg }}">{{ t.id }}</div>
-          <div style="font-size:13.5px;font-weight:600;color:{{ t.fg }}">{{ t.name }}</div>
-          <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ true }}">
-            <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ t.tagfg }};background:{{ t.tagbg }};padding:2px 7px;border-radius:20px">{{ t.tag }}</div>
+        <div onClick="{{ t.go }}" style="display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:42px;padding:6px 15px;border-radius:8px 8px 0 0;background:{{ t.bg }};border-bottom:2.5px solid {{ t.bd }};white-space:nowrap;cursor:pointer;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:7px">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:.06em;color:{{ t.idfg }}">{{ t.id }}</div>
+            <div style="font-size:13.5px;font-weight:600;color:{{ t.fg }}">{{ t.name }}</div>
+            <sc-if value="{{ t.tag }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:{{ t.tagfg }};background:{{ t.tagbg }};padding:2px 7px;border-radius:20px">{{ t.tag }}</div>
+            </sc-if>
+          </div>
+          <sc-if value="{{ t.isTeam }}">
+          <div style="display:flex;align-items:center;gap:6px">
+            <div style="font-size:9.5px;font-weight:600;color:#8a97a8;white-space:nowrap">{{ t.industryLabel }}</div>
+            <div style="display:flex;gap:3px">
+              <sc-for list="{{ t.people }}" as="p" hint-placeholder-count="2">
+                <div title="{{ p.name }}" style="width:17px;height:17px;border-radius:50%;background:{{ p.bg }};color:{{ p.fg }};font-size:7.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ p.initials }}</div>
+              </sc-for>
+            </div>
+          </div>
           </sc-if>
         </div>
       </sc-for>

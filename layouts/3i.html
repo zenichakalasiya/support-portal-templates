@@ -81,18 +81,14 @@
         <div style="padding:40px 56px 52px;background:#fbfcfd">
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
             <div style="font-size:22px;font-weight:700;color:#0b2545;letter-spacing:-0.018em">Browse by category</div>
-            <div style="font-size:14px;color:#5f6f83">214 services across 8 categories</div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;margin-top:16px">
             <sc-for list="{{ categories }}" as="c" hint-placeholder-count="8">
-              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;border-radius:12px;padding:18px;min-width:0">
-                <div style="display:flex;align-items:center;gap:11px">
-                  <div style="width:36px;height:36px;border-radius:10px;background:{{ c.bg }};color:{{ c.fg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ c.i }}</span>
-                  </div>
-                  <div style="font-size:15px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+              <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;min-width:0">
+                <div style="width:38px;height:38px;border-radius:10px;background:{{ c.bg }};color:{{ c.fg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                 </div>
-                <div style="font-size:13px;color:#5f6f83;margin-top:12px;line-height:1.5">{{ c.d }}</div>
+                <div style="font-size:15px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
               </div>
             </sc-for>
           </div>
