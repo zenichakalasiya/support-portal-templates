@@ -405,13 +405,15 @@
         "Saahil Pandya": ["5a", "4b", "4p", "6c", "3h", "4c", "4c2", "3j"],
         "Juli Gopani": ["2a", "4f2", "4g", "4i", "4d", "8a", "7a", "4e"],
         "Nirav Bhatt": ["4f", "3g", "2a", "4c", "3h", "3c", "4b", "3i", "5a", "8b", "7c", "4e", "4g"],
-        "Zeni Chaklasiya": ["3b2", "4f", "2an", "6c", "4p", "4i", "4c2", "6a", "4e", "8b", "7a"]
+        "Zeni Chaklasiya": ["3b2", "4f", "2an", "6c", "4p", "4i", "4c2", "6a", "4e", "8b", "7a"],
+        "Sakshi Asudhani": ["4e", "7a", "5a", "4p", "4c2", "4b", "3h", "3i"]
       };
       const PERSON_COLOR = {
         "Saahil Pandya": { bg: "#E6EEF9", fg: "#1A4F96" },
         "Juli Gopani": { bg: "#E3F2EA", fg: "#0B5C40" },
         "Nirav Bhatt": { bg: "#FDF1D6", fg: "#8A5A08" },
-        "Zeni Chaklasiya": { bg: "#F3E8FB", fg: "#6B3FA0" }
+        "Zeni Chaklasiya": { bg: "#F3E8FB", fg: "#6B3FA0" },
+        "Sakshi Asudhani": { bg: "#DFF4F3", fg: "#0F6E68" }
       };
       const SHORT_INDUSTRY = { it: "IT & ITES", health: "Healthcare", mfg: "Manufacturing", gov: "Government", edu: "Education", bfsi: "BFSI" };
       const initialsOf = name => name.split(" ").map(w => w[0]).join("").toUpperCase();
