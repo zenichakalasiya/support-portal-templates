@@ -141,28 +141,38 @@
     return '<polygon points="' + (cx - r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + (cx + r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + cx.toFixed(1) + ',' + cy.toFixed(1) + '" fill="' + front + '"/>' +
       '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + h).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.28).toFixed(1) + '" fill="' + side + '"/>';
   }
+  // A larger, bolder "M" — a single thick rounded stroke plus two small
+  // tinted "foot" dots under its base, echoing a reference doodle whose
+  // letterform was built from an outline stroke plus small geometric bases
+  // rather than a plain typeface stroke — set on a bigger sheet of paper
+  // with the four isometric blocks scattered further out around it.
   function motadataDeskInner(w, h) {
-    const cardCx = w * 0.4, cardCy = h * 0.54;
-    const cardW = w * 0.34, cardH = h * 0.66;
+    const cardCx = w * 0.42, cardCy = h * 0.52;
+    const cardW = w * 0.34, cardH = h * 0.74;
     const cx0 = cardCx - cardW / 2, cy0 = cardCy - cardH / 2;
-    const card = '<g transform="rotate(-7 ' + cardCx.toFixed(1) + ' ' + cardCy.toFixed(1) + ')">' +
-      '<rect x="' + cx0.toFixed(1) + '" y="' + cy0.toFixed(1) + '" width="' + cardW.toFixed(1) + '" height="' + cardH.toFixed(1) + '" rx="10" fill="#ffffff" stroke="#d9e2dc" stroke-width="1.5"/>' +
+    const mLeft = cx0 + cardW * 0.16, mRight = cx0 + cardW * 0.84;
+    const mTop = cy0 + cardH * 0.14, mBase = cy0 + cardH * 0.5, mDip = cy0 + cardH * 0.3;
+    const strokeW = cardW * 0.055, footR = cardW * 0.075;
+    const card = '<g transform="rotate(-6 ' + cardCx.toFixed(1) + ' ' + cardCy.toFixed(1) + ')">' +
+      '<rect x="' + cx0.toFixed(1) + '" y="' + cy0.toFixed(1) + '" width="' + cardW.toFixed(1) + '" height="' + cardH.toFixed(1) + '" rx="12" fill="#ffffff" stroke="#d9e2dc" stroke-width="1.5"/>' +
+      '<circle cx="' + mLeft.toFixed(1) + '" cy="' + mBase.toFixed(1) + '" r="' + footR.toFixed(1) + '" fill="#2FB8A8" fill-opacity=".18"/>' +
+      '<circle cx="' + mRight.toFixed(1) + '" cy="' + mBase.toFixed(1) + '" r="' + footR.toFixed(1) + '" fill="#E2603A" fill-opacity=".18"/>' +
       '<polyline points="' +
-        (cx0 + cardW * 0.2).toFixed(1) + ',' + (cy0 + cardH * 0.6).toFixed(1) + ' ' +
-        (cx0 + cardW * 0.2).toFixed(1) + ',' + (cy0 + cardH * 0.26).toFixed(1) + ' ' +
-        (cx0 + cardW * 0.5).toFixed(1) + ',' + (cy0 + cardH * 0.48).toFixed(1) + ' ' +
-        (cx0 + cardW * 0.8).toFixed(1) + ',' + (cy0 + cardH * 0.26).toFixed(1) + ' ' +
-        (cx0 + cardW * 0.8).toFixed(1) + ',' + (cy0 + cardH * 0.6).toFixed(1) +
-      '" fill="none" stroke="#22314F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<line x1="' + (cx0 + cardW * 0.16).toFixed(1) + '" y1="' + (cy0 + cardH * 0.76).toFixed(1) + '" x2="' + (cx0 + cardW * 0.84).toFixed(1) + '" y2="' + (cy0 + cardH * 0.76).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
-      '<line x1="' + (cx0 + cardW * 0.16).toFixed(1) + '" y1="' + (cy0 + cardH * 0.85).toFixed(1) + '" x2="' + (cx0 + cardW * 0.6).toFixed(1) + '" y2="' + (cy0 + cardH * 0.85).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
-      '<polygon points="' + (cx0 + cardW - 14).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH - 14).toFixed(1) + '" fill="#2FB8A8"/>' +
+        mLeft.toFixed(1) + ',' + mBase.toFixed(1) + ' ' +
+        mLeft.toFixed(1) + ',' + mTop.toFixed(1) + ' ' +
+        cardCx.toFixed(1) + ',' + mDip.toFixed(1) + ' ' +
+        mRight.toFixed(1) + ',' + mTop.toFixed(1) + ' ' +
+        mRight.toFixed(1) + ',' + mBase.toFixed(1) +
+      '" fill="none" stroke="#22314F" stroke-width="' + strokeW.toFixed(1) + '" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<line x1="' + mLeft.toFixed(1) + '" y1="' + (cy0 + cardH * 0.66).toFixed(1) + '" x2="' + mRight.toFixed(1) + '" y2="' + (cy0 + cardH * 0.66).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
+      '<line x1="' + mLeft.toFixed(1) + '" y1="' + (cy0 + cardH * 0.75).toFixed(1) + '" x2="' + (cx0 + cardW * 0.58).toFixed(1) + '" y2="' + (cy0 + cardH * 0.75).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
+      '<polygon points="' + (cx0 + cardW - 18).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH - 18).toFixed(1) + '" fill="#2FB8A8"/>' +
       '</g>';
     return card +
-      isoWedge(w * 0.66, h * 0.06, w * 0.17, w * 0.06, "#22314F", "#16213D") +
-      isoCube(w * 0.78, h * 0.4, w * 0.135, w * 0.05, "#F0968B", "#F7C3BB", "#D97A6E") +
-      halfDome(w * 0.52, h * 0.88, w * 0.09, "#E2603A", "#B84A2C") +
-      isoCone(w * 0.2, h * 0.86, w * 0.05, h * 0.09, "#2FB8A8", "#1F8A7E");
+      isoWedge(w * 0.68, h * 0.05, w * 0.16, w * 0.055, "#22314F", "#16213D") +
+      isoCube(w * 0.8, h * 0.35, w * 0.13, w * 0.045, "#F0968B", "#F7C3BB", "#D97A6E") +
+      halfDome(w * 0.63, h * 0.92, w * 0.085, "#E2603A", "#B84A2C") +
+      isoCone(w * 0.16, h * 0.9, w * 0.048, h * 0.09, "#2FB8A8", "#1F8A7E");
   }
 
   // A halftone dot field whose opacity itself ramps up left-to-right, so the
@@ -308,11 +318,11 @@
       note: "Brought over from 3g's own hero — the same soft radial glows and fine dot-grid texture over a light blue wash, with dark ink text for contrast. Now the default for this template."
     },
     {
-      key: "desk3d", label: "Motadata Desk", dot: "#22314F", light: true, hideAnn: true,
+      key: "desk3d", label: "Motadata Desk", dot: "#22314F", light: true, hideAnn: true, bannerHeight: 320, center: true,
       base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
-      motif: svgUrl(440, 168, motadataDeskInner(440, 168)),
-      motifSize: "440px 168px", motifPos: "center",
-      note: "An original illustration for this desk — a notebook doodled with an 'M' beside scattered isometric blocks (wedge, cube, dome, cone) in Motadata's palette, over a sage wash. The announcement card steps aside so the scene has the full banner to itself."
+      motif: svgUrl(520, 268, motadataDeskInner(520, 268)),
+      motifSize: "520px 268px", motifPos: "center",
+      note: "An original illustration for this desk — a notebook doodled with a bold 'M' beside scattered isometric blocks (wedge, cube, dome, cone) in Motadata's palette, over a sage wash. A taller banner gives the scene more room to breathe. The announcement card steps aside so the scene has the full banner to itself."
     },
     {
       key: "dotgrad", label: "Dot Gradient", dot: "#2FAFC0", light: true, rawBg: true,
