@@ -120,59 +120,59 @@
     }
     return out;
   }
-  // ---- 3D isometric-block illustration for the "Motadata Desk" banner -------
-  function isoCube(x, y, s, depth, front, top, side) {
-    return '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + s.toFixed(1) + '" height="' + s.toFixed(1) + '" rx="3" fill="' + front + '"/>' +
-      '<polygon points="' + x.toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s).toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + ' ' + (x + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + top + '"/>' +
-      '<polygon points="' + (x + s).toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s).toFixed(1) + ',' + (y + s).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y + s - depth).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + side + '"/>';
+  // ---- flat brand-card illustration for the "Motadata Desk" banner ---------
+  // A plain white card (wordmark + a small three-glyph outline mark +
+  // product name) scattered with simple flat solid-colour shapes — a
+  // triangle, two half-domes and a pill — rather than the shaded isometric
+  // blocks used elsewhere, matching a flatter reference illustration.
+  function flatTriangle(cx, cy, size, rotateDeg, color) {
+    const half = size / 2, top = size * 0.87;
+    const pts = cx.toFixed(1) + ',' + (cy - top * 0.6).toFixed(1) + ' ' +
+      (cx - half).toFixed(1) + ',' + (cy + top * 0.4).toFixed(1) + ' ' +
+      (cx + half).toFixed(1) + ',' + (cy + top * 0.4).toFixed(1);
+    return '<polygon points="' + pts + '" fill="' + color + '" transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"/>';
   }
-  function isoWedge(x, y, s, depth, front, side) {
-    const apex = x.toFixed(1) + ',' + (y + s / 2).toFixed(1);
-    const topR = (x + s).toFixed(1) + ',' + y.toFixed(1);
-    const botR = (x + s).toFixed(1) + ',' + (y + s).toFixed(1);
-    return '<polygon points="' + apex + ' ' + topR + ' ' + botR + '" fill="' + front + '"/>' +
-      '<polygon points="' + topR + ' ' + botR + ' ' + (x + s + depth).toFixed(1) + ',' + (y + s - depth).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + side + '"/>';
+  function flatDome(cx, cy, r, color, rotateDeg) {
+    const d = 'M ' + (cx - r).toFixed(1) + ',' + cy.toFixed(1) + ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (cx + r).toFixed(1) + ',' + cy.toFixed(1) + ' Z';
+    return '<path d="' + d + '" fill="' + color + '"' + (rotateDeg ? (' transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"') : '') + '/>';
   }
-  function halfDome(cx, cy, r, front, side) {
-    return '<path d="M ' + (cx - r).toFixed(1) + ',' + cy.toFixed(1) + ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (cx + r).toFixed(1) + ',' + cy.toFixed(1) + ' L ' + (cx + r).toFixed(1) + ',' + (cy + r * 0.32).toFixed(1) + ' A ' + r.toFixed(1) + ',' + (r * 0.32).toFixed(1) + ' 0 0 1 ' + (cx - r).toFixed(1) + ',' + (cy + r * 0.32).toFixed(1) + ' Z" fill="' + front + '"/>' +
-      '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + r * 0.32).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.32).toFixed(1) + '" fill="' + side + '"/>';
+  function pillShape(cx, cy, w, h, color, rotateDeg) {
+    return '<rect x="' + (cx - w / 2).toFixed(1) + '" y="' + (cy - h / 2).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '" rx="' + (h / 2).toFixed(1) + '" fill="' + color + '"' + (rotateDeg ? (' transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"') : '') + '/>';
   }
-  function isoCone(cx, cy, r, h, front, side) {
-    return '<polygon points="' + (cx - r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + (cx + r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + cx.toFixed(1) + ',' + cy.toFixed(1) + '" fill="' + front + '"/>' +
-      '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + h).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.28).toFixed(1) + '" fill="' + side + '"/>';
+  // The card's little logo mark: an outlined circle, triangle and arch-
+  // plus-underline glyph in a row, all the same thin stroke colour.
+  function motadataMark(x, y, h, color) {
+    const sw = (h * 0.09).toFixed(1);
+    const r = h * 0.18, gap = h * 0.24;
+    let cx = x + r;
+    let out = '<circle cx="' + cx.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="none" stroke="' + color + '" stroke-width="' + sw + '"/>';
+    cx += r + gap;
+    const triHalf = h * 0.32, triTop = y - h * 0.34, triBase = y + h * 0.28;
+    const triCx = cx + triHalf;
+    out += '<polyline points="' + (triCx - triHalf).toFixed(1) + ',' + triBase.toFixed(1) + ' ' + triCx.toFixed(1) + ',' + triTop.toFixed(1) + ' ' + (triCx + triHalf).toFixed(1) + ',' + triBase.toFixed(1) + ' ' + (triCx - triHalf).toFixed(1) + ',' + triBase.toFixed(1) + '" fill="none" stroke="' + color + '" stroke-width="' + sw + '" stroke-linejoin="round"/>';
+    cx = triCx + triHalf + gap;
+    const archR = h * 0.26, archCx = cx + archR, archY = y - h * 0.02;
+    out += '<path d="M ' + (archCx - archR).toFixed(1) + ',' + archY.toFixed(1) + ' A ' + archR.toFixed(1) + ',' + archR.toFixed(1) + ' 0 0 1 ' + (archCx + archR).toFixed(1) + ',' + archY.toFixed(1) + '" fill="none" stroke="' + color + '" stroke-width="' + sw + '" stroke-linecap="round"/>' +
+      '<line x1="' + (archCx - archR * 0.8).toFixed(1) + '" y1="' + (archY + h * 0.26).toFixed(1) + '" x2="' + (archCx + archR * 0.8).toFixed(1) + '" y2="' + (archY + h * 0.26).toFixed(1) + '" stroke="' + color + '" stroke-width="' + sw + '" stroke-linecap="round"/>';
+    return out;
   }
-  // A larger, bolder "M" — a single thick rounded stroke plus two small
-  // tinted "foot" dots under its base, echoing a reference doodle whose
-  // letterform was built from an outline stroke plus small geometric bases
-  // rather than a plain typeface stroke — set on a bigger sheet of paper
-  // with the four isometric blocks scattered further out around it.
   function motadataDeskInner(w, h) {
-    const cardCx = w * 0.42, cardCy = h * 0.52;
-    const cardW = w * 0.34, cardH = h * 0.74;
+    const cardCx = w * 0.44, cardCy = h * 0.49;
+    const cardW = w * 0.48, cardH = h * 0.55;
     const cx0 = cardCx - cardW / 2, cy0 = cardCy - cardH / 2;
-    const mLeft = cx0 + cardW * 0.16, mRight = cx0 + cardW * 0.84;
-    const mTop = cy0 + cardH * 0.14, mBase = cy0 + cardH * 0.5, mDip = cy0 + cardH * 0.3;
-    const strokeW = cardW * 0.055, footR = cardW * 0.075;
+    const markColor = "#8CA79B";
     const card = '<g transform="rotate(-6 ' + cardCx.toFixed(1) + ' ' + cardCy.toFixed(1) + ')">' +
-      '<rect x="' + cx0.toFixed(1) + '" y="' + cy0.toFixed(1) + '" width="' + cardW.toFixed(1) + '" height="' + cardH.toFixed(1) + '" rx="12" fill="#ffffff" stroke="#d9e2dc" stroke-width="1.5"/>' +
-      '<circle cx="' + mLeft.toFixed(1) + '" cy="' + mBase.toFixed(1) + '" r="' + footR.toFixed(1) + '" fill="#2FB8A8" fill-opacity=".18"/>' +
-      '<circle cx="' + mRight.toFixed(1) + '" cy="' + mBase.toFixed(1) + '" r="' + footR.toFixed(1) + '" fill="#E2603A" fill-opacity=".18"/>' +
-      '<polyline points="' +
-        mLeft.toFixed(1) + ',' + mBase.toFixed(1) + ' ' +
-        mLeft.toFixed(1) + ',' + mTop.toFixed(1) + ' ' +
-        cardCx.toFixed(1) + ',' + mDip.toFixed(1) + ' ' +
-        mRight.toFixed(1) + ',' + mTop.toFixed(1) + ' ' +
-        mRight.toFixed(1) + ',' + mBase.toFixed(1) +
-      '" fill="none" stroke="#22314F" stroke-width="' + strokeW.toFixed(1) + '" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<line x1="' + mLeft.toFixed(1) + '" y1="' + (cy0 + cardH * 0.66).toFixed(1) + '" x2="' + mRight.toFixed(1) + '" y2="' + (cy0 + cardH * 0.66).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
-      '<line x1="' + mLeft.toFixed(1) + '" y1="' + (cy0 + cardH * 0.75).toFixed(1) + '" x2="' + (cx0 + cardW * 0.58).toFixed(1) + '" y2="' + (cy0 + cardH * 0.75).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
-      '<polygon points="' + (cx0 + cardW - 18).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH - 18).toFixed(1) + '" fill="#2FB8A8"/>' +
+      '<rect x="' + cx0.toFixed(1) + '" y="' + cy0.toFixed(1) + '" width="' + cardW.toFixed(1) + '" height="' + cardH.toFixed(1) + '" rx="14" fill="#ffffff" stroke="#e3e9e5" stroke-width="1.5"/>' +
+      '<text x="' + (cx0 + cardW * 0.09).toFixed(1) + '" y="' + (cy0 + cardH * 0.25).toFixed(1) + '" font-family="Arial,sans-serif" font-size="' + (cardH * 0.13).toFixed(1) + '" font-weight="700" fill="#12233F">Motadata</text>' +
+      motadataMark(cx0 + cardW * 0.12, cy0 + cardH * 0.6, cardH * 0.36, markColor) +
+      '<text x="' + (cx0 + cardW * 0.93).toFixed(1) + '" y="' + (cy0 + cardH * 0.87).toFixed(1) + '" font-family="Arial,sans-serif" font-size="' + (cardH * 0.09).toFixed(1) + '" font-weight="600" letter-spacing="2" fill="#93a1b0" text-anchor="end">SERVICEOPS</text>' +
       '</g>';
     return card +
-      isoWedge(w * 0.68, h * 0.05, w * 0.16, w * 0.055, "#22314F", "#16213D") +
-      isoCube(w * 0.8, h * 0.35, w * 0.13, w * 0.045, "#F0968B", "#F7C3BB", "#D97A6E") +
-      halfDome(w * 0.63, h * 0.92, w * 0.085, "#E2603A", "#B84A2C") +
-      isoCone(w * 0.16, h * 0.9, w * 0.048, h * 0.09, "#2FB8A8", "#1F8A7E");
+      pillShape(w * 0.08, h * 0.14, w * 0.13, h * 0.13, "#BFE0CB", -8) +
+      flatTriangle(w * 0.9, h * 0.2, w * 0.13, 8, "#123524") +
+      flatDome(w * 0.94, h * 0.56, w * 0.075, "#D97A54", -90) +
+      flatDome(w * 0.92, h * 0.86, w * 0.085, "#F2B79A", -130) +
+      flatTriangle(w * 0.12, h * 0.84, w * 0.19, -6, "#2F6FB0");
   }
 
   // A halftone dot field whose opacity itself ramps up left-to-right, so the
@@ -322,7 +322,7 @@
       base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
       motif: svgUrl(520, 268, motadataDeskInner(520, 268)),
       motifSize: "520px 268px", motifPos: "center",
-      note: "An original illustration for this desk — a notebook doodled with a bold 'M' beside scattered isometric blocks (wedge, cube, dome, cone) in Motadata's palette, over a sage wash. A taller banner gives the scene more room to breathe. The announcement card steps aside so the scene has the full banner to itself."
+      note: "A flat Motadata brand card — wordmark, a small three-glyph mark and the ServiceOps name — scattered with simple flat triangles, half-domes and a pill in Motadata's palette, over a sage wash. The announcement card steps aside so the scene has the full banner to itself."
     },
     {
       key: "dotgrad", label: "Dot Gradient", dot: "#2FAFC0", light: true, rawBg: true,
