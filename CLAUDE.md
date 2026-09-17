@@ -198,7 +198,15 @@ gated by `bannerIsDesk` (`sidecarBanner()`'s `activeKey === "desk3d"`) —
 nested inside the existing `bannerHideAnn` branch, with the generic
 `{{ bannerMotif }}` div kept as the `!bannerIsDesk` fallback for any future
 hideAnn seed. `desk3d`'s own `motif` field is `""`; it plays no part in
-this seed's rendering.
+this seed's rendering. `desk3d`'s `dot` is a sage green (`#3E7C5A`), not
+picked to match its swatch alone — it's the seed's whole colour identity:
+`bannerAccentBg/Fg/Border` (the data cards' ID pill / icon-chip tint) derive
+from it as usual, and a fourth flag, `pageTint` (used by `desk3d` only),
+additionally tints `bannerPageBg` — the page's own ground colour, behind
+the top bar, side rail and every data card, normally a flat neutral
+`#f6f8fb` — to a very light wash of that same green
+(`tintLight(active.dot, .95)`) so the whole page reads as part of the same
+green scene as the banner, not just the banner card itself.
 This is also *why* `js/dc.js`'s `compileElement` is namespace-aware:
 `document.createElement(tag)` always produces an HTML element, so a raw
 `<svg>` block authored in a `layouts/*.html` file would silently render as

@@ -263,7 +263,7 @@
       note: "Brought over from 3g's own hero — the same soft radial glows and fine dot-grid texture over a light blue wash, with dark ink text for contrast. Now the default for this template."
     },
     {
-      key: "desk3d", label: "Motadata Desk", dot: "#22314F", light: true, hideAnn: true, bannerHeight: 320, center: true,
+      key: "desk3d", label: "Motadata Desk", dot: "#3E7C5A", light: true, hideAnn: true, bannerHeight: 320, center: true, pageTint: true,
       base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
       motif: "",
       note: "A real 3D scene, not a generated pattern: a paper sheet with an extruded 'motadata' wordmark and six floating solids (charcoal, peach, terracotta, teal), each with proper top/front/side faces and soft ground shadows, over a sage wash. Its markup is hand-authored SVG directly in the 3b2 template (see isDesk / bannerIsDesk) rather than one of the JS shape generators the other seeds use. The announcement card steps aside so the scene has the full banner to itself."
@@ -676,6 +676,7 @@
         bannerAccentFg: tintDark(active.dot, .35),
         bannerHideAnn: !!active.hideAnn,
         bannerIsDesk: activeKey === "desk3d",
+        bannerPageBg: active.pageTint ? tintLight(active.dot, .95) : "#f6f8fb",
         bannerGridCols: active.hideAnn ? "minmax(0,1fr) minmax(360px,560px)" : "minmax(0,1fr) minmax(280px,452px)",
         bannerMinHeight: (active.bannerHeight || 220) + "px",
         bannerLeftJustify: active.center ? "center" : "space-between",
