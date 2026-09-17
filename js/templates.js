@@ -870,7 +870,104 @@ window.TEMPLATES = {
             </div>
           </div>
           <sc-if value="{{ bannerHideAnn }}">
+          <sc-if value="{{ bannerIsDesk }}">
+          <div style="min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:visible">
+            <svg viewBox="0 0 460 212" style="width:100%;height:auto;display:block;overflow:visible">
+              <defs>
+                <filter id="deskSoft" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+                </filter>
+                <linearGradient id="deskPaper" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff"></stop>
+                  <stop offset="1" stop-color="#F2F5F4"></stop>
+                </linearGradient>
+                <linearGradient id="deskPeach" x1="0" y1="0" x2="1" y2="0.3">
+                  <stop offset="0" stop-color="#F4C0A2"></stop>
+                  <stop offset=".55" stop-color="#E9A882"></stop>
+                  <stop offset="1" stop-color="#CF8460"></stop>
+                </linearGradient>
+                <linearGradient id="deskRed" x1="0" y1="0" x2="1" y2="0.3">
+                  <stop offset="0" stop-color="#D9603A"></stop>
+                  <stop offset=".5" stop-color="#C3482A"></stop>
+                  <stop offset="1" stop-color="#9E3620"></stop>
+                </linearGradient>
+                <linearGradient id="deskTeal" x1="0" y1="0" x2="1" y2="0.4">
+                  <stop offset="0" stop-color="#2B7392"></stop>
+                  <stop offset="1" stop-color="#3D93B5"></stop>
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="258" cy="176" rx="104" ry="17" fill="#9FB5B2" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="120" cy="190" rx="31" ry="8" fill="#8FA8A6" opacity=".4" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="386" cy="54" rx="40" ry="10" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="380" cy="110" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="435" cy="145" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+
+              <path d="M147.6,40.4 L321.6,20.4 L348,150 L174,170 Z" fill="url(#deskPaper)"></path>
+
+              <g transform="matrix(1.74,-0.2,0.22,1.08,152,62)">
+                <text x="11" y="-7" font-size="7.4" font-weight="700" fill="#243A3D" letter-spacing="0.2">motadata</text>
+                <g stroke="none">
+                  <path d="M20,22 L26,16 L36,16 L30,22 Z" fill="#C9D6D2"></path>
+                  <path d="M20,22 H30 V74 H20 Z" fill="#7E9B95"></path>
+                  <path d="M30,22 L36,16 V68 L30,74 Z" fill="#A3B7B2"></path>
+
+                  <path d="M30,22 L36,16 L45,16 L39,22 Z" fill="#C9D6D2"></path>
+                  <path d="M30,22 L39,22 L52,50 L43,50 Z" fill="#88A49E"></path>
+                  <path d="M39,22 L45,16 L58,44 L52,50 Z" fill="#AEC0BB"></path>
+
+                  <path d="M57,22 L63,16 L72,16 L66,22 Z" fill="#C9D6D2"></path>
+                  <path d="M57,22 L66,22 L53,50 L44,50 Z" fill="#73908A"></path>
+                  <path d="M66,22 L72,16 L59,44 L53,50 Z" fill="#9BAFAA"></path>
+
+                  <path d="M66,22 L72,16 L82,16 L76,22 Z" fill="#C9D6D2"></path>
+                  <path d="M66,22 H76 V74 H66 Z" fill="#7E9B95"></path>
+                  <path d="M76,22 L82,16 V68 L76,74 Z" fill="#A3B7B2"></path>
+                </g>
+              </g>
+
+              <g transform="translate(378,34) scale(1.22) translate(-378,-34)">
+                <path d="M352,20 L406,26 L392,52 L338,46 Z" fill="#1A242A"></path>
+                <path d="M406,26 L392,52 L420,40 Z" fill="#2F3C45"></path>
+                <path d="M352,20 L406,26" stroke="#44525B" stroke-width="1" fill="none"></path>
+              </g>
+
+              <g transform="translate(381,73) scale(1.22) translate(-381,-73)">
+                <path d="M364,80 A21.4,21.4 0 0 0 406,72 Z" fill="url(#deskPeach)"></path>
+                <path d="M356,74 L398,66 L406,72 L364,80 Z" fill="#F8DCC8"></path>
+                <path d="M364,80 L406,72" stroke="#E0A383" stroke-width="0.8" fill="none"></path>
+              </g>
+
+              <g transform="translate(435,138) scale(1.22) translate(-435,-138)">
+                <path d="M412,140 A21.4,21.4 0 0 1 454,132 Z" fill="url(#deskRed)"></path>
+                <path d="M412,140 L454,132 L458,137 L416,145 Z" fill="#8E3019"></path>
+              </g>
+
+              <g transform="translate(120,153) scale(1.22) translate(-120,-153)">
+                <path d="M118,126 L98,180 L124,176 Z" fill="url(#deskTeal)"></path>
+                <path d="M118,126 L142,146 L124,176 Z" fill="#59B0D0"></path>
+                <path d="M118,126 L124,176" stroke="#24647F" stroke-width="0.8" fill="none" opacity=".55"></path>
+              </g>
+
+              <ellipse cx="366" cy="207" rx="37" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <g transform="translate(364,192) scale(1.22) translate(-364,-192)">
+                <path d="M344,182 L356,172 L384,172 L372,182 Z" fill="#F8DCC8"></path>
+                <path d="M344,182 H372 V202 H344 Z" fill="#E9A882"></path>
+                <path d="M372,182 L384,172 V192 L372,202 Z" fill="#CF8460"></path>
+              </g>
+
+              <ellipse cx="118" cy="93" rx="30" ry="7" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <g transform="translate(117,70) scale(1.22) translate(-117,-70)">
+                <path d="M100,62 L111,53 L135,53 L124,62 Z" fill="#4A5A63"></path>
+                <path d="M100,62 H124 V88 H100 Z" fill="#1F2C33"></path>
+                <path d="M124,62 L135,53 V79 L124,88 Z" fill="#33424B"></path>
+              </g>
+            </svg>
+          </div>
+          </sc-if>
+          <sc-if value="{{ !bannerIsDesk }}">
           <div style="min-width:0;align-self:stretch;border-radius:12px;overflow:hidden;{{ bannerMotif }}"></div>
+          </sc-if>
           </sc-if>
           <sc-if value="{{ !bannerHideAnn }}">
           <div style="min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:{{ bannerAnnJustify }};border-radius:12px;overflow:hidden;{{ bannerMotif }}">

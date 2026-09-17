@@ -188,6 +188,32 @@ looking unfinished in the sliver of pattern that peeks out beside the card.
 shrinking as it trails away, low opacity" shape as `diamondCascadeInner`,
 just with gears instead of diamonds.
 
+`desk3d` is the one seed that breaks this pattern on purpose: its artwork
+is a pixel-accurate port of a hand-authored reference illustration (paper
+sheet, an extruded 3D "motadata" wordmark, six floating 3D solids with
+real top/front/side faces and blurred ground-shadow ellipses), not
+something a `w,h -> svg string` generator could reasonably reproduce. It
+is **hand-authored `<svg>` markup living directly in `layouts/3b2.html`**,
+gated by `bannerIsDesk` (`sidecarBanner()`'s `activeKey === "desk3d"`) —
+nested inside the existing `bannerHideAnn` branch, with the generic
+`{{ bannerMotif }}` div kept as the `!bannerIsDesk` fallback for any future
+hideAnn seed. `desk3d`'s own `motif` field is `""`; it plays no part in
+this seed's rendering.
+This is also *why* `js/dc.js`'s `compileElement` is namespace-aware:
+`document.createElement(tag)` always produces an HTML element, so a raw
+`<svg>` block authored in a `layouts/*.html` file would silently render as
+nothing (an inert unknown element) without it. `compileElement` now checks
+`el.namespaceURI === SVG_NS` on the *parsed template node* — the browser's
+own HTML parser already resolves an `<svg>` subtree into the real SVG
+namespace with correctly-cased tag names (`linearGradient`,
+`feGaussianBlur`, etc.) via the standard foreign-content algorithm, so this
+reads that resolution back rather than re-deriving it — and calls
+`createElementNS` with `el.localName` (not `tagName.toLowerCase()`, which
+would mangle that camelCase) when it's true. This is a generic runtime
+capability, not a `desk3d` special case: any layout can now embed literal
+`<svg>` markup (gradients, filters, camelCase tags and all) and it will
+render correctly.
+
 ### Layout ID quirks
 
 `renderVals()` derives one `is<id>` boolean per layout from the active tab, and

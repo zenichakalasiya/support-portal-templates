@@ -203,8 +203,17 @@
   // Editor-only hints from Claude Design; they carry no runtime meaning.
   var DROP_ATTR = { 'hint-placeholder-count': 1, 'hint-placeholder-val': 1, 'data-comment-anchor': 1 };
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
   function compileElement(el) {
-    var tag = el.tagName.toLowerCase();
+    // The HTML parser that builds the template already resolves an <svg>
+    // subtree into the real SVG namespace (with correctly-cased tag names
+    // like `linearGradient`, `feGaussianBlur`) — `tagName`/`toLowerCase()`
+    // would mangle that case, so for anything already SVG-namespaced use
+    // `localName` verbatim and re-create it via `createElementNS`, or the
+    // browser treats it as an unknown HTML element and renders nothing.
+    var isSvg = el.namespaceURI === SVG_NS;
+    var tag = isSvg ? el.localName : el.tagName.toLowerCase();
     var attrs = [];
     for (var i = 0; i < el.attributes.length; i++) {
       var a = el.attributes[i];
@@ -214,7 +223,7 @@
     var kids = compileChildren(el);
     var isVoid = /^(br|hr|img|input|source|track|wbr)$/.test(tag);
     return function (vals, into) {
-      var node = document.createElement(tag);
+      var node = isSvg ? document.createElementNS(SVG_NS, tag) : document.createElement(tag);
       for (var i = 0; i < attrs.length; i++) {
         var name = attrs[i][0];
         var v = attrs[i][1](vals);
