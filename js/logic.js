@@ -120,21 +120,28 @@
     }
     return out;
   }
-  // ---- flat brand-card illustration for the "Motadata Desk" banner ---------
+  // ---- 3D brand-card illustration for the "Motadata Desk" banner -----------
   // A plain white card (wordmark + a small three-glyph outline mark +
-  // product name) scattered with simple flat solid-colour shapes — a
-  // triangle, two half-domes and a pill — rather than the shaded isometric
-  // blocks used elsewhere, matching a flatter reference illustration.
-  function flatTriangle(cx, cy, size, rotateDeg, color) {
-    const half = size / 2, top = size * 0.87;
-    const pts = cx.toFixed(1) + ',' + (cy - top * 0.6).toFixed(1) + ' ' +
-      (cx - half).toFixed(1) + ',' + (cy + top * 0.4).toFixed(1) + ' ' +
-      (cx + half).toFixed(1) + ',' + (cy + top * 0.4).toFixed(1);
-    return '<polygon points="' + pts + '" fill="' + color + '" transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"/>';
+  // product name) scattered with shaded 3D shapes — two triangular prisms
+  // and two domes, each a front face plus a darker side/underside face
+  // (the side shade is `tintDark()` of the same base colour, so every
+  // shape stays tied to its own hue) — plus one flat pill, matching a
+  // reference illustration of solid 3D blocks scattered around a card.
+  function solidTriangle(cx, cy, size, rotateDeg, front, side) {
+    const half = size / 2, apexY = cy - size * 0.58, baseY = cy + size * 0.38;
+    const bevel = size * 0.22;
+    const g = '<g transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')">' +
+      '<polygon points="' + cx.toFixed(1) + ',' + apexY.toFixed(1) + ' ' + (cx - half).toFixed(1) + ',' + baseY.toFixed(1) + ' ' + (cx + half).toFixed(1) + ',' + baseY.toFixed(1) + '" fill="' + front + '"/>' +
+      '<polygon points="' + cx.toFixed(1) + ',' + apexY.toFixed(1) + ' ' + (cx + half).toFixed(1) + ',' + baseY.toFixed(1) + ' ' + (cx + half - bevel).toFixed(1) + ',' + (baseY + bevel * 0.5).toFixed(1) + '" fill="' + side + '"/>' +
+      '</g>';
+    return g;
   }
-  function flatDome(cx, cy, r, color, rotateDeg) {
-    const d = 'M ' + (cx - r).toFixed(1) + ',' + cy.toFixed(1) + ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (cx + r).toFixed(1) + ',' + cy.toFixed(1) + ' Z';
-    return '<path d="' + d + '" fill="' + color + '"' + (rotateDeg ? (' transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"') : '') + '/>';
+  function solidDome(cx, cy, r, front, side, rotateDeg) {
+    const d = 'M ' + (cx - r).toFixed(1) + ',' + cy.toFixed(1) + ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (cx + r).toFixed(1) + ',' + cy.toFixed(1) +
+      ' L ' + (cx + r).toFixed(1) + ',' + (cy + r * 0.3).toFixed(1) + ' A ' + r.toFixed(1) + ',' + (r * 0.3).toFixed(1) + ' 0 0 1 ' + (cx - r).toFixed(1) + ',' + (cy + r * 0.3).toFixed(1) + ' Z';
+    const rim = '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + r * 0.3).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.3).toFixed(1) + '" fill="' + side + '"/>';
+    return '<g' + (rotateDeg ? (' transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"') : '') + '>' +
+      '<path d="' + d + '" fill="' + front + '"/>' + rim + '</g>';
   }
   function pillShape(cx, cy, w, h, color, rotateDeg) {
     return '<rect x="' + (cx - w / 2).toFixed(1) + '" y="' + (cy - h / 2).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '" rx="' + (h / 2).toFixed(1) + '" fill="' + color + '"' + (rotateDeg ? (' transform="rotate(' + rotateDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"') : '') + '/>';
@@ -167,12 +174,13 @@
       motadataMark(cx0 + cardW * 0.12, cy0 + cardH * 0.6, cardH * 0.36, markColor) +
       '<text x="' + (cx0 + cardW * 0.93).toFixed(1) + '" y="' + (cy0 + cardH * 0.87).toFixed(1) + '" font-family="Arial,sans-serif" font-size="' + (cardH * 0.09).toFixed(1) + '" font-weight="600" letter-spacing="2" fill="#93a1b0" text-anchor="end">SERVICEOPS</text>' +
       '</g>';
+    const green = "#164028", orange = "#D97A54", peach = "#F2B79A", blue = "#2F6FB0";
     return card +
       pillShape(w * 0.08, h * 0.14, w * 0.13, h * 0.13, "#BFE0CB", -8) +
-      flatTriangle(w * 0.9, h * 0.2, w * 0.13, 8, "#123524") +
-      flatDome(w * 0.94, h * 0.56, w * 0.075, "#D97A54", -90) +
-      flatDome(w * 0.92, h * 0.86, w * 0.085, "#F2B79A", -130) +
-      flatTriangle(w * 0.12, h * 0.84, w * 0.19, -6, "#2F6FB0");
+      solidTriangle(w * 0.9, h * 0.2, w * 0.13, 8, green, tintLight(green, .3)) +
+      solidDome(w * 0.94, h * 0.56, w * 0.075, orange, tintDark(orange, .22), -90) +
+      solidDome(w * 0.92, h * 0.86, w * 0.085, peach, tintDark(peach, .18), -130) +
+      solidTriangle(w * 0.12, h * 0.84, w * 0.19, -6, blue, tintLight(blue, .28));
   }
 
   // A halftone dot field whose opacity itself ramps up left-to-right, so the
@@ -322,7 +330,7 @@
       base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
       motif: svgUrl(520, 268, motadataDeskInner(520, 268)),
       motifSize: "520px 268px", motifPos: "center",
-      note: "A flat Motadata brand card — wordmark, a small three-glyph mark and the ServiceOps name — scattered with simple flat triangles, half-domes and a pill in Motadata's palette, over a sage wash. The announcement card steps aside so the scene has the full banner to itself."
+      note: "A Motadata brand card — wordmark, a small three-glyph mark and the ServiceOps name — scattered with shaded 3D triangles, domes and a pill in Motadata's palette, over a sage wash. The announcement card steps aside so the scene has the full banner to itself."
     },
     {
       key: "dotgrad", label: "Dot Gradient", dot: "#2FAFC0", light: true, rawBg: true,
