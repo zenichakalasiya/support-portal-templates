@@ -88,11 +88,28 @@
     d += 'A' + rHole + ',' + rHole + ' 0 1 0 ' + (cx + rHole).toFixed(1) + ',' + cy.toFixed(1) + ' Z';
     return d;
   }
-  function gearsInner(size, op) {
-    return '<g fill="#fff" fill-opacity="' + op + '" fill-rule="evenodd">' +
-      '<path d="' + gearRingPath(size * 0.78, size * 0.3, size * 0.24, size * 0.185, 9, size * 0.1) + '"/>' +
-      '<path d="' + gearRingPath(size * 0.4, size * 0.74, size * 0.15, size * 0.115, 8, size * 0.06) + '"/>' +
-      '</g>';
+  function gearGlyph(cx, cy, r, teeth, color, op) {
+    return '<path d="' + gearRingPath(cx, cy, r, r * 0.8, teeth, r * 0.34) + '" fill="' + color + '" fill-opacity="' + op + '" fill-rule="evenodd"/>';
+  }
+  // A cascade of interlocking gears, biggest at the right edge and shrinking
+  // as they trail left, confined to the right ~40% of the width — same
+  // "anchored cluster, faint" idea as diamondCascadeInner, at low opacity so
+  // it reads as a light watermark rather than a solid illustration.
+  function gearsCascadeInner(w, h) {
+    const white = "#FFFFFF";
+    let out = '';
+    [
+      [0.95, 0.5, 0.78, 9, .22],
+      [0.78, 0.24, 0.46, 9, .2],
+      [0.83, 0.76, 0.4, 8, .19],
+      [0.63, 0.5, 0.34, 8, .17],
+      [0.7, 0.92, 0.26, 7, .16],
+      [0.6, 0.1, 0.22, 7, .14],
+      [0.58, 0.7, 0.17, 6, .13]
+    ].forEach(function (d) {
+      out += gearGlyph(w * d[0], h * d[1], h * d[2] / 2, d[3], white, d[4]);
+    });
+    return out;
   }
   function dotGrid(x0, y0, cols, rows, spacing, r, color, op) {
     let out = '';
@@ -149,14 +166,18 @@
   }
 
   // A halftone dot field whose opacity itself ramps up left-to-right, so the
-  // dots read as a gradient rather than a uniform tiled pattern.
+  // dots read as a gradient rather than a uniform tiled pattern. The ramp
+  // finishes by ~60% of the width (not 100%) and holds at full density the
+  // rest of the way, so the pattern is already at its densest well before
+  // the announcement card's left edge, all the way to the banner's right
+  // side, instead of still fading in underneath where the card covers it.
   function dotGradientInner(w, h, color) {
     const cols = 26, rows = 9;
     let out = '';
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         const t = col / (cols - 1);
-        const op = Math.max(0, (t - 0.3) / 0.7) * 0.6;
+        const op = Math.min(1, Math.max(0, (t - 0.12) / 0.5)) * 0.62;
         if (op < 0.02) continue;
         const cx = (w / cols) * (col + 0.5);
         const cy = (h / rows) * (row + 0.5);
@@ -312,17 +333,16 @@
       note: "A cluster of rounded-corner squares anchored at the right edge, cascading in a shrinking sequence toward the 40%-width mark, blending into the blue gradient rather than a hard edge."
     },
     {
-      key: "hexpulse", label: "Hex Pulse Blue", dot: "#F0A73C", rawBg: true, bannerHeight: 320, center: true,
+      key: "hexpulse", label: "Hex Pulse Blue", dot: "#F0A73C", rawBg: true, bannerHeight: 320, center: true, searchWhite: true,
       base: "background-color:#0E4C5C;background-image:" + svgUrl(900, 220, ringDots(900, 220)) + ",linear-gradient(120deg,#0B3E4C 0%,#0E4C5C 60%,#11566A 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
       motif: "",
       note: "Orange rings, plus marks and a dot grid scattered full-width at low opacity, over a deep teal-blue wash."
     },
     {
-      key: "gears", label: "Gear Works", dot: "#57616E",
-      base: "linear-gradient(125deg,#2A2F38 0%,#3E4550 55%,#57616E 100%)",
-      motif: svgUrl(220, 220, gearsInner(220, .22)),
-      motifSize: "190px 190px", motifPos: "right bottom",
-      note: "Manufacturing corner accent — a pair of interlocking gears in the bottom-right corner over a steel-grey gradient."
+      key: "gears", label: "Gear Works", dot: "#57616E", rawBg: true,
+      base: "background-color:#3E4550;background-image:" + svgUrl(900, 220, gearsCascadeInner(900, 220)) + ",linear-gradient(125deg,#2A2F38 0%,#3E4550 55%,#57616E 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
+      motif: "",
+      note: "A cascade of interlocking gears, largest at the right edge and shrinking as they trail left across the right ~40% of the width, at light opacity over a steel-grey gradient."
     }
   ];
 
@@ -677,6 +697,7 @@
       const chip = on => "display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid " +
         (on ? "#07101f;background:#07101f;color:#fff" : "#dde4ee;background:#fff;color:#4a5a70");
       const light = !!active.light;
+      const whiteSearch = light || !!active.searchWhite;
       return {
         showBannerSeed: true,
         bannerSwatches: BANNER_SEEDS.map(s => ({
@@ -691,10 +712,10 @@
         bannerMotif: active.motif ? ("background-image:" + active.motif + ";background-repeat:no-repeat;background-size:" + active.motifSize + ";background-position:" + active.motifPos + ";") : "",
         bannerTitleColor: light ? "#0b2545" : "#fff",
         bannerSubColor: light ? "#425a75" : "#c5dcea",
-        bannerSearchBg: light ? "#fff" : "#ffffff17",
-        bannerSearchBorder: light ? "1px solid #d3e3f4" : "1px solid #ffffff33",
-        bannerSearchFg: light ? "#5f6f83" : "#a9c9da",
-        bannerSearchIcon: light ? "#1E6FC4" : "#a9c9da",
+        bannerSearchBg: whiteSearch ? "#fff" : "#ffffff17",
+        bannerSearchBorder: whiteSearch ? "1px solid #d3e3f4" : "1px solid #ffffff33",
+        bannerSearchFg: whiteSearch ? "#5f6f83" : "#a9c9da",
+        bannerSearchIcon: whiteSearch ? "#1E6FC4" : "#a9c9da",
         bannerBorder: light ? "1px solid #cfe0f2" : "1px solid rgba(255,255,255,.14)",
         bannerAccentBg: tintLight(active.dot, .88),
         bannerAccentBorder: tintLight(active.dot, .78),

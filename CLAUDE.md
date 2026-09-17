@@ -169,6 +169,24 @@ per seed. The motif sits *behind* the announcement card (same grid cell,
 naturally peeks out wherever the card doesn't cover it — this was a deliberate
 correction after two earlier layouts (motif squeezed between columns, then
 motif stacked in a separate box below the card) were both explicitly rejected.
+A third flag, `searchWhite` (used by `hexpulse` only), forces a white search
+bar even on a non-`light` seed — that seed's own teal wash reads better with
+a solid white search field than the usual translucent one dark seeds get.
+Full-width patterns (`dotgrad`, `starlight`, `diamond`, `hexpulse`, `gears`)
+are `rawBg: true` and painted directly on the outer grid container rather than
+via the `motif` div, each a `svgUrl()`-generated SVG stretched
+`background-size:100% 100%` over the whole banner (not just the right
+column) so the pattern reaches the true right edge, not just the edge of
+whichever column happens to hold the announcement card. `dotGradientInner`'s
+left-to-right fade deliberately reaches full density by ~60% of the design
+width rather than 100% — the announcement card's left edge usually falls
+around 65–73% of the real banner width, so a fade tuned to the full 0–100%
+range would still be visibly ramping up right where the card covers it,
+looking unfinished in the sliver of pattern that peeks out beside the card.
+`gearsCascadeInner` (built from `gearGlyph`, itself built on the older
+`gearRingPath`) follows the same "anchored cluster, biggest at the edge,
+shrinking as it trails away, low opacity" shape as `diamondCascadeInner`,
+just with gears instead of diamonds.
 
 ### Layout ID quirks
 
