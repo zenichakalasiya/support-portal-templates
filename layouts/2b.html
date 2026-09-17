@@ -70,11 +70,12 @@
 
           <div style="max-width:860px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:20px">
             <div style="display:flex;align-items:center;height:52px;background:#fff;border:1px solid #d8e4f2;border-radius:10px;padding-right:6px;box-shadow:0 2px 8px rgba(11,37,69,.05)">
-              <div style="display:flex;align-items:center;gap:10px;flex:1;padding:0 16px;min-width:0">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#5f6f83">search</span>
+              <div style="display:flex;align-items:center;flex:1;padding:0 16px;min-width:0">
                 <div style="font-size:14.5px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search services, articles or a request ID</div>
               </div>
-              <div style="display:flex;align-items:center;height:40px;padding:0 20px;background:{{ ink }};color:{{ onInk }};border-radius:7px;font-size:14px;font-weight:600;white-space:nowrap;flex-shrink:0">Search</div>
+              <div style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:{{ ink }};flex-shrink:0">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">search</span>
+              </div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
             <sc-for list="{{ squareActions }}" as="a" hint-placeholder-count="4">

@@ -38,12 +38,13 @@
         <div style="flex:1 1 340px;min-width:0">
           <div style="font-size:34px;font-weight:700;color:#0b2545;letter-spacing:-0.028em;line-height:1.15;margin-top:10px">Welcome to the Plant Service Desk</div>
           <div style="font-size:14px;color:#4a5a70;margin-top:8px;line-height:1.6">Line stoppages, maintenance and plant IT — reported from the floor.</div>
-          <div style="display:flex;gap:10px;margin-top:18px;max-width:520px">
-            <div style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:46px;padding:0 15px;background:#fff;border:1px solid #dde4ee;border-radius:9px">
-              <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#5f6f83">search</span>
+          <div style="display:flex;margin-top:18px;max-width:520px">
+            <div style="flex:1;min-width:0;display:flex;align-items:center;height:46px;padding:0 6px 0 15px;background:#fff;border:1px solid #dde4ee;border-radius:9px">
               <div style="flex:1;min-width:0;font-size:14px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search by machine, line or service</div>
+              <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:{{ brand }};flex-shrink:0">
+                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">search</span>
+              </div>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;height:46px;padding:0 22px;background:{{ brand }};color:#fff;border-radius:9px;font-size:14px;font-weight:600;white-space:nowrap;flex-shrink:0">Search</div>
           </div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:stretch">
@@ -105,7 +106,7 @@
                 <div style="font-size:12.5px;color:#5f6f83;white-space:nowrap">most requested</div>
               </div>
             <div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #e6ebf2;border-radius:12px;padding:12px">
-              <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
+              <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
                   <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>
@@ -146,11 +147,12 @@
       <div>
         <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:{{ ink }};border-radius:12px;padding:16px 18px">
           <div style="flex:1 1 300px;display:flex;align-items:stretch;gap:13px;min-width:0">
-            <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
-              <div style="font-size:11.5px;font-weight:600;color:{{ inkSub }};line-height:1.4">{{ annNow.d }}</div>
+            <div data-tooltip="{{ annNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
+              <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:{{ inkSub }}">{{ annNow.mon }}</div>
+              <div style="font-size:17px;font-weight:800;color:{{ onInk }};line-height:1.1;margin-top:2px">{{ annNow.day }}</div>
             </div>
             <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-              <div style="font-size:14px;font-weight:700;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+              <div style="font-size:14px;font-weight:500;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
               <div style="font-size:12px;font-weight:400;color:{{ inkSub }};margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
             </div>
           </div>
@@ -169,7 +171,7 @@
             </div>
             </sc-if>
             <sc-if value="{{ annIsLast }}">
-            <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+            <div style="display:flex;align-items:center;gap:3px;height:26px;padding:0 12px;border:1px solid rgba(255,255,255,.3);border-radius:16px;font-size:12.5px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </sc-if>
           </div>
         </div>

@@ -36,12 +36,13 @@
         <div style="min-width:0">
             <div style="font-size:36px;font-weight:700;color:#14183A;letter-spacing:-0.034em;line-height:1.1;margin-top:16px;text-wrap:pretty">Your desk, Yash. Everything you left open.</div>
             <div style="font-size:15px;color:#5A5750;margin-top:13px;line-height:1.65;max-width:420px;text-wrap:pretty">Cohort enrolments, certificates and compliance training, plus every request you have with the service desk.</div>
-            <div style="display:flex;gap:10px;margin-top:22px;max-width:460px">
-              <div style="flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:48px;padding:0 15px;background:#fff;border:1px solid #DCD8CF;border-radius:10px">
-                <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#93908A">search</span>
+            <div style="display:flex;margin-top:22px;max-width:460px">
+              <div style="flex:1;min-width:0;display:flex;align-items:center;height:48px;padding:0 6px 0 15px;background:#fff;border:1px solid #DCD8CF;border-radius:10px">
                 <div style="flex:1;min-width:0;font-size:14px;color:#93908A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search courses and guides</div>
+                <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#2B3A8F;flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">search</span>
+                </div>
               </div>
-              <div style="display:flex;align-items:center;justify-content:center;height:48px;padding:0 22px;background:#2B3A8F;border-radius:10px;font-size:14px;font-weight:700;color:#fff;white-space:nowrap">Search</div>
             </div>
           </div>
 
@@ -56,11 +57,12 @@
 
               <div style="background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;align-self:start;width:100%" data-comment-anchor="6b927bd4b9-div">
                 <div style="display:flex;align-items:stretch;gap:13px;padding:14px 16px 12px;min-width:0">
-                  <div style="flex:0 0 58px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
-                    <div style="font-size:11.5px;font-weight:600;color:#5A5750;line-height:1.4">{{ annNow.d }}</div>
+                  <div data-tooltip="{{ annNow.d }}" style="flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
+                    <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#928c7f">{{ annNow.mon }}</div>
+                    <div style="font-size:17px;font-weight:800;color:#14183A;line-height:1.1;margin-top:2px">{{ annNow.day }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:15px;font-weight:700;color:#14183A;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+                    <div style="font-size:15px;font-weight:500;color:#14183A;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:12.5px;font-weight:400;color:#5A5750;margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -79,7 +81,7 @@
                   </div>
                   </sc-if>
                   <sc-if value="{{ annIsLast }}">
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;height:30px;padding:0 15px;border:1px solid #DCD8CF;background:#fff;border-radius:20px;font-size:13px;font-weight:700;color:#2B3A8F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </sc-if>
                 </div>
               </div>
@@ -106,7 +108,7 @@
               <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
             </div>
             <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:12px;padding:16px 18px">
-              <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
+              <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:11px;padding:12px 13px;background:#FEFAF3;border:1px solid #EFE4CE;border-radius:10px;min-width:0">
                   <div style="width:32px;height:32px;border-radius:9px;background:#EFE4CE;color:#2B3A8F;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>

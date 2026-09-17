@@ -126,7 +126,12 @@ both, drop a partial in `layouts/`, and rebuild. Role tags (`primary`,
 `catalog-first`, `course-led`, …) must also exist in the `TAGS` map just below,
 or the tab renders with the fallback grey.
 
-`GROUPS[0]` is a generated pseudo-group, **"Top selected by Team"** — each real
+`GROUPS` is preceded by two hand-picked pseudo-groups, unshifted on in this
+order so **"Final"** ends up first: **"Final"** — a fixed, ordered list of 12
+layout ids the user chose as the ship-ready set (4e, 4g, 7a, 4c2, 5a, 3h, 4f,
+2a, 3b2, 3c, 4p, 8b) — and **"Top selected by Team"** underneath it.
+
+`GROUPS[1]` is the generated pseudo-group, **"Top selected by Team"** — each real
 team member's personal top picks, by layout id, live in the `TEAM_PICKS` map
 right after `GROUPS` is defined. It is unshifted onto `GROUPS` after being
 built, so it never needs its own hand-written member list: for each id in
@@ -139,6 +144,32 @@ colour) — everything else recomputes. This group's tabs render an extra row
 `layouts/_shell.html`; other groups don't set that flag, so their tabs stay
 the original single-line layout.
 
+### The 3b2 banner-seed system
+
+`3b2`'s hero banner has its own switcher (`showBannerSeed`, rendered as a
+"Banner" swatch row above the template), separate from and modeled on `2a`'s
+`seedTokens()`. `BANNER_SEEDS` (module-level array in `js/logic.js`, near the
+SVG shape-generator helpers) holds one entry per swatch — `key`, `label`,
+`dot` (swatch colour), `base` (CSS background value or, if `rawBg: true`, a
+complete `background-*` declaration string), `motif` (an inline SVG data URI
+from a small shape generator, or `""`), `motifSize`/`motifPos`. `sidecarBanner()`
+picks the active entry via `state.bannerSeed` (default `"3gwash"`) and derives
+everything the template needs: `bannerBg`/`bannerMotif` (the two background
+layers), theme-aware text colours (`bannerTitleColor` etc., switched by each
+seed's `light` flag), and tint colours for the template's own data-card ID
+pills and icon chips (`bannerAccentBg/Fg/Border`, computed from `dot` via the
+`tintLight`/`tintDark` helpers) — so switching banners re-tints the whole page,
+not just the hero. Two seed-level flags change the layout itself: `hideAnn`
+(used by `desk3d` only) drops the announcement card entirely and widens the
+right grid column (`bannerGridCols`) so the motif gets the full banner; `center`
+(used by `hexpulse` only) vertically centers both hero columns without
+changing text alignment. `bannerHeight` overrides the shared 220px min-height
+per seed. The motif sits *behind* the announcement card (same grid cell,
+`bannerMotif` on the outer div, the white card as a normal child on top) so it
+naturally peeks out wherever the card doesn't cover it — this was a deliberate
+correction after two earlier layouts (motif squeezed between columns, then
+motif stacked in a separate box below the card) were both explicitly rejected.
+
 ### Layout ID quirks
 
 `renderVals()` derives one `is<id>` boolean per layout from the active tab, and
@@ -149,6 +180,12 @@ layouts key off those flags. Two deviations from 1:1 tab→template:
 - `4p` is shared by Education and Healthcare; `show.notHealth` suppresses the
   Quick links and Notice board cards in the Healthcare context.
 
+`3c2` ("Counter II", in the Rejected group) is a hand-duplicated sibling of
+`3c` with its action-card and KPI fills inverted (white action cards / glass
+KPIs, vs. `3c`'s glass action cards / white KPIs) — a deliberate one-off
+variant, not a shared template, kept in sync with `3c` only by hand if `3c`'s
+banner/action-row changes again.
+
 `js/app.js`'s `activeLayoutId()` resolves the active layout by first checking
 `TEMPLATES[tab]` directly, then falling back to scanning `is<id>` flags — read
 that function before assuming a tab id always maps to a template file. Six ids
@@ -156,6 +193,10 @@ appear in more than one group, which is why 37 layouts fill 45 tab positions.
 
 ## Notes worth knowing before editing
 
+- **`reference/3b2-banners/`** holds the user's own reference screenshots for
+  the `3b2` banner-seed designs (named `<n>-<seed-key>-<theme>.png`) — kept for
+  their own future reference, not wired into the app or referenced by any
+  template. Safe to leave alone; not dead weight to clean up.
 - **Fonts**: Inter, Newsreader, Material Symbols Rounded load from Google
   Fonts. Icons are ligatures — offline, they render as literal names
   (`chevron_right`) rather than glyphs.
@@ -255,8 +296,10 @@ These were applied template-wide and should be kept when adding or editing one:
   with something else that must **not** resize (a Contact/escalation card, e.g.
   `8a`/`8b`), nest the two new cards in their own sub-grid inside the original
   card's slot rather than changing the outer row's column count.
-- **Most read** is a listing data card: header, then rows of id pill, title,
-  date and category.
+- **Most read** is a listing data card: header, then rows of a leading
+  `description` icon chip (matching `4c2`'s original treatment), id pill,
+  title, date and category. The icon chip is on every Most read row
+  gallery-wide now, not just `4c2`.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
   notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That

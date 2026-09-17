@@ -44,14 +44,9 @@
           </div>
           <div style="position:relative;display:flex;gap:10px">
             <sc-for list="{{ greetCounters }}" as="c" hint-placeholder-count="3">
-              <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:12px;min-width:132px">
-                <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#fff">{{ c.i }}</span>
-                </div>
-                <div>
-                  <div style="font-size:21px;font-weight:700;color:#fff;line-height:1.1">{{ c.v }}</div>
-                  <div style="font-size:12px;color:rgba(255,255,255,.82);margin-top:2px">{{ c.l }}</div>
-                </div>
+              <div style="display:flex;flex-direction:column;padding:12px 18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:12px;min-width:132px">
+                <div style="font-size:21px;font-weight:700;color:#fff;line-height:1.1">{{ c.v }}</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.82);margin-top:2px">{{ c.l }}</div>
               </div>
             </sc-for>
           </div>
@@ -63,13 +58,13 @@
               <div style="position:relative;border-radius:16px;padding:24px 26px;background:{{ cardBg }};border:1px solid {{ cardBorder }};box-shadow:{{ cardShadow }};overflow:hidden;display:flex;align-items:center;gap:20px">
                 <div style="position:relative;flex:0 1 auto;min-width:0">
                   <div style="font-size:21px;font-weight:700;color:#0b2545;letter-spacing:-0.02em;line-height:1.25">Something broken, or something needed?</div>
-                  <div style="font-size:13.5px;color:#5f6f83;margin-top:7px;line-height:1.55;max-width:470px">Machine faults, spares and plant access — routed to the right team on shift.</div>
+                  <div style="font-size:13.5px;color:#5f6f83;margin-top:7px;line-height:1.55;max-width:600px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Machine faults, spares and plant access — routed to the right team on shift.</div>
                   <!-- Both blocks are sized to their own text, never to the card, so the shape
                        pattern on the right of the card stays uncovered. The action grid is
                        width:max-content with equal 1fr columns, which sizes all four cards to the
                        widest label; Contact Us sits beside them and stretches to their height. -->
-                  <div style="display:flex;align-items:stretch;gap:14px;margin-top:18px;flex-wrap:wrap">
-                    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:max-content">
+                  <div style="display:flex;align-items:stretch;gap:14px;margin-top:18px;flex-wrap:nowrap">
+                    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:max-content;flex-shrink:0">
                       <div style="display:flex;align-items:center;gap:9px;min-height:46px;padding:8px 16px;background:#161E27;color:#ffffff;border-radius:11px;font-size:14.5px;font-weight:600;line-height:1.25;white-space:nowrap">
                         <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#F2A81D">report</span>Report a Machine Fault
                       </div>
@@ -83,7 +78,7 @@
                         <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#0c6259">engineering</span>Work Instructions
                       </div>
                     </div>
-                    <div style="display:flex;flex-direction:column;width:max-content;flex:0 0 auto;padding:14px 16px;background:#eff4fa;border:1px solid {{ cardBorder }};border-radius:11px">
+                    <div style="display:flex;flex-direction:column;flex:1 1 auto;min-width:0;padding:14px 16px;background:#eff4fa;border:1px solid {{ cardBorder }};border-radius:11px">
                       <div style="font-size:14.5px;font-weight:700;color:#0b2545;white-space:nowrap">Contact Us</div>
                       <div style="height:1px;background:#eef2f7;margin:11px 0"></div>
                       <div style="display:flex;align-items:center;gap:10px">
@@ -109,12 +104,11 @@
 
               <div style="display:flex;flex-direction:column;min-width:0;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                 <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7;flex-shrink:0">
-                  <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:#F2A81D">bolt</span>
                   <div style="font-size:15px;font-weight:700;color:#0b2545">Quick links</div>
                 </div>
                 <div style="flex:1;display:flex;flex-direction:column">
                   <sc-for list="{{ mfgQuickLinks3 }}" as="q" hint-placeholder-count="3">
-                    <div style="flex:1;display:flex;align-items:center;gap:11px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
+                    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#26384A;flex-shrink:0">{{ q.i }}</span>
                       <div style="flex:1;min-width:0;font-size:13px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ q.t }}</div>
                       <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#9fb0c4;flex-shrink:0">north_east</span>
@@ -133,11 +127,12 @@
               </div>
               <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 18px 17px;border-top:1px solid rgba(255,255,255,.14);flex-shrink:0">
                 <div style="flex:1 1 320px;display:flex;align-items:stretch;gap:13px;min-width:0">
-                  <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
-                    <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
+                  <div data-tooltip="{{ annNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
+                    <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.65)">{{ annNow.mon }}</div>
+                    <div style="font-size:17px;font-weight:800;color:#fff;line-height:1.1;margin-top:2px">{{ annNow.day }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+                    <div style="font-size:17px;font-weight:500;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -156,7 +151,7 @@
                   </div>
                   </sc-if>
                   <sc-if value="{{ annIsLast }}">
-                  <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;height:28px;padding:0 14px;border:1px solid rgba(255,255,255,.3);border-radius:18px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                   </sc-if>
                 </div>
               </div>
@@ -214,7 +209,9 @@
               <div>
                 <sc-for list="{{ topArticles }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
-                    <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#5f6f83;flex-shrink:0;margin-top:2px">description</span>
+                    <div style="width:36px;height:36px;border-radius:8px;background:#EEF0F2;color:#22262B;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">description</span>
+                    </div>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
                         <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>

@@ -136,11 +136,15 @@ img { max-width: 100%; }
 #shell [role='button'] { transition: background-color .12s ease, box-shadow .12s ease; }
 #shell [role='button']:hover { filter: brightness(0.975); }
 
-/* The tab strip scrolls horizontally when the industry has many layouts. */
+/* The tab strip scrolls horizontally when the industry has many layouts.
+   No scroll-behavior:smooth here on purpose: it re-animates on every discrete
+   wheel/trackpad delta, and rapid successive deltas (a normal trackpad swipe)
+   make the browser keep re-targeting that animation — which feels like the
+   scroll stutters or snaps back mid-gesture. Native wheel/trackpad scrolling
+   is already smooth; this rule was fighting it. */
 #shell [style*='overflow-x:auto'] {
   scrollbar-width: thin;
   scrollbar-color: var(--ring-line) transparent;
-  scroll-behavior: smooth;
 }
 #shell [style*='overflow-x:auto']::-webkit-scrollbar { height: 6px; }
 #shell [style*='overflow-x:auto']::-webkit-scrollbar-thumb {
@@ -155,6 +159,56 @@ img { max-width: 100%; }
 /* Every clickable region inside a layout gets a pointer and a focus ring;
    the design draws them as plain divs. */
 #stage [role='button'] { cursor: pointer; }
+
+/* Custom hover tooltip: any element carrying data-tooltip shows its value in
+   a small dark popover below it. Used by announcement date tiles (the tile
+   face only shows a weekday + day number; the full date lives here). Pure
+   CSS — `content: attr()` reads the attribute, no JS needed. Positioned
+   BELOW (not above) the tile on purpose: these tiles usually sit in the
+   first row of a card with `overflow:hidden` for its rounded corners, and a
+   tooltip opening upward gets clipped by that card's own top edge. */
+#stage [data-tooltip] { position: relative; cursor: default; }
+#stage [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 9px);
+  transform: translateX(-50%) translateY(-4px);
+  background: #0b2545;
+  color: #fff;
+  font: 600 11.5px/1.3 var(--font-sans);
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(11,37,69,.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+  z-index: 40;
+}
+#stage [data-tooltip]::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 4px);
+  transform: translateX(-50%) translateY(-4px);
+  border: 5px solid transparent;
+  border-bottom-color: #0b2545;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+  z-index: 40;
+}
+#stage [data-tooltip]:hover::after, #stage [data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Reveal-on-hover corner arrow: a card carrying data-hover-reveal shows its
+   .reveal-arrow child only while hovered, so a plain clickable card gets a
+   quiet affordance instead of a permanent icon cluttering every tile. */
+#stage [data-hover-reveal] .reveal-arrow { opacity: 0; transition: opacity .15s ease; }
+#stage [data-hover-reveal]:hover .reveal-arrow { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

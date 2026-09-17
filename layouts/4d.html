@@ -81,11 +81,12 @@
             </div>
 
             <div style="display:flex;align-items:stretch;gap:14px;background:{{ ink }};border-radius:6px;padding:14px 18px">
-              <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
-                <div style="font-size:11.5px;font-weight:600;color:{{ inkSub }};line-height:1.4">{{ annNow.d }}</div>
+              <div data-tooltip="{{ annNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
+                <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:{{ inkSub }}">{{ annNow.mon }}</div>
+                <div style="font-size:17px;font-weight:800;color:{{ onInk }};line-height:1.1;margin-top:2px">{{ annNow.day }}</div>
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                <div style="font-size:13.5px;font-weight:700;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+                <div style="font-size:13.5px;font-weight:500;color:{{ onInk }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                 <div style="font-size:12px;font-weight:400;color:{{ inkSub }};margin-top:5px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
               </div>
               <div style="display:flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:{{ onInk }};white-space:nowrap;flex-shrink:0;align-self:center">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>

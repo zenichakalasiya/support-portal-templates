@@ -54,11 +54,12 @@
             <div style="display:flex;flex-direction:column;gap:14px;padding:16px 20px 18px;background:#2E2E2E">
               <div style="display:flex;align-items:flex-start;gap:16px;min-width:0">
                 <div style="flex:1;min-width:0;display:flex;align-items:stretch;gap:13px">
-                  <div style="flex:0 0 62px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
-                    <div style="font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72);line-height:1.4">{{ annNow.d }}</div>
+                  <div data-tooltip="{{ annNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:rgba(255,255,255,.14);border-radius:8px">
+                    <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.65)">{{ annNow.mon }}</div>
+                    <div style="font-size:17px;font-weight:800;color:#fff;line-height:1.1;margin-top:2px">{{ annNow.day }}</div>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
+                    <div style="font-size:17px;font-weight:500;color:#fff;letter-spacing:-0.015em;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annNow.t }}</div>
                     <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,.78);margin-top:6px;line-height:1.5;text-wrap:pretty">{{ annNow.s }}</div>
                   </div>
                 </div>
@@ -77,7 +78,7 @@
                 </div>
                 </sc-if>
                 <sc-if value="{{ annIsLast }}">
-                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+                <div style="display:flex;align-items:center;gap:4px;height:28px;padding:0 14px;border:1px solid rgba(255,255,255,.3);border-radius:18px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </sc-if>
                 </div>
               </div>
@@ -133,7 +134,7 @@
               <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Most Used Services</div>
             </div>
             <div style="display:flex;flex-direction:column;gap:10px;padding:0 22px 22px">
-              <sc-for list="{{ services4 }}" as="s" hint-placeholder-count="4">
+              <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
                 <div style="display:flex;align-items:center;gap:12px;padding:12px;background:#fafafa;border:1px solid #ececec;border-radius:10px;min-width:0">
                   <div style="width:36px;height:36px;border-radius:10px;background:#EEF2FF;color:#2B54F5;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>

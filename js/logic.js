@@ -27,8 +27,307 @@
   // tabs whose announcement strip rotates on its own
   const AUTO_ANN = new Set(["3h", "4g", "4i", "6c"]);
 
+  // Announcement date tiles show a day number + 3-letter month only (no
+  // weekday, no year) on the tile face; the original "11 Aug 2026" string
+  // (already a short month) is reused as-is for the hover tooltip.
+  const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, sept: 8, oct: 9, nov: 10, dec: 11 };
+  const MONTH_SHORT = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  function dateTile(str) {
+    const m = /^(\d{1,2})\s+([A-Za-z]+)\.?\s+(\d{4})$/.exec(String(str || "").trim());
+    if (!m) return { day: "", mon: "" };
+    const day = parseInt(m[1], 10);
+    const monIdx = MONTHS[m[2].toLowerCase()];
+    return {
+      day: String(day).padStart(2, "0"),
+      mon: monIdx === undefined ? m[2].slice(0, 3).toUpperCase() : MONTH_SHORT[monIdx]
+    };
+  }
+  function withDateTiles(list) {
+    return (list || []).map(x => Object.assign({}, x, dateTile(x.d)));
+  }
+
+  // ---- 3b2 banner background varieties -------------------------------
+  // Tint a seed's swatch colour into a light pill/chip background (mix toward
+  // white) or a readable dark foreground (mix toward black), so every data
+  // card's ID pills and icon chips can track whichever banner is active.
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    const num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+  }
+  function tintLight(hex, amount) {
+    const rgb = hexToRgb(hex);
+    const mix = c => Math.round(c + (255 - c) * amount);
+    return 'rgb(' + mix(rgb[0]) + ',' + mix(rgb[1]) + ',' + mix(rgb[2]) + ')';
+  }
+  function tintDark(hex, amount) {
+    const rgb = hexToRgb(hex);
+    const mix = c => Math.round(c * (1 - amount));
+    return 'rgb(' + mix(rgb[0]) + ',' + mix(rgb[1]) + ',' + mix(rgb[2]) + ')';
+  }
+
+  // Small SVG-shape generators, tiled at low opacity over a unique gradient
+  // per variant. Shapes only borrow the geometric motif of a reference image
+  // (quarter circles, hex grid, gear teeth, circuit traces, …) — no text,
+  // logos or watermarks from any reference are reproduced.
+  function svgUrl(w, h, inner) {
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' + inner + '</svg>';
+    return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+  }
+  function gearRingPath(cx, cy, rOuter, rInner, teeth, rHole) {
+    const step = Math.PI / teeth;
+    let d = '';
+    for (let i = 0; i < teeth * 2; i++) {
+      const r = i % 2 === 0 ? rOuter : rInner;
+      const a = i * step;
+      d += (i === 0 ? 'M' : 'L') + (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1) + ' ';
+    }
+    d += 'Z M' + (cx + rHole).toFixed(1) + ',' + cy.toFixed(1) + ' ';
+    d += 'A' + rHole + ',' + rHole + ' 0 1 0 ' + (cx - rHole).toFixed(1) + ',' + cy.toFixed(1) + ' ';
+    d += 'A' + rHole + ',' + rHole + ' 0 1 0 ' + (cx + rHole).toFixed(1) + ',' + cy.toFixed(1) + ' Z';
+    return d;
+  }
+  function gearsInner(size, op) {
+    return '<g fill="#fff" fill-opacity="' + op + '" fill-rule="evenodd">' +
+      '<path d="' + gearRingPath(size * 0.78, size * 0.3, size * 0.24, size * 0.185, 9, size * 0.1) + '"/>' +
+      '<path d="' + gearRingPath(size * 0.4, size * 0.74, size * 0.15, size * 0.115, 8, size * 0.06) + '"/>' +
+      '</g>';
+  }
+  function dotGrid(x0, y0, cols, rows, spacing, r, color, op) {
+    let out = '';
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        out += '<circle cx="' + (x0 + col * spacing).toFixed(1) + '" cy="' + (y0 + row * spacing).toFixed(1) + '" r="' + r + '" fill="' + color + '" fill-opacity="' + op + '"/>';
+      }
+    }
+    return out;
+  }
+  // ---- 3D isometric-block illustration for the "Motadata Desk" banner -------
+  function isoCube(x, y, s, depth, front, top, side) {
+    return '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + s.toFixed(1) + '" height="' + s.toFixed(1) + '" rx="3" fill="' + front + '"/>' +
+      '<polygon points="' + x.toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s).toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + ' ' + (x + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + top + '"/>' +
+      '<polygon points="' + (x + s).toFixed(1) + ',' + y.toFixed(1) + ' ' + (x + s).toFixed(1) + ',' + (y + s).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y + s - depth).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + side + '"/>';
+  }
+  function isoWedge(x, y, s, depth, front, side) {
+    const apex = x.toFixed(1) + ',' + (y + s / 2).toFixed(1);
+    const topR = (x + s).toFixed(1) + ',' + y.toFixed(1);
+    const botR = (x + s).toFixed(1) + ',' + (y + s).toFixed(1);
+    return '<polygon points="' + apex + ' ' + topR + ' ' + botR + '" fill="' + front + '"/>' +
+      '<polygon points="' + topR + ' ' + botR + ' ' + (x + s + depth).toFixed(1) + ',' + (y + s - depth).toFixed(1) + ' ' + (x + s + depth).toFixed(1) + ',' + (y - depth).toFixed(1) + '" fill="' + side + '"/>';
+  }
+  function halfDome(cx, cy, r, front, side) {
+    return '<path d="M ' + (cx - r).toFixed(1) + ',' + cy.toFixed(1) + ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (cx + r).toFixed(1) + ',' + cy.toFixed(1) + ' L ' + (cx + r).toFixed(1) + ',' + (cy + r * 0.32).toFixed(1) + ' A ' + r.toFixed(1) + ',' + (r * 0.32).toFixed(1) + ' 0 0 1 ' + (cx - r).toFixed(1) + ',' + (cy + r * 0.32).toFixed(1) + ' Z" fill="' + front + '"/>' +
+      '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + r * 0.32).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.32).toFixed(1) + '" fill="' + side + '"/>';
+  }
+  function isoCone(cx, cy, r, h, front, side) {
+    return '<polygon points="' + (cx - r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + (cx + r).toFixed(1) + ',' + (cy + h).toFixed(1) + ' ' + cx.toFixed(1) + ',' + cy.toFixed(1) + '" fill="' + front + '"/>' +
+      '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy + h).toFixed(1) + '" rx="' + r.toFixed(1) + '" ry="' + (r * 0.28).toFixed(1) + '" fill="' + side + '"/>';
+  }
+  function motadataDeskInner(w, h) {
+    const cardCx = w * 0.4, cardCy = h * 0.54;
+    const cardW = w * 0.34, cardH = h * 0.66;
+    const cx0 = cardCx - cardW / 2, cy0 = cardCy - cardH / 2;
+    const card = '<g transform="rotate(-7 ' + cardCx.toFixed(1) + ' ' + cardCy.toFixed(1) + ')">' +
+      '<rect x="' + cx0.toFixed(1) + '" y="' + cy0.toFixed(1) + '" width="' + cardW.toFixed(1) + '" height="' + cardH.toFixed(1) + '" rx="10" fill="#ffffff" stroke="#d9e2dc" stroke-width="1.5"/>' +
+      '<polyline points="' +
+        (cx0 + cardW * 0.2).toFixed(1) + ',' + (cy0 + cardH * 0.6).toFixed(1) + ' ' +
+        (cx0 + cardW * 0.2).toFixed(1) + ',' + (cy0 + cardH * 0.26).toFixed(1) + ' ' +
+        (cx0 + cardW * 0.5).toFixed(1) + ',' + (cy0 + cardH * 0.48).toFixed(1) + ' ' +
+        (cx0 + cardW * 0.8).toFixed(1) + ',' + (cy0 + cardH * 0.26).toFixed(1) + ' ' +
+        (cx0 + cardW * 0.8).toFixed(1) + ',' + (cy0 + cardH * 0.6).toFixed(1) +
+      '" fill="none" stroke="#22314F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<line x1="' + (cx0 + cardW * 0.16).toFixed(1) + '" y1="' + (cy0 + cardH * 0.76).toFixed(1) + '" x2="' + (cx0 + cardW * 0.84).toFixed(1) + '" y2="' + (cy0 + cardH * 0.76).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
+      '<line x1="' + (cx0 + cardW * 0.16).toFixed(1) + '" y1="' + (cy0 + cardH * 0.85).toFixed(1) + '" x2="' + (cx0 + cardW * 0.6).toFixed(1) + '" y2="' + (cy0 + cardH * 0.85).toFixed(1) + '" stroke="#e2e8e4" stroke-width="3"/>' +
+      '<polygon points="' + (cx0 + cardW - 14).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH).toFixed(1) + ' ' + (cx0 + cardW).toFixed(1) + ',' + (cy0 + cardH - 14).toFixed(1) + '" fill="#2FB8A8"/>' +
+      '</g>';
+    return card +
+      isoWedge(w * 0.66, h * 0.06, w * 0.17, w * 0.06, "#22314F", "#16213D") +
+      isoCube(w * 0.78, h * 0.4, w * 0.135, w * 0.05, "#F0968B", "#F7C3BB", "#D97A6E") +
+      halfDome(w * 0.52, h * 0.88, w * 0.09, "#E2603A", "#B84A2C") +
+      isoCone(w * 0.2, h * 0.86, w * 0.05, h * 0.09, "#2FB8A8", "#1F8A7E");
+  }
+
+  // A halftone dot field whose opacity itself ramps up left-to-right, so the
+  // dots read as a gradient rather than a uniform tiled pattern.
+  function dotGradientInner(w, h, color) {
+    const cols = 26, rows = 9;
+    let out = '';
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const t = col / (cols - 1);
+        const op = Math.max(0, (t - 0.3) / 0.7) * 0.6;
+        if (op < 0.02) continue;
+        const cx = (w / cols) * (col + 0.5);
+        const cy = (h / rows) * (row + 0.5);
+        out += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="2.6" fill="' + color + '" fill-opacity="' + op.toFixed(2) + '"/>';
+      }
+    }
+    return out;
+  }
+
+  // ---- full-width scattered scene for the "Starlight" banner -----------
+  function starBurst(cx, cy, rOuter, rInner, points, color, op) {
+    const step = Math.PI / points;
+    let d = '';
+    for (let i = 0; i < points * 2; i++) {
+      const r = i % 2 === 0 ? rOuter : rInner;
+      const a = i * step - Math.PI / 2;
+      d += (i === 0 ? 'M' : 'L') + (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1) + ' ';
+    }
+    return '<path d="' + d + 'Z" fill="' + color + '" fill-opacity="' + op + '"/>';
+  }
+  function squareShape(cx, cy, size, rotDeg, color, op) {
+    const half = size / 2;
+    return '<rect x="' + (cx - half).toFixed(1) + '" y="' + (cy - half).toFixed(1) + '" width="' + size.toFixed(1) + '" height="' + size.toFixed(1) + '" rx="' + (size * 0.14).toFixed(1) + '" fill="' + color + '" fill-opacity="' + op + '" transform="rotate(' + rotDeg + ' ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"/>';
+  }
+  function ringArc(cx, cy, rOuter, rInner, startDeg, endDeg, color, op) {
+    const a0 = startDeg * Math.PI / 180, a1 = endDeg * Math.PI / 180;
+    const p = (r, a) => (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1);
+    const large = (endDeg - startDeg) > 180 ? 1 : 0;
+    return '<path d="M ' + p(rOuter, a0) + ' A ' + rOuter.toFixed(1) + ',' + rOuter.toFixed(1) + ' 0 ' + large + ' 1 ' + p(rOuter, a1) +
+      ' L ' + p(rInner, a1) + ' A ' + rInner.toFixed(1) + ',' + rInner.toFixed(1) + ' 0 ' + large + ' 0 ' + p(rInner, a0) + ' Z" fill="' + color + '" fill-opacity="' + op + '"/>';
+  }
+  function archShape(x, y, w, h, color, op) {
+    const r = w / 2;
+    return '<path d="M ' + x.toFixed(1) + ',' + (y + h).toFixed(1) +
+      ' L ' + x.toFixed(1) + ',' + (y + r).toFixed(1) +
+      ' A ' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + (x + w).toFixed(1) + ',' + (y + r).toFixed(1) +
+      ' L ' + (x + w).toFixed(1) + ',' + (y + h).toFixed(1) + ' Z" fill="' + color + '" fill-opacity="' + op + '"/>';
+  }
+  function nightSkyInner(w, h) {
+    const lite = "#A9C6ED", mid = "#6E85B4", white = "#FFFFFF";
+    return '<circle cx="' + (w * 0.15).toFixed(1) + '" cy="' + (h * 0.1).toFixed(1) + '" r="' + (h * 0.18).toFixed(1) + '" fill="' + lite + '" fill-opacity=".4"/>' +
+      ringArc(w * 0.28, h * 0.32, h * 0.26, h * 0.14, 200, 470, mid, .4) +
+      squareShape(w * 0.08, h * 0.62, h * 0.32, 15, lite, .4) +
+      starBurst(w * 0.18, h * 0.82, h * 0.09, h * 0.032, 4, white, .55) +
+      squareShape(w * 0.62, h * 0.08, h * 0.3, -18, lite, .4) +
+      starBurst(w * 0.78, h * 0.32, h * 0.08, h * 0.03, 4, white, .55) +
+      starBurst(w * 0.84, h * 0.42, h * 0.05, h * 0.018, 4, white, .55) +
+      squareShape(w * 0.7, h * 0.78, h * 0.3, 25, lite, .4) +
+      '<circle cx="' + (w * 0.48).toFixed(1) + '" cy="' + (h * 1.02).toFixed(1) + '" r="' + (h * 0.14).toFixed(1) + '" fill="' + mid + '" fill-opacity=".4"/>' +
+      archShape(w * 0.87, h * 0.55, w * 0.11, h * 0.5, mid, .4) +
+      '<circle cx="' + (w * 0.925).toFixed(1) + '" cy="' + (h * 0.5).toFixed(1) + '" r="' + (h * 0.14).toFixed(1) + '" fill="' + lite + '" fill-opacity=".4"/>';
+  }
+
+  // ---- full-width "orange rings + plus marks + dot grid" scene ---------
+  function plusMark(cx, cy, size, color, op) {
+    const half = size / 2, t = size * 0.24;
+    return '<rect x="' + (cx - t / 2).toFixed(1) + '" y="' + (cy - half).toFixed(1) + '" width="' + t.toFixed(1) + '" height="' + size.toFixed(1) + '" fill="' + color + '" fill-opacity="' + op + '"/>' +
+      '<rect x="' + (cx - half).toFixed(1) + '" y="' + (cy - t / 2).toFixed(1) + '" width="' + size.toFixed(1) + '" height="' + t.toFixed(1) + '" fill="' + color + '" fill-opacity="' + op + '"/>';
+  }
+  function plusCluster(x0, y0, cols, rows, spacing, size, color, op) {
+    let out = '';
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        out += plusMark(x0 + col * spacing, y0 + row * spacing, size, color, op);
+      }
+    }
+    return out;
+  }
+  function ringDots(w, h) {
+    const orange = "#F0A73C", white = "#FFFFFF", navy = "#0A2E38";
+    const ring = (cx, cy, r, sw, color, op) => '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="none" stroke="' + color + '" stroke-width="' + sw.toFixed(1) + '" stroke-opacity="' + op + '"/>';
+    const disc = (cx, cy, r, color, op) => '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="' + color + '" fill-opacity="' + op + '"/>';
+    return disc(w * 0.02, -h * 0.05, h * 0.55, navy, .16) +
+      ring(w * 0.03, h * 0.1, h * 0.1, h * 0.045, orange, .22) +
+      disc(w * 0.14, h * 0.45, h * 0.16, white, .18) +
+      plusCluster(w * 0.05, h * 0.66, 3, 2, h * 0.13, h * 0.09, white, .18) +
+      ring(w * 0.83, h * 0.13, h * 0.1, h * 0.045, orange, .22) +
+      ring(w * 0.95, h * 0.24, h * 0.2, h * 0.05, white, .18) +
+      disc(w * 0.97, h * 0.55, h * 0.3, orange, .16) +
+      dotGrid(w * 0.75, h * 0.36, 6, 5, h * 0.075, 2.2, white, .22) +
+      disc(w * 0.03, h * 1.05, h * 0.35, navy, .16) +
+      disc(w * 0.12, h * 1.12, h * 0.3, orange, .16) +
+      disc(w * 0.74, h * 1.05, h * 0.25, white, .16) +
+      disc(w * 0.92, h * 1.05, h * 0.3, navy, .16);
+  }
+
+  // A network of outlined diamonds + connecting diagonal lines, confined to
+  // the right ~40% of the width, blending into the background: each shape's
+  // own opacity ramps up the further right it sits, rather than a hard edge.
+  function fadeOp(x, w, maxOp, startT) {
+    const t = Math.max(0, Math.min(1, (x / w - (startT === undefined ? 0.55 : startT)) / (1 - (startT === undefined ? 0.55 : startT))));
+    return (t * maxOp).toFixed(2);
+  }
+  function roundedDiamond(cx, cy, size, corner, color, sw, op, filled) {
+    const half = size / 2;
+    const attrs = 'x="' + (cx - half).toFixed(1) + '" y="' + (cy - half).toFixed(1) + '" width="' + size.toFixed(1) + '" height="' + size.toFixed(1) + '" rx="' + corner.toFixed(1) + '" transform="rotate(45 ' + cx.toFixed(1) + ' ' + cy.toFixed(1) + ')"';
+    return filled
+      ? '<rect ' + attrs + ' fill="' + color + '" fill-opacity="' + op + '"/>'
+      : '<rect ' + attrs + ' fill="none" stroke="' + color + '" stroke-width="' + sw + '" stroke-opacity="' + op + '"/>';
+  }
+  function diamondCascadeInner(w, h) {
+    const white = "#FFFFFF", tint = "#BFE0FF";
+    let out = '';
+    // anchor cluster, weighted toward the right edge
+    [[0.85, 0.28, 0.5, false], [0.68, 0.45, 0.42, false], [0.85, 0.68, 0.38, true], [0.97, 0.15, 0.26, false]].forEach(function (d) {
+      const cx = w * d[0], cy = h * d[1], size = h * d[2];
+      out += roundedDiamond(cx, cy, size, size * 0.16, d[3] ? tint : white, 1.6, fadeOp(cx, w, .5, 0.35), d[3]);
+    });
+    // cascade trailing left, shrinking toward the 40%-width mark
+    [[0.58, 0.6, 0.22], [0.48, 0.78, 0.15], [0.42, 0.38, 0.11]].forEach(function (d) {
+      const cx = w * d[0], cy = h * d[1], size = h * d[2];
+      out += roundedDiamond(cx, cy, size, size * 0.18, white, 1.4, fadeOp(cx, w, .45, 0.35), false);
+    });
+    return out;
+  }
+
+  // Each variant is a single, non-repeating corner motif — not a tiled pattern
+  // — layered once over a unique gradient wash, matching how the reference
+  // images actually use these shapes (a cluster in one corner, not full-bleed
+  // texture). `base` paints the whole banner; `motif` is the shape cluster,
+  // sized and positioned so it sits in the banner's right corner without
+  // repeating or overpowering the text.
+  const BANNER_SEEDS = [
+    {
+      key: "3gwash", label: "3G Wash", dot: "#1E6FC4", light: true, rawBg: true,
+      base: "background-color:#DCEBFA;background-image:radial-gradient(closest-side,#bcdcf6 0%,transparent 100%),radial-gradient(closest-side,#a9d3f2 0%,transparent 100%),radial-gradient(rgba(11,37,69,.07) 1.2px,transparent 1.3px),linear-gradient(104deg,#E9F2FC 0%,#DCEBFA 55%,#CFE4F7 100%);background-repeat:no-repeat,no-repeat,repeat,no-repeat;background-size:640px 340px,420px 300px,18px 18px,cover;background-position:92% -30%,68% 145%,0 0,center;",
+      motif: "",
+      note: "Brought over from 3g's own hero — the same soft radial glows and fine dot-grid texture over a light blue wash, with dark ink text for contrast. Now the default for this template."
+    },
+    {
+      key: "desk3d", label: "Motadata Desk", dot: "#22314F", light: true, hideAnn: true,
+      base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
+      motif: svgUrl(440, 168, motadataDeskInner(440, 168)),
+      motifSize: "440px 168px", motifPos: "center",
+      note: "An original illustration for this desk — a notebook doodled with an 'M' beside scattered isometric blocks (wedge, cube, dome, cone) in Motadata's palette, over a sage wash. The announcement card steps aside so the scene has the full banner to itself."
+    },
+    {
+      key: "dotgrad", label: "Dot Gradient", dot: "#2FAFC0", light: true, rawBg: true,
+      base: "background-color:#FDF6E8;background-image:" + svgUrl(900, 220, dotGradientInner(900, 220, "#2FAFC0")) + ",linear-gradient(100deg,#FBF3C7 0%,#FDF6E8 30%,#EAF6F1 65%,#D3EEEA 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
+      motif: "",
+      note: "A halftone dot field that itself fades as a gradient — barely-there dots on the left growing into solid teal dots on the right — over a warm cream-to-cool teal wash."
+    },
+    {
+      key: "starlight", label: "Starlight", dot: "#A9C6ED", rawBg: true,
+      base: "background-color:#1E2740;background-image:" + svgUrl(900, 220, nightSkyInner(900, 220)) + ",linear-gradient(120deg,#1B2438 0%,#212C46 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
+      motif: "",
+      note: "Scattered sunburst stars, twinkle sparkles, a ring and an arch, spread across the full width behind both the text and the announcement card — over a grayish navy wash."
+    },
+    {
+      key: "diamond", label: "Diamond Cascade", dot: "#8FC3FF", rawBg: true,
+      base: "background-color:#0B3FA8;background-image:" + svgUrl(900, 220, diamondCascadeInner(900, 220)) + ",linear-gradient(135deg,#1E6FEB 0%,#0B3FA8 55%,#06225C 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
+      motif: "",
+      note: "A cluster of rounded-corner squares anchored at the right edge, cascading in a shrinking sequence toward the 40%-width mark, blending into the blue gradient rather than a hard edge."
+    },
+    {
+      key: "hexpulse", label: "Hex Pulse Blue", dot: "#F0A73C", rawBg: true, bannerHeight: 320, center: true,
+      base: "background-color:#0E4C5C;background-image:" + svgUrl(900, 220, ringDots(900, 220)) + ",linear-gradient(120deg,#0B3E4C 0%,#0E4C5C 60%,#11566A 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
+      motif: "",
+      note: "Orange rings, plus marks and a dot grid scattered full-width at low opacity, over a deep teal-blue wash."
+    },
+    {
+      key: "gears", label: "Gear Works", dot: "#57616E",
+      base: "linear-gradient(125deg,#2A2F38 0%,#3E4550 55%,#57616E 100%)",
+      motif: svgUrl(220, 220, gearsInner(220, .22)),
+      motifSize: "190px 190px", motifPos: "right bottom",
+      note: "Manufacturing corner accent — a pair of interlocking gears in the bottom-right corner over a steel-grey gradient."
+    }
+  ];
+
   class Component extends DCLogic {
-    state = { tab: "3b", group: "it", reqH: 0, seed: "coral" };
+    state = { tab: "3b", group: "it", reqH: 0, seed: "coral", bannerSeed: "3gwash" };
   
     foyVals() {
       // Plant-floor shortcuts. 4i shows all four, 3h the first three.
@@ -122,12 +421,12 @@
           { i: "key", t: "Reset LMS password" },
           { i: "menu_book", t: "Library account" }
         ],
-        eduNotices: [
+        eduNotices: withDateTiles([
           { k: "Examinations", d: "12 Aug 2026", t: "Mid-term hall tickets are now available for download on the student portal.", s: "Download yours before the 20 Aug cut-off; late requests go through the exam cell." },
           { k: "Admissions", d: "10 Aug 2026", t: "Round 2 counselling schedule published for postgraduate programmes.", s: "Seat allotment results follow on 18 Aug; keep your documents to hand." },
           { k: "Maintenance", d: "08 Aug 2026", t: "Hostel block C Wi-Fi upgrade on Saturday 16 Aug, 02:00–05:00.", s: "Wired ports in the common room stay live through the window." },
           { k: "Library", d: "05 Aug 2026", t: "Extended reading room hours until 23:00 through the examination period.", s: "Entry needs your library card after 20:00." }
-        ],
+        ]),
         railKpis: [
           { v: "8", l: "Open requests", s: "2 updated today" },
           { v: "5", l: "My tasks", s: "2 due this shift" },
@@ -135,12 +434,12 @@
         ],
         services4: (this.layoutVals().services6 || []).slice(0, 4),
         requests4: (this.layoutVals().requests8 || []).slice(0, 4),
-        govNotices: [
+        govNotices: withDateTiles([
           { k: "Circular", no: "No. IT/2026/114", d: "04 Sept 2026", t: "e-KYC verification becomes mandatory for all new service applications from 1 October 2026." },
           { k: "Tender", no: "No. DIT/PR/88", d: "29 Aug 2026", t: "Bids invited for the district data centre network refresh — closes 26 September." },
           { k: "Holiday", no: "No. GAD/2026/41", d: "22 Aug 2026", t: "Citizen facilitation centres closed on 2 October for Gandhi Jayanti." },
           { k: "Policy", no: "No. IT/2026/109", d: "14 Aug 2026", t: "Revised grievance escalation matrix takes effect across all departments." }
-        ],
+        ]),
         foyActions: [
           { i: "report", t: "Report an incident", s: "Something is broken, slow or behaving unexpectedly.", cta: "Report it" },
           { i: "add_task", t: "Request a service", s: "Hardware, software, access or a new account.", cta: "Browse catalog" },
@@ -151,11 +450,11 @@
     }
   
     annCarousel() {
-      const items = [
+      const items = withDateTiles([
         { k: "Rollout", d: "05 Sept 2026", t: "Windows 11 rollout starts 22 September", s: "Check whether your laptop is on the first wave, and what to back up first." },
         { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
         { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST", s: "Walk-in support at the Block B desk now runs through the evening shift." }
-      ];
+      ]);
       const i = ((this.state.annIdx || 0) % items.length + items.length) % items.length;
       return {
         annNow: items[i],
@@ -214,15 +513,16 @@
        Dot colours come from the active seed, so each Prism variant tints its
        own dots. */
     prismAnn() {
-      const items = [
+      const items = withDateTiles([
         { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
         { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first." },
         { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST", s: "Walk-in support at the Block B desk now runs through the evening shift." }
-      ];
+      ]);
       const i = ((this.state.pAnnIdx || 0) % items.length + items.length) % items.length;
       const tok = this.seedTokens();
       return {
         pAnnNow: items[i],
+        pAnnIsLast: i === items.length - 1,
         pAnnDots: items.map((a, n) => ({
           w: n === i ? "18px" : "6px",
           bg: n === i ? tok.t2Acc : tok.t2Dot,
@@ -260,14 +560,15 @@
         { i: "menu_book", t: "Find a procedure or guide" }
       ];
       // carried over from the Announcements card this layout no longer has
-      const hcAnns = [
+      const hcAnns = withDateTiles([
         { k: "Maintenance", d: "11 Aug 2026", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "Clinical Wi-Fi stays up throughout." },
         { k: "Rollout", d: "08 Aug 2026", t: "New VPN client rollout begins next week", s: "Ward laptops update overnight on their own." },
         { k: "Service desk", d: "04 Aug 2026", t: "Service desk hours extended to 20:00 IST", s: "Clinical on-call cover is unchanged." }
-      ];
+      ]);
       const hcI = ((this.state.hcAnnIdx || 0) % hcAnns.length + hcAnns.length) % hcAnns.length;
       const out = {
         hcAnnNow: hcAnns[hcI],
+        hcAnnIsLast: hcI === hcAnns.length - 1,
         hcAnnDots: hcAnns.map((a, n) => ({
           k: a.k,
           w: n === hcI ? "20px" : "7px",
@@ -369,14 +670,54 @@
         t2Hair2:    coral ? "#faf4f3" : "#f4f7fa"
       });
     }
-  
+
+    sidecarBanner() {
+      const activeKey = this.state.bannerSeed || BANNER_SEEDS[0].key;
+      const active = BANNER_SEEDS.find(s => s.key === activeKey) || BANNER_SEEDS[0];
+      const chip = on => "display:flex;align-items:center;gap:7px;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid " +
+        (on ? "#07101f;background:#07101f;color:#fff" : "#dde4ee;background:#fff;color:#4a5a70");
+      const light = !!active.light;
+      return {
+        showBannerSeed: true,
+        bannerSwatches: BANNER_SEEDS.map(s => ({
+          key: s.key,
+          label: s.label,
+          dot: "width:10px;height:10px;border-radius:3px;background:" + s.dot + ";flex-shrink:0",
+          style: chip(s.key === activeKey),
+          go: () => this.setState({ bannerSeed: s.key })
+        })),
+        bannerNote: active.note,
+        bannerBg: active.rawBg ? active.base : ("background-image:" + active.base + ";background-size:cover;background-position:center;"),
+        bannerMotif: active.motif ? ("background-image:" + active.motif + ";background-repeat:no-repeat;background-size:" + active.motifSize + ";background-position:" + active.motifPos + ";") : "",
+        bannerTitleColor: light ? "#0b2545" : "#fff",
+        bannerSubColor: light ? "#425a75" : "#c5dcea",
+        bannerSearchBg: light ? "#fff" : "#ffffff17",
+        bannerSearchBorder: light ? "1px solid #d3e3f4" : "1px solid #ffffff33",
+        bannerSearchFg: light ? "#5f6f83" : "#a9c9da",
+        bannerSearchIcon: light ? "#1E6FC4" : "#a9c9da",
+        bannerBorder: light ? "1px solid #cfe0f2" : "1px solid rgba(255,255,255,.14)",
+        bannerAccentBg: tintLight(active.dot, .88),
+        bannerAccentBorder: tintLight(active.dot, .78),
+        bannerAccentFg: tintDark(active.dot, .35),
+        bannerHideAnn: !!active.hideAnn,
+        bannerGridCols: active.hideAnn ? "minmax(0,1fr) minmax(360px,560px)" : "minmax(0,1fr) minmax(280px,452px)",
+        bannerMinHeight: (active.bannerHeight || 220) + "px",
+        bannerLeftJustify: active.center ? "center" : "space-between",
+        bannerLeftGap: active.center ? "26px" : "20px",
+        bannerLeftAlign: "stretch",
+        bannerTextAlign: "left",
+        bannerSearchWidth: "100%",
+        bannerAnnJustify: active.center ? "center" : "flex-start"
+      };
+    }
+
     renderVals() {
       const LAYOUTS = [
         ["8a", "Vault"], ["8b", "Keystone"],
         ["7a", "Quadrangle"], ["7b", "Course Shelf"], ["7c", "Study Desk"],
         ["6c", "Triptych"], ["6b", "Foyer"], ["6a", "Gazette"], ["5a", "Meridian"], ["5b", "Consort"], ["5c", "Bedside"], ["4p", "Employee Center"], ["4i", "Rails"], ["4h", "Broadside"], ["4g", "Half Deck"], ["4f", "Front Desk"], ["4e", "Atrium"], ["4d", "Portico"], ["4c", "Mosaic"], ["4c2", "Mosaic II"], ["4b", "Broadsheet"], ["4a", "Service Center"], ["4a2", "Help Desk"], ["3j", "Bulletin"], ["3i", "Wayfinder"], ["3h", "Concierge"],
         ["4f2", "Counter · Image"], ["3h2", "Concierge II"], ["3g", "Atlas"], ["3d", "Dispatch"],
-        ["3b", "Sidecar"], ["3b2", "Sidecar · Announcements"], ["3c", "Counter"], ["2a", "Prism"], ["2ag", "Prism · Green"], ["2an", "Prism · Navy"],
+        ["3b", "Sidecar"], ["3b2", "Sidecar · Announcements"], ["3c", "Counter"], ["3c2", "Counter II"], ["2a", "Prism"], ["2ag", "Prism · Green"], ["2an", "Prism · Navy"],
         ["2b", "Ledger"]
       ];
       const GROUPS = [
@@ -392,7 +733,7 @@
           "Notice board, academic calendar and quick links above the actions; approvals and catalog below, with a student KPI row."],
         ["bfsi", "BFSI", [["8a", "primary"], ["8b", "help-centre"], ["4a", ""], ["4f", ""], ["4g", ""]],
           "Split banner with a finance motif, category grid beside announcements, approvals full width, then assets, contacts and KPIs."],
-        ["rejected", "Rejected", [["4a2", "unplaced"], ["4h", ""], ["3d", ""], ["3h2", ""], ["2b", ""], ["5b", ""], ["6b", ""], ["3b", ""]],
+        ["rejected", "Rejected", [["4a2", "unplaced"], ["4h", ""], ["3d", ""], ["3h2", ""], ["3c2", ""], ["2b", ""], ["5b", ""], ["6b", ""], ["3b", ""]],
           "Not shipping."]
       ];
       const NAMES = {};
@@ -438,6 +779,11 @@
       });
       GROUPS.unshift(["team", "Top selected by Team", teamOrder.map(id => [id, ""]),
         "Personal top picks from the team, across every industry."]);
+
+      GROUPS.unshift(["final", "Final", [
+        ["4e", ""], ["4g", ""], ["7a", ""], ["4c2", ""], ["5a", ""], ["3h", ""],
+        ["4f", ""], ["2a", ""], ["3b2", ""], ["3c", ""], ["4p", ""], ["8b", ""]
+      ], "Final selection, ready to ship."]);
   
       let group = this.state.group;
       if (!GROUPS.some(g => g[0] === group)) group = GROUPS[0][0];
@@ -513,6 +859,9 @@
   
       vals.kbs4 = (vals.kbs6 || []).slice(0, 4);
       vals.kbs3 = (vals.kbs6 || []).slice(0, 3);
+      vals.servicesCat4 = (vals.services || []).slice(0, 4);
+      vals.servicesCat6 = (vals.services6 || []).map(s => Object.assign({}, s, { c: (s.c || "").split(" · ")[0] }));
+      vals.services2a = (vals.services || []).concat([{ n: "Password Reset", c: "Security", i: "lock_reset" }]);
       vals.quickLinks4 = (vals.quickLinks || []).slice(0, 4);
       vals.deptCards4 = (vals.deptCards12 || []).slice(0, 4);
       vals.assetsCis8 = [].concat(vals.assets || [], vals.cis || []).slice(0, 8);
@@ -521,8 +870,9 @@
   
       const foy = this.foyVals();
       foy.govNotices3 = (foy.govNotices || []).slice(0, 3);
+      foy.empKpis2 = (foy.empKpis || []).slice(0, 2);
   
-      return Object.assign({ tabs, optionCount, industries, industryNote }, show, measure, vals, this.seedTokens(), this.prismAnn(), this.hcVals(), this.deskNoticeVals(), this.annCarousel(), foy);
+      return Object.assign({ tabs, optionCount, industries, industryNote }, show, measure, vals, this.seedTokens(), this.sidecarBanner(), this.prismAnn(), this.hcVals(), this.deskNoticeVals(), this.annCarousel(), foy);
     }
   
     componentDidMount() {
@@ -646,11 +996,11 @@
           { id: "AST-13", s: "DESKTOP-5JPPI6F · asset assignment", d: "10 Aug, 12:57 PM", who: "Keya", ai: "KE", ab: "#7c3aed" }
         ],
   
-        anns: [
+        anns: withDateTiles([
           { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
           { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
           { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." }
-        ],
+        ]),
   
         kbs: [
           { id: "KB-4", r: "01", t: "How to Reset Your Password", m: "Guideline Documents · 2.4k reads", d: "30 Jul, 11:34 AM", cat: "Guideline" },
@@ -1014,10 +1364,10 @@
           { ini: "KE", bg: "#7b3f9d", t: "DESKTOP-5JPPI6F", s: "Approval required for AST-13 · Keya", tag: "AST-13" }
         ],
   
-        annRows2: [
+        annRows2: withDateTiles([
           { t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", s: "VPN, the intranet and payroll submission are unavailable for the full window.", d: "11 Aug 2026" },
           { t: "New VPN client rollout begins next week", s: "Check whether your laptop is on the first wave, and what to back up first.", d: "08 Aug 2026" }
-        ],
+        ]),
   
         chips4: [
           { t: "New Laptop Request", i: "laptop_mac" },
@@ -1165,12 +1515,12 @@
           { id: "KB-3", t: "Setting Up Multi-Factor Authentication", r: "4.3", m: "870 reads", d: "28 Jul, 09:45 AM", cat: "Guideline" }
         ],
   
-        annFeatured: {
+        annFeatured: Object.assign({
           k: "Maintenance",
           d: "11 Aug 2026",
           t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00",
           b: "Core switches are being replaced across both Ahmedabad floors. VPN, the intranet and payroll submission will be unavailable for the full window."
-        },
+        }, dateTile("11 Aug 2026")),
   
         annsRest: [
           { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
@@ -1179,13 +1529,13 @@
           { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
         ],
   
-        anns5: [
+        anns5: withDateTiles([
           { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
           { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
           { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." },
           { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026", s: "Laptops and desktops now come up for replacement a year earlier than before." },
           { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
-        ],
+        ]),
   
         kbs8: [
           { id: "KB-4", r: "01", t: "How to Reset Your Password", m: "Guideline Documents · 2.4k reads", d: "30 Jul, 11:34 AM", cat: "Guideline" },
