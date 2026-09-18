@@ -239,8 +239,8 @@ window.TEMPLATES = {
                 </div>
                 <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
                   <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:{{ t2Badge }};border-radius:11px;min-width:0">
-                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:{{ t2Badge50 }};border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:#ffffff;color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                         <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
                       </div>
                       <div style="min-width:0">
@@ -261,8 +261,8 @@ window.TEMPLATES = {
                 </div>
                 <div style="border-top:1px solid {{ t2Hair }};display:flex;flex-direction:column;gap:10px;padding:16px 20px 20px">
                   <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
-                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:{{ t2Badge }};border-radius:11px;min-width:0">
-                      <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Badge }};color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="display:flex;align-items:center;gap:12px;padding:16px 14px;background:{{ t2Badge50 }};border-radius:11px;min-width:0">
+                      <div style="width:38px;height:38px;border-radius:11px;background:#ffffff;color:{{ t2Acc }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                         <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                       </div>
                       <div style="min-width:0">
@@ -900,8 +900,8 @@ window.TEMPLATES = {
               <ellipse cx="258" cy="176" rx="104" ry="17" fill="#9FB5B2" opacity=".34" filter="url(#deskSoft)"></ellipse>
               <ellipse cx="120" cy="190" rx="31" ry="8" fill="#8FA8A6" opacity=".4" filter="url(#deskSoft)"></ellipse>
               <ellipse cx="386" cy="54" rx="40" ry="10" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
-              <ellipse cx="380" cy="110" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
-              <ellipse cx="435" cy="145" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="380" cy="130" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <ellipse cx="435" cy="165" rx="29" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
 
               <path d="M147.6,40.4 L321.6,20.4 L348,150 L174,170 Z" fill="url(#deskPaper)"></path>
 
@@ -932,15 +932,15 @@ window.TEMPLATES = {
                 <path d="M352,20 L406,26" stroke="#44525B" stroke-width="1" fill="none"></path>
               </g>
 
-              <g transform="translate(381,73) scale(1.22) translate(-381,-73)">
-                <path d="M364,80 A21.4,21.4 0 0 0 406,72 Z" fill="url(#deskPeach)"></path>
-                <path d="M356,74 L398,66 L406,72 L364,80 Z" fill="#F8DCC8"></path>
-                <path d="M364,80 L406,72" stroke="#E0A383" stroke-width="0.8" fill="none"></path>
+              <g transform="translate(381,93) scale(1.22) translate(-381,-93)">
+                <path d="M364,100 A21.4,21.4 0 0 0 406,92 Z" fill="url(#deskPeach)"></path>
+                <path d="M356,94 L398,86 L406,92 L364,100 Z" fill="#F8DCC8"></path>
+                <path d="M364,100 L406,92" stroke="#E0A383" stroke-width="0.8" fill="none"></path>
               </g>
 
-              <g transform="translate(435,138) scale(1.22) translate(-435,-138)">
-                <path d="M412,140 A21.4,21.4 0 0 1 454,132 Z" fill="url(#deskRed)"></path>
-                <path d="M412,140 L454,132 L458,137 L416,145 Z" fill="#8E3019"></path>
+              <g transform="translate(435,158) scale(1.22) translate(-435,-158)">
+                <path d="M412,160 A21.4,21.4 0 0 1 454,152 Z" fill="url(#deskRed)"></path>
+                <path d="M412,160 L454,152 L458,157 L416,165 Z" fill="#8E3019"></path>
               </g>
 
               <g transform="translate(120,153) scale(1.22) translate(-120,-153)">
@@ -949,11 +949,11 @@ window.TEMPLATES = {
                 <path d="M118,126 L124,176" stroke="#24647F" stroke-width="0.8" fill="none" opacity=".55"></path>
               </g>
 
-              <ellipse cx="366" cy="207" rx="37" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
-              <g transform="translate(364,192) scale(1.22) translate(-364,-192)">
-                <path d="M344,182 L356,172 L384,172 L372,182 Z" fill="#F8DCC8"></path>
-                <path d="M344,182 H372 V202 H344 Z" fill="#E9A882"></path>
-                <path d="M372,182 L384,172 V192 L372,202 Z" fill="#CF8460"></path>
+              <ellipse cx="432" cy="207" rx="37" ry="8" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
+              <g transform="translate(430,192) scale(1.22) translate(-430,-192)">
+                <path d="M410,182 L422,172 L450,172 L438,182 Z" fill="#F8DCC8"></path>
+                <path d="M410,182 H438 V202 H410 Z" fill="#E9A882"></path>
+                <path d="M438,182 L450,172 V192 L438,202 Z" fill="#CF8460"></path>
               </g>
 
               <ellipse cx="118" cy="93" rx="30" ry="7" fill="#8FA8A6" opacity=".34" filter="url(#deskSoft)"></ellipse>
@@ -1273,7 +1273,7 @@ window.TEMPLATES = {
             </div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:18px;margin-top:34px">
+          <div style="display:flex;flex-direction:column;gap:18px;margin-top:64px">
            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start">
 
               <div ref="{{ reqCardRef }}" style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
@@ -8633,7 +8633,7 @@ window.TEMPLATES = {
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch">
             <div style="background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">Pending approvals</div>
@@ -8662,6 +8662,27 @@ window.TEMPLATES = {
                     <div style="width:24px;height:24px;border-radius:8px;background:{{ a.ab }};color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ a.ai }}</div>
                     <div style="flex-shrink:0;font-size:12px;color:#152D4B;white-space:nowrap">{{ a.who }}</div>
                     <div style="flex:1;min-width:0;font-size:12px;color:#54677B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">· {{ a.d }}</div>
+                  </div>
+                </div>
+                </sc-for>
+            </div>
+
+            <div style="display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden;min-width:0">
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
+                <div style="font-size:16px;font-weight:700;color:#152D4B">My open requests</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">8</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </div>
+              <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
+                  <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;border:1px solid #dde1e5;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0">
+                    <div style="flex:1;min-width:0;font-size:12px;color:#54677B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.d }}</div>
+                    <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:{{ r.bg }};color:{{ r.fg }};white-space:nowrap;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:13px;line-height:1">{{ r.si }}</span>{{ r.st }}</span>
                   </div>
                 </div>
                 </sc-for>

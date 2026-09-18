@@ -66,6 +66,10 @@
     const mix = c => Math.round(c * (1 - amount));
     return 'rgb(' + mix(rgb[0]) + ',' + mix(rgb[1]) + ',' + mix(rgb[2]) + ')';
   }
+  function withAlpha(hex, alpha) {
+    const rgb = hexToRgb(hex);
+    return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + alpha + ')';
+  }
 
   // Small SVG-shape generators, tiled at low opacity over a unique gradient
   // per variant. Shapes only borrow the geometric motif of a reference image
@@ -617,7 +621,7 @@
       if (green) return Object.assign(base, {
         t2Wash: "#e6f4ec", t2Bd: "#cbe5d8", t2Acc: "#0e7150", t2AccLite: "#7ac5a2",
         t2Btn: "#0c2f24", t2Btn2: "#0e7150", t2Ink: "#0d2c22",
-        t2Mute: "#4c6459", t2Mute2: "#5c7368", t2Badge: "#eaf5f0", t2CardBd: "#dbe8e2",
+        t2Mute: "#4c6459", t2Mute2: "#5c7368", t2Badge: "#eaf5f0", t2Badge50: withAlpha("#eaf5f0", .5), t2CardBd: "#dbe8e2",
         t2Ground: "#f4f9f6", t2Tex: "rgba(14,113,80,.07)",
         t2Ring1: "rgba(14,113,80,.16)", t2Ring2: "rgba(14,113,80,.2)",
         t2Blob: "#cfead9", t2Dot: "#b9cdc4", t2Hair: "#eef4f1", t2Hair2: "#f3f8f6"
@@ -633,6 +637,7 @@
         t2Mute:     coral ? "#6b5450" : "#4f5b6d",
         t2Mute2:    coral ? "#8a716c" : "#6b7789",
         t2Badge:    coral ? "#fbe3df" : "#e3e9f2",
+        t2Badge50:  withAlpha(coral ? "#fbe3df" : "#e3e9f2", .5),
         t2CardBd:   coral ? "#ecdedb" : "#dde4ee",
         t2Ground:   coral ? "#fcf7f6" : "#f6f8fb",
         t2Tex:      coral ? "rgba(194,69,47,.06)" : "rgba(81,99,129,.06)",

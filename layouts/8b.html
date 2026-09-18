@@ -103,7 +103,7 @@
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch">
             <div style="background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden">
               <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
                 <div style="font-size:16px;font-weight:700;color:#152D4B">Pending approvals</div>
@@ -132,6 +132,27 @@
                     <div style="width:24px;height:24px;border-radius:8px;background:{{ a.ab }};color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">{{ a.ai }}</div>
                     <div style="flex-shrink:0;font-size:12px;color:#152D4B;white-space:nowrap">{{ a.who }}</div>
                     <div style="flex:1;min-width:0;font-size:12px;color:#54677B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">· {{ a.d }}</div>
+                  </div>
+                </div>
+                </sc-for>
+            </div>
+
+            <div style="display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden;min-width:0">
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
+                <div style="font-size:16px;font-weight:700;color:#152D4B">My open requests</div>
+                <div style="font-size:11.5px;font-weight:700;color:#8a5a08;background:#fdf1d6;padding:2px 8px;border-radius:20px">8</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#1B5E9E;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
+              </div>
+              <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
+                <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
+                  <div style="display:flex;align-items:center;gap:8px;min-width:0">
+                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;border:1px solid #dde1e5;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0">
+                    <div style="flex:1;min-width:0;font-size:12px;color:#54677B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.d }}</div>
+                    <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;background:{{ r.bg }};color:{{ r.fg }};white-space:nowrap;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:13px;line-height:1">{{ r.si }}</span>{{ r.st }}</span>
                   </div>
                 </div>
                 </sc-for>
