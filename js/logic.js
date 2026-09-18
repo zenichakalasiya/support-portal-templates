@@ -279,7 +279,7 @@
       note: "A halftone dot field that itself fades as a gradient — barely-there dots on the left growing into solid teal dots on the right — over a warm cream-to-cool teal wash."
     },
     {
-      key: "starlight", label: "Starlight", dot: "#A9C6ED", rawBg: true,
+      key: "starlight", label: "Starlight", dot: "#A9C6ED", rawBg: true, searchWhite: true,
       base: "background-color:#1E2740;background-image:" + svgUrl(900, 220, nightSkyInner(900, 220)) + ",linear-gradient(120deg,#1B2438 0%,#212C46 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
       motif: "",
       note: "Scattered sunburst stars, twinkle sparkles, a ring and an arch, spread across the full width behind both the text and the announcement card — over a grayish navy wash."
@@ -291,7 +291,7 @@
       note: "A cluster of rounded-corner squares anchored at the right edge, cascading in a shrinking sequence toward the 40%-width mark, blending into the blue gradient rather than a hard edge."
     },
     {
-      key: "hexpulse", label: "Hex Pulse Blue", dot: "#F0A73C", rawBg: true, bannerHeight: 320, center: true, searchWhite: true,
+      key: "hexpulse", label: "Hex Pulse Blue", dot: "#0E4C5C", rawBg: true, bannerHeight: 320, annBottom: true, searchWhite: true,
       base: "background-color:#0E4C5C;background-image:" + svgUrl(900, 220, ringDots(900, 220)) + ",linear-gradient(120deg,#0B3E4C 0%,#0E4C5C 60%,#11566A 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
       motif: "",
       note: "Orange rings, plus marks and a dot grid scattered full-width at low opacity, over a deep teal-blue wash."
@@ -666,7 +666,6 @@
           style: chip(s.key === activeKey),
           go: () => this.setState({ bannerSeed: s.key })
         })),
-        bannerNote: active.note,
         bannerBg: active.rawBg ? active.base : ("background-image:" + active.base + ";background-size:cover;background-position:center;"),
         bannerMotif: active.motif ? ("background-image:" + active.motif + ";background-repeat:no-repeat;background-size:" + active.motifSize + ";background-position:" + active.motifPos + ";") : "",
         bannerTitleColor: light ? "#0b2545" : "#fff",
@@ -684,12 +683,12 @@
         bannerPageBg: active.pageTint ? tintLight(active.dot, .95) : "#f6f8fb",
         bannerGridCols: active.hideAnn ? "minmax(0,1fr) minmax(360px,560px)" : "minmax(0,1fr) minmax(280px,452px)",
         bannerMinHeight: (active.bannerHeight || 220) + "px",
-        bannerLeftJustify: active.center ? "center" : "space-between",
-        bannerLeftGap: active.center ? "26px" : "20px",
+        bannerLeftJustify: "space-between",
+        bannerLeftGap: "20px",
         bannerLeftAlign: "stretch",
         bannerTextAlign: "left",
         bannerSearchWidth: "100%",
-        bannerAnnJustify: active.center ? "center" : "flex-start"
+        bannerAnnJustify: active.annBottom ? "flex-end" : "flex-start"
       };
     }
 

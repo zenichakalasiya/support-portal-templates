@@ -822,7 +822,6 @@ window.TEMPLATES = {
         </div>
       </sc-for>
     </div>
-    <div style="font-size:12.5px;color:#5f6f83;line-height:1.5;flex:1 1 260px;min-width:0">{{ bannerNote }}</div>
   </div>
   </sc-if>
 
@@ -1527,7 +1526,7 @@ window.TEMPLATES = {
             </div>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:18px;margin-top:34px">
+          <div style="display:flex;flex-direction:column;gap:18px;margin-top:64px">
            <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start">
 
               <div ref="{{ reqCardRef }}" style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">

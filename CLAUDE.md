@@ -159,19 +159,28 @@ layers), theme-aware text colours (`bannerTitleColor` etc., switched by each
 seed's `light` flag), and tint colours for the template's own data-card ID
 pills and icon chips (`bannerAccentBg/Fg/Border`, computed from `dot` via the
 `tintLight`/`tintDark` helpers) — so switching banners re-tints the whole page,
-not just the hero. Two seed-level flags change the layout itself: `hideAnn`
+not just the hero. Seed-level flags change the layout itself: `hideAnn`
 (used by `desk3d` only) drops the announcement card entirely and widens the
-right grid column (`bannerGridCols`) so the motif gets the full banner; `center`
-(used by `hexpulse` only) vertically centers both hero columns without
-changing text alignment. `bannerHeight` overrides the shared 220px min-height
-per seed. The motif sits *behind* the announcement card (same grid cell,
-`bannerMotif` on the outer div, the white card as a normal child on top) so it
-naturally peeks out wherever the card doesn't cover it — this was a deliberate
-correction after two earlier layouts (motif squeezed between columns, then
-motif stacked in a separate box below the card) were both explicitly rejected.
-A third flag, `searchWhite` (used by `hexpulse` only), forces a white search
-bar even on a non-`light` seed — that seed's own teal wash reads better with
-a solid white search field than the usual translucent one dark seeds get.
+right grid column (`bannerGridCols`) so the motif gets the full banner;
+`annBottom` (used by `hexpulse` only) bottom-aligns the announcement card
+(`bannerAnnJustify: "flex-end"`) so its bottom edge lines up with the
+search bar's bottom edge in that seed's taller (320px) banner — title stays
+top-left and search stays bottom-left, the same `space-between` layout
+every other seed uses, just with more vertical room between them.
+`bannerHeight` overrides the shared 220px min-height per seed. The motif
+sits *behind* the announcement card (same grid cell, `bannerMotif` on the
+outer div, the white card as a normal child on top) so it naturally peeks
+out wherever the card doesn't cover it — this was a deliberate correction
+after two earlier layouts (motif squeezed between columns, then motif
+stacked in a separate box below the card) were both explicitly rejected.
+Another flag, `searchWhite` (used by `hexpulse` and `starlight`), forces a
+white search bar even on a non-`light` seed — those seeds' own dark washes
+read better with a solid white search field than the usual translucent one
+dark seeds get. There is no longer an on-screen note per seed — the
+swatch row used to carry a one-line description (`bannerNote`/`active.note`)
+next to the swatches; it was removed from `layouts/3b2.html` (each seed's
+`note:` field still exists on `BANNER_SEEDS` as internal documentation, it
+just isn't rendered anywhere any more).
 Full-width patterns (`dotgrad`, `starlight`, `diamond`, `hexpulse`, `gears`)
 are `rawBg: true` and painted directly on the outer grid container rather than
 via the `motif` div, each a `svgUrl()`-generated SVG stretched
@@ -207,6 +216,15 @@ the top bar, side rail and every data card, normally a flat neutral
 `#f6f8fb` — to a very light wash of that same green
 (`tintLight(active.dot, .95)`) so the whole page reads as part of the same
 green scene as the banner, not just the banner card itself.
+
+Every seed's `dot` is meant to be its whole colour identity, not just its
+swatch dot — `hexpulse`'s was originally `#F0A73C` (the orange used for the
+decorative rings/plus-marks *inside* `ringDots()`, a minor accent within
+the pattern) rather than a shade of its own deep-teal wash, which read as a
+mismatched orange on every ID pill and icon chip on the page while the
+banner itself was teal. It's now `#0E4C5C`, lifted straight from that
+wash's own gradient stops — check any new seed's `dot` against its `base`
+wash (not just against decorative motif colours) before shipping it.
 This is also *why* `js/dc.js`'s `compileElement` is namespace-aware:
 `document.createElement(tag)` always produces an HTML element, so a raw
 `<svg>` block authored in a `layouts/*.html` file would silently render as
