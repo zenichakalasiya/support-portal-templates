@@ -282,7 +282,13 @@ layouts key off those flags. Two deviations from 1:1 tab→template:
 `3c` with its action-card and KPI fills inverted (white action cards / glass
 KPIs, vs. `3c`'s glass action cards / white KPIs) — a deliberate one-off
 variant, not a shared template, kept in sync with `3c` only by hand if `3c`'s
-banner/action-row changes again.
+banner/action-row changes again. **Hero spacing is hand-synced too** — both now
+carry `padding:30px 48px 40px` on the hero, `margin-top:2px` on the welcome
+title and `margin-top:64px` on the search bar. Note the search bar's top margin
+is the one the user means by "3C's search margin"; the `margin-top:64px` further
+down `3c.html` (~line 101) is a *different* element — the data-cards block — and
+an earlier session changed that one by mistake while believing it had done the
+search. Check which element you are on before touching either.
 
 `js/app.js`'s `activeLayoutId()` resolves the active layout by first checking
 `TEMPLATES[tab]` directly, then falling back to scanning `is<id>` flags — read
@@ -379,7 +385,10 @@ These were applied template-wide and should be kept when adding or editing one:
   single-line; leave card-row titles free to wrap.
 - **Pending Approvals rows** use the check / close / undo icon buttons, never
   text buttons. Tints are semantic and fixed; the corner radius follows the
-  template.
+  template. The canonical button is a **24×24 filled tint chip with no
+  border**, 15px glyph: approve `#e6f4ec`/`#1f7a44`, reject
+  `#fdeaea`/`#b02a2a`, send back `#fdf1d6`/`#8a5a08`. `5a` was the one
+  outlier — 28×28, outlined, no fill, a blue check — and was brought in line.
 - **Asset and CI lists** use tinted rounded tiles in a gapped column (the 3b
   treatment), with the tint taken from the layout's own palette; the icon itself
   sits on its own small background chip (bg + accent colour pair), matching
@@ -396,8 +405,16 @@ These were applied template-wide and should be kept when adding or editing one:
   card's slot rather than changing the outer row's column count.
 - **Most read** is a listing data card: header, then rows of a leading
   `description` icon chip (matching `4c2`'s original treatment), id pill,
-  title, date and category. The icon chip is on every Most read row
-  gallery-wide now, not just `4c2`.
+  title, date and category. **The chip is NOT gallery-wide** — an earlier
+  version of this file claimed it was, but only the **Final 12** carry one
+  (2a, 3b2, 3c, 3h, 4c2, 4e, 4f, 4g, 4p, 5a, 7a, 8b). Twenty-one other Most
+  read cards have no leading icon at all (2b, 3b, 3c2, 3d, 3g, 3i, 3j, 4a,
+  4a2, 4b, 4c, 4d, 4f2, 4i, 5b, 5c, 6b, 6c, 7b, 7c, 8a) and `3h2` has a bare
+  glyph with no chip behind it. **Leave them that way — do not add icons to
+  the others**; the user asked explicitly for a recolour only. Where the chip
+  does exist, its bg/fg **must equal that card's own ID pill bg/fg**, so the
+  two read as one pair; this was applied across all 12 and several (3c, 3h,
+  4c2, 4f, 4g, 5a) had drifted to an unrelated blue or near-miss grey.
 - **ID pills (`SR-201`, `INC-187`, `KB-4`, …) carry no stroke — background
   colour only.** Every `My Open Requests` / `Pending Approvals` / `Most read`
   (or other id-pill-bearing) card in a given template shares one bg/text
@@ -407,7 +424,10 @@ These were applied template-wide and should be kept when adding or editing one:
   different colour on their Most Read (or, for 4G, Pending Approvals) pill
   and were brought in line. `3b2`'s pills already read from
   `bannerAccentBg/Fg` (the active banner seed's tint) and needed only the
-  stroke removed, not a colour change.
+  stroke removed, not a colour change. **`8b` is the one template whose pill
+  colour is anchored elsewhere**: its pills take the My assets / My CIs
+  icon-chip pair (`#E4EFF9`/`#1B5E9E`) rather than what My Open Requests
+  happened to use, so the pills and those tiles' icons match.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
   notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That
@@ -427,6 +447,16 @@ These were applied template-wide and should be kept when adding or editing one:
   "Most used services", "Browse by category", "Service catalog" and the like are
   a heading alone — the "Browse catalog ›" / "Full catalog ›" / "All 214" links
   were removed gallery-wide. A decorative rule after the heading (3d) stays.
+  In `3h` the section is **one white data card** rather than loose tiles on the
+  page: the heading sits inside the card above a divider (mirroring the Most
+  Read card beside it), and the eight service tiles lost their individual card
+  chrome for a light cool-grey wash (`#F7F9FC`, from 3H's ink-and-steel
+  neutrals rather than its amber accent — an amber tile wash was tried first
+  and rejected as too yellow) with white icon chips so the icons stay visible
+  against it. That
+  row's grid is `align-items:stretch`, and both cards are flex columns with the
+  tile grid on `flex:1`, so Most Used Services and Most Read always share one
+  height — don't put `align-items:start` back on that grid.
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.

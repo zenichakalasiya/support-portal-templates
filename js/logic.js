@@ -953,7 +953,10 @@
       // empty space below it — the featured item plus the first two of the
       // rest, normalized to the same {mon,day,t,sub} shape.
       const annTop3 = [Object.assign({ t: annFeaturedRaw.t, sub: annFeaturedRaw.b }, dateTile(annFeaturedRaw.d))]
-        .concat(withDateTiles(annsRestRaw.slice(0, 2)).map(x => ({ mon: x.mon, day: x.day, t: x.t, sub: x.s })));
+        .concat(withDateTiles(annsRestRaw.slice(0, 2)).map(x => ({ mon: x.mon, day: x.day, t: x.t, sub: x.s })))
+        // sep draws a rule *between* rows in 4c2's Announcement card — the first
+        // row skips it, since the card header already carries its own divider.
+        .map((x, i) => Object.assign({ sep: i > 0 }, x));
 
       return {
         ink, brand, brandLite, accent,

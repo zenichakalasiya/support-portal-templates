@@ -1207,14 +1207,14 @@ window.TEMPLATES = {
 
       <div style="flex:1;min-width:0;background:#fff">
 
-        <div style="position:relative;background:#07101F;padding:52px 48px 40px;overflow:hidden">
+        <div style="position:relative;background:#07101F;padding:30px 48px 40px;overflow:hidden">
           <div style="position:absolute;width:640px;height:640px;border-radius:50%;border:80px solid rgba(255,255,255,.06);left:-200px;top:-260px"></div>
           <div style="position:absolute;width:260px;height:260px;border-radius:40px;background:rgba(255,255,255,.05);right:-60px;bottom:-120px;transform:rotate(18deg)"></div>
           <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:{{ accent }};opacity:.9;right:180px;top:-40px"></div>
           <div style="position:relative;display:flex;flex-direction:column">
-            <div style="font-size:40px;font-weight:800;color:#fff;margin-top:14px;letter-spacing:-0.04em;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Welcome to Support Portal</div>
+            <div style="font-size:40px;font-weight:800;color:#fff;margin-top:2px;letter-spacing:-0.04em;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Welcome to Support Portal</div>
             <div style="font-size:15px;color:rgba(255,255,255,.7);margin-top:18px;line-height:1.6;max-width:520px">Search 412 knowledge articles and 214 services, or raise a ticket and we'll route it to the right team.</div>
-            <div style="display:flex;align-items:center;gap:10px;height:52px;margin-top:36px;max-width:480px;padding:0 6px 0 18px;background:#fff;border-radius:9px">
+            <div style="display:flex;align-items:center;gap:10px;height:52px;margin-top:64px;max-width:480px;padding:0 6px 0 18px;background:#fff;border-radius:9px">
               <div style="flex:1;font-size:14px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search services, articles or a request ID</div>
               <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#07101F;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">search</span>
@@ -1364,7 +1364,7 @@ window.TEMPLATES = {
                 </div>
                 <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
-                    <div style="width:32px;height:32px;border-radius:8px;background:#eef1f3;color:#5f6f83;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="width:32px;height:32px;border-radius:8px;background:#eff1f3;color:#5f6f83;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">description</span>
                     </div>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
@@ -1469,14 +1469,14 @@ window.TEMPLATES = {
 
       <div style="flex:1;min-width:0;background:#fff">
 
-        <div style="position:relative;background:#07101F;padding:52px 48px 40px;overflow:hidden">
+        <div style="position:relative;background:#07101F;padding:30px 48px 40px;overflow:hidden">
           <div style="position:absolute;width:640px;height:640px;border-radius:50%;border:80px solid rgba(255,255,255,.06);left:-200px;top:-260px"></div>
           <div style="position:absolute;width:260px;height:260px;border-radius:40px;background:rgba(255,255,255,.05);right:-60px;bottom:-120px;transform:rotate(18deg)"></div>
           <div style="position:absolute;width:120px;height:120px;border-radius:50%;background:{{ accent }};opacity:.9;right:180px;top:-40px"></div>
           <div style="position:relative;display:flex;flex-direction:column">
-            <div style="font-size:40px;font-weight:800;color:#fff;margin-top:14px;letter-spacing:-0.04em;line-height:1.08">Welcome to<br>Support Portal</div>
+            <div style="font-size:40px;font-weight:800;color:#fff;margin-top:2px;letter-spacing:-0.04em;line-height:1.08">Welcome to<br>Support Portal</div>
             <div style="font-size:15px;color:rgba(255,255,255,.7);margin-top:14px;line-height:1.6;max-width:520px">Search 412 knowledge articles and 214 services, or raise a ticket and we'll route it to the right team.</div>
-            <div style="display:flex;align-items:center;gap:10px;height:52px;margin-top:28px;max-width:480px;padding:0 6px 0 18px;background:#fff;border-radius:9px">
+            <div style="display:flex;align-items:center;gap:10px;height:52px;margin-top:64px;max-width:480px;padding:0 6px 0 18px;background:#fff;border-radius:9px">
               <div style="flex:1;font-size:14px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Search services, articles or a request ID</div>
               <div style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#07101F;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">search</span>
@@ -2341,17 +2341,17 @@ window.TEMPLATES = {
         </div>
 
         <!-- Row 3 — Most Used Services and Most Read, both starting at the same top edge. -->
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,392px);gap:18px;margin-top:18px;align-items:start">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,392px);gap:18px;margin-top:18px;align-items:stretch">
 
-            <div style="min-width:0">
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+            <div style="min-width:0;display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+              <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #e6ebf2">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+              <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:18px">
                 <sc-for list="{{ svcCards }}" as="s" hint-placeholder-count="8">
-                  <div style="background:{{ cardBg }};border:1px solid #dfe5ec;border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;min-width:0;display:flex;flex-direction:column">
-                    <div style="flex:1;padding:20px 14px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-                      <div style="width:48px;height:48px;border-radius:14px;background:#EDF1F5;color:#26384A;display:flex;align-items:center;justify-content:center">
+                  <div style="background:#F7F9FC;border-radius:12px;overflow:hidden;min-width:0;display:flex;flex-direction:column">
+                    <div style="flex:1;padding:18px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+                      <div style="width:48px;height:48px;border-radius:14px;background:#fff;color:#26384A;display:flex;align-items:center;justify-content:center">
                         <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">{{ s.i }}</span>
                       </div>
                       <div style="font-size:14px;font-weight:600;color:#0b2545;margin-top:12px;line-height:1.35">{{ s.n }}</div>
@@ -2374,7 +2374,7 @@ window.TEMPLATES = {
               <div>
                 <sc-for list="{{ topArticles }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
-                    <div style="width:36px;height:36px;border-radius:8px;background:#EEF0F2;color:#22262B;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="width:36px;height:36px;border-radius:8px;background:#eff1f3;color:#5f6f83;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">description</span>
                     </div>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
@@ -4119,6 +4119,9 @@ window.TEMPLATES = {
                 <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:700;color:#3d2a05;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
               <sc-for list="{{ annTop3 }}" as="n" hint-placeholder-count="3">
+              <sc-if value="{{ n.sep }}">
+                <div style="height:1px;background:rgba(61,42,5,.18);margin-top:14px"></div>
+              </sc-if>
               <div style="display:flex;align-items:stretch;gap:12px;margin-top:14px;min-width:0">
                 <div data-tooltip="{{ n.d }}" style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px 5px;background:#ffffff5c;border-radius:8px">
                   <div style="font-size:8.5px;font-weight:700;letter-spacing:.05em;color:#3d2a05b8">{{ n.mon }}</div>
@@ -4198,7 +4201,7 @@ window.TEMPLATES = {
               </div>
               <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                 <div style="min-height:80px;background:#ffffff;border-bottom:1px solid #eef2f7;display:flex;align-items:center;gap:14px;padding:14px 20px;min-width:0">
-                  <div style="width:36px;height:36px;border-radius:8px;background:#eef1f3;color:#191a1f;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="width:36px;height:36px;border-radius:8px;background:#eff1f3;color:#5f6f83;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">description</span>
                   </div>
                   <div style="flex:1;min-width:0">
@@ -4813,7 +4816,7 @@ window.TEMPLATES = {
             </div>
             <sc-for list="{{ kbs2 }}" as="k" hint-placeholder-count="2">
               <div style="display:flex;align-items:flex-start;gap:12px;padding:13px 18px;border-top:1px solid #f1f5f9;min-width:0">
-                <div style="width:36px;height:36px;border-radius:8px;background:#E7EFFC;color:#1A4F96;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <div style="width:36px;height:36px;border-radius:8px;background:#eef2f7;color:#4a5a70;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">description</span>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
@@ -5291,7 +5294,7 @@ window.TEMPLATES = {
           </div>
           <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
             <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 15px;border-bottom:1px solid #f4f7fa;min-width:0">
-              <div style="width:36px;height:36px;border-radius:8px;background:#E7EFFC;color:#1A4F96;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <div style="width:36px;height:36px;border-radius:8px;background:#f3f6fa;color:#4a5a70;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                 <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">description</span>
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
@@ -6276,7 +6279,7 @@ window.TEMPLATES = {
               </div>
               <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                 <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid #eef3f8;min-width:0">
-                  <div style="width:32px;height:32px;border-radius:8px;background:#E8F2FA;color:#0F5C8C;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="width:32px;height:32px;border-radius:8px;background:#F1F6FA;color:#41586e;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">description</span>
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px">
@@ -6305,14 +6308,14 @@ window.TEMPLATES = {
                     <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:6px;flex-shrink:0">
-                      <div title="Approve" style="width:28px;height:28px;border-radius:4px;border:1px solid #dde7f0;color:#0F5C8C;display:flex;align-items:center;justify-content:center">
-                        <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">check</span>
+                      <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
+                        <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">check</span>
                       </div>
-                      <div title="Reject" style="width:28px;height:28px;border-radius:4px;border:1px solid #dde7f0;color:#B23B3B;display:flex;align-items:center;justify-content:center">
-                        <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">close</span>
+                      <div title="Reject" style="width:24px;height:24px;border-radius:6px;background:#fdeaea;color:#b02a2a;display:flex;align-items:center;justify-content:center">
+                        <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">close</span>
                       </div>
-                      <div title="Send back" style="width:28px;height:28px;border-radius:4px;border:1px solid #dde7f0;color:#5f7c93;display:flex;align-items:center;justify-content:center">
-                        <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">undo</span>
+                      <div title="Send back" style="width:24px;height:24px;border-radius:6px;background:#fdf1d6;color:#8a5a08;display:flex;align-items:center;justify-content:center">
+                        <span style="font-family:'Material Symbols Rounded';font-size:15px;line-height:1">undo</span>
                       </div>
                     </div>
                   </div>
@@ -8643,7 +8646,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#1B5E9E;background:#E4EFF9;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -8676,7 +8679,7 @@ window.TEMPLATES = {
               <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#1B5E9E;background:#E4EFF9;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0">
@@ -8701,7 +8704,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#1B5E9E;background:#E4EFF9;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
