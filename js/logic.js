@@ -900,7 +900,26 @@
       const cardBg = cardStyle === "Flat tinted" ? "#f7f9fc" : "#ffffff";
       const cardBorder = cardStyle === "Flat tinted" ? "#f7f9fc" : (cardStyle === "Outlined" ? "#c9d4e2" : "#e9eef5");
       const cardShadow = cardStyle === "Elevated" ? "0 6px 18px rgba(11,37,69,.07)" : "none";
-  
+
+      const annFeaturedRaw = {
+        k: "Maintenance",
+        d: "11 Aug 2026",
+        t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00",
+        b: "Core switches are being replaced across both Ahmedabad floors. VPN, the intranet and payroll submission will be unavailable for the full window."
+      };
+      const annsRestRaw = [
+        { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
+        { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." },
+        { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026", s: "Laptops and desktops now come up for replacement a year earlier than before." },
+        { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
+      ];
+      // 4c2's Announcement card shows 3 compact rows (mon/day tile, title,
+      // one-line subtitle) instead of one large featured item with a lot of
+      // empty space below it — the featured item plus the first two of the
+      // rest, normalized to the same {mon,day,t,sub} shape.
+      const annTop3 = [Object.assign({ t: annFeaturedRaw.t, sub: annFeaturedRaw.b }, dateTile(annFeaturedRaw.d))]
+        .concat(withDateTiles(annsRestRaw.slice(0, 2)).map(x => ({ mon: x.mon, day: x.day, t: x.t, sub: x.s })));
+
       return {
         ink, brand, brandLite, accent,
         onInk: porcelain ? "#0b2545" : "#ffffff",
@@ -1492,20 +1511,10 @@
           { id: "KB-3", t: "Setting Up Multi-Factor Authentication", r: "4.3", m: "870 reads", d: "28 Jul, 09:45 AM", cat: "Guideline" }
         ],
   
-        annFeatured: Object.assign({
-          k: "Maintenance",
-          d: "11 Aug 2026",
-          t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00",
-          b: "Core switches are being replaced across both Ahmedabad floors. VPN, the intranet and payroll submission will be unavailable for the full window."
-        }, dateTile("11 Aug 2026")),
-  
-        annsRest: [
-          { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },
-          { k: "Service desk", t: "Service desk hours extended to 20:00 IST", d: "04 Aug 2026", s: "Walk-in support at the Block B desk now runs through the evening shift." },
-          { k: "Policy", t: "Asset refresh cycle moves from 4 years to 3", d: "29 Jul 2026", s: "Laptops and desktops now come up for replacement a year earlier than before." },
-          { k: "Training", t: "Security awareness module due by 30 September", d: "22 Jul 2026", s: "Twenty minutes on the learning portal, with a reminder two weeks before." }
-        ],
-  
+        annFeatured: Object.assign({}, annFeaturedRaw, dateTile(annFeaturedRaw.d)),
+        annsRest: annsRestRaw,
+        annTop3,
+
         anns5: withDateTiles([
           { k: "Maintenance", t: "Planned network maintenance — Sat 16 Aug, 02:00–05:00", d: "11 Aug 2026", s: "VPN, the intranet and payroll submission are unavailable for the full window." },
           { k: "Rollout", t: "New VPN client rollout begins next week", d: "08 Aug 2026", s: "Check whether your laptop is on the first wave, and what to back up first." },

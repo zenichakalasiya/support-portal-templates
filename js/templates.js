@@ -4119,16 +4119,18 @@ window.TEMPLATES = {
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:700;color:#3d2a05;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
               </div>
-              <div style="display:flex;align-items:stretch;gap:13px;margin-top:14px;min-width:0">
-                <div data-tooltip="{{ annFeatured.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#ffffff5c;border-radius:8px">
-                  <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#3d2a05b8">{{ annFeatured.mon }}</div>
-                  <div style="font-size:17px;font-weight:800;color:#3d2a05;line-height:1.1;margin-top:2px">{{ annFeatured.day }}</div>
+              <sc-for list="{{ annTop3 }}" as="n" hint-placeholder-count="3">
+              <div style="display:flex;align-items:stretch;gap:12px;margin-top:14px;min-width:0">
+                <div data-tooltip="{{ n.d }}" style="flex:0 0 46px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px 5px;background:#ffffff5c;border-radius:8px">
+                  <div style="font-size:8.5px;font-weight:700;letter-spacing:.05em;color:#3d2a05b8">{{ n.mon }}</div>
+                  <div style="font-size:14px;font-weight:800;color:#3d2a05;line-height:1.1;margin-top:1px">{{ n.day }}</div>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
-                  <div style="font-size:15px;font-weight:500;color:#3d2a05;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annFeatured.t }}</div>
-                  <div style="font-size:12.5px;font-weight:400;color:#3d2a05b8;margin-top:5px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ annFeatured.b }}</div>
+                  <div style="font-size:13px;font-weight:600;color:#3d2a05;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.t }}</div>
+                  <div style="font-size:11.5px;font-weight:400;color:#3d2a05b8;margin-top:3px;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.sub }}</div>
                 </div>
               </div>
+              </sc-for>
             </div>
           </div>
 
@@ -4547,7 +4549,7 @@ window.TEMPLATES = {
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 15px">
                 <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
                   <div style="background:#f7f9fc;border-radius:10px;padding:12px 13px;min-width:0">
-                    <div style="width:30px;height:30px;border-radius:8px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                    <div style="width:30px;height:30px;border-radius:8px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center">
                       <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ s.i }}</span>
                     </div>
                     <div style="font-size:12.5px;font-weight:600;color:#0b2545;margin-top:9px;line-height:1.35">{{ s.n }}</div>
@@ -4593,7 +4595,7 @@ window.TEMPLATES = {
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;padding:14px 15px">
                 <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
                   <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                    <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="width:36px;height:36px;border-radius:10px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0">
@@ -4615,7 +4617,7 @@ window.TEMPLATES = {
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;padding:14px 15px">
                 <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
                   <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                    <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <div style="width:36px;height:36px;border-radius:10px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0">
@@ -5271,7 +5273,7 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 15px">
             <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
               <div style="background:#f7f9fc;border-radius:10px;padding:12px 13px;min-width:0">
-                <div style="width:30px;height:30px;border-radius:8px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center">
+                <div style="width:30px;height:30px;border-radius:8px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center">
                   <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ s.i }}</span>
                 </div>
                 <div style="font-size:12.5px;font-weight:600;color:#0b2545;margin-top:9px;line-height:1.35">{{ s.n }}</div>
@@ -5317,7 +5319,7 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;padding:14px 15px">
             <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
               <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <div style="width:36px;height:36px;border-radius:10px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
                 </div>
                 <div style="flex:1;min-width:0">
@@ -5339,7 +5341,7 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;padding:14px 15px">
             <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
               <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
-                <div style="width:36px;height:36px;border-radius:10px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <div style="width:36px;height:36px;border-radius:10px;background:#ffffff;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                 </div>
                 <div style="flex:1;min-width:0">
