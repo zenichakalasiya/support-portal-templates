@@ -66,6 +66,35 @@
     const mix = c => Math.round(c * (1 - amount));
     return 'rgb(' + mix(rgb[0]) + ',' + mix(rgb[1]) + ',' + mix(rgb[2]) + ')';
   }
+  // A page-ground wash that keeps the source colour's hue but pins saturation and
+  // lightness, so every banner seed gets an equally visible tint regardless of how
+  // light or pale its own dot is (tintLight() alone leaves a pale dot near-white).
+  function washFromHex(hex, sat, light) {
+    const rgb = hexToRgb(hex);
+    const r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h = 0;
+    if (max !== min) {
+      const d = max - min;
+      if (max === r) h = (g - b) / d + (g < b ? 6 : 0);
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h /= 6;
+    }
+    const s = max === min ? 0 : sat;
+    const c = (1 - Math.abs(2 * light - 1)) * s;
+    const x = c * (1 - Math.abs(((h * 6) % 2) - 1));
+    const m = light - c / 2;
+    const hp = h * 6;
+    let t;
+    if (hp < 1) t = [c, x, 0];
+    else if (hp < 2) t = [x, c, 0];
+    else if (hp < 3) t = [0, c, x];
+    else if (hp < 4) t = [0, x, c];
+    else if (hp < 5) t = [x, 0, c];
+    else t = [c, 0, x];
+    return 'rgb(' + t.map(v => Math.round((v + m) * 255)).join(',') + ')';
+  }
   function withAlpha(hex, alpha) {
     const rgb = hexToRgb(hex);
     return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + alpha + ')';
@@ -267,7 +296,7 @@
       note: "Brought over from 3g's own hero — the same soft radial glows and fine dot-grid texture over a light blue wash, with dark ink text for contrast. Now the default for this template."
     },
     {
-      key: "desk3d", label: "Motadata Desk", dot: "#3E7C5A", light: true, hideAnn: true, bannerHeight: 320, center: true, pageTint: true,
+      key: "desk3d", label: "Motadata Desk", dot: "#3E7C5A", light: true, hideAnn: true, bannerHeight: 320, center: true,
       base: "linear-gradient(120deg,#DCEAE1 0%,#E7F1EA 55%,#EFF6F0 100%)",
       motif: "",
       note: "A real 3D scene, not a generated pattern: a paper sheet with an extruded 'motadata' wordmark and six floating solids (charcoal, peach, terracotta, teal), each with proper top/front/side faces and soft ground shadows, over a sage wash. Its markup is hand-authored SVG directly in the 3b2 template (see isDesk / bannerIsDesk) rather than one of the JS shape generators the other seeds use. The announcement card steps aside so the scene has the full banner to itself."
@@ -680,7 +709,9 @@
         bannerAccentFg: tintDark(active.dot, .35),
         bannerHideAnn: !!active.hideAnn,
         bannerIsDesk: activeKey === "desk3d",
-        bannerPageBg: active.pageTint ? tintLight(active.dot, .95) : "#f6f8fb",
+        bannerPageBg: washFromHex(active.dot, .28, .965),
+        bannerTileBg: washFromHex(active.dot, .30, .975),
+        bannerBadgeBg: washFromHex(active.dot, .34, .958),
         bannerGridCols: active.hideAnn ? "minmax(0,1fr) minmax(360px,560px)" : "minmax(0,1fr) minmax(280px,452px)",
         bannerMinHeight: (active.bannerHeight || 220) + "px",
         bannerLeftJustify: "space-between",

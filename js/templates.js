@@ -1030,7 +1030,7 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Open Requests</div>
-              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:{{ bannerBadgeBg }};padding:3px 9px;border-radius:20px">8</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -1099,13 +1099,13 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545;white-space:nowrap">My Assets</div>
-              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">8</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:{{ bannerBadgeBg }};padding:3px 9px;border-radius:20px">8</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
               <sc-for list="{{ assets }}" as="a" hint-placeholder-count="4">
-                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:{{ bannerTileBg }};border-radius:10px;min-width:0">
                   <div style="width:36px;height:36px;border-radius:10px;background:{{ bannerAccentBg }};color:{{ bannerAccentFg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ a.i }}</span>
                   </div>
@@ -1121,13 +1121,13 @@ window.TEMPLATES = {
           <div style="display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">My CIs</div>
-              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">4</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:{{ bannerBadgeBg }};padding:3px 9px;border-radius:20px">4</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:16px 20px">
               <sc-for list="{{ cis }}" as="c" hint-placeholder-count="4">
-                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;background:{{ bannerTileBg }};border-radius:10px;min-width:0">
                   <div style="width:36px;height:36px;border-radius:10px;background:{{ bannerAccentBg }};color:{{ bannerAccentFg }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ c.i }}</span>
                   </div>
@@ -1143,7 +1143,7 @@ window.TEMPLATES = {
           <div style="grid-column:1 / -1;display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 20px;border-bottom:1px solid #eef2f7">
               <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Read</div>
-              <div style="font-size:12px;font-weight:700;color:#0b2545;background:#f0f4f9;padding:3px 9px;border-radius:20px">412</div>
+              <div style="font-size:12px;font-weight:700;color:#0b2545;background:{{ bannerBadgeBg }};padding:3px 9px;border-radius:20px">412</div>
               <div style="flex:1"></div>
               <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:{{ brand }};white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
             </div>
@@ -1159,7 +1159,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
                     <div style="flex:1 1 auto;min-width:0;font-size:12px;color:#5f6f83;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.d }}</div>
-                    <div style="flex-shrink:0;font-size:11.5px;color:#4a5a70;background:#f3f6fa;padding:3px 9px;border-radius:6px;white-space:nowrap">{{ k.cat }}</div>
+                    <div style="flex-shrink:0;font-size:11.5px;color:#4a5a70;background:{{ bannerTileBg }};padding:3px 9px;border-radius:6px;white-space:nowrap">{{ k.cat }}</div>
                   </div>
                 </div>
               </div>

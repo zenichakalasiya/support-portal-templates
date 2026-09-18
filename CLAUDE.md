@@ -210,12 +210,40 @@ hideAnn seed. `desk3d`'s own `motif` field is `""`; it plays no part in
 this seed's rendering. `desk3d`'s `dot` is a sage green (`#3E7C5A`), not
 picked to match its swatch alone — it's the seed's whole colour identity:
 `bannerAccentBg/Fg/Border` (the data cards' ID pill / icon-chip tint) derive
-from it as usual, and a fourth flag, `pageTint` (used by `desk3d` only),
-additionally tints `bannerPageBg` — the page's own ground colour, behind
-the top bar, side rail and every data card, normally a flat neutral
-`#f6f8fb` — to a very light wash of that same green
-(`tintLight(active.dot, .95)`) so the whole page reads as part of the same
-green scene as the banner, not just the banner card itself.
+from it as usual, and so does `bannerPageBg` — the page's own ground
+colour, behind the top bar, side rail and every data card.
+
+**Every seed tints the page, not just `desk3d`.** This used to be a
+`pageTint` flag that only `desk3d` set (everything else got a flat neutral
+`#f6f8fb`); the flag is gone and `bannerPageBg` is now derived for every
+seed. It does *not* use `tintLight()`: mixing a seed's `dot` toward white
+by a fixed amount gives wildly uneven results, because the dots are not
+equally light to begin with — `starlight` (`#A9C6ED`) and `diamond`
+(`#8FC3FF`) are already pale, so `tintLight(dot, .95)` left them *lighter*
+than the old neutral and their white cards stopped reading as cards at all.
+`washFromHex(hex, sat, light)` (next to `tintLight`/`tintDark` in
+`js/logic.js`) instead keeps only the source colour's **hue** and pins
+saturation and lightness, so every seed lands at the same strength in its
+own hue. Three grounds derive from it, each one step darker than the last,
+and all three sit *behind* white cards:
+
+- `bannerPageBg` — `washFromHex(dot, .28, .965)`, the page ground
+  (replaces the old neutral `#f6f8fb`).
+- `bannerTileBg` — `washFromHex(dot, .30, .975)`, the small fills
+  *inside* cards: My Assets / My CIs tiles (was `#f7f9fc`) and the Most
+  read category pill (was `#f3f6fa`).
+- `bannerBadgeBg` — `washFromHex(dot, .34, .958)`, the data-card header
+  count badges, 8 / 8 / 4 / 412 (was `#f0f4f9`).
+
+`desk3d`'s approved green ground is preserved by this change, landing at
+`rgb(244,249,246)` where the old `pageTint` formula gave
+`rgb(245,248,247)`. **The data cards themselves stay white** — they render
+from the gallery-wide `cardStyle` design prop (`cardBg`/`cardBorder`/
+`cardShadow`), and tinting the card surface per seed would both override
+that prop for this one template and flatten the card-against-page contrast.
+The seed colour reaches the cards through their contents (ID pills, icon
+chips, tiles, badges) instead, which was the explicit call here — don't
+"finish the job" by tinting `cardBg` in `3b2`.
 
 Every seed's `dot` is meant to be its whole colour identity, not just its
 swatch dot — `hexpulse`'s was originally `#F0A73C` (the orange used for the

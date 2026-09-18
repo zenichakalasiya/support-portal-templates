@@ -1,112 +1,123 @@
-# Handoff — 2026-09-17 16:36
+# Handoff — 2026-09-18 16:04
 
 ## Read first
-`CLAUDE.md`'s **"The 3b2 banner-seed system"** section (under Architecture) —
-it now documents the `searchWhite` flag, the `rawBg` full-width-pattern
-convention (painted on the outer grid container, not a column div), why
-`dotGradientInner`'s fade finishes at ~60% width rather than 100%, and the
-new `gearsCascadeInner` generator. Read that before touching any `3b2`
-banner seed again.
+`CLAUDE.md`'s **"The 3b2 banner-seed system"** section (under Architecture). It
+now documents `washFromHex()` and the three per-seed ground colours
+(`bannerPageBg` / `bannerTileBg` / `bannerBadgeBg`) that replaced the old
+`pageTint`-flag-gated single tint. Read it before touching any `3b2` colour.
 
 ## What we worked on this session
-A short, targeted follow-up session fixing four specific things the
-previous session's `3b2` banner-seed work and `4g` cleanup had gotten
-visibly wrong, all from screenshot-referenced user feedback: the Dot
-Gradient pattern stopping short of the announcement card, Hex Pulse Blue's
-translucent search bar, a leftover stroke on 4G's announcement card, and
-Gear Works' motif not matching the requested cascading-gears reference
-image.
+This session started by **recovering the previous session's context from another
+account** — the work had been running in a second terminal under a different
+Claude account that hit its weekly limit mid-task (resets Sep 19, 1:30pm IST).
+Its transcript was read off disk from
+`~/.claude/projects/D--Motadata-support-portal-templates/c873370a-….jsonl`, which
+carried the full state of a 9-item request. Eight of those nine items turned out
+to be already implemented *and* pushed; this session verified each one against
+the code, then implemented the one clause that was genuinely missing — extending
+the `3b2` banner-seed colour through the rest of the page.
 
 ## Completed
-- **Dot Gradient banner pattern now reaches the true right edge.** Root
-  cause: `dotgrad` (and every other full-width `rawBg` seed) painted its
-  pattern via `active.base` on the *outer* grid container already — that
-  part was correct — but the fade formula in `dotGradientInner` ramped
-  opacity linearly across the *entire* 0–100% design width, reaching full
-  density only at x=900 (100%). Since the announcement card's left edge
-  typically sits around 65–73% of the real banner width, the pattern was
-  still visibly ramping up right where the card covers it, so the sliver
-  of pattern visible beside/after the card looked faded rather than dense
-  — read by the user as "the pattern only fills half the card's area, then
-  it's just flat color." Fixed by changing the fade to finish by ~60% of
-  the design width and hold at max density (0.62 alpha) for the rest —
-  verified with canvas pixel-sampling of the live rendered background
-  (screenshots were unreliable this session, see Gotchas) showing alpha
-  plateaus at column 16 of 26 (~63% across) and stays flat through column
-  25, comfortably before and through where the card sits.
-- **Hex Pulse Blue's search bar is now solid white.** Added a `searchWhite`
-  boolean seed flag (only `hexpulse` sets it) and a `whiteSearch = light ||
-  active.searchWhite` derivation in `sidecarBanner()`, so a specific
-  non-`light` seed can still opt into the white/bordered search-field
-  styling that `light` seeds get by default, without changing the banner's
-  own dark-teal theme or hero text colors.
-- **4G's hero-embedded announcement card lost its stroke.** Removed
-  `border:1px solid rgba(255,255,255,.20)` from the card's style in
-  `layouts/4g.html`, keeping the `rgba(255,255,255,.10)` glass fill.
-- **Gear Works banner rebuilt as a full-width gear cascade**, replacing the
-  old small bottom-right corner motif (`gearsInner`, now deleted). New
-  `gearGlyph()` helper (built on the existing `gearRingPath`) plus
-  `gearsCascadeInner()` place a biggest-gear-at-the-right, shrinking-as-it-
-  trails-left cluster of 7 gears across roughly the outer 40% of the
-  banner width, at low opacity (0.13–0.22), following the same "anchored
-  cluster, low opacity" pattern `diamondCascadeInner` already used. The
-  `gears` seed switched from a `motif`-based corner accent to `rawBg: true`
-  like the other full-width pattern seeds.
+- **Re-verified the previous session's 9-item list against the actual code**
+  (not against its own summary). All confirmed present:
+  - ID-pill strokes removed gallery-wide — 85 pill instances across `layouts/`,
+    zero `border:` / `outline:` remaining.
+  - Each template resolves to exactly one ID-pill fg/bg pair, so 4G (open
+    requests + pending approvals), 5A (most read vs open requests) and 4F all
+    match internally as asked.
+  - `3c.html` **and** `3c2.html` both at `margin-top:64px` (3C2 was the one
+    missed the time before).
+  - `3b2` Starlight `searchWhite: true`; Hex Pulse Blue at `bannerHeight: 320`
+    with `annBottom: true` and `dot: "#0E4C5C"` (the mismatched orange is gone).
+  - The banner-swatch note bar is gone — no `bannerNote` anywhere in the repo.
+- **The missing clause — every `3b2` seed now themes the whole page, not just
+  Motadata Desk.** Previously only ID pills and icon chips followed the active
+  seed; the page ground tinted for `desk3d` alone and everything else was fixed
+  neutral grey. Now:
+  - `bannerPageBg` — the page ground — derives for **every** seed (the
+    `pageTint` flag that gated it to `desk3d` has been deleted).
+  - `bannerTileBg` (new) — My Assets / My CIs tiles (was `#f7f9fc`) and the Most
+    read category pill (was `#f3f6fa`).
+  - `bannerBadgeBg` (new) — the data-card header count badges 8 / 8 / 4 / 412
+    (was `#f0f4f9`).
+  - Data cards themselves stay **white** — this was the user's explicit choice
+    when asked (see Decisions).
+- **New `washFromHex(hex, sat, light)` helper** in `js/logic.js`, sitting next to
+  `tintLight` / `tintDark`. It keeps only the source colour's hue and pins
+  saturation and lightness.
+- **`CLAUDE.md` updated** with the whole system and the reasoning, replacing the
+  old `pageTint` paragraph.
+- `node build.js` run; headless `renderVals()` sweep clean — **36 tabs, 42
+  tab×seed combinations, 0 failures**, `sc-if`/`div` balance intact in `3b2`, no
+  leftover neutral fills in the generated bundle.
 
 ## In progress
-Nothing mid-flight. All four fixes were rebuilt (`node build.js` for the
-`4g.html` markup change; `js/logic.js` changes need no build step, they're
-loaded directly) and verified: a headless `renderVals()` sweep across every
-seed and every layout tab (`ok: 36 fail: 0`, `_shell` excluded), plus live
-DOM/canvas inspection in a real browser session confirming each fix
-actually renders as intended (see Gotchas for why canvas pixel-sampling was
-used instead of trusting screenshots).
+**Nothing mid-flight in the code, but the colour change was never seen in a
+browser.** Every check this session was headless (computed values + render
+sweep). The numbers land where intended — all seven seeds sit at equal strength
+in their own hue, and `desk3d`'s already-approved green is preserved at
+`rgb(244,249,246)` vs the old formula's `rgb(245,248,247)` — but nobody has
+actually looked at it. The tint is deliberately subtle: the same strength as the
+old neutral `#f6f8fb`, just hue-shifted per seed.
 
 ## Next steps
-- Nothing explicitly deferred this session — all four reported issues were
-  fixed and verified before moving on.
-- If more `3b2` banner seeds get added later, the `rawBg` + `svgUrl(900,
-  220, ...)` + "fade must finish well before ~65% width" pattern
-  established this session is the one to follow for anything meant to
-  stay visible behind/beside the announcement card.
+1. **Open `3b2` and click through all 7 banner swatches.** Judge whether the page
+   wash is strong enough — if it should read more clearly, raise the `sat`
+   argument (currently `.28`) or lower the `light` argument (currently `.965`) in
+   `bannerPageBg`, and keep `bannerTileBg` / `bannerBadgeBg` in step with it.
+2. Decide whether the **count-badge text colour** should follow the seed too. It
+   is still the neutral `#0b2545`, deliberately — it matches the card title
+   sitting right beside it — while the badge's background now tints.
+3. Nothing else from the 9-item list is outstanding.
 
 ## Decisions made
-- **Full-width banner patterns paint on the outer grid container, not the
-  motif div**, and any left-to-right fade inside them must finish by
-  roughly 60% of the design width, not 100% — because the announcement
-  card covers the last ~30% of the banner and a fade tuned to the full
-  range never visibly reaches its own maximum. This is now the standard to
-  follow for any new full-width `rawBg` seed.
-- **`searchWhite` is a seed-level override, independent of `light`** — a
-  dark-themed seed can still want a white search field. Don't fold this
-  into the `light` flag itself; keep it as its own boolean so a seed can
-  mix "dark hero, white search" freely.
+- **Data cards stay white; the seed colour reaches them through their contents.**
+  The user was asked directly and picked this over tinting the card surface. Two
+  reasons it was worth asking: the cards render from the gallery-wide `cardStyle`
+  design prop (`cardBg`/`cardBorder`/`cardShadow`), so tinting them would
+  override that prop for this one template, and with the page ground already
+  tinted the cards would stop lifting off the background. **Don't "finish the
+  job" later by tinting `cardBg` in `3b2`** — it was considered and rejected.
+- **`washFromHex()` instead of `tintLight()` for the page grounds.** Mixing a
+  seed's `dot` toward white by a fixed amount gives wildly uneven results,
+  because the dots are not equally light to begin with. `starlight` (`#A9C6ED`)
+  and `diamond` (`#8FC3FF`) are already pale, so `tintLight(dot, .95)` produced a
+  page *lighter* than the old neutral — their white cards would have disappeared
+  into the background. Pinning saturation and lightness and keeping only the hue
+  makes every seed land at the same strength.
+- **The `pageTint` seed flag was deleted rather than left in place.** Now that
+  every seed tints its page, a flag that only `desk3d` set is dead weight that
+  would mislead the next reader.
 
 ## Gotchas & notes
-- **The Chrome browser automation tool's screenshot/zoom actions were
-  unreliable again this session** (stale captures, a `Page.captureScreenshot`
-  timeout, and a `zoom` call that returned a screenshot of the wrong scroll
-  position entirely). Do not trust a single screenshot as proof of a fix —
-  prefer DOM inspection (`getAttribute('style')`) for style-only changes,
-  and canvas-based pixel sampling (draw the SVG background onto an
-  off-screen `<canvas>` sized to the real container, then sample specific
-  x-fractions or scan for first/last non-zero alpha) for verifying an SVG
-  background pattern's actual on-screen coverage — this is what caught and
-  confirmed the Dot Gradient fix in this session.
-- **A subtler trap found this session: clicking a banner-seed swatch in an
-  unfocused/backgrounded browser tab silently "fails" to visually update,**
-  even though the click handler DID fire and `state.bannerSeed` DID change.
-  Cause: `js/app.js`'s `schedule()` defers the actual re-render via
-  `requestAnimationFrame`, and Chrome throttles/pauses `rAF` callbacks for
-  a tab that is `document.hidden`/unfocused — common for an automation-
-  driven tab that never receives real OS focus. The fix for testing
-  purposes: take a screenshot (or otherwise force the tab into the
-  foreground) *after* the click and *before* re-inspecting the DOM, which
-  forces the pending frame to flush. This is a testing-tool quirk, not an
-  app bug — do not "fix" `schedule()` or `app.js` in response to this; the
-  rAF-based render batching is correct behavior for a real, focused user
-  session.
-- The local static server (`http-server` on port 5173, used for this
-  session's browser verification since `file://` blocks `fetch()`) was
-  started and later stopped again — nothing left running past this
-  session.
+- **Cross-account context recovery works, and is worth remembering.** When a
+  session dies on a usage limit, its full transcript is still on disk as JSONL
+  under `<config-dir>/projects/<project-slug>/<session-id>.jsonl`. This machine
+  has **two** config dirs for two accounts — `~/.claude` and `~/.claude-pro` —
+  so check both. Parse the file by streaming it line by line and pulling
+  `type: "user"` / `type: "assistant"` text blocks; a long session's file is
+  ~90 MB, so don't try to read it whole. Background-agent output lands separately
+  under the temp `tasks/<task-id>.output` file, which is how the tail end of the
+  previous session's ID-pill sweep was recovered.
+- **Browser automation could not be used at all this session** — three separate
+  walls, worth knowing before trying again:
+  1. The Chrome extension **refuses `file://` URLs** outright ("Can't interact
+     with browser-internal or unparseable URLs"), so the usual double-click-the-
+     `index.html` workflow is not drivable. A static server is required.
+  2. **Port 5173 is poisoned in this Chrome profile.** A service worker left
+     behind by a different Motadata app ("Ticket Listing & Full Detail page")
+     intercepts it and serves that app instead of whatever is actually listening
+     — confirmed by `curl` returning the correct gallery HTML from the same URL
+     at the same moment the browser showed the other app. Use a different port.
+  3. Even on a clean port (5199) and a fresh tab, the extension reported a page
+     title that did not match the URL it claimed to be on, and `#stage` was never
+     present. Only one browser was connected ("Browser 1"); `switch_browser`
+     found no others. **Edge has the extension installed** and was going to be
+     connected instead, but never registered with the account before the session
+     ended.
+- **The static server used this session is disposable** — a ~10-line Node script
+  written to the scratchpad temp dir, not committed. Recreate it, or use any
+  static server; the project needs no build step to serve.
+- The gallery is also a **private Claude artifact** that does *not* auto-update:
+  <https://claude.ai/code/artifact/fdeaa529-b28d-4f96-a9f4-bb9b385ff0f4>. It is a
+  snapshot and has not been republished with this session's change.
