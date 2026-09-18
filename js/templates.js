@@ -4114,7 +4114,7 @@ window.TEMPLATES = {
               </div>
             </div>
             <div style="flex:1;min-height:200px;background:{{ accent }};padding:24px 26px;display:flex;flex-direction:column;justify-content:flex-start">
-              <div style="display:flex;align-items:center;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px solid rgba(61,42,5,.18)">
                 <div style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#3d2a05">Announcement</div>
                 <div style="flex:1"></div>
                 <div style="display:flex;align-items:center;gap:3px;font-size:12.5px;font-weight:700;color:#3d2a05;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
@@ -4138,7 +4138,7 @@ window.TEMPLATES = {
                and Most Used Services in the block the knowledge base used to hold. -->
           <div style="display:flex;flex-direction:column;min-width:0">
             <div style="min-height:380px;background:#fff;padding:24px 26px;display:flex;flex-direction:column;justify-content:flex-start">
-              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0b2545">Quick links</div>
+              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0b2545;padding-bottom:16px;border-bottom:1px solid #eef2f7">Quick links</div>
               <div style="display:flex;flex-direction:column;margin-top:14px">
                 <sc-for list="{{ mfgQuickLinks }}" as="q" hint-placeholder-count="4">
                   <div style="display:flex;align-items:center;gap:13px;padding:15px 0;border-bottom:1px solid #eef2f7;min-width:0">
@@ -4150,7 +4150,7 @@ window.TEMPLATES = {
               </div>
             </div>
             <div style="flex:1;background:#4c37b0;padding:24px 26px 20px">
-              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff">Most Used Services</div>
+              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16)">Most Used Services</div>
               <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
                   <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.09);border-radius:10px;min-width:0">
@@ -7537,7 +7537,7 @@ window.TEMPLATES = {
 </div>`,
 
   "7a": `<div id="7a" data-screen-label="7a Quadrangle" style="display:flex;flex-direction:column;width:100%">
-  <div style="border-top:1px solid #dde4ee;background:#FAF7F1">
+  <div style="border-top:1px solid #dde4ee;background:#FCFAF6">
     <div style="position:sticky;top:0;z-index:25;display:flex;align-items:center;gap:14px;height:60px;padding:0 20px;background:#fff;border-bottom:1px solid #E4DCCC">
       <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#6B6255">dock_to_right</span>
       <div style="display:flex;align-items:center;gap:7px">
@@ -7608,7 +7608,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center">
                     <div style="font-size:13.5px;font-weight:500;color:#191510;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.t }}</div>
-                    <div style="font-size:12px;font-weight:400;color:#6B6255;margin-top:4px;line-height:1.5;text-wrap:pretty">{{ n.s }}</div>
+                    <div style="font-size:12px;font-weight:400;color:#6B6255;margin-top:4px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.s }}</div>
                   </div>
                 </div>
               </sc-for>
