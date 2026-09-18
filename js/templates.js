@@ -473,7 +473,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 16px;border:1px solid {{ cardBorder }};background:{{ cardBg }};border-radius:14px">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#0b2545;line-height:1.35">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -495,7 +495,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:15px 16px;border:1px solid {{ cardBorder }};background:{{ cardBg }};border-radius:14px">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -554,7 +554,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#edeff1;border:1px solid #dbdee2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14.5px;font-weight:600;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -670,7 +670,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#f3f6fa;border:1px solid #e6ecf3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12.5px;color:#5f6f83;margin-top:5px;line-height:1.45">{{ r.d }}</div>
@@ -690,7 +690,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#f3f6fa;border:1px solid #e6ecf3;padding:3px 8px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 8px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -791,7 +791,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -1038,7 +1038,7 @@ window.TEMPLATES = {
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                 <div style="flex:1 1 150px;min-width:0">
                   <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                    <div style="font-size:12px;font-weight:600;color:{{ bannerAccentFg }};background:{{ bannerAccentBg }};border:1px solid {{ bannerAccentBorder }};padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="font-size:12px;font-weight:600;color:{{ bannerAccentFg }};background:{{ bannerAccentBg }};padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                   </div>
                   <div style="font-size:12.5px;color:#5f6f83;margin-top:5px;line-height:1.45">{{ r.d }}</div>
@@ -1286,7 +1286,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12.5px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -1332,7 +1332,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -1369,7 +1369,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -1540,7 +1540,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14.5px;font-weight:500;color:#0b2545">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12.5px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -1586,7 +1586,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 20px;border-bottom:1px solid #f4f7fa">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -1619,7 +1619,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ kbs3 }}" as="k" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:12px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -1826,7 +1826,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs6 }}" as="k" hint-placeholder-count="6">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f7fafc;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#eef2f7;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -2379,7 +2379,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -2559,7 +2559,7 @@ window.TEMPLATES = {
                   <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#5f6f83;flex-shrink:0;margin-top:2px">description</span>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -2761,7 +2761,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ approvals3 }}" as="p" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #f4f7fa">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -2796,7 +2796,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -2866,7 +2866,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:11px 18px;border-bottom:1px solid #f4f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                       </div>
                       <div style="font-size:11.5px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -3060,7 +3060,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals4 }}" as="a" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:5px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -3094,7 +3094,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
                   <div style="flex:1 1 150px;min-width:0">
                     <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                      <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                     </div>
                     <div style="font-size:12px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -3116,7 +3116,7 @@ window.TEMPLATES = {
                   <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:#fff;min-width:0">
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -3337,7 +3337,7 @@ window.TEMPLATES = {
             <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
               <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                   <div style="display:flex;gap:5px;flex-shrink:0">
                     <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -3374,7 +3374,7 @@ window.TEMPLATES = {
               <div style="flex:1;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
                 <div style="flex:1 1 150px;min-width:0">
                   <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:{{ brand }};line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                   </div>
                   <div style="font-size:11.5px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -3394,7 +3394,7 @@ window.TEMPLATES = {
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:13px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -3578,7 +3578,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs6 }}" as="k" hint-placeholder-count="6">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f4f7fa;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -3736,7 +3736,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:12px 18px;border-bottom:1px solid #f1f5f9;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#edeff1;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -3757,7 +3757,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals }}" as="p" hint-placeholder-count="2">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:12px 18px;border-bottom:1px solid #f1f5f9">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#607186;background:#eff1f3;border:1px solid #dfe3e7;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#edeff1;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ p.id }}</div>
                     <div style="flex:1;min-width:0;font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -3791,7 +3791,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 18px;border-bottom:1px solid #f1f5f9">
                   <div style="flex:1 1 150px;min-width:0">
                     <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                      <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#edeff1;border:1px solid #dbdee2;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#edeff1;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                     </div>
                     <div style="font-size:12.5px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -3965,7 +3965,7 @@ window.TEMPLATES = {
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1.35;color:#fff;flex-shrink:0">north_east</span>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#edeff1;border:1px solid #dbdee2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#4a5a70;background:#edeff1;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;flex:1;min-width:0;font-size:13.5px;color:#fff;line-height:1.45">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -4203,7 +4203,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:700;color:#0b2545;line-height:1.3">{{ k.t }}</div>
                     </div>
                     <div style="font-size:12px;color:#5f6f83;margin-top:5px;line-height:1.45">{{ k.m }}</div>
@@ -4336,7 +4336,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                   <div style="display:flex;flex-direction:column;gap:7px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -4478,7 +4478,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 15px;border-bottom:1px solid #f4f7fa">
                   <div style="flex:1 1 160px;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:11px;font-weight:600;color:#1A4F96;background:#E7EFFC;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                     </div>
                     <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;line-height:1.45">{{ r.d }}</div>
@@ -4518,7 +4518,7 @@ window.TEMPLATES = {
               <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:12px 15px;border-bottom:1px solid #f4f7fa">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11px;font-weight:600;color:#1A4F96;background:#E7EFFC;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:12.5px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -4572,7 +4572,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 7px;border-radius:4px;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;padding:3px 7px;border-radius:4px;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -4818,7 +4818,7 @@ window.TEMPLATES = {
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#eef2f7;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -5037,7 +5037,7 @@ window.TEMPLATES = {
             <sc-for list="{{ kbs2 }}" as="k" hint-placeholder-count="2">
               <div style="display:flex;flex-direction:column;gap:7px;padding:13px 18px;border-top:1px solid #f1f5f9;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#eef2f7;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -5222,7 +5222,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 15px;border-bottom:1px solid #f4f7fa">
               <div style="flex:1 1 160px;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11px;font-weight:600;color:#4a5a70;background:#f3f6fa;border:1px solid #e6ecf3;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                  <div style="font-size:11px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                 </div>
                 <div style="font-size:11.5px;color:#5f6f83;margin-top:4px;line-height:1.45">{{ r.d }}</div>
@@ -5242,7 +5242,7 @@ window.TEMPLATES = {
           <sc-for list="{{ apprRowsStd }}" as="a" hint-placeholder-count="2">
             <div style="display:flex;flex-direction:column;gap:8px;padding:12px 15px;border-bottom:1px solid #f4f7fa">
               <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                <div style="font-size:11px;font-weight:600;color:#0b2545;background:#eef1f6;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                <div style="font-size:11px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                 <div style="flex:1;min-width:0;font-size:12.5px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                 <div style="display:flex;gap:5px;flex-shrink:0">
                   <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -5296,7 +5296,7 @@ window.TEMPLATES = {
               </div>
               <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 7px;border-radius:4px;flex-shrink:0">{{ k.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#4a5a70;background:#f3f6fa;padding:3px 7px;border-radius:4px;flex-shrink:0">{{ k.id }}</div>
                   <div style="flex:1;min-width:0;font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -5695,7 +5695,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:13px 16px;border-top:1px solid #eef2f7;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -5898,7 +5898,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;border:1px solid #CFE0F7;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#1A4F96;background:#E7EFFC;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -6189,7 +6189,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 13px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;border:1px solid #e0eaf2;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12px;color:#5f7c93;margin-top:5px;line-height:1.45">{{ r.d }} · {{ r.who }}</div>
@@ -6281,7 +6281,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11px;font-weight:600;color:#0F5C8C;background:#E8F2FA;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11px;font-weight:600;color:#41586e;background:#F1F6FA;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                     </div>
                     <div style="font-size:11px;color:#5f7c93">{{ k.cat }}</div>
@@ -6302,7 +6302,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals4 }}" as="a" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:9px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
                   <div style="display:flex;align-items:center;gap:9px;min-width:0">
-                    <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;border:1px solid #e0eaf2;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;color:#0b2545;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:6px;flex-shrink:0">
                       <div title="Approve" style="width:28px;height:28px;border-radius:4px;border:1px solid #dde7f0;color:#0F5C8C;display:flex;align-items:center;justify-content:center">
@@ -6336,7 +6336,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 13px;padding:13px 18px;border-bottom:1px solid #f3f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;border:1px solid #e0eaf2;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#41586e;background:#F1F6FA;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#0b2545;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12px;color:#5f7c93;margin-top:5px;line-height:1.45">{{ r.d }} · {{ r.who }}</div>
@@ -6497,7 +6497,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 13px;padding:13px 18px;border-bottom:1px solid #EFF1EC">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#3E5148;background:#F3F5F0;border:1px solid #E2E5DE;padding:3px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#3E5148;background:#F3F5F0;padding:3px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#23302B;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12px;color:#4A5A52;margin-top:5px;line-height:1.45">{{ r.d }} · {{ r.who }}</div>
@@ -6519,7 +6519,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ apprRows3b2 }}" as="a" hint-placeholder-count="2">
                   <div style="display:flex;flex-direction:column;gap:9px;padding:13px 18px;border-bottom:1px solid #EFF1EC">
                     <div style="display:flex;align-items:center;gap:9px;min-width:0">
-                      <div style="font-size:12px;font-weight:600;color:#3E5148;background:#F3F5F0;border:1px solid #E2E5DE;padding:3px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                      <div style="font-size:12px;font-weight:600;color:#3E5148;background:#F3F5F0;padding:3px 9px;border-radius:2px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;color:#23302B;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:2px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -6574,7 +6574,7 @@ window.TEMPLATES = {
                   <sc-for list="{{ kbs8 }}" as="k" hint-placeholder-count="8">
                     <div style="display:flex;flex-direction:column;gap:7px;padding:13px 18px;border-bottom:1px solid #EFF1EC;min-width:0">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:11.5px;font-weight:700;color:#3E5148;background:#F3F5F0;border:1px solid #E2E5DE;padding:3px 8px;border-radius:2px;line-height:1.2;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:11.5px;font-weight:700;color:#3E5148;background:#F3F5F0;padding:3px 8px;border-radius:2px;line-height:1.2;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:13px;font-weight:500;color:#23302B;line-height:1.4">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -6699,7 +6699,7 @@ window.TEMPLATES = {
             <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
               <div style="display:flex;flex-direction:column;gap:8px;padding:13px 22px;border-top:1px solid #ececec">
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5f5f5f;background:#efefef;border:1px solid #dfdfdf;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5f5f5f;background:#efefef;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0A0A0A;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                   <div style="display:flex;gap:5px;flex-shrink:0">
                     <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -6797,7 +6797,7 @@ window.TEMPLATES = {
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:13px 22px;border-top:1px solid #ececec">
                 <div style="flex:1 1 150px;min-width:0">
                   <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f5f5f;background:#efefef;border:1px solid #dfdfdf;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f5f5f;background:#efefef;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#0A0A0A;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                   </div>
                   <div style="font-size:12px;color:#5f5f5f;margin-top:5px">{{ r.d }}</div>
@@ -6819,7 +6819,7 @@ window.TEMPLATES = {
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:13px 22px;border-top:1px solid #ececec;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#6a6a6a;background:#f0f0f0;border:1px solid #e1e1e1;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5f5f5f;background:#efefef;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                   <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#0A0A0A;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ k.t }}</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -6968,7 +6968,7 @@ window.TEMPLATES = {
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 18px;border-bottom:1px solid #f4f7fa">
                     <div style="flex:1 1 150px;min-width:0">
                       <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                       </div>
                       <div style="font-size:12px;color:#5f6f83;margin-top:5px">{{ r.d }}</div>
@@ -6993,7 +6993,7 @@ window.TEMPLATES = {
                 <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                   <div style="display:flex;flex-direction:column;gap:8px;padding:13px 18px;border-bottom:1px solid #f4f7fa">
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;border:1px solid #dfe2e6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#5f6f83;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                       <div style="display:flex;gap:5px;flex-shrink:0">
                         <div title="Approve" style="width:24px;height:24px;border-radius:4px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -7154,7 +7154,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 22px;border-bottom:1px solid #f4f7fa">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5f7288;background:#eff1f3;border:1px solid #dfe3e7;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5f7288;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:15px;font-weight:600;color:#0E2B4A;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:4px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -7190,7 +7190,7 @@ window.TEMPLATES = {
                     <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:#1A8FE3;flex-shrink:0">article</span>
                     <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:13.5px;font-weight:600;color:#5f7288;background:#eff1f3;border:1px solid #dfe3e7;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:13.5px;font-weight:600;color:#5f7288;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:15px;font-weight:600;color:#0E2B4A;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -7242,7 +7242,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 22px;border-bottom:1px solid #f4f7fa">
                   <div style="flex:1 1 150px;min-width:0">
                     <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                      <div style="font-size:13px;font-weight:600;color:#5f7288;background:#eff1f3;border:1px solid #dfe3e7;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:13px;font-weight:600;color:#5f7288;background:#eff1f3;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:15px;font-weight:600;color:#0E2B4A;line-height:1.4;text-wrap:pretty">{{ r.t }}</div>
                     </div>
                     <div style="font-size:13px;color:#5f7288;line-height:1.45;margin-top:5px">{{ r.d }}</div>
@@ -7438,7 +7438,7 @@ window.TEMPLATES = {
                   <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                     <div style="display:flex;flex-direction:column;gap:7px;padding:15px 18px;background:#fff;min-width:0">
                       <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <div style="font-size:12px;font-weight:600;color:#5c6675;background:#eff0f1;border:1px solid #dee0e3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                        <div style="font-size:12px;font-weight:600;color:#5c6675;background:#eff0f1;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                         <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#1B2430;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                       </div>
                       <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -7461,7 +7461,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #f3f5f8">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5c6675;background:#eff0f1;border:1px solid #dee0e3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5c6675;background:#eff0f1;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#1B2430;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:6px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -7518,7 +7518,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 18px;border-bottom:1px solid #f3f5f8">
                   <div style="flex:1 1 150px;min-width:0">
                     <div style="display:flex;align-items:center;gap:11px;min-width:0">
-                      <div style="font-size:12px;font-weight:600;color:#5c6675;background:#eff0f1;border:1px solid #dee0e3;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:12px;font-weight:600;color:#5c6675;background:#eff0f1;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#1B2430;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                     </div>
                     <div style="font-size:12px;color:#5c6675;margin-top:5px">{{ r.d }}</div>
@@ -7690,7 +7690,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F6F2E9">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;border:1px solid #EEDFC0;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#191510;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:4px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -7724,7 +7724,7 @@ window.TEMPLATES = {
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:13px 18px;border-bottom:1px solid #F6F2E9">
                   <div style="flex:1 1 150px;min-width:0">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;border:1px solid #EEDFC0;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#191510;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                     </div>
                     <div style="font-size:12px;color:#6B6255;margin-top:4px">{{ r.d }}</div>
@@ -7750,7 +7750,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;border:1px solid #EEDFC0;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#8A5710;background:#F5EAD6;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#191510;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -7956,7 +7956,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F6F7FB">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5A6079;background:#efeff2;border:1px solid #dedfe4;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5A6079;background:#efeff2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#14183A;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -8010,7 +8010,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F6F7FB;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5A6079;background:#efeff2;border:1px solid #dedfe4;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5A6079;background:#efeff2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#14183A;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -8222,7 +8222,7 @@ window.TEMPLATES = {
             <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
               <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F4F2ED;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5A5750;background:#efeeee;border:1px solid #dedddc;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5A5750;background:#efeeee;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                   <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#14183A;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -8404,7 +8404,7 @@ window.TEMPLATES = {
             <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
               <div style="display:flex;flex-direction:column;gap:8px;padding:14px 18px;border-bottom:1px solid #F4F6FA">
                 <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                  <div style="font-size:11.5px;font-weight:600;color:#5A6884;background:#eff0f3;border:1px solid #dee1e6;padding:3px 9px;border-radius:3px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                  <div style="font-size:11.5px;font-weight:600;color:#5A6884;background:#eff0f3;padding:3px 9px;border-radius:3px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                   <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#10306B;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                   <div style="display:flex;gap:5px;flex-shrink:0">
                     <div title="Approve" style="width:24px;height:24px;border-radius:3px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -8436,7 +8436,7 @@ window.TEMPLATES = {
               <sc-for list="{{ kbs4 }}" as="k" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:7px;padding:14px 18px;border-bottom:1px solid #F4F6FA;min-width:0">
                   <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#5A6884;background:#eff0f3;border:1px solid #dee1e6;padding:3px 9px;border-radius:3px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#5A6884;background:#eff0f3;padding:3px 9px;border-radius:3px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                     <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#10306B;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
@@ -8643,7 +8643,7 @@ window.TEMPLATES = {
               <sc-for list="{{ approvals3 }}" as="a" hint-placeholder-count="3">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;border:1px solid #dde1e5;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ a.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;text-wrap:pretty;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                     <div style="display:flex;gap:5px;flex-shrink:0">
                       <div title="Approve" style="width:24px;height:24px;border-radius:8px;background:#e6f4ec;color:#1f7a44;display:flex;align-items:center;justify-content:center">
@@ -8676,7 +8676,7 @@ window.TEMPLATES = {
               <sc-for list="{{ requests4 }}" as="r" hint-placeholder-count="4">
                 <div style="display:flex;flex-direction:column;gap:8px;padding:15px 20px;border-bottom:1px solid #F4F8FB">
                   <div style="display:flex;align-items:center;gap:8px;min-width:0">
-                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;border:1px solid #dde1e5;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
+                    <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ r.id }}</div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
                   </div>
                   <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0">
@@ -8701,7 +8701,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
                     <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                      <div style="font-size:11.5px;font-weight:600;color:#1B5E9E;background:#E4EFF9;border:1px solid #CFE0F7;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
+                      <div style="font-size:11.5px;font-weight:600;color:#54677B;background:#eef0f2;padding:3px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0">{{ k.id }}</div>
                       <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#152D4B;line-height:1.4;text-wrap:pretty">{{ k.t }}</div>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;min-width:0">

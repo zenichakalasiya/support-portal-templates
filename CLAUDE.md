@@ -370,6 +370,16 @@ These were applied template-wide and should be kept when adding or editing one:
   `description` icon chip (matching `4c2`'s original treatment), id pill,
   title, date and category. The icon chip is on every Most read row
   gallery-wide now, not just `4c2`.
+- **ID pills (`SR-201`, `INC-187`, `KB-4`, …) carry no stroke — background
+  colour only.** Every `My Open Requests` / `Pending Approvals` / `Most read`
+  (or other id-pill-bearing) card in a given template shares one bg/text
+  colour for its pills, canonically whichever colour `My Open Requests` used
+  before this pass — a handful of templates (4F, 4F2, 4G, 5A, 8B, plus
+  smaller near-duplicate-shade mismatches in 2B, 3B, 3D, 4B, 5C) had a
+  different colour on their Most Read (or, for 4G, Pending Approvals) pill
+  and were brought in line. `3b2`'s pills already read from
+  `bannerAccentBg/Fg` (the active banner seed's tint) and needed only the
+  stroke removed, not a colour change.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
   notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That
