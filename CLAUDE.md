@@ -428,6 +428,14 @@ These were applied template-wide and should be kept when adding or editing one:
   colour is anchored elsewhere**: its pills take the My assets / My CIs
   icon-chip pair (`#E4EFF9`/`#1B5E9E`) rather than what My Open Requests
   happened to use, so the pills and those tiles' icons match.
+- **`7a`'s cards carry no outline.** All ten card containers had a warm sand
+  stroke (`#E4DCCC`); it was removed on request and must not come back. Three
+  `#E4DCCC` borders remain on purpose and are *not* card outlines — the top
+  bar's bottom edge, the side rail's right edge and the hero's bottom edge — as
+  does one inner tile's `#F0EADD` stroke. Note `7a` has **no `box-shadow`
+  anywhere**, so with the outline gone its white cards sit about 4 rgb units off
+  the `#FCFAF6` page ground; if the cards ever need to read as separate again,
+  add a soft shadow or deepen the page, don't restore the stroke.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
   notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That
