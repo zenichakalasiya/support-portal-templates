@@ -100,7 +100,7 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:14px;align-items:start">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:14px;align-items:stretch">
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);overflow:hidden">
             <div style="padding:15px 20px;border-bottom:1px solid {{ t2Hair }}">
               <div style="font-size:15.5px;font-weight:700;color:{{ t2Ink }}">Contact Us</div>

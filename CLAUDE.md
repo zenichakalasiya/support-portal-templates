@@ -542,14 +542,19 @@ These were applied template-wide and should be kept when adding or editing one:
   1fr` split) — Contact Us sits in column 1 only, so its width matches
   "Report an incident" exactly, and the announcement card carries
   `grid-column:span 3` to take columns 2–4, matching the other three
-  action cards' combined width. `align-items:start` (not the grid default
-  `stretch`) so each card is exactly as tall as its own content — Contact
-  Us (short: title, divider, 2 rows) and the announcement (one line) end
-  up close in height without either being artificially stretched to match
-  a taller sibling. The announcement card's own internal content is
+  action cards' combined width. The row is `align-items:stretch` (the
+  grid default): Contact Us is already the taller of the two (title,
+  divider, one content row) so stretching doesn't change it, but the
+  announcement card — which has no fixed height of its own — grows to
+  fill that same track height, so its bottom edge lines up with Contact
+  Us's rather than stopping short at its own content height. (An
+  intermediate version tried `align-items:start` so both cards shrank to
+  their own content, but that left the announcement card visibly shorter
+  than Contact Us with mismatched bottoms — reverted back to `stretch` on
+  request.) The announcement card's own internal content is
   `align-items:flex-start` (was `center`) so the date-tile-plus-text block
-  and the carousel controls sit at the top rather than centering in
-  whatever height the flex-wrap row ends up with. Contact Us shows
+  and the carousel controls sit at the top of that now-taller card,
+  leaving the extra space below rather than re-centering into it. Contact Us shows
   unconditionally for all three variants (`2a`/`2ag`/`2an`) —
   `showPrismContact` was deleted along with the Navy-only gate.
 
