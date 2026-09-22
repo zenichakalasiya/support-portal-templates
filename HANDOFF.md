@@ -1,123 +1,104 @@
-# Handoff — 2026-09-21 12:45
+# Handoff — 2026-09-22 11:14
 
 ## Read first
-`CLAUDE.md`, three areas, all edited across these sessions:
-1. **"The 3b2 banner-seed system"** — `washFromHex()` and the three per-seed
-   grounds that replaced the old `pageTint` flag.
-2. **"House rules that hold across the gallery"** — the **Most read**, **Pending
-   Approvals**, **ID pills**, **Service and catalogue sections** and the new
-   **`7a` cards carry no outline** bullets. The Most read bullet *corrects a
-   false claim* the file used to make.
-3. **"Layout ID quirks"** — the `3c`/`3c2` paragraph now records which element is
-   actually "3C's search margin", because that was got wrong once already.
+`CLAUDE.md`'s **"Contact Us cards carry no chat button"** bullet (under
+"House rules that hold across the gallery") — it now has a long paragraph
+right after it covering this session's work in detail, including the 2A
+restructure specifics (grid-row removal, the new row layout, the deleted
+`showPrismContact` flag).
 
 ## What we worked on this session
-Picked up a 9-item request from a **different Claude account** that had hit its
-weekly limit mid-task (transcript recovered off disk — see Gotchas), verified it
-against the code, implemented the one piece that was missing, then worked through
-two further rounds of the user's review feedback across `3h`, `4c2`, `5a`, `8b`,
-`3c` and `7a`.
+One focused request: across all 12 "Final" templates, make every Contact
+Us (or equivalent) card show an icon before both the phone number and the
+email, matching a reference card (title → divider → icon+phone →
+icon+email). Six of the twelve needed work; the other six (5A, 3H, 3C,
+3B2, 4C2, and the one card already inside 2a) already matched the
+reference and were left alone.
 
 ## Completed
-
-**Recovered request (8 of its 9 items were already in the tree; each was
-re-verified against the code, not against the old session's summary):**
-- ID-pill strokes gone gallery-wide (85 pill sites), one fg/bg pair per template.
-- `3c`/`3c2` data-card block at `margin-top:64px`.
-- `3b2`: Starlight `searchWhite`, Hex Pulse Blue at height 320 with `annBottom`
-  and a teal `dot`, swatch note bar gone.
-- **The missing item:** every `3b2` seed now themes the page, not just `desk3d`.
-  `bannerPageBg` derives for all seeds (`pageTint` flag deleted) and two new vals
-  — `bannerTileBg`, `bannerBadgeBg` — tint the asset/CI tiles, the Most read
-  category pill and the header count badges. New `washFromHex(hex, sat, light)`
-  in `js/logic.js`. Data cards stay white.
-
-**Review feedback:**
-- **3H — Most Used Services is one white data card**, heading inside above a
-  divider, tiles stripped of their own card chrome. The row grid is
-  `align-items:stretch` with both cards as flex columns and the tile grid on
-  `flex:1`, so it always matches Most Read's height.
-- **Most read leading icon chip matches its own card's ID pill** (bg and fg) in
-  all 12 templates that have a chip. **No icons were added anywhere** — explicit
-  instruction.
-- **8B's ID pills** take the My assets / My CIs icon-chip pair
-  (`#E4EFF9`/`#1B5E9E`) at all 3 pill sites.
-- **4C2** has a rule between announcement rows via a new `sep` flag on `annTop3`.
-- **5A's approvals buttons** now use the standard 24×24 filled tints.
-- **3C/3C2**: the 64px margin finally landed on the **search bar**, and the hero
-  top tightened (space above the title 66px → 32px).
-- **7A: all ten card outlines removed** (`#E4DCCC`). This is the only change not
-  yet published at the time this handoff was written — the publish step follows.
-
-Everything above was rebuilt with `node build.js` and swept headlessly after
-every change: 36 tabs, 42 tab×seed renders, 0 failures, all `sc-if`/`sc-for`
-balanced.
+- **4E / 4G** — "Service Desk" card's single line
+  (`+91 79 4040 0000 · servicedesk@acme.com`, no icons) split into two
+  separate icon+text rows (`call` / `mail` glyphs).
+- **4F** — same single-line problem in the dark rail's footer area, except
+  here it was genuinely broken: `white-space:nowrap` + `text-overflow:
+  ellipsis` meant it visibly truncated on narrower widths. Same two-row
+  fix.
+- **4P** — the horizontal contact bar (title, hours, phone, email side by
+  side) had no icons at all; added `call`/`mail` glyphs before the phone
+  and email segments without changing the bar's horizontal shape.
+- **7A** — had no Contact Us card whatsoever. Rather than adding a new
+  column or replacing Academic Calendar (both were offered as options),
+  the user asked to split the existing Quick Links column into two
+  stacked cards: Quick Links on top, a new Contact Us card below, each
+  `flex:1` inside a shared wrapper so they split the column's
+  stretched height evenly.
+- **8B** — the true "last row" of the page was a branding footer bar
+  (motadata logo, © copyright, a row of social icons via a `keystoneFoot`
+  fixture) — that whole footer became the Contact Us card (title above,
+  icon+phone and icon+email below). `keystoneFoot` was deleted from
+  `js/logic.js` since nothing else used it. The separate "Can't find what
+  you're looking for?" escalation card (CTA button + portrait image)
+  earlier in the page was **not** touched — the user was specific that
+  only the blue footer row was in scope.
+- **2A (2a/2ag/2an, all three variants)** — the biggest change, and it
+  went well beyond "add icons": the user asked to (1) stop the "Report an
+  incident" tile from spanning 2 grid rows so all 4 action cards sit in
+  one equal-height row, (2) move the announcement card out of that grid
+  into a new row below, paired with (3) a brand-new Contact Us card
+  (content styled like 3H's: title, divider, icon+phone, icon+email) to
+  its left, both stretched to match height via a `320px 1fr` grid with
+  `align-items:stretch`. The old Contact Us card that used to live inside
+  the hero wash — visible for Navy (`2an`) only via a `showPrismContact`
+  flag — was removed entirely; the new card shows unconditionally for all
+  three variants. `showPrismContact` is deleted from `seedTokens()` since
+  its only two call sites are gone.
 
 ## In progress
-Nothing mid-flight in the code. **Nothing has been verified in a browser by
-Claude** — every check was headless. The user reviewed each change themselves on
-a local static server, which is how the 3H tile colour and the 3C margin got
-corrected.
+Nothing mid-flight. Every change was rebuilt (`node build.js`) and
+verified two ways: a headless `renderVals()` sweep (36 tabs, 0 failures,
+`<div>`/`<sc-if>`/`<sc-for>` balance checked on every edited file) and, this
+time, an actual browser check on a local static server — port 5173 was
+occupied by two stale listeners when the session started (killed both);
+port 5199 worked cleanly. Confirmed visually or via DOM query: 4e, 4g, 4f,
+4p, 7a, 8b, 2a (Coral) and 2an (Navy) all show the new icon rows / new
+layout correctly, with no console errors.
 
 ## Next steps
-1. **Look at 7A with the outlines gone.** It has **no `box-shadow` anywhere**,
-   and its `#FCFAF6` page is ~4 rgb units off white, so the white cards may now
-   read as one flat sheet. Fix by adding a soft shadow or deepening the page
-   ground — *not* by restoring the stroke.
-2. **Check 3H's service tiles.** At `#F7F9FC` there are ~5 rgb units between tile
-   and its **white** icon chips, so the chips may read as absent — the 4E/4G
-   complaint inverted. Fix by tinting the chip (e.g. `#EDF1F5`), not by darkening
-   the tile again.
-3. **Decide about `3c.html:101`** — the data-cards block still sits at
-   `margin-top:64px`, raised from 34px by the earlier session's mistake. Nobody
-   asked for that gap to grow.
-4. Still open: whether `3b2`'s **count-badge text colour** should follow the
-   banner seed. It is neutral `#0b2545` while its background now tints.
+Nothing outstanding from this request — all 12 Final templates now have a
+consistent icon+phone/icon+email Contact Us treatment. If more templates
+get promoted into "Final" later, give their Contact Us card (or add one)
+the same title/divider/icon-row shape before considering it done.
 
 ## Decisions made
-- **3H's service tiles are cool grey, not amber.** Amber was tried first
-  (`#FDF4E4`, from 3H's own `#F2A81D` safety stripe), lightened once on request,
-  then rejected outright and replaced with `#F2F5F9`, lightened again to
-  **`#F7F9FC`**. If tinting 3H again, start cool.
-- **Do not add Most read icons anywhere.** 21 Most read cards have no leading
-  icon and `3h2` has a bare glyph. Asked directly, the user chose to enforce the
-  chip rule on the **Final 12 only**, then confirmed: "don't add any new icons,
-  just recolor the icon's bg placed before id pill."
-- **`3b2`'s data cards stay white** — chosen over tinting the card surface,
-  because they render from the gallery-wide `cardStyle` prop and a tinted card on
-  a tinted page loses separation. Don't "finish the job" later.
-- **`washFromHex()` rather than `tintLight()`** for the `3b2` grounds: the seed
-  dots aren't equally light, so a fixed white-mix left the pale ones
-  (`starlight`, `diamond`) *lighter* than the neutral they replaced.
-- **7A's remaining `#E4DCCC` borders are structural**, not card outlines, and
-  were deliberately kept: top bar, side rail, hero bottom edge.
+- **7A's new Contact Us card was added by splitting an existing column**,
+  not by adding a 4th column to the top 3-column row or by replacing
+  Academic Calendar — this was an explicit choice among three options
+  offered, made to avoid disturbing the row's existing balance.
+- **8B's footer (logo/copyright/social icons) was fully repurposed into
+  Contact Us**, not supplemented — the user pointed at "the bottom last
+  row that is blue" specifically, distinct from the escalation card above
+  it, which stays as-is.
+- **2A's Contact Us card is no longer Navy-exclusive.** It was previously
+  gated by `showPrismContact: navyLocked` inside `seedTokens()`; the user
+  explicitly asked for it across "2A's all versions," so the gate and the
+  flag are both gone, not just bypassed.
 
 ## Gotchas & notes
-- **"3C's search margin" has already caused one wrong edit.** `3c.html` has two
-  `margin-top` values in play: the **search bar** in the hero (line ~43, what the
-  user means) and the **data-cards block** (line ~101). An earlier session
-  changed the second while reporting it had done the first — and because 64px
-  *was* in the file, a later verification pass confirmed it as done. **Grep alone
-  was not enough; the element had to be read.**
-- **Cross-account context recovery.** When a session dies on a usage limit its
-  transcript is still at `<config-dir>/projects/<project-slug>/<session-id>.jsonl`.
-  This machine has two config dirs for two accounts — `~/.claude` and
-  `~/.claude-pro` — so check both. Stream it line by line pulling
-  `type: "user"` / `type: "assistant"` text blocks; a long session runs ~90 MB. A
-  background agent's tail end is in the temp `tasks/<task-id>.output` file.
-- **Browser automation is unusable here**, three walls deep: the extension
-  **refuses `file://` URLs**; **port 5173 is poisoned in this Chrome profile** by
-  a service worker from another Motadata app ("Ticket Listing & Full Detail
-  page") that serves that app no matter what is actually listening (confirmed by
-  `curl` returning the right HTML at the same moment); and even on a clean port
-  and fresh tab the extension reported a page title that didn't match the URL it
-  claimed, with `#stage` never present. Edge has the extension installed but
-  never registered with the account.
-- **The preview server is disposable and short-lived** — a ~10-line Node script
-  in the scratchpad temp dir (port 5199 was used). Claude Code **killed it once
-  mid-session because the machine was low on memory**; that is expected behaviour
-  and says nothing about the server. Restart it only when asked.
-- The private Claude artifact
-  (<https://claude.ai/code/artifact/fdeaa529-b28d-4f96-a9f4-bb9b385ff0f4>) is a
-  snapshot that does **not** auto-update, and has not been republished with any
-  of this work.
+- **Port 5173 was already bound by two stale processes** at the start of
+  this session (visible via `netstat`), consistent with a note from a
+  prior handoff about this Chrome profile poisoning that port with a
+  service worker from an unrelated Motadata app. Killing the stale PIDs
+  and using port 5199 instead worked without issue — prefer a non-5173
+  port for this repo's local preview server going forward.
+- **The right-hand data-card column in several Final templates scrolls
+  independently of the page** (e.g. 4e, 4g) — a plain mouse-wheel `scroll`
+  action at a coordinate inside that column sometimes scrolled the wrong
+  container or did nothing visible. When a screenshot doesn't show the
+  expected scroll progress, verify via a direct DOM query (`querySelector`
+  + `closest`) instead of retrying the scroll.
+- A separate, unrelated background research task from an earlier part of
+  this session (auditing ID-pill colors) went further than asked and
+  produced a real, useful commit (`b75d570`) — it was reviewed in full
+  before being kept. Nothing about that is pending; mentioned here only
+  because the commit's authorship in `git log` (a fork of this session)
+  might otherwise look unexplained.
