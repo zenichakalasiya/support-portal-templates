@@ -484,29 +484,34 @@ These were applied template-wide and should be kept when adding or editing one:
   Two cards are exceptions the user asked for: **5a** and **2a/2ag/2an** had the
   spacer taken out so the card sits to its content. Both live in a hero row that
   does not stretch, so nothing else moved.
-- **Every "Final" template's Contact Us (or equivalent) card shows an icon
-  before both the phone number and the email**, each on its own row —
-  `call`/`mail` glyphs, matching the reference pattern (title, divider,
-  icon+phone, icon+email). `4e`/`4g`'s "Service Desk" card and `4f`'s dark
-  rail footer used to cram both onto one `·`-joined line (`4f`'s truncated
-  with an ellipsis on narrower widths); `4p`'s horizontal contact bar had no
-  icons at all. `7a` had no Contact Us card whatsoever — one was added by
-  splitting the Quick links column into two stacked cards (Quick links on
-  top, Contact Us below) rather than adding a 4th column or replacing an
-  existing card. They started as `flex:1` each (an even 50/50 split of the
-  column's stretched height) but that was dropped on request — both now
-  size to their own content instead (no `flex:1` on either card, nor on
-  Contact Us's inner content wrapper), so Quick links (3 rows) reads
-  taller than Contact Us (2 rows) rather than both being forced equal with
-  Contact Us carrying a lot of empty space. `8b`'s Contact Us lives in
-  what used to be a branding footer (logo, copyright, social icons — all
-  removed, `keystoneFoot` deleted as now-dead) at the very bottom of the
-  page, styled as **one inline row** (title, then icon+phone and
-  icon+email side by side, `flex-wrap:wrap`) matching `4p`'s contact bar
-  rather than stacked — it was built stacked first, then changed to inline
-  on request. The separate "Can't find what you're looking for?"
-  escalation card (CTA button + portrait) above it is untouched — that one
-  wasn't the "blue row" being replaced. **2a's Contact Us card was
+- **A proper Contact Us *card* (its own bordered box, title above a
+  divider, phone and email as two separate stacked rows) gets a `call`/
+  `mail` icon before each row.** `4e`/`4g`'s "Service Desk" card, `7a`'s
+  (added — see below), `2a`'s (added — see below), and the pre-existing
+  ones on `3h`/`3c`/`3b2`/`4c2`/`5a` all follow this. A Contact Us that
+  reads as **one inline bar or strip** instead (phone and email as plain
+  text in a single line, not their own rows) does **not** get icons —
+  phone and email are joined by a plain `·` instead, e.g.
+  `+91 79 4040 0000 · servicedesk@acme.com`. `4f`'s dark rail footer (no
+  title, just a `border-top` separator) and `4p`'s horizontal contact bar
+  and `8b`'s footer bar (title, then a divider, then the `·`-joined line)
+  all follow this — icons were tried on all three at one point and
+  explicitly reverted. If a template's Contact Us is ever restyled from
+  one shape to the other, its icon treatment must flip with it. `7a` had
+  no Contact Us card whatsoever — one was added by splitting the Quick
+  links column into two stacked cards (Quick links on top, Contact Us
+  below) rather than adding a 4th column or replacing an existing card.
+  They started as `flex:1` each (an even 50/50 split of the column's
+  stretched height) but that was dropped on request — both now size to
+  their own content instead (no `flex:1` on either card, nor on Contact
+  Us's inner content wrapper), so Quick links (3 rows) reads taller than
+  Contact Us (2 rows) rather than both being forced equal with Contact Us
+  carrying a lot of empty space. `8b`'s Contact Us lives in what used to
+  be a branding footer (logo, copyright, social icons — all removed,
+  `keystoneFoot` deleted as now-dead) at the very bottom of the page. The
+  separate "Can't find what you're looking for?" escalation card (CTA
+  button + portrait) above it is untouched — that one wasn't the "blue
+  row" being replaced. **2a's Contact Us card was
   reworked more heavily**: it used to live inside the hero wash, visible
   for the Navy variant (`2an`) only. The hero action-card grid's big
   "Report an incident" tile no longer spans 2 rows (`grid-row:span 2`

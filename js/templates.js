@@ -4710,15 +4710,8 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="position:relative;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:8px">
-          <div style="display:flex;align-items:center;gap:9px;min-width:0">
-            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:rgba(255,255,255,.6);flex-shrink:0">call</span>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:9px;min-width:0">
-            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:rgba(255,255,255,.6);flex-shrink:0">mail</span>
-            <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
-          </div>
+        <div style="position:relative;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)">
+          <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000 · servicedesk@acme.com</div>
         </div>
       </div>
 
@@ -6073,18 +6066,14 @@ window.TEMPLATES = {
           </div>
         </sc-if>
 
-      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:{{ ink }};padding:16px 22px">
+      <div style="background:{{ ink }};padding:16px 22px">
         <div style="font-size:14px;font-weight:700;color:{{ onInk }};white-space:nowrap">Contact us</div>
-        <div style="font-size:13px;color:{{ inkSub }};white-space:nowrap">Mon–Fri · 08:00–20:00 IST</div>
-        <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:{{ inkSub }}">call</span>
-          <div style="font-size:13px;color:{{ onInk }}">+91 79 4040 0000</div>
+        <div style="height:1px;background:{{ inkLine }};margin:12px 0"></div>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div style="font-size:13px;color:{{ inkSub }};white-space:nowrap">Mon–Fri · 08:00–20:00 IST</div>
+          <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000 · servicedesk@acme.com</div>
+          <div style="flex:1"></div>
         </div>
-        <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
-          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:{{ inkSub }}">mail</span>
-          <div style="font-size:13px;color:{{ onInk }}">servicedesk@acme.com</div>
-        </div>
-        <div style="flex:1"></div>
         <div style="height:36px;margin-top:0px"></div>
       </div>
 
@@ -8841,17 +8830,10 @@ window.TEMPLATES = {
 
         </div>
 
-        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:22px 30px;background:#1E3A5F">
-          <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em;white-space:nowrap">Contact Us</div>
-          <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
-            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:#8FC4F0">call</span>
-            <div style="font-size:13px;color:#fff">+91 22 6100 9000</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
-            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:#8FC4F0">mail</span>
-            <div style="font-size:13px;color:#fff">servicedesk@acme.com</div>
-          </div>
-          <div style="flex:1"></div>
+        <div style="padding:22px 30px;background:#1E3A5F">
+          <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em">Contact Us</div>
+          <div style="height:1px;background:rgba(255,255,255,.16);margin:12px 0"></div>
+          <div style="font-size:13px;color:#fff;white-space:nowrap">+91 22 6100 9000 · servicedesk@acme.com</div>
         </div>
 
       </div>
