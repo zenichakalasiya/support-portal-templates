@@ -508,11 +508,17 @@ These were applied template-wide and should be kept when adding or editing one:
   links column into two stacked cards (Quick links on top, Contact Us
   below) rather than adding a 4th column or replacing an existing card.
   They started as `flex:1` each (an even 50/50 split of the column's
-  stretched height) but that was dropped on request — both now size to
-  their own content instead (no `flex:1` on either card, nor on Contact
-  Us's inner content wrapper), so Quick links (3 rows) reads taller than
-  Contact Us (2 rows) rather than both being forced equal with Contact Us
-  carrying a lot of empty space. `8b`'s Contact Us lives in what used to
+  stretched height), that was dropped on request so both sized to their
+  own content instead, and then **Contact Us alone got `flex:1` back**
+  (Quick links stayed content-sized) so its card's bottom edge lines up
+  with Notice board / Academic calendar's bottom edge in the row beside
+  it — the column itself already stretches to the row's full height via
+  the row's `align-items:stretch`, so giving only the second card
+  `flex:1;min-height:0` lets it absorb that leftover space while Quick
+  links keeps its natural 3-row height above it. Contact Us's inner
+  content wrapper is `flex:1;justify-content:center` so the phone/mail
+  rows sit centered in the now-taller card rather than pinned to its top.
+  `8b`'s Contact Us lives in what used to
   be a branding footer (logo, copyright, social icons — all removed,
   `keystoneFoot` deleted as now-dead) at the very bottom of the page. The
   separate "Can't find what you're looking for?" escalation card (CTA

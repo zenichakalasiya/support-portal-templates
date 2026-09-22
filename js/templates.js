@@ -7659,11 +7659,11 @@ window.TEMPLATES = {
                   </div>
                 </sc-for>
               </div>
-              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #F0EADD;border-radius:10px;overflow:hidden;min-width:0">
+              <div style="display:flex;flex-direction:column;flex:1;min-height:0;background:#fff;border:1px solid #F0EADD;border-radius:10px;overflow:hidden;min-width:0">
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
                   <div style="font-size:15.5px;font-weight:700;color:#191510">Contact Us</div>
                 </div>
-                <div style="display:flex;flex-direction:column;gap:9px;padding:14px 18px">
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:14px 18px">
                   <div style="display:flex;align-items:center;gap:9px">
                     <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8A5710;flex-shrink:0">call</span>
                     <div style="font-size:13px;font-weight:500;color:#191510;white-space:nowrap">+91 79 4040 0000</div>
