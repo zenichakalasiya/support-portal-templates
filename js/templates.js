@@ -100,12 +100,12 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="display:grid;grid-template-columns:320px 1fr;gap:14px;margin-top:14px;align-items:stretch">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:14px;align-items:start">
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);overflow:hidden">
             <div style="padding:15px 20px;border-bottom:1px solid {{ t2Hair }}">
               <div style="font-size:15.5px;font-weight:700;color:{{ t2Ink }}">Contact Us</div>
             </div>
-            <div style="display:flex;flex-direction:column;justify-content:center;gap:9px;padding:16px 20px;flex:1">
+            <div style="display:flex;flex-direction:column;gap:9px;padding:16px 20px">
               <div style="display:flex;align-items:center;gap:9px">
                 <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:{{ t2Mute2 }};flex-shrink:0">call</span>
                 <div style="font-size:13px;font-weight:500;color:{{ t2Ink }};white-space:nowrap">+91 79 4040 0000</div>
@@ -116,7 +116,7 @@ window.TEMPLATES = {
               </div>
             </div>
           </div>
-          <div ref="{{ pAnnAuto }}" style="background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap">
+          <div ref="{{ pAnnAuto }}" style="grid-column:span 3;background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap">
             <div style="flex:1 1 360px;display:flex;align-items:stretch;gap:13px;min-width:0">
               <div data-tooltip="{{ pAnnNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#fff;border:1px solid {{ t2CardBd }};border-radius:10px">
                 <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:{{ t2Mute2 }}">{{ pAnnNow.mon }}</div>
@@ -6074,7 +6074,6 @@ window.TEMPLATES = {
           <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000 · servicedesk@acme.com</div>
           <div style="flex:1"></div>
         </div>
-        <div style="height:36px;margin-top:0px"></div>
       </div>
 
     </div>

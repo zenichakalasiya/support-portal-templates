@@ -481,9 +481,13 @@ These were applied template-wide and should be kept when adding or editing one:
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.
-  Two cards are exceptions the user asked for: **5a** and **2a/2ag/2an** had the
-  spacer taken out so the card sits to its content. Both live in a hero row that
-  does not stretch, so nothing else moved.
+  Three cards are exceptions the user asked for: **5a**, **2a/2ag/2an** and
+  **4p** had the spacer taken out so the card sits to its content. 5a and
+  2a live in a hero row that does not stretch, so nothing else moved; 4p's
+  spacer (`height:36px;margin-top:0px`, left over from when its contact
+  bar used to just be one flex row with nothing below it) was pure dead
+  weight once the bar grew a real title+divider+data structure — removing
+  it just tightens the bar itself, no other row depends on its height.
 - **A proper Contact Us *card* (its own bordered box, title above a
   divider, phone and email as two separate stacked rows) gets a `call`/
   `mail` icon before each row.** `4e`/`4g`'s "Service Desk" card, `7a`'s
@@ -520,13 +524,21 @@ These were applied template-wide and should be kept when adding or editing one:
   removed outright) rather than just no-longer-spanning, so all four
   really do read as one equal-height row instead of the row stretching to
   a taller card 1. The announcement card (`pAnnAuto`) moved out of that
-  grid into a new `320px 1fr` row directly below it, paired with a new
-  Contact Us card (3h's title/divider/icon+phone/icon+email content) on
-  the left — both `align-items:stretch` so Contact Us matches the
-  announcement card's height. That announcement card's own content is
+  grid into a new row directly below it, paired with a new Contact Us
+  card (3h's title/divider/icon+phone/icon+email content) on the left.
+  This new row reuses the **exact same** `1.6fr 1fr 1fr 1fr` column
+  definition as the action-card row above it (not an independent `320px
+  1fr` split) — Contact Us sits in column 1 only, so its width matches
+  "Report an incident" exactly, and the announcement card carries
+  `grid-column:span 3` to take columns 2–4, matching the other three
+  action cards' combined width. `align-items:start` (not the grid default
+  `stretch`) so each card is exactly as tall as its own content — Contact
+  Us (short: title, divider, 2 rows) and the announcement (one line) end
+  up close in height without either being artificially stretched to match
+  a taller sibling. The announcement card's own internal content is
   `align-items:flex-start` (was `center`) so the date-tile-plus-text block
-  and the carousel controls sit at the top of the card instead of
-  floating centered in whatever extra height the row has. Contact Us shows
+  and the carousel controls sit at the top rather than centering in
+  whatever height the flex-wrap row ends up with. Contact Us shows
   unconditionally for all three variants (`2a`/`2ag`/`2an`) —
   `showPrismContact` was deleted along with the Navy-only gate.
 
