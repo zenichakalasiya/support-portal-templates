@@ -428,14 +428,19 @@ These were applied template-wide and should be kept when adding or editing one:
   colour is anchored elsewhere**: its pills take the My assets / My CIs
   icon-chip pair (`#E4EFF9`/`#1B5E9E`) rather than what My Open Requests
   happened to use, so the pills and those tiles' icons match.
-- **`7a`'s cards carry no outline.** All ten card containers had a warm sand
-  stroke (`#E4DCCC`); it was removed on request and must not come back. Three
-  `#E4DCCC` borders remain on purpose and are *not* card outlines — the top
-  bar's bottom edge, the side rail's right edge and the hero's bottom edge — as
-  does one inner tile's `#F0EADD` stroke. Note `7a` has **no `box-shadow`
-  anywhere**, so with the outline gone its white cards sit about 4 rgb units off
-  the `#FCFAF6` page ground; if the cards ever need to read as separate again,
-  add a soft shadow or deepen the page, don't restore the stroke.
+- **`7a`'s cards carry a `1px solid #F0EADD` outline and no `box-shadow`.**
+  This flipped twice: the original warm sand stroke (`#E4DCCC`) was removed
+  on request in an earlier session (leaving cards to sit on the `#FCFAF6`
+  page ground by color contrast alone), then explicitly restored — this
+  time in the divider color (`#F0EADD`, the same shade every card's own
+  internal header-row divider already uses) rather than the original
+  `#E4DCCC`. All 11 card containers carry it (the 10 data cards plus the 4
+  hero action tiles), matching the one inner tile (the "Most used
+  services" mini-cards) that had this exact border already. The three
+  structural `#E4DCCC` borders (top bar's bottom edge, side rail's right
+  edge, hero's bottom edge) are unrelated and untouched either way — they
+  were never card outlines. Still no `box-shadow` anywhere in this
+  template; don't add one, the border now does that job.
 - **Government notice cards** (3i, 3j, 6a, 3c) use the announcement row with the
   notice number as the subtext: `[ date block ] [ bold title / No. IT/2026/114 ]`.
 - **Data card headers are exactly `[ title ][ badge ] … [ View all › ]`.** That
@@ -479,9 +484,14 @@ These were applied template-wide and should be kept when adding or editing one:
   with an ellipsis on narrower widths); `4p`'s horizontal contact bar had no
   icons at all. `7a` had no Contact Us card whatsoever — one was added by
   splitting the Quick links column into two stacked cards (Quick links on
-  top, Contact Us below, each `flex:1` so they split the column's stretched
-  height evenly) rather than adding a 4th column or replacing an existing
-  card. `8b`'s Contact Us now lives in what used to be a branding footer
+  top, Contact Us below) rather than adding a 4th column or replacing an
+  existing card. They started as `flex:1` each (an even 50/50 split of the
+  column's stretched height) but that was dropped on request — both now
+  size to their own content instead (no `flex:1` on either card, nor on
+  Contact Us's inner content wrapper), so Quick links (3 rows) reads
+  taller than Contact Us (2 rows) rather than both being forced equal with
+  Contact Us carrying a lot of empty space. `8b`'s Contact Us now lives in
+  what used to be a branding footer
   (logo, copyright, social icons — all removed, `keystoneFoot` deleted as
   now-dead) at the very bottom of the page; the separate "Can't find what
   you're looking for?" escalation card (CTA button + portrait) above it is
