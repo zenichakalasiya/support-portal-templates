@@ -471,6 +471,32 @@ These were applied template-wide and should be kept when adding or editing one:
   Two cards are exceptions the user asked for: **5a** and **2a/2ag/2an** had the
   spacer taken out so the card sits to its content. Both live in a hero row that
   does not stretch, so nothing else moved.
+- **Every "Final" template's Contact Us (or equivalent) card shows an icon
+  before both the phone number and the email**, each on its own row —
+  `call`/`mail` glyphs, matching the reference pattern (title, divider,
+  icon+phone, icon+email). `4e`/`4g`'s "Service Desk" card and `4f`'s dark
+  rail footer used to cram both onto one `·`-joined line (`4f`'s truncated
+  with an ellipsis on narrower widths); `4p`'s horizontal contact bar had no
+  icons at all. `7a` had no Contact Us card whatsoever — one was added by
+  splitting the Quick links column into two stacked cards (Quick links on
+  top, Contact Us below, each `flex:1` so they split the column's stretched
+  height evenly) rather than adding a 4th column or replacing an existing
+  card. `8b`'s Contact Us now lives in what used to be a branding footer
+  (logo, copyright, social icons — all removed, `keystoneFoot` deleted as
+  now-dead) at the very bottom of the page; the separate "Can't find what
+  you're looking for?" escalation card (CTA button + portrait) above it is
+  untouched — that one wasn't the "blue row" being replaced. **2a's Contact
+  Us card was reworked more heavily**: it used to live inside the hero wash,
+  visible for the Navy variant (`2an`) only. The hero action-card grid's big
+  "Report an incident" tile no longer spans 2 rows (`grid-row:span 2`
+  removed) so all four action cards sit in one equal-height row; the
+  announcement card (`pAnnAuto`, unchanged) moved out of that grid into a
+  new `320px 1fr` row directly below it, paired with a new Contact Us card
+  (3h's title/divider/icon+phone/icon+email content) on the left — both
+  `align-items:stretch` so Contact Us matches the announcement card's
+  height. This new Contact Us card shows unconditionally for all three
+  variants (`2a`/`2ag`/`2an`) — `showPrismContact` was deleted along with
+  the Navy-only gate.
 
 ## Deployment
 

@@ -75,27 +75,10 @@ window.TEMPLATES = {
               </div>
             </div>
           </div>
-
-          <sc-if value="{{ showPrismContact }}" hint-placeholder-val="{{ true }}">
-          <div style="position:relative;flex:0 1 320px;min-width:0;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);border-radius:16px;padding:22px;backdrop-filter:blur(16px);box-shadow:0 14px 34px rgba(12,47,36,.10)">
-            <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:{{ t2Acc }}">Contact Us</div>
-            <div style="height:1px;background:{{ t2Bd }};margin:14px 0"></div>
-            <div style="display:flex;flex-direction:column;gap:11px">
-              <div style="display:flex;align-items:center;gap:10px">
-                <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ t2Mute2 }}">call</span>
-                <div style="font-size:13.5px;font-weight:600;color:{{ t2Ink }}">+91 79 4040 0000</div>
-              </div>
-              <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:{{ t2Mute2 }}">mail</span>
-                <div style="font-size:13.5px;font-weight:600;color:{{ t2Ink }};min-width:0;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
-              </div>
-            </div>
-          </div>
-          </sc-if>
         </div>
 
         <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:26px">
-          <div style="grid-row:span 2;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+          <div style="background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:18px">
             <div style="width:48px;height:48px;border-radius:13px;background:{{ t2Btn }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
               <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">report</span>
             </div>
@@ -116,7 +99,25 @@ window.TEMPLATES = {
               </div>
             </div>
           </sc-for>
-          <div ref="{{ pAnnAuto }}" style="grid-column:span 3;background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        </div>
+
+        <div style="display:grid;grid-template-columns:320px 1fr;gap:14px;margin-top:14px;align-items:stretch">
+          <div style="display:flex;flex-direction:column;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);overflow:hidden">
+            <div style="padding:15px 20px;border-bottom:1px solid {{ t2Hair }}">
+              <div style="font-size:15.5px;font-weight:700;color:{{ t2Ink }}">Contact Us</div>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:center;gap:9px;padding:16px 20px;flex:1">
+              <div style="display:flex;align-items:center;gap:9px">
+                <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:{{ t2Mute2 }};flex-shrink:0">call</span>
+                <div style="font-size:13px;font-weight:500;color:{{ t2Ink }};white-space:nowrap">+91 79 4040 0000</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:9px;min-width:0">
+                <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:{{ t2Mute2 }};flex-shrink:0">mail</span>
+                <div style="font-size:13px;font-weight:500;color:{{ t2Ink }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+              </div>
+            </div>
+          </div>
+          <div ref="{{ pAnnAuto }}" style="background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
             <div style="flex:1 1 360px;display:flex;align-items:stretch;gap:13px;min-width:0">
               <div data-tooltip="{{ pAnnNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#fff;border:1px solid {{ t2CardBd }};border-radius:10px">
                 <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:{{ t2Mute2 }}">{{ pAnnNow.mon }}</div>
@@ -4635,7 +4636,16 @@ window.TEMPLATES = {
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:13px 15px;border-bottom:1px solid #eef2f7">
                 <div style="font-size:14px;font-weight:700;color:#0b2545;white-space:nowrap">Service Desk</div>
               </div>
-              <div style="padding:13px 15px;font-size:12.5px;color:#4a5a70;line-height:1.5;text-wrap:pretty">+91 79 4040 0000 · servicedesk@acme.com</div>
+              <div style="display:flex;flex-direction:column;gap:9px;padding:13px 15px">
+                <div style="display:flex;align-items:center;gap:9px">
+                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#5f6f83;flex-shrink:0">call</span>
+                  <div style="font-size:12.5px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:9px;min-width:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#5f6f83;flex-shrink:0">mail</span>
+                  <div style="font-size:12.5px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -4701,8 +4711,15 @@ window.TEMPLATES = {
           </sc-for>
         </div>
 
-        <div style="position:relative;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)">
-          <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000 · servicedesk@acme.com</div>
+        <div style="position:relative;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:9px;min-width:0">
+            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:rgba(255,255,255,.6);flex-shrink:0">call</span>
+            <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px;min-width:0">
+            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:rgba(255,255,255,.6);flex-shrink:0">mail</span>
+            <div style="font-size:12px;color:rgba(255,255,255,.82);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+          </div>
         </div>
       </div>
 
@@ -5379,7 +5396,16 @@ window.TEMPLATES = {
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:13px 15px;border-bottom:1px solid #eef2f7">
             <div style="font-size:14px;font-weight:700;color:#0b2545;white-space:nowrap">Service Desk</div>
           </div>
-          <div style="padding:13px 15px;font-size:12.5px;color:#4a5a70;line-height:1.5;text-wrap:pretty">+91 79 4040 0000 · servicedesk@acme.com</div>
+          <div style="display:flex;flex-direction:column;gap:9px;padding:13px 15px">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#5f6f83;flex-shrink:0">call</span>
+              <div style="font-size:12.5px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">+91 79 4040 0000</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;min-width:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#5f6f83;flex-shrink:0">mail</span>
+              <div style="font-size:12.5px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -6051,8 +6077,14 @@ window.TEMPLATES = {
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:{{ ink }};padding:16px 22px">
         <div style="font-size:14px;font-weight:700;color:{{ onInk }};white-space:nowrap">Contact us</div>
         <div style="font-size:13px;color:{{ inkSub }};white-space:nowrap">Mon–Fri · 08:00–20:00 IST</div>
-        <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">+91 79 4040 0000</div>
-        <div style="font-size:13px;color:{{ onInk }};white-space:nowrap">servicedesk@acme.com</div>
+        <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
+          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:{{ inkSub }}">call</span>
+          <div style="font-size:13px;color:{{ onInk }}">+91 79 4040 0000</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
+          <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:{{ inkSub }}">mail</span>
+          <div style="font-size:13px;color:{{ onInk }}">servicedesk@acme.com</div>
+        </div>
         <div style="flex:1"></div>
         <div style="height:36px;margin-top:0px"></div>
       </div>
@@ -7634,17 +7666,34 @@ window.TEMPLATES = {
               </sc-for>
             </div>
 
-            <div style="display:flex;flex-direction:column;background:#fff;border-radius:10px;overflow:hidden;min-width:0">
-              <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
-                <div style="font-size:15.5px;font-weight:700;color:#191510">Quick links</div>
-              </div>
-              <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
-                <div style="display:flex;align-items:center;gap:11px;padding:14px 18px;border-bottom:1px solid #F6F2E9">
-                  <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8A5710;flex-shrink:0">{{ q.i }}</span>
-                  <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#191510;line-height:1.35;text-wrap:pretty">{{ q.t }}</div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#B07A24;flex-shrink:0">north_east</span>
+            <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+              <div style="display:flex;flex-direction:column;background:#fff;border-radius:10px;overflow:hidden;min-width:0;flex:1">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
+                  <div style="font-size:15.5px;font-weight:700;color:#191510">Quick links</div>
                 </div>
-              </sc-for>
+                <sc-for list="{{ quickLinks3 }}" as="q" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:11px;padding:14px 18px;border-bottom:1px solid #F6F2E9">
+                    <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#8A5710;flex-shrink:0">{{ q.i }}</span>
+                    <div style="flex:1;min-width:0;font-size:13.5px;font-weight:600;color:#191510;line-height:1.35;text-wrap:pretty">{{ q.t }}</div>
+                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#B07A24;flex-shrink:0">north_east</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;flex-direction:column;background:#fff;border-radius:10px;overflow:hidden;min-width:0;flex:1">
+                <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
+                  <div style="font-size:15.5px;font-weight:700;color:#191510">Contact Us</div>
+                </div>
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:9px;padding:14px 18px;flex:1">
+                  <div style="display:flex;align-items:center;gap:9px">
+                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8A5710;flex-shrink:0">call</span>
+                    <div style="font-size:13px;font-weight:500;color:#191510;white-space:nowrap">+91 79 4040 0000</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:9px;min-width:0">
+                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8A5710;flex-shrink:0">mail</span>
+                    <div style="font-size:13px;font-weight:500;color:#191510;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -8793,17 +8842,15 @@ window.TEMPLATES = {
 
         </div>
 
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:22px 30px;background:#1E3A5F">
-          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
-            <div style="width:9px;height:9px;border-radius:2px;background:#E8850C"></div>
-            <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em">motadata</div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:22px 30px;background:#1E3A5F">
+          <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em">Contact Us</div>
+          <div style="display:flex;align-items:center;gap:9px">
+            <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8FC4F0;flex-shrink:0">call</span>
+            <div style="font-size:13px;color:#fff;white-space:nowrap">+91 22 6100 9000</div>
           </div>
-          <div style="font-size:12.5px;color:#A9C0D5;white-space:nowrap">© Sterling Financial Group</div>
-          <div style="flex:1"></div>
-          <div style="display:flex;align-items:center;gap:16px">
-            <sc-for list="{{ keystoneFoot }}" as="f" hint-placeholder-count="4">
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#A9C0D5">{{ f.i }}</span>
-            </sc-for>
+          <div style="display:flex;align-items:center;gap:9px">
+            <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8FC4F0;flex-shrink:0">mail</span>
+            <div style="font-size:13px;color:#fff;white-space:nowrap">servicedesk@acme.com</div>
           </div>
         </div>
 

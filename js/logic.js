@@ -387,7 +387,6 @@
         requests4: (this.layoutVals().requests6 || []).slice(0, 4),
         keystoneNav: [{ t: "Knowledge base" }, { t: "How-to videos" }, { t: "Help guides" }],
         keystoneTopics: [{ t: "reset password" }, { t: "market data access" }, { t: "report phishing" }],
-        keystoneFoot: [{ i: "public" }, { i: "forum" }, { i: "mail" }, { i: "call" }],
         vaultNav: [
           { t: "Knowledge Articles", c: "" },
           { t: "Get Help", c: "" },
@@ -638,7 +637,6 @@
         (on ? "#07101f;background:#07101f;color:#fff" : "#dde4ee;background:#fff;color:#4a5a70");
       const base = {
         showSeedSwitch: !green && !navyLocked,
-        showPrismContact: navyLocked,
         seedCoral: () => this.setState({ seed: "coral" }),
         seedNavy: () => this.setState({ seed: "navy" }),
         seedCoralStyle: chip(coral),
