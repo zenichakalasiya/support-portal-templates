@@ -121,8 +121,8 @@
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
-                <div style="flex:1;min-height:0;overflow-y:auto">
-                  <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
+                <div style="flex:1;min-height:0">
+                  <sc-for list="{{ anns3 }}" as="n" hint-placeholder-count="3">
                     <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                       <div data-tooltip="{{ n.d }}" style="flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
                         <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#8a97a8">{{ n.mon }}</div>

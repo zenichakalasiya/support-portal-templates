@@ -78,15 +78,14 @@ window.TEMPLATES = {
         </div>
 
         <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:14px;margin-top:26px">
-          <div style="background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:18px">
-            <div style="width:48px;height:48px;border-radius:13px;background:{{ t2Btn }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">report</span>
+          <div style="background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:18px;display:flex;flex-direction:column;gap:12px">
+            <div style="width:38px;height:38px;border-radius:11px;background:{{ t2Btn }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">report</span>
             </div>
             <div>
-              <div style="font-size:22px;font-weight:700;color:{{ t2Ink }};letter-spacing:-0.02em">Report an incident</div>
-              <div style="font-size:14px;color:{{ t2Mute }};margin-top:8px;line-height:1.55;max-width:300px">Something is broken, slow, or not behaving the way it should.</div>
+              <div style="font-size:15px;font-weight:600;color:{{ t2Ink }}">Report an incident</div>
+              <div style="font-size:12.5px;color:{{ t2Mute2 }};margin-top:3px">Something is broken, slow, or not behaving the way it should.</div>
             </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:{{ t2Acc }};white-space:nowrap">Report it now<span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">arrow_forward</span></div>
           </div>
           <sc-for list="{{ qa3 }}" as="a" hint-placeholder-count="3">
             <div style="background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:18px;display:flex;flex-direction:column;gap:12px">
@@ -117,7 +116,7 @@ window.TEMPLATES = {
               </div>
             </div>
           </div>
-          <div ref="{{ pAnnAuto }}" style="background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <div ref="{{ pAnnAuto }}" style="background:{{ t2Badge }};border:1px solid {{ t2CardBd }};border-radius:14px;padding:18px 22px;display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap">
             <div style="flex:1 1 360px;display:flex;align-items:stretch;gap:13px;min-width:0">
               <div data-tooltip="{{ pAnnNow.d }}" style="flex:0 0 62px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#fff;border:1px solid {{ t2CardBd }};border-radius:10px">
                 <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:{{ t2Mute2 }}">{{ pAnnNow.mon }}</div>
@@ -1304,8 +1303,8 @@ window.TEMPLATES = {
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
-                <div style="flex:1;min-height:0;overflow-y:auto">
-                  <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
+                <div style="flex:1;min-height:0">
+                  <sc-for list="{{ anns3 }}" as="n" hint-placeholder-count="3">
                     <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                       <div data-tooltip="{{ n.d }}" style="flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
                         <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#8a97a8">{{ n.mon }}</div>
@@ -1558,8 +1557,8 @@ window.TEMPLATES = {
                   <div style="flex:1"></div>
                   <div style="display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#07101F;white-space:nowrap">View all<span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1">chevron_right</span></div>
                 </div>
-                <div style="flex:1;min-height:0;overflow-y:auto">
-                  <sc-for list="{{ anns5 }}" as="n" hint-placeholder-count="5">
+                <div style="flex:1;min-height:0">
+                  <sc-for list="{{ anns3 }}" as="n" hint-placeholder-count="3">
                     <div style="display:flex;align-items:stretch;gap:13px;padding:13px 20px;border-bottom:1px solid #f4f7fa;min-width:0">
                       <div data-tooltip="{{ n.d }}" style="flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 6px;background:#f1f3f6;border-radius:8px">
                         <div style="font-size:9.5px;font-weight:700;letter-spacing:.05em;color:#8a97a8">{{ n.mon }}</div>
@@ -8842,16 +8841,17 @@ window.TEMPLATES = {
 
         </div>
 
-        <div style="display:flex;flex-direction:column;gap:12px;padding:22px 30px;background:#1E3A5F">
-          <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em">Contact Us</div>
-          <div style="display:flex;align-items:center;gap:9px">
-            <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8FC4F0;flex-shrink:0">call</span>
-            <div style="font-size:13px;color:#fff;white-space:nowrap">+91 22 6100 9000</div>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:22px 30px;background:#1E3A5F">
+          <div style="font-size:15.5px;font-weight:700;color:#fff;letter-spacing:-0.012em;white-space:nowrap">Contact Us</div>
+          <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
+            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:#8FC4F0">call</span>
+            <div style="font-size:13px;color:#fff">+91 22 6100 9000</div>
           </div>
-          <div style="display:flex;align-items:center;gap:9px">
-            <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#8FC4F0;flex-shrink:0">mail</span>
-            <div style="font-size:13px;color:#fff;white-space:nowrap">servicedesk@acme.com</div>
+          <div style="display:flex;align-items:center;gap:7px;white-space:nowrap">
+            <span style="font-family:'Material Symbols Rounded';font-size:16px;line-height:1;color:#8FC4F0">mail</span>
+            <div style="font-size:13px;color:#fff">servicedesk@acme.com</div>
           </div>
+          <div style="flex:1"></div>
         </div>
 
       </div>

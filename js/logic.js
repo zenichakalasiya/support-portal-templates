@@ -351,6 +351,7 @@
         kbs4: (this.layoutVals().kbs8 || []).slice(0, 4),
         kbs2: (this.layoutVals().kbs8 || []).slice(0, 2),
         anns2: (this.layoutVals().anns5 || []).slice(0, 2),
+        anns3: (this.layoutVals().anns5 || []).slice(0, 3),
         apprRowsStd: [
           { id: "INC-192", s: "Wrong configuration details · editorial review", d: "11 Aug, 02:14 PM", who: "Rosy", ai: "RO", ab: "#2f5fe0" },
           { id: "AST-13", s: "DESKTOP-5JPPI6F · asset assignment", d: "10 Aug, 12:57 PM", who: "Keya", ai: "KE", ab: "#7c3aed" }

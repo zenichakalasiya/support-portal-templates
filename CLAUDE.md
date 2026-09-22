@@ -87,7 +87,8 @@ a template string is parsed once per session.
   bottom of the file declares the three design-time props (palette / mood /
   cardStyle) and their option lists.
   Fixture lists are shared across layouts and several differ only by length
-  (`kbs3/4/6/8`, `approvals/approvals3/approvals4`, `requests4/requests6`), so
+  (`kbs3/4/6/8`, `approvals/approvals3/approvals4`, `requests4/requests6`,
+  `anns2/anns3` — both `.slice()` off the same `anns5`), so
   **grep before editing one** — some rows are byte-identical across lists and a
   naive string replace will hit the wrong fixture.
   The same trap applies inside a template: one file can reuse the same
@@ -289,6 +290,13 @@ is the one the user means by "3C's search margin"; the `margin-top:64px` further
 down `3c.html` (~line 101) is a *different* element — the data-cards block — and
 an earlier session changed that one by mistake while believing it had done the
 search. Check which element you are on before touching either.
+Both `3c` and `3c2`'s "Announcements" card show `anns3` (3 rows, no
+`overflow-y`) instead of the full `anns5` — it used to render all 5 with
+`overflow-y:auto`, which produced a visible scrollbar since 5 rows didn't
+fit the card's fixed `{{ reqCardH }}` height (matched to "My Open
+Requests" next to it). The header badge still reads the true total (5),
+per the usual "badge is the type's real count, not what's on screen"
+convention — only the row count and the scroll were the problem.
 
 `js/app.js`'s `activeLayoutId()` resolves the active layout by first checking
 `TEMPLATES[tab]` directly, then falling back to scanning `is<id>` flags — read
@@ -490,23 +498,32 @@ These were applied template-wide and should be kept when adding or editing one:
   size to their own content instead (no `flex:1` on either card, nor on
   Contact Us's inner content wrapper), so Quick links (3 rows) reads
   taller than Contact Us (2 rows) rather than both being forced equal with
-  Contact Us carrying a lot of empty space. `8b`'s Contact Us now lives in
-  what used to be a branding footer
-  (logo, copyright, social icons — all removed, `keystoneFoot` deleted as
-  now-dead) at the very bottom of the page; the separate "Can't find what
-  you're looking for?" escalation card (CTA button + portrait) above it is
-  untouched — that one wasn't the "blue row" being replaced. **2a's Contact
-  Us card was reworked more heavily**: it used to live inside the hero wash,
-  visible for the Navy variant (`2an`) only. The hero action-card grid's big
+  Contact Us carrying a lot of empty space. `8b`'s Contact Us lives in
+  what used to be a branding footer (logo, copyright, social icons — all
+  removed, `keystoneFoot` deleted as now-dead) at the very bottom of the
+  page, styled as **one inline row** (title, then icon+phone and
+  icon+email side by side, `flex-wrap:wrap`) matching `4p`'s contact bar
+  rather than stacked — it was built stacked first, then changed to inline
+  on request. The separate "Can't find what you're looking for?"
+  escalation card (CTA button + portrait) above it is untouched — that one
+  wasn't the "blue row" being replaced. **2a's Contact Us card was
+  reworked more heavily**: it used to live inside the hero wash, visible
+  for the Navy variant (`2an`) only. The hero action-card grid's big
   "Report an incident" tile no longer spans 2 rows (`grid-row:span 2`
-  removed) so all four action cards sit in one equal-height row; the
-  announcement card (`pAnnAuto`, unchanged) moved out of that grid into a
-  new `320px 1fr` row directly below it, paired with a new Contact Us card
-  (3h's title/divider/icon+phone/icon+email content) on the left — both
-  `align-items:stretch` so Contact Us matches the announcement card's
-  height. This new Contact Us card shows unconditionally for all three
-  variants (`2a`/`2ag`/`2an`) — `showPrismContact` was deleted along with
-  the Navy-only gate.
+  removed) — it's also sized identically to the other 3 action cards now
+  (38px icon, 15px title, no trailing "Report it now →" link, which was
+  removed outright) rather than just no-longer-spanning, so all four
+  really do read as one equal-height row instead of the row stretching to
+  a taller card 1. The announcement card (`pAnnAuto`) moved out of that
+  grid into a new `320px 1fr` row directly below it, paired with a new
+  Contact Us card (3h's title/divider/icon+phone/icon+email content) on
+  the left — both `align-items:stretch` so Contact Us matches the
+  announcement card's height. That announcement card's own content is
+  `align-items:flex-start` (was `center`) so the date-tile-plus-text block
+  and the carousel controls sit at the top of the card instead of
+  floating centered in whatever extra height the row has. Contact Us shows
+  unconditionally for all three variants (`2a`/`2ag`/`2an`) —
+  `showPrismContact` was deleted along with the Navy-only gate.
 
 ## Deployment
 
