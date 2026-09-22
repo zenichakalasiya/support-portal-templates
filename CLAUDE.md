@@ -491,17 +491,19 @@ These were applied template-wide and should be kept when adding or editing one:
 - **A proper Contact Us *card* (its own bordered box, title above a
   divider, phone and email as two separate stacked rows) gets a `call`/
   `mail` icon before each row.** `4e`/`4g`'s "Service Desk" card, `7a`'s
-  (added — see below), `2a`'s (added — see below), and the pre-existing
-  ones on `3h`/`3c`/`3b2`/`4c2`/`5a` all follow this. A Contact Us that
-  reads as **one inline bar or strip** instead (phone and email as plain
-  text in a single line, not their own rows) does **not** get icons —
-  phone and email are joined by a plain `·` instead, e.g.
-  `+91 79 4040 0000 · servicedesk@acme.com`. `4f`'s dark rail footer (no
-  title, just a `border-top` separator) and `4p`'s horizontal contact bar
-  and `8b`'s footer bar (title, then a divider, then the `·`-joined line)
-  all follow this — icons were tried on all three at one point and
-  explicitly reverted. If a template's Contact Us is ever restyled from
-  one shape to the other, its icon treatment must flip with it. `7a` had
+  (added — see below), and the pre-existing ones on `3h`/`3c`/`3b2`/
+  `4c2`/`5a` all follow this. A Contact Us that reads as **one inline bar
+  or strip** instead (phone and email as plain text in a single line, not
+  their own rows) does **not** get icons — phone and email are joined by
+  a plain `·` instead, e.g. `+91 79 4040 0000 · servicedesk@acme.com`.
+  `4f`'s dark rail footer (no title, just a `border-top` separator),
+  `4p`'s horizontal contact bar, `8b`'s footer bar, and `2a`'s Contact Us
+  card (title, then a divider, then the `·`-joined line, no icons) all
+  follow this — icons were tried on `4f`/`4p`/`8b` at one point and
+  explicitly reverted; `2a`'s card started with icon rows (see below) and
+  was later flattened to match this same inline shape. If a template's
+  Contact Us is ever restyled from one shape to the other, its icon
+  treatment must flip with it. `7a` had
   no Contact Us card whatsoever — one was added by splitting the Quick
   links column into two stacked cards (Quick links on top, Contact Us
   below) rather than adding a 4th column or replacing an existing card.
@@ -525,8 +527,11 @@ These were applied template-wide and should be kept when adding or editing one:
   really do read as one equal-height row instead of the row stretching to
   a taller card 1. The announcement card (`pAnnAuto`) moved out of that
   grid into a new row directly below it, paired with a new Contact Us
-  card (3h's title/divider/icon+phone/icon+email content) on the left.
-  This new row reuses the **exact same** `1.6fr 1fr 1fr 1fr` column
+  card (title/divider, phone and email) on the left. That card started
+  with 3h's icon+phone/icon+email stacked-row content, then was flattened
+  on request to a single inline `·`-joined line with no icons — see the
+  card-vs-inline-bar rule above. This new row reuses the **exact same**
+  `1.6fr 1fr 1fr 1fr` column
   definition as the action-card row above it (not an independent `320px
   1fr` split) — Contact Us sits in column 1 only, so its width matches
   "Report an incident" exactly, and the announcement card carries
