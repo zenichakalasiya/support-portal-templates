@@ -446,6 +446,11 @@ These were applied template-wide and should be kept when adding or editing one:
   unshifted, which `splice`s every other group out of `GROUPS`. Set it to
   `false` to bring back "Top selected by Team", the industries and "Rejected"
   (their data is untouched). Non-final hash routes fall back to Final.
+  The rest of the gallery header is hidden too, so only the 12-tab strip
+  shows: `#panel-wrap` (the THEME bar) has inline `display:none` in
+  `index.html`, and the title row, group-chip row and industry note in
+  `layouts/_shell.html` are `display:none` (markup kept). Flip those back to
+  `flex` to restore them.
 - **`7a`'s cards carry a `1px solid #F0EADD` outline and no `box-shadow`.**
   This flipped twice: the original warm sand stroke (`#E4DCCC`) was removed
   on request in an earlier session (leaving cards to sit on the `#FCFAF6`

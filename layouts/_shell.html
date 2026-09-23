@@ -1,11 +1,11 @@
   <div style="position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #dde4ee;padding:13px 24px 0">
-    <div style="display:flex;align-items:baseline;gap:12px">
+    <div style="display:none;align-items:baseline;gap:12px">
       <div style="font-size:14.5px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">ServiceOps · Support Portal layout templates</div>
       <div style="font-size:13px;color:#5f6f83">{{ optionCount }} options · shipping by industry</div>
       <div style="flex:1"></div>
       <a href="https://claude.ai/design/p/968d629a-9cdf-4371-be3b-329de5ad3fdf?file=Support+Portal+Layout+Spec.dc.html" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">Spec doc</a>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+    <div style="display:none;flex-wrap:wrap;gap:7px;margin-top:12px">
       <sc-for list="{{ industries }}" as="g" hint-placeholder-count="7">
         <div onClick="{{ g.go }}" style="display:flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:20px;background:{{ g.bg }};border:1px solid {{ g.bd }};white-space:nowrap;cursor:pointer;flex-shrink:0">
           <div style="font-size:13px;font-weight:600;color:{{ g.fg }}">{{ g.name }}</div>
@@ -13,10 +13,10 @@
         </div>
       </sc-for>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;margin-top:11px;min-width:0">
+    <div style="display:none;align-items:center;gap:10px;margin-top:11px;min-width:0">
       <div style="flex:1;min-width:0;font-size:12px;color:#5f6f83;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ industryNote }}</div>
     </div>
-    <div style="display:flex;align-items:flex-end;gap:3px;margin-top:9px;overflow-x:auto">
+    <div style="display:flex;align-items:flex-end;gap:3px;margin-top:0;overflow-x:auto">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="15">
         <div onClick="{{ t.go }}" style="display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:42px;padding:6px 15px;border-radius:8px 8px 0 0;background:{{ t.bg }};border-bottom:2.5px solid {{ t.bd }};white-space:nowrap;cursor:pointer;flex-shrink:0">
           <div style="display:flex;align-items:center;gap:7px">
