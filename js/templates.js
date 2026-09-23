@@ -238,7 +238,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0">
                         <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ a.n }}</div>
-                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ a.tag }} · {{ a.k }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px"><span style="font-weight:600;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 7px;border-radius:6px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -260,7 +260,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0">
                         <div style="font-size:13.5px;font-weight:500;color:{{ t2Ink }}">{{ c.n }}</div>
-                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px">{{ c.tag }} · {{ c.k }}</div>
+                        <div style="font-size:11.5px;color:{{ t2Mute2 }};margin-top:4px"><span style="font-weight:600;color:{{ t2Mute }};background:{{ t2Badge }};padding:2px 7px;border-radius:6px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -1104,7 +1104,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0">
                     <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:{{ bannerAccentFg }};background:{{ bannerAccentBg }};padding:2px 7px;border-radius:6px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                   </div>
                 </div>
               </sc-for>
@@ -1126,7 +1126,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0">
                     <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:{{ bannerAccentFg }};background:{{ bannerAccentBg }};padding:2px 7px;border-radius:6px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                   </div>
                 </div>
               </sc-for>
@@ -1390,7 +1390,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#5f6f83;background:#eff1f3;padding:2px 7px;border-radius:8px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -1411,7 +1411,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                        <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#5f6f83;background:#eff1f3;padding:2px 7px;border-radius:8px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -4595,7 +4595,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0">
                       <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:5px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -4617,7 +4617,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0">
                       <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                      <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:5px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -4852,7 +4852,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0">
                     <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#4a5a70;background:#eef2f7;padding:2px 7px;border-radius:6px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                   </div>
                 </div>
               </sc-for>
@@ -4874,7 +4874,7 @@ window.TEMPLATES = {
                   </div>
                   <div style="flex:1;min-width:0">
                     <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                    <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#4a5a70;background:#eef2f7;padding:2px 7px;border-radius:6px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                   </div>
                 </div>
               </sc-for>
@@ -5328,7 +5328,7 @@ window.TEMPLATES = {
                 </div>
                 <div style="flex:1;min-width:0">
                   <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                  <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                  <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#4a5a70;background:#f3f6fa;padding:2px 7px;border-radius:5px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                 </div>
               </div>
             </sc-for>
@@ -5350,7 +5350,7 @@ window.TEMPLATES = {
                 </div>
                 <div style="flex:1;min-width:0">
                   <div style="font-size:13px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                  <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                  <div style="font-size:11.5px;color:#5f6f83;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#4a5a70;background:#f3f6fa;padding:2px 7px;border-radius:5px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                 </div>
               </div>
             </sc-for>
@@ -5962,7 +5962,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="min-width:0">
                       <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -5983,7 +5983,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="min-width:0">
                       <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                      <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                     </div>
                   </div>
                 </sc-for>
@@ -6010,7 +6010,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0">
                         <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }} · {{ a.k }}</div>
+                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -6031,7 +6031,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0">
                         <div style="font-size:12.5px;font-weight:600;color:#0b2545;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }} · {{ c.k }}</div>
+                        <div style="font-size:11px;color:#5f6f83;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#1A4F96;background:#E7EFFC;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                       </div>
                     </div>
                   </sc-for>
@@ -6253,7 +6253,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0">
                       <div style="font-size:14px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                      <div style="font-size:12px;color:#5f7c93;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }}</div>
+                      <div style="font-size:12px;color:#5f7c93;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#41586e;background:#F1F6FA;padding:2px 7px;border-radius:6px;white-space:nowrap">{{ a.tag }}</span></div>
                     </div>
                   </div>
                 </sc-for>
@@ -6275,7 +6275,7 @@ window.TEMPLATES = {
                     </div>
                     <div style="flex:1;min-width:0">
                       <div style="font-size:14px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                      <div style="font-size:12px;color:#5f7c93;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }}</div>
+                      <div style="font-size:12px;color:#5f7c93;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#41586e;background:#F1F6FA;padding:2px 7px;border-radius:6px;white-space:nowrap">{{ c.tag }}</span></div>
                     </div>
                   </div>
                 </sc-for>
@@ -7810,7 +7810,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0;width:100%">
                         <div style="font-size:12px;font-weight:600;color:#191510;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                        <div style="font-size:10.5px;color:#6B6255;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.tag }}</div>
+                        <div style="font-size:10.5px;color:#6B6255;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#8A5710;background:#F5EAD6;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ a.tag }}</span></div>
                       </div>
                     </div>
                   </sc-for>
@@ -7832,7 +7832,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="min-width:0;width:100%">
                         <div style="font-size:12px;font-weight:600;color:#191510;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                        <div style="font-size:10.5px;color:#6B6255;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.tag }}</div>
+                        <div style="font-size:10.5px;color:#6B6255;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span style="font-weight:600;color:#8A5710;background:#F5EAD6;padding:2px 7px;border-radius:4px;white-space:nowrap">{{ c.tag }}</span></div>
                       </div>
                     </div>
                   </sc-for>
@@ -8775,7 +8775,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13.5px;font-weight:600;color:#152D4B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.n }}</div>
-                        <div style="font-size:11.5px;color:#54677B;margin-top:2px">{{ a.tag }} · {{ a.k }}</div>
+                        <div style="font-size:11.5px;color:#54677B;margin-top:2px"><span style="font-weight:600;color:#1B5E9E;background:#E4EFF9;padding:2px 7px;border-radius:8px;white-space:nowrap">{{ a.tag }}</span> · {{ a.k }}</div>
                       </div>
                       <div style="font-size:11.5px;font-weight:600;color:#1f7a44;background:#e7f4ee;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0">In use</div>
                     </div>
@@ -8798,7 +8798,7 @@ window.TEMPLATES = {
                       </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13.5px;font-weight:600;color:#152D4B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
-                        <div style="font-size:11.5px;color:#54677B;margin-top:2px">{{ c.tag }} · {{ c.k }}</div>
+                        <div style="font-size:11.5px;color:#54677B;margin-top:2px"><span style="font-weight:600;color:#1B5E9E;background:#E4EFF9;padding:2px 7px;border-radius:8px;white-space:nowrap">{{ c.tag }}</span> · {{ c.k }}</div>
                       </div>
                     </div>
                   </sc-for>

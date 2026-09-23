@@ -436,6 +436,16 @@ These were applied template-wide and should be kept when adding or editing one:
   colour is anchored elsewhere**: its pills take the My assets / My CIs
   icon-chip pair (`#E4EFF9`/`#1B5E9E`) rather than what My Open Requests
   happened to use, so the pills and those tiles' icons match.
+- **The asset / CI id (`AST-1`, `CI-8`) sits in a pill too**, wrapped around
+  `{{ a.tag }}` / `{{ c.tag }}` with the *same bg/fg/radius as that template's
+  own ID pills* — done for the Final 12 only (4e, 4g, 7a, 5a, 4f, 2a, 3b2, 3c,
+  4p, 8b; 4c2 and 3h have no asset/CI list). Other templates still show the id
+  as plain text; don't extend it without being asked.
+- **Only the "Final" group chip is shown for now.** `renderVals()` in
+  `js/logic.js` has `SHOW_ONLY_FINAL = true` right after the `final` group is
+  unshifted, which `splice`s every other group out of `GROUPS`. Set it to
+  `false` to bring back "Top selected by Team", the industries and "Rejected"
+  (their data is untouched). Non-final hash routes fall back to Final.
 - **`7a`'s cards carry a `1px solid #F0EADD` outline and no `box-shadow`.**
   This flipped twice: the original warm sand stroke (`#E4DCCC`) was removed
   on request in an earlier session (leaving cards to sit on the `#FCFAF6`

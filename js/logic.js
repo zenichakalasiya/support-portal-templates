@@ -795,7 +795,10 @@
         ["4e", ""], ["4g", ""], ["7a", ""], ["4c2", ""], ["5a", ""], ["3h", ""],
         ["4f", ""], ["2a", ""], ["3b2", ""], ["3c", ""], ["4p", ""], ["8b", ""]
       ], "Final selection, ready to ship."]);
-  
+
+      const SHOW_ONLY_FINAL = true;
+      if (SHOW_ONLY_FINAL) GROUPS.splice(1);
+
       let group = this.state.group;
       if (!GROUPS.some(g => g[0] === group)) group = GROUPS[0][0];
       const activeGroup = GROUPS.find(g => g[0] === group);
