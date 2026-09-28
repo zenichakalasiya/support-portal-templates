@@ -199,18 +199,29 @@ shrinking as it trails away, low opacity" shape as `diamondCascadeInner`,
 just with gears instead of diamonds.
 
 **`shapes3d` ("Floating Shapes")** is a duplicate of `desk3d` with a
-different graphic, added on request: same `hideAnn: true`, `bannerHeight:
-320`, `center: true` and light-wash `base` as `desk3d` (so the announcement
-card steps aside the same way), but instead of the hand-authored SVG scene
-it renders one `<img>` pointing at `assets/3b2-shapes.png` — a glossy
+different graphic, added on request: same `hideAnn: true` and `center:
+true` as `desk3d` (so the announcement card steps aside the same way), but
+`bannerHeight: 230` — noticeably shorter than `desk3d`'s 320, on request —
+and light-wash `base`. Instead of the hand-authored SVG scene it renders
+one `<img>` pointing at `assets/3b2-shapes.png` — a glossy
 realistic-3D-shapes stock photo (spheres, rings, cones) whose cluster of
 shapes sits along its own left edge and bottom, not the right. Rather than
 re-cropping the asset, the `<img>` is flipped in place with
-`transform:scaleX(-1)` (`object-fit:contain` first, so the whole image is
-visible and centered before the flip) — mirroring left-to-right moves the
-cluster into the banner's right corner while the vertical (bottom-heavy)
-arrangement is untouched, which is what "arrange the shapes at the right
-corner" meant here. `js/logic.js`'s `sidecarBanner()` computes
+`transform:scaleX(-1)` — mirroring left-to-right moves the cluster into
+the banner's right corner while the vertical (bottom-heavy) arrangement is
+untouched, which is what "arrange the shapes at the right corner" meant
+here. The `<img>` is sized `width:70%;height:auto` (not
+`width:100%;height:100%;object-fit:contain`, tried first) — with both
+dimensions forced to 100% of a container whose aspect ratio doesn't match
+the photo's, `object-fit:contain` still shows the whole image but inside a
+taller/wider *box* than the image itself fills, and that empty box space
+around the image was what read as "the image looks cut off with padding
+around it" — the picture wasn't cropped, but the mismatched box made it
+look pinched. `width:70%;height:auto` instead sizes the `<img>` box to
+exactly the photo's own aspect ratio (no object-fit needed), so there's no
+letterbox gap and nothing near any edge ever gets clipped — this also
+satisfies "make the image small" as a side effect of fixing the box-fit
+issue, not a separate resize. `js/logic.js`'s `sidecarBanner()` computes
 `bannerIsShapes` (`activeKey === "shapes3d"`) the same way it computes
 `bannerIsDesk`, and a new `bannerIsDeskOrShapes` flag replaces the old bare
 `!bannerIsDesk` on the generic hideAnn fallback `<sc-if>` in

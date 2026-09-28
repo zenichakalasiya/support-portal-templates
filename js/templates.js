@@ -958,8 +958,8 @@ window.TEMPLATES = {
           </div>
           </sc-if>
           <sc-if value="{{ bannerIsShapes }}">
-          <div style="min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden">
-            <img src="assets/3b2-shapes.png" alt="" style="width:100%;height:100%;object-fit:contain;transform:scaleX(-1);display:block">
+          <div style="min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:flex-end;overflow:visible">
+            <img src="assets/3b2-shapes.png" alt="" style="width:70%;height:auto;object-fit:contain;transform:scaleX(-1);display:block">
           </div>
           </sc-if>
           <sc-if value="{{ !bannerIsDeskOrShapes }}">

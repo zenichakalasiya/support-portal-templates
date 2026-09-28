@@ -302,7 +302,7 @@
       note: "A real 3D scene, not a generated pattern: a paper sheet with an extruded 'motadata' wordmark and six floating solids (charcoal, peach, terracotta, teal), each with proper top/front/side faces and soft ground shadows, over a sage wash. Its markup is hand-authored SVG directly in the 3b2 template (see isDesk / bannerIsDesk) rather than one of the JS shape generators the other seeds use. The announcement card steps aside so the scene has the full banner to itself."
     },
     {
-      key: "shapes3d", label: "Floating Shapes", dot: "#6C63FF", light: true, hideAnn: true, bannerHeight: 320, center: true,
+      key: "shapes3d", label: "Floating Shapes", dot: "#6C63FF", light: true, hideAnn: true, bannerHeight: 230, center: true,
       base: "linear-gradient(120deg,#EEF1FA 0%,#F3F5FC 55%,#F8F9FD 100%)",
       motif: "",
       note: "A duplicate of the Motadata Desk seed with a different graphic: a glossy realistic-3d-shapes photo (assets/3b2-shapes.png — spheres, rings and cones), flipped horizontally so its cluster of shapes reads in the banner's right corner instead of its native left/bottom edges. See bannerIsShapes in the template. Like desk3d, the announcement card steps aside for the full-banner image."
