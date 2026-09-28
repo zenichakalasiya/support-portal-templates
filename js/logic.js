@@ -302,6 +302,12 @@
       note: "A real 3D scene, not a generated pattern: a paper sheet with an extruded 'motadata' wordmark and six floating solids (charcoal, peach, terracotta, teal), each with proper top/front/side faces and soft ground shadows, over a sage wash. Its markup is hand-authored SVG directly in the 3b2 template (see isDesk / bannerIsDesk) rather than one of the JS shape generators the other seeds use. The announcement card steps aside so the scene has the full banner to itself."
     },
     {
+      key: "shapes3d", label: "Floating Shapes", dot: "#6C63FF", light: true, hideAnn: true, bannerHeight: 320, center: true,
+      base: "linear-gradient(120deg,#EEF1FA 0%,#F3F5FC 55%,#F8F9FD 100%)",
+      motif: "",
+      note: "A duplicate of the Motadata Desk seed with a different graphic: a glossy realistic-3d-shapes photo (assets/3b2-shapes.png — spheres, rings and cones), flipped horizontally so its cluster of shapes reads in the banner's right corner instead of its native left/bottom edges. See bannerIsShapes in the template. Like desk3d, the announcement card steps aside for the full-banner image."
+    },
+    {
       key: "dotgrad", label: "Dot Gradient", dot: "#2FAFC0", light: true, rawBg: true,
       base: "background-color:#FDF6E8;background-image:" + svgUrl(900, 220, dotGradientInner(900, 220, "#2FAFC0")) + ",linear-gradient(100deg,#FBF3C7 0%,#FDF6E8 30%,#EAF6F1 65%,#D3EEEA 100%);background-repeat:no-repeat,no-repeat;background-size:100% 100%,cover;background-position:center,center;",
       motif: "",
@@ -708,6 +714,8 @@
         bannerAccentFg: tintDark(active.dot, .35),
         bannerHideAnn: !!active.hideAnn,
         bannerIsDesk: activeKey === "desk3d",
+        bannerIsShapes: activeKey === "shapes3d",
+        bannerIsDeskOrShapes: activeKey === "desk3d" || activeKey === "shapes3d",
         bannerPageBg: washFromHex(active.dot, .28, .965),
         bannerTileBg: washFromHex(active.dot, .30, .975),
         bannerBadgeBg: washFromHex(active.dot, .34, .958),
