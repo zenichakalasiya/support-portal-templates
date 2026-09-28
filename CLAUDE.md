@@ -230,7 +230,23 @@ ellipse got the same literal (dx,dy) added to its own `cx`/`cy` so the
 shadow keeps tracking its shape. If any of `desk3d`'s objects move again,
 prepend a translate rather than editing the inner anchor/path numbers —
 it's the only way to reposition without fighting the scale-around-a-point
-math already baked into each group.
+math already baked into each group. The red half-dome was moved again
+later, the same way — `translate(-35,10)` in place of the earlier
+`translate(12,15)` prepend — to sit near the paper's bottom-right corner
+instead of out past the banner's edge, shadow ellipse moved to match.
+
+`desk3d`'s 3D "M" glyph (the isometric logo block below the "motadata"
+text on the paper) was made into a small outline mark on request: the
+inner `<g stroke="none">` wrapping its 12 fill paths is now `<g
+transform="translate(51,45) scale(0.6) translate(-51,-45)" fill="none"
+stroke="#243A3D" stroke-width="1.6" stroke-linejoin="round"
+stroke-linecap="round">` — the per-path `fill="#hex"` attributes were
+deleted so the paths inherit the group's `fill="none"`/`stroke`, and the
+`translate(51,45) scale(0.6) translate(-51,-45)` anchors the shrink on the
+glyph's own local bounding-box center (51,45) so it shrinks in place
+rather than drifting toward the SVG origin. The isometric shape and facet
+lines are otherwise untouched — only fill vs. stroke and overall scale
+changed, not the path data.
 
 **Every seed tints the page, not just `desk3d`.** This used to be a
 `pageTint` flag that only `desk3d` set (everything else got a flat neutral
