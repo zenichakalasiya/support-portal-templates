@@ -214,6 +214,24 @@ picked to match its swatch alone — it's the seed's whole colour identity:
 from it as usual, and so does `bannerPageBg` — the page's own ground
 colour, behind the top bar, side rail and every data card.
 
+`desk3d`'s floating objects were repositioned once on request: the small
+peach/cream 3D box originally sat bottom-right, doubled up with the red
+half-dome right above it (read as a lidded jar); it now sits **under the
+paper/"M" wordmark**, shifted left of centre, via a prepended
+`translate(-210,-5)` on its existing `translate(430,192) scale(1.22)
+translate(-430,-192)` group transform (prepending a plain translate shifts
+the already-scaled shape by that amount in absolute viewBox units, instead
+of recomputing the path's local coordinates or the scale anchor). The red
+half-dome moved the opposite way — `translate(12,15)` prepended to its own
+`translate(435,158) scale(1.22)...` — further toward the banner's right
+edge and with a bigger gap from the cream half-dome above it, now that it
+no longer has the box stacked underneath it. Each shape's floating-shadow
+ellipse got the same literal (dx,dy) added to its own `cx`/`cy` so the
+shadow keeps tracking its shape. If any of `desk3d`'s objects move again,
+prepend a translate rather than editing the inner anchor/path numbers —
+it's the only way to reposition without fighting the scale-around-a-point
+math already baked into each group.
+
 **Every seed tints the page, not just `desk3d`.** This used to be a
 `pageTint` flag that only `desk3d` set (everything else got a flat neutral
 `#f6f8fb`); the flag is gone and `bannerPageBg` is now derived for every
