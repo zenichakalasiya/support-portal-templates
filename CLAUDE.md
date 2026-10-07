@@ -466,6 +466,17 @@ These were applied template-wide and should be kept when adding or editing one:
   border**, 15px glyph: approve `#e6f4ec`/`#1f7a44`, reject
   `#fdeaea`/`#b02a2a`, send back `#fdf1d6`/`#8a5a08`. `5a` was the one
   outlier — 28×28, outlined, no fill, a blue check — and was brought in line.
+- **`4e`/`4g`/`5a`/`4f`'s action cards carry no trailing arrow icon.** Each had
+  an icon + title (+ description) row ending in a `chevron_right` (`4e`/`5a`/
+  `4f`) or `arrow_forward` (`4g`) glyph on the far right — removed on request.
+  `4e`/`4g` are the 3 `heroTiles3` quick-action tiles inside the hero banner;
+  `5a` is the `qa3` quick-actions list; `4f` is the `railTiles3` list in the
+  dark side rail. In `4e`/`5a`/`4f` the title div already carries `flex:1`, so
+  deleting just the trailing `<span>` was enough — the title still fills the
+  row. `4g`'s arrow sat in its own `flex:1` spacer div (to push the icon left
+  and arrow right on one row above the title); that spacer was removed along
+  with the arrow, since a lone spacer with nothing to push against is dead
+  weight once the arrow is gone.
 - **Asset and CI lists** use tinted rounded tiles in a gapped column (the 3b
   treatment), with the tint taken from the layout's own palette; the icon itself
   sits on its own small background chip (bg + accent colour pair), matching
@@ -549,19 +560,28 @@ These were applied template-wide and should be kept when adding or editing one:
   cards elsewhere) and **4h**, whose editorial layout uses an
   uppercase eyebrow over a serif heading with no header row at all.
 - **Service and catalogue sections carry no link.** "Popular services",
-  "Most used services", "Browse by category", "Service catalog" and the like are
-  a heading alone — the "Browse catalog ›" / "Full catalog ›" / "All 214" links
-  were removed gallery-wide. A decorative rule after the heading (3d) stays.
-  In `3h` the section is **one white data card** rather than loose tiles on the
-  page: the heading sits inside the card above a divider (mirroring the Most
-  Read card beside it), and the eight service tiles lost their individual card
-  chrome for a light cool-grey wash (`#F7F9FC`, from 3H's ink-and-steel
-  neutrals rather than its amber accent — an amber tile wash was tried first
-  and rejected as too yellow) with white icon chips so the icons stay visible
-  against it. That
-  row's grid is `align-items:stretch`, and both cards are flex columns with the
-  tile grid on `flex:1`, so Most Used Services and Most Read always share one
-  height — don't put `align-items:start` back on that grid.
+  "Favourite services", "Browse by category", "Service catalog" and the like
+  are a heading alone — the "Browse catalog ›" / "Full catalog ›" / "All 214"
+  links were removed gallery-wide. A decorative rule after the heading (3d)
+  stays. **"Most Used Services" / "Most used services" was renamed to
+  "Favourite Services" / "Favourite services"** on request, gallery-wide,
+  matching each file's own existing casing (Title Case where the heading
+  already was, sentence case where it already was) — this touched 19 layouts
+  that actually carry the heading: `2a`, `2b`, `3c`, `3c2`, `3g`, `3h`
+  (+ two doc comments), `3h2`, `4b`, `4c2` (+ one doc comment), `5a`, `5b`,
+  `5c`, `6a`, `6b`, `6c`, `7a`, `7b`, `7c`, `8b`. `4e`/`4g`/`4f` never had this
+  heading (their equivalent sections are named differently or are hero quick-
+  link tiles, not a "Most/Favourite services" card) and were correctly left
+  alone. In `3h` the section is **one white data card** rather than loose
+  tiles on the page: the heading sits inside the card above a divider
+  (mirroring the Most Read card beside it), and the eight service tiles lost
+  their individual card chrome for a light cool-grey wash (`#F7F9FC`, from
+  3H's ink-and-steel neutrals rather than its amber accent — an amber tile
+  wash was tried first and rejected as too yellow) with white icon chips so
+  the icons stay visible against it. That row's grid is `align-items:stretch`,
+  and both cards are flex columns with the tile grid on `flex:1`, so
+  Favourite Services and Most Read always share one height — don't put
+  `align-items:start` back on that grid.
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.

@@ -143,7 +143,7 @@ window.TEMPLATES = {
 
         <div style="margin:30px 0 14px">
           <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-            <div style="font-size:18px;font-weight:700;color:{{ t2Ink }};letter-spacing:-0.01em">Most Used Services</div>
+            <div style="font-size:18px;font-weight:700;color:{{ t2Ink }};letter-spacing:-0.01em">Favourite Services</div>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr));gap:14px">
@@ -515,7 +515,7 @@ window.TEMPLATES = {
 
           <div>
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-              <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Most Used Services</div>
+              <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Favourite Services</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px">
               <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
@@ -1244,7 +1244,7 @@ window.TEMPLATES = {
 
         <div style="padding:36px 48px 44px">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Most Used Services</div>
+            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Favourite Services</div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px">
             <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
@@ -1506,7 +1506,7 @@ window.TEMPLATES = {
 
         <div style="padding:36px 48px 44px">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Most Used Services</div>
+            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Favourite Services</div>
           </div>
           <div style="display:grid;grid-template-columns:repeat(5,1fr) 90px;gap:14px">
             <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
@@ -2034,7 +2034,7 @@ window.TEMPLATES = {
 
             <div>
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
-                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
+                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Favourite Services</div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
@@ -2338,12 +2338,12 @@ window.TEMPLATES = {
 
         </div>
 
-        <!-- Row 3 — Most Used Services and Most Read, both starting at the same top edge. -->
+        <!-- Row 3 — Favourite Services and Most Read, both starting at the same top edge. -->
         <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,392px);gap:18px;margin-top:18px;align-items:stretch">
 
             <div style="min-width:0;display:flex;flex-direction:column;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
               <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #e6ebf2">
-                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
+                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Favourite Services</div>
               </div>
               <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:18px">
                 <sc-for list="{{ svcCards }}" as="s" hint-placeholder-count="8">
@@ -2361,7 +2361,7 @@ window.TEMPLATES = {
             </div>
 
             <!-- The header lives inside the card, divided from the rows, and the card starts at
-                 the top of the cell so its top edge lines up with the Most Used Services title. -->
+                 the top of the cell so its top edge lines up with the Favourite Services title. -->
             <div style="min-width:0;background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden" data-comment-anchor="038e65e09e-div">
               <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #e6ebf2">
                 <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Read</div>
@@ -2468,7 +2468,7 @@ window.TEMPLATES = {
 
             <div>
               <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
-                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Most Used Services</div>
+                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Favourite Services</div>
                 <div style="font-size:12.5px;color:#5f6f83">Tap the heart to pin a service to your favourites</div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
@@ -3707,7 +3707,7 @@ window.TEMPLATES = {
 
           <div style="background:#fff;border:1px solid #dde4ee;border-radius:10px;overflow:hidden">
             <div style="display:flex;align-items:center;gap:12px;padding:15px 20px;border-bottom:1px solid #eef2f7">
-              <div style="font-size:16.5px;font-weight:600;color:#0b2545;letter-spacing:-0.012em">Most used services</div>
+              <div style="font-size:16.5px;font-weight:600;color:#0b2545;letter-spacing:-0.012em">Favourite services</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px 20px 20px">
               <sc-for list="{{ topics }}" as="t" hint-placeholder-count="6">
@@ -4135,7 +4135,7 @@ window.TEMPLATES = {
           </div>
 
           <!-- Column 2 — two sections: Quick links (the merged image slot + open-requests rows)
-               and Most Used Services in the block the knowledge base used to hold. -->
+               and Favourite Services in the block the knowledge base used to hold. -->
           <div style="display:flex;flex-direction:column;min-width:0">
             <div style="min-height:380px;background:#fff;padding:24px 26px;display:flex;flex-direction:column;justify-content:flex-start">
               <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0b2545;padding-bottom:16px;border-bottom:1px solid #eef2f7">Quick links</div>
@@ -4150,7 +4150,7 @@ window.TEMPLATES = {
               </div>
             </div>
             <div style="flex:1;background:#4c37b0;padding:24px 26px 20px">
-              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16)">Most Used Services</div>
+              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16)">Favourite Services</div>
               <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
                   <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.09);border-radius:10px;min-width:0">
@@ -4457,7 +4457,6 @@ window.TEMPLATES = {
                       <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ h.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ h.t }}</div>
-                    <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:rgba(255,255,255,.75);flex-shrink:0">chevron_right</span>
                   </div>
                 </sc-for>
               </div>
@@ -4703,7 +4702,6 @@ window.TEMPLATES = {
             <div style="display:flex;align-items:center;gap:12px;background:#1b3355;border:1px solid rgba(255,255,255,.13);border-radius:8px;padding:14px 15px;min-width:0">
               <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:rgba(255,255,255,.88);flex-shrink:0">{{ r.i }}</span>
               <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.t }}</div>
-              <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:rgba(255,255,255,.55);flex-shrink:0">chevron_right</span>
             </div>
           </sc-for>
         </div>
@@ -5180,8 +5178,6 @@ window.TEMPLATES = {
                 <div style="width:38px;height:38px;border-radius:9px;background:{{ h.bg }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                   <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ h.i }}</span>
                 </div>
-                <div style="flex:1"></div>
-                <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:rgba(255,255,255,.62);flex-shrink:0">arrow_forward</span>
               </div>
               <div style="font-size:13.5px;font-weight:700;color:#fff;line-height:1.3;text-wrap:pretty">{{ h.t }}</div>
             </div>
@@ -6141,7 +6137,6 @@ window.TEMPLATES = {
                     <div style="font-size:13.5px;font-weight:600;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.t }}</div>
                     <div style="font-size:11.5px;color:#4a6478;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ a.s }}</div>
                   </div>
-                  <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1;color:#9db3c6;flex-shrink:0">chevron_right</span>
                 </div>
               </sc-for>
               <div style="background:#fff;border:1px solid #ffffff;border-radius:6px;padding:15px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
@@ -6224,7 +6219,7 @@ window.TEMPLATES = {
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #dde7f0;border-radius:6px;overflow:hidden">
               <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:15px 18px;border-bottom:1px solid #eef3f8">
                 
-                <div style="font-size:15.5px;font-weight:700;color:#0b2545">Most Used Services</div>
+                <div style="font-size:15.5px;font-weight:700;color:#0b2545">Favourite Services</div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 18px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
@@ -6566,7 +6561,7 @@ window.TEMPLATES = {
               <div style="background:#fff;border:1px solid #E2E5DE;border-radius:2px;overflow:hidden">
                 <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #EFF1EC">
                   
-                  <div style="font-size:15.5px;font-weight:700;color:#23302B">Most Used Services</div>
+                  <div style="font-size:15.5px;font-weight:700;color:#23302B">Favourite Services</div>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 18px">
                   <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
@@ -6744,7 +6739,7 @@ window.TEMPLATES = {
 
           <div style="display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #e6e6e6;border-radius:8px;overflow:hidden">
             <div style="display:flex;align-items:center;gap:10px;padding:18px 22px 16px">
-              <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Most Used Services</div>
+              <div style="font-size:18px;font-weight:700;color:#0A0A0A;letter-spacing:-0.022em">Favourite Services</div>
             </div>
             <div style="display:flex;flex-direction:column;gap:10px;padding:0 22px 22px">
               <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
@@ -6908,7 +6903,7 @@ window.TEMPLATES = {
 
         <div style="position:relative;padding:0 30px 34px;margin-top:-56px">
           <div style="padding:24px 26px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;box-shadow:0 4px 18px #0b3b7a14">
-            <div style="font-size:19px;font-weight:700;color:#0b2545;letter-spacing:-0.018em;text-align:center">Most Used Services</div>
+            <div style="font-size:19px;font-weight:700;color:#0b2545;letter-spacing:-0.018em;text-align:center">Favourite Services</div>
             <div style="font-size:14.5px;color:#5f6f83;margin-top:7px;text-align:center;line-height:1.55">The services citizens and staff request most often across departments.</div>
             <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:22px">
               <sc-for list="{{ services6 }}" as="s" hint-placeholder-count="6">
@@ -7146,7 +7141,7 @@ window.TEMPLATES = {
 
           <div style="width:100%;padding:34px 0 0">
             <div style="display:flex;align-items:baseline;gap:10px">
-              <div style="font-size:14.5px;color:#5f7288">Most used services</div>
+              <div style="font-size:14.5px;color:#5f7288">Favourite services</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px">
               <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
@@ -7510,7 +7505,7 @@ window.TEMPLATES = {
           <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch;margin-top:16px">
             <div style="background:#fff;border:1px solid #e6e9ee;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #eef0f4">
-                <div style="font-size:15.5px;font-weight:700;color:#1B2430">Most Used Services</div>
+                <div style="font-size:15.5px;font-weight:700;color:#1B2430">Favourite Services</div>
               </div>
               <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 18px 18px">
                 <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
@@ -7699,7 +7694,7 @@ window.TEMPLATES = {
 
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #F0EADD;border-radius:10px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0EADD">
-              <div style="font-size:15.5px;font-weight:700;color:#191510">Most used services</div>
+              <div style="font-size:15.5px;font-weight:700;color:#191510">Favourite services</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:16px 18px">
               <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
@@ -8018,7 +8013,7 @@ window.TEMPLATES = {
 
             <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #E3E6F0;border-radius:8px;overflow:hidden;min-width:0">
               <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F0F2F8">
-                <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
+                <div style="font-size:15.5px;font-weight:700;color:#14183A">Favourite services</div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px;flex:1">
                 <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
@@ -8194,7 +8189,7 @@ window.TEMPLATES = {
 
           <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #DCD8CF;border-radius:12px;overflow:hidden;min-width:0">
             <div style="display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid #F4F2ED">
-              <div style="font-size:15.5px;font-weight:700;color:#14183A">Most used services</div>
+              <div style="font-size:15.5px;font-weight:700;color:#14183A">Favourite services</div>
             </div>
             <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:12px;padding:16px 18px">
               <sc-for list="{{ servicesCat4 }}" as="s" hint-placeholder-count="4">
@@ -8654,7 +8649,7 @@ window.TEMPLATES = {
 
           <div style="display:grid;grid-template-columns:minmax(0,1fr)">
             <div style="min-width:0;display:flex;flex-direction:column">
-              <div style="font-size:20px;font-weight:700;color:#152D4B;letter-spacing:-0.022em">Most used services</div>
+              <div style="font-size:20px;font-weight:700;color:#152D4B;letter-spacing:-0.022em">Favourite services</div>
               <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
                   <div style="display:flex;flex-direction:column;gap:11px;padding:17px;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;min-width:0">
