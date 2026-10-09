@@ -598,6 +598,31 @@ These were applied template-wide and should be kept when adding or editing one:
   and both cards are flex columns with the tile grid on `flex:1`, so
   Favourite Services and Most Read always share one height — don't put
   `align-items:start` back on that grid.
+- **Every "Favourite Services" section now sits inside its own white
+  bordered card**, matching the treatment `3h`/`4b`/`5a`/`5b`/`5c`/`6a`/
+  `6c`/`7a`/`7b`/`7c` already had (header row with a bottom divider, then
+  the tile grid in a padded body) — on request, after the user noticed 8
+  templates still had the heading floating loose on the page with no
+  shared card boundary: `2a`, `2b`, `3c`, `3c2`, `3g`, `3h2`, `6b`, `8b`.
+  A ninth, `4c2`, already had a boxed section but filled solid purple
+  (`#4c37b0`) rather than white; it was converted to plain white to match
+  its sibling Quick Links card in the same column (same divider, same
+  navy/grey text, same `#f7f9fc` tile wash — a literal one-for-one colour
+  swap, nothing else about its layout changed). Each file reuses its own
+  existing card tokens (`cardBg`/`cardBorder`/`cardShadow`, or the
+  template's own hard-coded card hex where it doesn't use those design
+  props) rather than importing another template's literal values, and
+  individually-bordered-and-shadowed tiles (the look used by `2a`/`3c`/
+  `3c2`'s services before this pass) were flattened to a plain tinted
+  wash (`#f7f9fc`-family, icon chip on white) once they sat inside an
+  outer card, so there's no double-boxing. `3g`'s tiles kept a thin
+  border (they double as an "add to favourites" picker list, each with
+  its own trailing `add` glyph, not a plain tile) and `3h2`'s kept their
+  full card shape (icon, title, CTA footer) since those four are rich
+  self-contained feature cards, not simple rows — only the loose heading
+  above them picked up the new enclosing card. `6b`'s own card convention
+  (`border:1px solid #e6ebf1;border-radius:4px`, no `cardBg`/`cardShadow`
+  tokens — this template has none) was matched instead of the others'.
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.

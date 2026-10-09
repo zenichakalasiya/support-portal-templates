@@ -210,13 +210,13 @@
             </div>
           </div>
 
-          <div>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+          <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid #eef1f3">
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Favourite Services</div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px;padding:16px 18px">
               <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
-                <div style="position:relative;min-height:132px;border-radius:14px;background:{{ brand }};padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+                <div style="position:relative;min-height:132px;border-radius:12px;background:{{ brand }};padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
                   <div style="position:absolute;width:150px;height:150px;border-radius:50%;border:26px solid rgba(255,255,255,.09);right:-52px;top:-58px"></div>
                   <span style="position:relative;font-family:'Material Symbols Rounded';font-size:30px;line-height:1;color:rgba(255,255,255,.92)">{{ s.i }}</span>
                   <div style="position:relative">

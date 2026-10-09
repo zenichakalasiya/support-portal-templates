@@ -141,23 +141,23 @@ window.TEMPLATES = {
           </div>
         </div>
 
-        <div style="margin:30px 0 14px">
-          <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-            <div style="font-size:18px;font-weight:700;color:{{ t2Ink }};letter-spacing:-0.01em">Favourite Services</div>
+        <div style="margin-top:26px;background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);overflow:hidden">
+          <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid {{ t2Hair }}">
+            <div style="font-size:16px;font-weight:700;color:{{ t2Ink }}">Favourite Services</div>
           </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr));gap:14px">
-          <sc-for list="{{ services2a }}" as="s" hint-placeholder-count="6">
-            <div style="background:#fff;border:1px solid {{ t2CardBd }};border-radius:14px;box-shadow:0 1px 2px rgba(12,47,36,.05);padding:16px;display:flex;align-items:center;gap:13px">
-              <div style="width:40px;height:40px;border-radius:11px;background:{{ t2Badge }};display:flex;align-items:center;justify-content:center;color:{{ t2Acc }};flex-shrink:0">
-                <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ s.i }}</span>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr));gap:14px;padding:18px 20px">
+            <sc-for list="{{ services2a }}" as="s" hint-placeholder-count="6">
+              <div style="background:{{ t2Badge }};border-radius:14px;padding:16px;display:flex;align-items:center;gap:13px">
+                <div style="width:40px;height:40px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;color:{{ t2Acc }};flex-shrink:0">
+                  <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ s.i }}</span>
+                </div>
+                <div style="min-width:0">
+                  <div style="font-size:14px;font-weight:600;color:{{ t2Ink }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.n }}</div>
+                  <div style="font-size:12px;color:{{ t2Mute2 }};margin-top:2px">{{ s.c }}</div>
+                </div>
               </div>
-              <div style="min-width:0">
-                <div style="font-size:14px;font-weight:600;color:{{ t2Ink }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.n }}</div>
-                <div style="font-size:12px;color:{{ t2Mute2 }};margin-top:2px">{{ s.c }}</div>
-              </div>
-            </div>
-          </sc-for>
+            </sc-for>
+          </div>
         </div>
 
         <div style="display:flex;flex-direction:column;gap:18px;margin-top:26px">
@@ -513,13 +513,13 @@ window.TEMPLATES = {
             </div>
           </div>
 
-          <div>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+          <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid #eef1f3">
               <div style="font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5f6f83">Favourite Services</div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,214px),1fr));gap:14px;padding:16px 18px">
               <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
-                <div style="position:relative;min-height:132px;border-radius:14px;background:{{ brand }};padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+                <div style="position:relative;min-height:132px;border-radius:12px;background:{{ brand }};padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
                   <div style="position:absolute;width:150px;height:150px;border-radius:50%;border:26px solid rgba(255,255,255,.09);right:-52px;top:-58px"></div>
                   <span style="position:relative;font-family:'Material Symbols Rounded';font-size:30px;line-height:1;color:rgba(255,255,255,.92)">{{ s.i }}</span>
                   <div style="position:relative">
@@ -1243,12 +1243,13 @@ window.TEMPLATES = {
         </div>
 
         <div style="padding:36px 48px 44px">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Favourite Services</div>
+          <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+          <div style="display:flex;align-items:center;gap:14px;padding:17px 20px;border-bottom:1px solid #eef2f7">
+            <div style="font-size:15.5px;font-weight:700;color:#0b2545">Favourite Services</div>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px">
+          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;padding:18px 20px">
             <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
-              <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;padding:20px;box-shadow:{{ cardShadow }}">
+              <div style="background:#f7f9fc;border-radius:14px;padding:20px">
                 <div style="width:42px;height:42px;border-radius:12px;background:#eef3fa;display:flex;align-items:center;justify-content:center;color:#07101F">
                   <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">{{ s.i }}</span>
                 </div>
@@ -1268,6 +1269,7 @@ window.TEMPLATES = {
                 <div style="font-size:12.5px;font-weight:500;color:#0b2545;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">servicedesk@acme.com</div>
               </div>
             </div>
+          </div>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:18px;margin-top:64px">
@@ -1505,12 +1507,13 @@ window.TEMPLATES = {
         </div>
 
         <div style="padding:36px 48px 44px">
-          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-            <div style="font-size:18px;font-weight:700;color:#0b2545;letter-spacing:-0.01em">Favourite Services</div>
+          <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+          <div style="display:flex;align-items:center;gap:14px;padding:17px 20px;border-bottom:1px solid #eef2f7">
+            <div style="font-size:15.5px;font-weight:700;color:#0b2545">Favourite Services</div>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(5,1fr) 90px;gap:14px">
+          <div style="display:grid;grid-template-columns:repeat(5,1fr) 90px;gap:14px;padding:18px 20px">
             <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
-              <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;padding:20px;box-shadow:{{ cardShadow }}">
+              <div style="background:#f7f9fc;border-radius:14px;padding:20px">
                 <div style="width:42px;height:42px;border-radius:12px;background:#eef3fa;display:flex;align-items:center;justify-content:center;color:#07101F">
                   <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1">{{ s.i }}</span>
                 </div>
@@ -1522,6 +1525,7 @@ window.TEMPLATES = {
               <span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#07101F">call</span>
               <div style="font-size:11.5px;font-weight:600;color:#07101F">Contact Us</div>
             </div>
+          </div>
           </div>
 
           <div style="display:flex;flex-direction:column;gap:18px;margin-top:64px">
@@ -2032,13 +2036,13 @@ window.TEMPLATES = {
 
           <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
 
-            <div>
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
-                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Favourite Services</div>
+            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
+              <div style="display:flex;align-items:center;gap:9px;padding:15px 18px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:15px;font-weight:700;color:#0b2545">Favourite Services</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px">
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;padding:16px 18px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
-                  <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;padding:16px;box-shadow:{{ cardShadow }};display:flex;align-items:center;gap:12px;min-width:0">
+                  <div style="background:#fff;border:1px solid {{ cardBorder }};border-radius:14px;padding:16px;display:flex;align-items:center;gap:12px;min-width:0">
                     <div style="width:38px;height:38px;border-radius:11px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">{{ s.i }}</span>
                     </div>
@@ -2466,25 +2470,25 @@ window.TEMPLATES = {
               </div>
             </div>
 
-            <div>
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
-                <div style="font-size:17px;font-weight:700;color:#0b2545;letter-spacing:-0.012em">Favourite Services</div>
+            <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:16px;box-shadow:{{ cardShadow }};overflow:hidden">
+              <div style="display:flex;align-items:baseline;gap:14px;padding:17px 20px;border-bottom:1px solid #eef2f7">
+                <div style="font-size:16.5px;font-weight:700;color:#0b2545">Favourite Services</div>
                 <div style="font-size:12.5px;color:#5f6f83">Tap the heart to pin a service to your favourites</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:18px 20px">
                 <sc-for list="{{ svcCards4 }}" as="s" hint-placeholder-count="4">
-                  <div style="background:{{ cardBg }};border:1px solid #dfe5ec;border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden;min-width:0;display:flex;flex-direction:column">
+                  <div style="background:#F7F9FC;border-radius:14px;overflow:hidden;min-width:0;display:flex;flex-direction:column">
                     <div style="flex:1;padding:14px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center">
                       <div style="width:100%;display:flex;justify-content:flex-end">
                         <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1;color:#F2A81D">{{ s.h }}</span>
                       </div>
-                      <div style="width:48px;height:48px;border-radius:14px;background:#EDF1F5;color:#26384A;display:flex;align-items:center;justify-content:center;margin-top:2px">
+                      <div style="width:48px;height:48px;border-radius:14px;background:#fff;color:#26384A;display:flex;align-items:center;justify-content:center;margin-top:2px">
                         <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1">{{ s.i }}</span>
                       </div>
                       <div style="font-size:14px;font-weight:600;color:#0b2545;margin-top:12px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%">{{ s.n }}</div>
                       <div style="font-size:12px;color:#5f6f83;margin-top:4px">{{ s.c }}</div>
                     </div>
-                    <div style="height:40px;flex-shrink:0;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;background:#F6F8FA;border-top:1px solid #dfe5ec;font-size:13px;font-weight:600;color:#26384A">
+                    <div style="height:40px;flex-shrink:0;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;background:#fff;border-top:1px solid #dfe5ec;font-size:13px;font-weight:600;color:#26384A">
                       {{ s.btn }}
                     </div>
                   </div>
@@ -4149,19 +4153,19 @@ window.TEMPLATES = {
                 </sc-for>
               </div>
             </div>
-            <div style="flex:1;background:#4c37b0;padding:24px 26px 20px">
-              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.16)">Favourite Services</div>
+            <div style="flex:1;background:#fff;padding:24px 26px 20px;border-top:1px solid #eef2f7">
+              <div style="font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0b2545;padding-bottom:16px;border-bottom:1px solid #eef2f7">Favourite Services</div>
               <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
-                  <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.09);border-radius:10px;min-width:0">
-                    <div style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.16);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;background:#f7f9fc;border-radius:10px;min-width:0">
+                    <div style="width:34px;height:34px;border-radius:9px;background:#eef3fa;color:{{ brand }};display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:18px;line-height:1">{{ s.i }}</span>
                     </div>
                     <div style="flex:1;min-width:0">
-                      <div style="font-size:13.5px;font-weight:600;color:#fff;line-height:1.4">{{ s.n }}</div>
-                      <div style="font-size:12px;color:rgba(255,255,255,.72);margin-top:3px;line-height:1.4">{{ s.c }}</div>
+                      <div style="font-size:13.5px;font-weight:600;color:#0b2545;line-height:1.4">{{ s.n }}</div>
+                      <div style="font-size:12px;color:#5f6f83;margin-top:3px;line-height:1.4">{{ s.c }}</div>
                     </div>
-                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:rgba(255,255,255,.8);flex-shrink:0">north_east</span>
+                    <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1;color:#9fb0c4;flex-shrink:0">north_east</span>
                   </div>
                 </sc-for>
               </div>
@@ -7135,16 +7139,14 @@ window.TEMPLATES = {
             </sc-for>
           </div>
 
-          <div style="width:100%;height:1px;background:#eef1f5"></div>
-
-          <div style="width:100%;padding:34px 0 0">
-            <div style="display:flex;align-items:baseline;gap:10px">
+          <div style="width:100%;margin-top:34px;border:1px solid #e6ebf1;border-radius:4px;overflow:hidden">
+            <div style="display:flex;align-items:baseline;gap:10px;padding:18px 22px;border-bottom:1px solid #eef1f5">
               <div style="font-size:14.5px;color:#5f7288">Favourite services</div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px">
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:22px">
               <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
-                <div style="display:flex;gap:16px;padding:20px 22px;border:1px solid #e6ebf1;border-radius:4px;min-width:0">
-                  <div style="width:36px;height:36px;border-radius:6px;background:#E8F4FD;color:#1A8FE3;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <div style="display:flex;gap:16px;padding:20px 22px;background:#f7f9fc;border-radius:4px;min-width:0">
+                  <div style="width:36px;height:36px;border-radius:6px;background:#fff;color:#1A8FE3;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                     <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1">{{ s.i }}</span>
                   </div>
                   <div style="flex:1;min-width:0">
@@ -8646,12 +8648,14 @@ window.TEMPLATES = {
         <div style="padding:32px 30px 36px;display:flex;flex-direction:column;gap:34px">
 
           <div style="display:grid;grid-template-columns:minmax(0,1fr)">
-            <div style="min-width:0;display:flex;flex-direction:column">
-              <div style="font-size:20px;font-weight:700;color:#152D4B;letter-spacing:-0.022em">Favourite services</div>
-              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px">
+            <div style="min-width:0;display:flex;flex-direction:column;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:11px;padding:16px 20px;border-bottom:1px solid #EDF3F8">
+                <div style="font-size:16px;font-weight:700;color:#152D4B">Favourite services</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px 20px">
                 <sc-for list="{{ servicesCat6 }}" as="s" hint-placeholder-count="6">
-                  <div style="display:flex;flex-direction:column;gap:11px;padding:17px;background:#fff;border-radius:8px;box-shadow:0 2px 8px #0c1e340f;min-width:0">
-                    <div style="width:34px;height:34px;border-radius:7px;background:#E4EFF9;color:#1B5E9E;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="display:flex;flex-direction:column;gap:11px;padding:17px;background:#F6FAFD;border-radius:8px;min-width:0">
+                    <div style="width:34px;height:34px;border-radius:7px;background:#fff;color:#1B5E9E;display:flex;align-items:center;justify-content:center;flex-shrink:0">
                       <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ s.i }}</span>
                     </div>
                     <div style="font-size:14px;font-weight:700;color:#152D4B;line-height:1.35;text-wrap:pretty">{{ s.n }}</div>
