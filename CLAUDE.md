@@ -221,7 +221,31 @@ look pinched. `width:70%;height:auto` instead sizes the `<img>` box to
 exactly the photo's own aspect ratio (no object-fit needed), so there's no
 letterbox gap and nothing near any edge ever gets clipped — this also
 satisfies "make the image small" as a side effect of fixing the box-fit
-issue, not a separate resize. `js/logic.js`'s `sidecarBanner()` computes
+issue, not a separate resize.
+
+The `<img>` also carries `margin:-26px -28px -26px 0` — on request, to
+remove the visible gap between the image and the banner card's own
+rounded border on the top, right and bottom sides (left is untouched;
+the flipped image's shape cluster sits toward the right/bottom, so there
+was never a "gap" to close on the left, and `justify-content:flex-end`
+on the wrapper already hugs it there). The banner's own outer container
+(`layouts/3b2.html` ~line 48) applies `padding:26px 28px` around *all*
+its content, shared by every banner seed — this negative margin exactly
+cancels that padding on 3 sides for this `<img>` only, letting it bleed
+to the container's true edge. It's safe to bleed this far because that
+same outer container also has `overflow:hidden` with its `border-radius`
+— content pushed into the padding area is still clipped cleanly at the
+rounded corner, it just no longer stops short of it with a gap first.
+**Apply the negative margin to the `<img>` itself, not to its flex
+wrapper div.** An earlier attempt put equivalent negative margins (plus
+`overflow:visible`) on the wrapper div — the grid cell itself — and that
+broke rendering outright (the image stopped resolving via a DOM query
+entirely); margin on the wrapper perturbs the grid-cell box that
+`bannerGridCols` is sizing, where margin on a flex *child* inside that
+already-sized cell does not, since the flex container's own size comes
+from the grid track (a fixed `fr` value), not from its child's content
+box. If this needs revisiting, change the `<img>`'s margin, not the
+wrapper's. `js/logic.js`'s `sidecarBanner()` computes
 `bannerIsShapes` (`activeKey === "shapes3d"`) the same way it computes
 `bannerIsDesk`, and a new `bannerIsDeskOrShapes` flag replaces the old bare
 `!bannerIsDesk` on the generic hideAnn fallback `<sc-if>` in
@@ -645,6 +669,17 @@ These were applied template-wide and should be kept when adding or editing one:
   (before "My Open Requests"/"Announcements") was also tightened from
   `margin-top:64px` to `22px` for the same reason — see the note above this
   section for where that line lives.
+- **`3c`'s "My Assets"/"My CIs" row must use the same `1.4fr 1fr` column
+  split as every other data-card row in the template, not an equal
+  `repeat(2, minmax(0,1fr))`.** That inner grid (`grid-column:1 / -1;
+  grid-row:2`, nested inside the outer `1.4fr 1fr` row above it) had drifted
+  to a 50/50 split, which left "My Assets" narrower than "My Open Requests"/
+  "Pending Approvals" above it and "My CIs" wider than "Announcements"/
+  "Most Read" — a real misalignment, not just a visual nitpick, since all
+  four rows are meant to share one set of column edges. Fixed by matching
+  it to `1.4fr 1fr`. If a future row here ever needs an actual even split,
+  don't reuse `minmax(0,1fr)` thinking it's equivalent — check what ratio
+  the rows around it already use first.
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.

@@ -959,7 +959,7 @@ window.TEMPLATES = {
           </sc-if>
           <sc-if value="{{ bannerIsShapes }}">
           <div style="min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:flex-end;overflow:visible">
-            <img src="assets/3b2-shapes.png" alt="" style="width:70%;height:auto;object-fit:contain;transform:scaleX(-1);display:block">
+            <img src="assets/3b2-shapes.png" alt="" style="width:70%;height:auto;object-fit:contain;transform:scaleX(-1);display:block;margin:-26px -28px -26px 0">
           </div>
           </sc-if>
           <sc-if value="{{ !bannerIsDeskOrShapes }}">
@@ -1381,7 +1381,7 @@ window.TEMPLATES = {
                   </sc-for>
               </div>
 
-              <div style="grid-column:1 / -1;grid-row:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px">
+              <div style="grid-column:1 / -1;grid-row:2;display:grid;grid-template-columns:1.4fr 1fr;gap:18px">
                 <div style="background:{{ cardBg }};border:1px solid {{ cardBorder }};border-radius:14px;box-shadow:{{ cardShadow }};overflow:hidden">
                   <div style="display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid #eef2f7">
                     <div style="font-size:15.5px;font-weight:700;color:#0b2545">My Assets</div>
