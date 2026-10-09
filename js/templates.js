@@ -4454,11 +4454,13 @@ window.TEMPLATES = {
                   <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1">search</span>
                 </div>
               </div>
-              <div style="display:flex;flex-direction:column;margin-top:26px;pointer-events:auto">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;width:100%;pointer-events:auto">
                 <sc-for list="{{ heroTiles3 }}" as="h" hint-placeholder-count="3">
-                  <div style="display:flex;align-items:center;gap:12px;min-width:0;padding:13px 2px;border-bottom:1px solid rgba(255,255,255,.16);cursor:pointer">
-                    <span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;color:{{ h.bg }};flex-shrink:0">{{ h.i }}</span>
-                    <div style="flex:1;min-width:0;font-size:14px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ h.t }}</div>
+                  <div style="background:#fff;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0;cursor:pointer">
+                    <div style="width:34px;height:34px;border-radius:9px;background:{{ h.bg }};color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <span style="font-family:'Material Symbols Rounded';font-size:19px;line-height:1">{{ h.i }}</span>
+                    </div>
+                    <div style="font-size:13px;font-weight:600;color:#0b2545;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ h.t }}</div>
                   </div>
                 </sc-for>
               </div>
