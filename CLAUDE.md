@@ -477,6 +477,22 @@ These were applied template-wide and should be kept when adding or editing one:
   and arrow right on one row above the title); that spacer was removed along
   with the arrow, since a lone spacer with nothing to push against is dead
   weight once the arrow is gone.
+- **`4e`'s `heroTiles3` rows were redesigned again, on request, to stop
+  reading as individual clickable buttons/cards.** They used to be a 38×38
+  solid-color rounded icon chip (`background:{{ h.bg }}`) next to a bold
+  title, stacked with a 16px gap — a shape that reads as a row of app-icon
+  buttons. That's gone: each row is now a plain Material icon glyph (no
+  background box) **tinted with `{{ h.bg }}` as its text `color`** instead —
+  same per-item identity colour (`#c2415f`/`#2f6fbf`/`#0f766e`), just carried
+  by the icon's own colour rather than a chip behind it — next to the same
+  bold white title, separated by a `rgba(255,255,255,.16)` divider
+  (`border-bottom`, on every row including the last, matching how `7a`'s
+  `quickLinks3` divider rows are built) and `cursor:pointer` on the row. No
+  trailing arrow was added back (explicitly ruled out, consistent with the
+  arrow removal above) — the divider-separated icon+text list shape itself
+  (the same idiom `7a`'s Quick Links card and a mobile settings list use) is
+  what signals "tappable row" here, not a box, a chip, or an arrow. This is
+  `4e`-only; `4g`/`5a`/`4f` keep their own existing action-row treatment.
 - **Asset and CI lists** use tinted rounded tiles in a gapped column (the 3b
   treatment), with the tint taken from the layout's own palette; the icon itself
   sits on its own small background chip (bg + accent colour pair), matching
