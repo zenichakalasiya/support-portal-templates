@@ -355,10 +355,17 @@ variant, not a shared template, kept in sync with `3c` only by hand if `3c`'s
 banner/action-row changes again. **Hero spacing is hand-synced too** — both now
 carry `padding:30px 48px 40px` on the hero, `margin-top:2px` on the welcome
 title and `margin-top:64px` on the search bar. Note the search bar's top margin
-is the one the user means by "3C's search margin"; the `margin-top:64px` further
-down `3c.html` (~line 101) is a *different* element — the data-cards block — and
-an earlier session changed that one by mistake while believing it had done the
-search. Check which element you are on before touching either.
+is the one the user means by "3C's search margin"; the gap further down
+`3c.html` between the Favourite Services card and the My Open Requests /
+Announcements row below it (~line 103, `margin-top` on the data-cards block's
+wrapping flex column) is a *different* element — an earlier session changed
+that one by mistake while believing it had done the search. Check which
+element you are on before touching either. That data-cards-block gap is now
+`margin-top:22px` (was `64px`, tuned down to match the rest of the template's
+18px inter-card row gaps once Favourite Services became its own bordered card
+— see below). `3c2` wasn't touched by that change and still carries whatever
+its own hand-synced copy of this gap is — re-check it if `3c`'s is ever
+adjusted again.
 Both `3c` and `3c2`'s "Announcements" card show `anns3` (3 rows, no
 `overflow-y`) instead of the full `anns5` — it used to render all 5 with
 `overflow-y:auto`, which produced a visible scrollbar since 5 rows didn't
@@ -623,6 +630,16 @@ These were applied template-wide and should be kept when adding or editing one:
   above them picked up the new enclosing card. `6b`'s own card convention
   (`border:1px solid #e6ebf1;border-radius:4px`, no `cardBg`/`cardShadow`
   tokens — this template has none) was matched instead of the others'.
+  **In `3c` specifically**, this card's shadow was called out as too heavy
+  once it got a card boundary (it had been using the shared `{{ cardShadow }}`
+  design-time token, the same weight as every other card on the page) — its
+  `box-shadow` is now a literal, lighter `0 1px 3px rgba(11,37,69,.045)`
+  instead of `{{ cardShadow }}`, a one-off override for this card only (the
+  other 8 newly-card-wrapped templates still use `{{ cardShadow }}` like
+  their sibling cards and weren't asked to change). The gap below the card
+  (before "My Open Requests"/"Announcements") was also tightened from
+  `margin-top:64px` to `22px` for the same reason — see the note above this
+  section for where that line lives.
 - **Contact Us cards carry no chat button.** It was removed everywhere and its
   height held by a spacer (`height:Npx;margin-top:Npx`) so card sizes and row
   alignments are unchanged — keep the spacer if you edit one of these cards.
